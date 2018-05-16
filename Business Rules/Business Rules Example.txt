@@ -1,0 +1,10 @@
+Business rules 1 
+https://www.powerobjects.com/2013/10/24/become-pseudo-developer-business-rules-crm-2013/
+
+https://www.sherweb.com/blog/configuring-business-rules-within-microsoft-dynamics-365-crm/
+
+http://www.inogic.com/blog/2014/09/business-rule-updates-in-dynamics-crm-2015-part-ii/
+
+http://www.inogic.com/blog/2016/12/business-rules-dynamics-365/
+
+ https://neilparkhurst.com/2016/11/18/dynamics-365-business-rules/
