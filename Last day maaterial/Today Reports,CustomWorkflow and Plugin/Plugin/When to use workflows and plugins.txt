@@ -1,0 +1,2 @@
+when to use plug-ins vs workflow
+https://msdn.microsoft.com/en-us/library/gg509027.aspx

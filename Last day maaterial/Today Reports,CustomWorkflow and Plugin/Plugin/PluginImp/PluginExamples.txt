@@ -1,0 +1,30 @@
+Set custom Full Name format in CRM 2011 with Plugin 
+http://www.magnetismsolutions.com/blog/paulnieuwelaar/2013/08/25/set-custom-full-name-format-in-crm-2011-with-plugin
+Plugin to update field in CRM
+http://stackoverflow.com/questions/25033387/plugin-to-update-field-in-crm
+http://missdynamicscrm.blogspot.in/2015/05/tips-crm-c-create-validated-parent-child-records-as-big-compound-using-relationship-related-entities-object-c-sharp.html
+Calculate SUM from Child Entity Using Fetch (Aggregate) Function , CRM 2011:Plug-in 
+https://parthimscrm.wordpress.com/2013/07/18/calculate-sum-from-child-entity-using-fetch-aggregate-function-crm-2011plug-in/
+
+Duplicate Detection Plugin Crm 2011 
+
+https://parthimscrm.wordpress.com/2013/07/05/duplicate-detection-plugin-crm-2011/
+
+Associate/Disassociate plugin messages in CRM 
+http://mscrmtechie.blogspot.in/2016/07/associatedisassociate-plugin-messages.html
+http://mscrmshop.blogspot.in/2012/05/how-to-trigger-plugin-for-many-to-many.html
+
+Update Record Plugin in CRM 2011 -- sequence number
+https://sasankkomarina.wordpress.com/2012/10/31/update-record-plugin-in-crm-2011/
+
+i m deleting contact record ,if department of contact = CRM
+https://sasankkomarina.wordpress.com/2012/10/31/delete-record-plugin-in-crm-2011/
+
+Assign Record Plugin in CRM 2011
+https://sasankkomarina.wordpress.com/2012/10/31/assign-record-plugin-in-crm-2011/
+
+Share Record Plugin in CRM 2011
+https://sasankkomarina.wordpress.com/2012/10/31/share-record-plugin-in-crm-2011/
+
+Change Record Status in CRM 2011
+https://sasankkomarina.wordpress.com/2012/10/31/change-record-status-in-crm-2011/

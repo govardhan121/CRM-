@@ -1,0 +1,11 @@
+But i want to know exact situation when will we use Asynchronous Plugin and when will use Asychronous Workflow.
+
+One key difference is Images that you can use in Asynchronous Plugin, but not in workflow.
+ I mean to say you can not register images for custom workflow. but for asyn plugins you can do that
+
+You cannot make an Asynchronous Plug-in on demand like the way we can do it in workflows.
+
+https://sites.google.com/site/mscrmmegha/home/mscrm-1/interview-questions-answers-for-mscrm-page2
+
+
+what exact situation when will we use Asynchronous Plugin and when will use Asychronous Workflow.

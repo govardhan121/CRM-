@@ -1,0 +1,2 @@
+Dynamic CRM 2013 Plugin pipeline stage and database rollback
+http://stackoverflow.com/questions/32683986/dynamic-crm-2013-plugin-pipeline-stage-and-database-rollback

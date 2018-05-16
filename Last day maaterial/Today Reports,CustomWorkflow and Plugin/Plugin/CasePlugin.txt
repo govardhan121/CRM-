@@ -1,0 +1,7 @@
+Capturing and Storing Case Resolution Fields in The Case Form 
+http://nishantrana.me/2015/04/02/plugin-when-a-case-incident-is-resolved-in-crm-2013/
+http://missdynamicscrm.blogspot.in/2015/02/capturing-and-storing-case-resolution-case-entity-CRM.html
+
+https://msdn.microsoft.com/en-us/library/dn817877.aspx
+
+http://www.magnetismsolutions.com/blog/paul-nieuwelaars-blog/2012/10/30/auto_create_price_list_item_for_dynamics_crm_2011_products

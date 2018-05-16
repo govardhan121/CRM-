@@ -1,0 +1,12 @@
+3.Business Rules,JavaScript Method which one trigger the first?
+Answer: javascript method is clientside program and syncronous and business rules are asynchronous process so javascrit execute first.
+
+ 4.What is the realtime workflow ?
+
+ 5.Realtime workflow trigger first or plugin will trigger first?
+  Answer: By default plugin will trigger first.
+
+ 6.How should is change execution order between synchronous workflow and Plugin?
+  Answer: we have tool synchronous event order in ToolBox by using we can able to update Rank of workflow. 
+
+http://arpitmscrmhunt.blogspot.in/2014/04/plugin-assembly-table-in-mscrm.html

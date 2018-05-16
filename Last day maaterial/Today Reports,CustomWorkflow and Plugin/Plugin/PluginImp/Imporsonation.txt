@@ -1,0 +1,7 @@
+CRM 2015 – Understanding impersonation in plugins and knowing when to use it
+
+https://crmbusiness.wordpress.com/2015/07/21/crm-2015-understanding-impersonation-in-plugins-and-knowing-when-to-use-it/
+http://www.powerobjects.com/2012/08/06/how-to-impersonate-in-microsoft-dynamics-crm/
+http://stackoverflow.com/questions/16723468/how-to-get-the-impersonated-user-id-in-a-plugin
+
+To impersonate a user, set the CallerId property on an instance of OrganizationServiceProxy before calling the service’s Web methods.

@@ -1,0 +1,63 @@
+Prevalidation on create plugin
+http://stackoverflow.com/questions/27957395/prevalidation-on-create-plugin
+http://missdynamicscrm.blogspot.in/2015/06/plugin-registration-filtering-attribute-CRM.html
+Use of Shared Variables in Plugin 
+https://mscrmmindfire.wordpress.com/2014/04/16/use-of-shared-variables-in-plugin/
+
+Get the Created Records When Lead is Qualified Using Plug-in 
+https://mscrmmindfire.wordpress.com/2013/04/29/using-plug-in-get-the-created-records-when-lead-was-qualified/?relatedposts_hit=1&relatedposts_origin=846&relatedposts_position=0
+https://mscrmmindfire.wordpress.com/category/webresources/
+
+http://blog.developers.ba/develop-create-update-plugin-dynamics-crm-2013/
+
+http://stackoverflow.com/questions/25675974/crm-2013-execution-order-when-a-post-operation-create-follows-a-pre-operation-up
+
+http://www.magnetismsolutions.com/blog/paulnieuwelaar/2013/08/25/set-custom-full-name-format-in-crm-2011-with-plugin
+
+---------
+
+CRM 2015 update - plugin error - 'Changing security attributes is not allowed in stage 20 plugins'
+http://stackoverflow.com/questions/30797658/crm-2015-update-plugin-error-changing-security-attributes-is-not-allowed-in
+Crm 2011 Plugin doesn't trigger on Message “RemoveMember”
+http://stackoverflow.com/questions/6609695/crm-2011-error-in-update-plugin?rq=1
+http://stackoverflow.com/questions/15828473/crm-2011-plugin-doesnt-trigger-on-message-removemember?rq=1
+
+Who triggered my plugin?
+http://www.langalaxy.de/2009/09/who-triggered-my-plugin/
+
+CRM Plugins – Stopping infinite loops and understanding PluginExecutionContext.Depth
+https://community.dynamics.com/crm/b/crmbusiness/archive/2015/07/01/crm-plugins-stopping-infinite-loops-and-understanding-pluginexecutioncontext-depth
+
+-----------------
+Prevalidation on create plugin
+http://stackoverflow.com/questions/27957395/prevalidation-on-create-plugin
+
+Use of Shared Variables in Plugin 
+https://mscrmmindfire.wordpress.com/2014/04/16/use-of-shared-variables-in-plugin/
+
+Get the Created Records When Lead is Qualified Using Plug-in 
+https://mscrmmindfire.wordpress.com/2013/04/29/using-plug-in-get-the-created-records-when-lead-was-qualified/?relatedposts_hit=1&relatedposts_origin=846&relatedposts_position=0
+https://mscrmmindfire.wordpress.com/category/webresources/
+
+http://blog.developers.ba/develop-create-update-plugin-dynamics-crm-2013/
+
+http://stackoverflow.com/questions/25675974/crm-2013-execution-order-when-a-post-operation-create-follows-a-pre-operation-up
+
+http://www.magnetismsolutions.com/blog/paulnieuwelaar/2013/08/25/set-custom-full-name-format-in-crm-2011-with-plugin
+
+---------
+
+CRM 2015 update - plugin error - 'Changing security attributes is not allowed in stage 20 plugins'
+http://stackoverflow.com/questions/30797658/crm-2015-update-plugin-error-changing-security-attributes-is-not-allowed-in
+---------------------
+
+http://thinkingincrm.blogspot.in/2013/06/consume-assign-sdk-message-in-crm-2011.html
+http://stackoverflow.com/questions/27957395/prevalidation-on-create-plugin
+
+
+http://www.magnetismsolutions.com/blog/roshanmehta/2012/07/27/when_should_i_use_plug_ins_vs_custom_workflows
+
+-------------------
+
+Plugin Triggered When Share/Unshare CRM C#
+https://community.dynamics.com/crm/b/misscrm360exploration/archive/2016/01/25/plugin-triggered-
