@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1226946",
+    "ThreadId": "540213",
+    "Html": "Hi,\r<br />\nI can´t update an entity with this type of parameter. In the serialize method, I don´t see this type in the Swith clause.\r<br />\nAnybody can help me?\r<br />\n<br />\nRegards.<br />\n",
+    "PostedDate": "2014-03-26T08:17:06.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1227010",
+    "ThreadId": "540213",
+    "Html": "Hi.\r<br />\n<br />\nTwoOptions is just true/false. You should be able to assign them directly and the toolkit will convert the values. You don't need to pass the TwoOptions type\r<br />\n<br />\nHope this helps.\r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2014-03-26T10:09:15.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-03-26T10:46:42.147-07:00"
+  },
+  {
+    "Id": "1227033",
+    "ThreadId": "540213",
+    "Html": "Yes! Thanks.\r<br />\nWe just discover that.<br />\n",
+    "PostedDate": "2014-03-26T10:47:47.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

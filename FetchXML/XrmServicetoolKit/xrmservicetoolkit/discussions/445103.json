@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1049202",
+    "ThreadId": "445103",
+    "Html": "I have downloaed the toolkit as well as the solution. I have installed the solution I have tried everything I can to get this to work.\r<br />\n<br />\nBackground:\r<br />\n<br />\nI have a js that gets called when I click an icon on the ribbon bar. What I want to do is take a hand full of fields from this entity and add a record to the new entity. As soon as I turn debugging on I get xrmservicetoolkit is undefined. There is no html involved so I can't include script tags.\r<br />\n<br />\nThanks in advance for any help you can provide.\r<br />\n<br />\n// Covert Lot to Great Car\r<br />\n/// &lt;reference path=&quot;ISV/CRMServiceToolkit/XrmServiceToolkit.js&quot; /&gt;\r<br />\n<br />\nfunction addgreat() {<br />\n<pre><code>var year = Xrm.Page.data.entity.attributes.get(&quot;esi_year&quot;).getValue();\n\n// Here is where I get the undefined.\n    var beGreatCar = XrmServiceToolkit.Soap.businessEntity(&quot;esi_car&quot;);\n\n beGreatCar.attributes[&quot;esi_year&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_year&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_make&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_make&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_model&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_model&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_chassissnumber&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_chassisnumber&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_enginenumber&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_enginenumber&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_bodystyle&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_bodystyle&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_coachworkby&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_bodyby&quot;).getValue();\n    beGreatCar.attributes[&quot;esi_bodynumber&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_bodynumber&quot;).getValue();\n\n    // Check for last know owner. Make it the buyer unless that is blank then make it the seller\n\n    if (Xrm.Page.data.entity.attributes.get(&quot;esi_bidregbuyerid&quot;).getValue() != null) {\n        beGreatCar.attributes[&quot;esi_contactid&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_bidregbuyerid&quot;).getValue();\n    } else {\n\n       beGreatCar.attributes[&quot;esi_contactid&quot;] = Xrm.Page.data.entity.attributes.get(&quot;esi_sellerid&quot;).getValue();\n    };\n\n    oService.Create(beGreatCar);\n    alert(year + &quot; Added to Great Cars.&quot;);        \n    }\n</code></pre>\n\n",
+    "PostedDate": "2013-05-27T08:58:44.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050079",
+    "ThreadId": "445103",
+    "Html": "For anyone looking at the same error.\r<br />\n<br />\nI figured out my issue on this. I had added it to my solution but not to my form. Once I added it to the form I was able to get to my next error.<br />\n",
+    "PostedDate": "2013-05-29T05:53:14.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051724",
+    "ThreadId": "445103",
+    "Html": "Hi There.<br />\n<br />\nWhen calling external functions from third party library from CRM ribbon button, you will need to have the JavaScript file loaded from ribbon first. If the third party library which contains the function you called also depends on other libraries like JSON2, jQuery, Xrmserivetoolkit, you will also have to load them first.<br />\n<br />\nFor you case, ribbon customization may be something like the code below<br />\n<pre><code>&lt;Actions&gt;\n    &lt;JavaScriptFunction FunctionName=&quot;isNaN&quot; Library=&quot;$webresource:new_json2&quot; /&gt;\n    &lt;JavaScriptFunction FunctionName=&quot;isNaN&quot; Library=&quot;$webresource:new_jquery&quot; /&gt;\n    &lt;JavaScriptFunction FunctionName=&quot;isNaN&quot; Library=&quot;$webresource:new_XrmServiceToolkit&quot; /&gt;\n    &lt;JavaScriptFunction FunctionName=&quot;addgreat&quot; Library=&quot;$webresource:new_ribbon&quot;&gt;\n    &lt;CrmParameter Value=&quot;SelectedEntityTypeName&quot; /&gt;\n    &lt;CrmParameter Value=&quot;FirstSelectedItemId&quot; /&gt;\n    &lt;/JavaScriptFunction&gt;\n&lt;/Actions&gt;</code></pre>\n\n",
+    "PostedDate": "2013-06-02T03:42:53.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

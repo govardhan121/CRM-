@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "889686",
+    "ThreadId": "387949",
+    "Html": "\r\n<p>Hello, We have problems when retrieving dateTime attibutes values with XrmServiceToolkit.Soap functions. We have NaN value, is it possible to change that.</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-07-24T06:40:22.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "889730",
+    "ThreadId": "387949",
+    "Html": "<p>Hello,</p>\r\n<p>I found the solution of this issue. It was caused when deserializing :</p>\r\n<p>if (entCV.type == \"dateTime\")<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entCV.value = new Date(attr.childNodes[k].childNodes[1].text);</p>\r\n<p>It is not well supported on some browsers as described here http://biostall.com/javascript-new-date-returning-nan-in-ie-or-invalid-date-in-safari.</p>\r\n<p>Regards.</p>",
+    "PostedDate": "2012-07-24T07:58:24.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "890947",
+    "ThreadId": "387949",
+    "Html": "<p>Hey There.</p>\r\n<p>There was a code change in version 1.3 which i noticed the issue. It should have been fixed recently.</p>\r\n<p>I recommend you can have a look at the code in version 1.3 and give it a try.</p>\r\n<p>Cheers,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-07-25T01:08:36.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "890980",
+    "ThreadId": "387949",
+    "Html": "<p>Hello Jaimie.</p>\r\n<p>Thank you for your help and this usefull library.</p>\r\n<p>I will move forward.</p>\r\n<p>Regards.</p>",
+    "PostedDate": "2012-07-25T02:34:41.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

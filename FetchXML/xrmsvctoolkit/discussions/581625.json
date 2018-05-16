@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1354899",
+    "ThreadId": "581625",
+    "Html": "I am using the XrmSvcToolkit retrieve method to get data from two entities and my results are returning as undefined.\r<br />\n<br />\nScenario:<br />\n<ol>\n<li>User selects a value in the lookup field on record A.</li>\n<li>XrmSvcToolkit is used to call a retrieve on the related record B.</li>\n<li>Record B contains a lookup field to related record C.</li>\n<li>\nI want the retrieve method to return the a value from record C and then populate a separate lookup field on record A.<br />\n</li>\n</ol>\nSample code:\r<br />\n<br />\nfunction fSetExistingProductWithQuote() {<br />\n<pre><code>  var PriceQuote = Xrm.Page.getAttribute(&quot;ev_selectpricequotedetail&quot;).getValue();\n      if (PriceQuote != null) {\n      var quote = Xrm.Page.getAttribute(&quot;ev_selectpricequotedetail&quot;).getValue();\n      var quoteid = quote[0].id;\n      alert(quoteid);\n      var results = XrmSvcToolkit.retrieve({\n          entityName: &quot;ev_pricequotedetail&quot;,\n          id: quoteid,\n          select: [&quot;ev_pricequotedetailId&quot;, &quot;ev_product_ev_pricequotedetail_itemnumber/ProductId&quot;, &quot;ev_product_ev_pricequotedetail_itemnumber/Name&quot;],\n          expand: [&quot;ev_product_ev_pricequotedetail_itemnumber&quot;],\n          async: false\n      });\n      var Prod = results[&quot;ev_product_ev_pricequotedetail_itemnumber/ProductId&quot;];</code></pre>\n\nalert(Prod);\r<br />\n}\r<br />\n}\r<br />\n<br />\nCan someone tell me where the code is failing? The lookup on record B is populated and record C contains the necessary data I want to return.<br />\n",
+    "PostedDate": "2015-02-23T06:47:26.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354910",
+    "ThreadId": "581625",
+    "Html": "Hi, please try to validate your query using <a href=\"http://crm2011odatatool.codeplex.com/\" rel=\"nofollow\">OData Query Designer</a>. Note that OData query is case sensitive. \r<br />\n<br />\nThanks,\r<br />\nDaniel Cai | <a href=\"http://www.example.com\" rel=\"nofollow\">http://www.kingswaysoft.com</a><br />\n",
+    "PostedDate": "2015-02-23T07:18:11.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354941",
+    "ThreadId": "581625",
+    "Html": "Hi Daniel,\r<br />\n<br />\nThank you for the prompt reply. \r<br />\n<br />\nI have used the oData Query Designer and updated my query based on the tool. I am able to execute a retrieveMultiple; however, I am still receiving an return result of &quot;undefined&quot;. <br />\n",
+    "PostedDate": "2015-02-23T09:04:10-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354942",
+    "ThreadId": "581625",
+    "Html": "undefined means there is no value returned for that particular field. It could be one of the two situations. <br />\n<ul>\n<li>The name of the field is not valid</li>\n<li>The field has a NULL value on CRM server side</li>\n</ul>\n",
+    "PostedDate": "2015-02-23T09:06:57.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360303",
+    "ThreadId": "581625",
+    "Html": "Hi Daniel,\r<br />\n<br />\nI have confirmed the field name matches the case and text in the Solution and the value on the server side is not null. I have tried multiple variations of retrieve and retrievemultiple but I am still missing something.\r<br />\n<br />\nMy three entities in question are:<br />\n<ol>\n<li>Order Product</li>\n<li>Price Quote Detail</li>\n<li>\nProduct<br />\n</li>\n</ol>\nWhen a user is on the Order Product form, I want to call a function onChange of the lookup field to Price Quote Detail to set the value of the Existing Product field on the Order Product form with the Product related the Price Quote Detail. I was having similar issues on other entities referencing data from the Product entity, but I was able to work around those issues with either Business Rules or a Workflow; neither of which are an option on Order Product.\r<br />\n<br />\nI've tried another entity other as the middle linking entity, but I'm getting the same &quot;undefined&quot; message when I throw an alert to display the value of the lookup field I'm returning my retrieveMultiple.\r<br />\n<br />\nDo I need to return something other than the lookup field in my result set? I'm returning the specific field with no [0].id nor [0].name included.<br />\n",
+    "PostedDate": "2015-03-05T18:58:59.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

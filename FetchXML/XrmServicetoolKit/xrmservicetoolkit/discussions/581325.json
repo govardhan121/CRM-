@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1353817",
+    "ThreadId": "581325",
+    "Html": "My code is as follows:<br />\nfunction CreateEmail( ) <br />\n{<br />\n<pre><code>var createEmail = new XrmServiceToolkit.Soap.BusinessEntity(&quot;email&quot;);\ncreateEmail.attributes[&quot;subject&quot;] = subject;\n createEmail.attributes[&quot;description&quot;] = &quot;line1&quot; + &quot;\\r\\n&quot; + &quot;line2&quot;;</code></pre>\n\n...<br />\n<br />\nThe email is created successfully, but the body of the email is squashed onto 1 line.  Does anyone know how to input a new line character to separate lines 1 and lines 2?<br />\n",
+    "PostedDate": "2015-02-18T14:33:28.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1353824",
+    "ThreadId": "581325",
+    "Html": "For all those wondering, I have found the answer, just like html, you enclose your paragraphs with &lt;p&gt;&lt;/p&gt;\r<br />\nso the updated code would be\r<br />\n<br />\ncreateEmail.attributes[&quot;description&quot;] = &quot;&lt;p&gt;line1&lt;/p&gt;&quot;+ &quot;&lt;p&gt;line2&lt;/p&gt;&quot;;<br />\n",
+    "PostedDate": "2015-02-18T14:55:35.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

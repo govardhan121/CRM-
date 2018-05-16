@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "856402",
+    "ThreadId": "361702",
+    "Html": "\r\n<p>I am new to CRM and the Toolkit</p>\r\n<p>I am trying to prefill the value only when the user create the new record.&nbsp;</p>\r\n<p>Below is the&nbsp;JavaScript I tired but does not work&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>function SettingDefaultValueList() { &nbsp;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"></span>var category = crmForm.all.category;&nbsp; &nbsp;\r\n<br>\r\n<span style=\"white-space:pre\"></span>var recordID = Xrm.Page.data.entity.getId();&nbsp; &nbsp;\r\n<br>\r\n<span style=\"white-space:pre\"></span>if (recordID == null) {&nbsp; &nbsp; &nbsp; &nbsp;\r\n<br>\r\n<span style=\"white-space:pre\"></span>if (category.DataValue != null) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>\r\n<span style=\"white-space:pre\"></span>category.DataValue = 1&nbsp; &nbsp; }}</p>\r\n",
+    "PostedDate": "2012-07-02T08:32:23.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "860322",
+    "ThreadId": "361702",
+    "Html": "<p>Hey There.</p>\r\n<p>I assume that what you mean is to pre populate / set the vaule for a OptionSet field named 'category'</p>\r\n<p>What you after is (i have not tested. Just typed them in) :</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>\r\n<span style=\"color: blue;\">var</span> CRM_FORM_TYPE_CREATE = 1;\r\n<span style=\"color: blue;\">var</span> CRM_FORM_TYPE_UPDATE = 2;\r\n<span style=\"color: blue;\">var</span> CRM_FORM_TYPE_READONLY = 3;\r\n<span style=\"color: blue;\">var</span> CRM_FORM_TYPE_DISABLED = 4;\r\n   \r\n<span style=\"color: blue;\">switch</span> (Xrm.Page.ui.getFormType()) {\r\n   <span style=\"color: blue;\">case</span> CRM_FORM_TYPE_CREATE:\r\n      <span style=\"color: blue;\">var</span> category = Xrm.Page.getAttribute(<span style=\"color: #a31515;\">'category'</span>);\r\n      category.setValue(1);\r\n      <span style=\"color: blue;\">break</span>;\r\n}\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-07-11T07:30:59.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "861125",
+    "ThreadId": "361702",
+    "Html": "<p>Thank you that is what I am looking for.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-07-12T06:47:59.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

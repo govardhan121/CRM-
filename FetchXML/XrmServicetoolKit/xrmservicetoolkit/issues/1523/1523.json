@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2015-04-09T12:19:55.89-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nWhen we tried to retrieve more than 5000 records using Soap.Fetch method of XrmServiceToolkit. \nWe got the below error but this error is not consistent this was occurred some time. \n__\"Not enough storage is available to complete this operation\"__\n\nWe have also attached the screenshot of error.\n\nCan you have any solution on this.\n \nThanks!",
+    "LastUpdatedDate": "2015-04-09T12:19:55.89-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-11-20T04:42:49.61-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue while retrieve more than 5000 records",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1523
+  },
+  "FileAttachments": [
+    {
+      "FileId": 554,
+      "FileName": "Error_toolkit.png",
+      "DownloadUrl": ".\\554"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hey There.\r\n\r\nI am not too sure if the error has actually caused by the toolkit, but I have seen this error \"Not enough storage is available to complete this operation\" elsewhere while using IE\r\n\r\nThere is a known issue from the early ages of IE. Mainly caused by a layer building process until it reaches 31 of them (for example if you have like 31 CSS files included in the page, IE will crash. You could find a bit research information through out the internet.\r\n\r\nThere maybe also a memory leak which could cause issue like this. \r\n\r\nI will keep a note and see if I have the same issue in some instances of my development, but as for now, I could not give you a proper solution.\r\n\r\nRegards,\nJaimie\r\n\r\n",
+      "PostedDate": "2013-11-25T12:24:34.847-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:19:55.89-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

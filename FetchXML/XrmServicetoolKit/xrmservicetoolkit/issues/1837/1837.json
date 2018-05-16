@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In file there is a reference to olkit.Extension, instead of XrmServiceToolkit.Extension",
+    "LastUpdatedDate": "2016-03-04T04:31:51.91-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-11-10T03:40:16.27-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Min version contains error",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 1837
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1684,
+      "FileName": "XrmServiceToolkit.min.js",
+      "DownloadUrl": ".\\1684"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "01132016_This issue is still present on the 2.2.1 minified version.\r\n\r\nThe exact position of the issue is Ln 25 Col 8385.  Replacing the string \" olkit\" with \"XrmServiceToolkit\" solved this issue.\r\n\r\nI have attached the corrected minified file.\r\n\r\nCheers.",
+      "PostedDate": "2016-01-13T03:54:58.343-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-02-05T19:56:37.343-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-03-04T04:31:51.91-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

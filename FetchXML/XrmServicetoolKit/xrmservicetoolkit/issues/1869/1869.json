@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In version 2.2.1 I experienced an issue while sending below FetchXMLxml using XrmServiceToolkit.Soap.Fetch which is making a summation on all the records under specific job excluding current record:\n\n<fetch distinct='false' mapping='logical' aggregate='true'> <entity name='mn_payments'>\n\t\t<attribute name='mn_amount' alias='amount_sum' aggregate='sum'/>\n\t\t<filter type='and'>\n\t\t\t<condition attribute='statecode' operator='eq' value='0' />\n\t\t\t<condition attribute='mn_jobid' operator='eq' value='{344A56BF-9434-E611-80F7-C4346BDD8131}'/>\n\t\t\t<condition attribute='mn_paymentsid' operator='ne' value='{A26909B3-9534-E611-80F7-C4346BDD8131}'/>\n\t\t</filter>\n\t</entity></fetch>\n\nI amended deserialize function and it resolved the issue. Please see the changed file attached:",
+    "LastUpdatedDate": "2016-06-18T09:16:07.79-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-06-18T09:08:22.353-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with XrmServiceToolkit.Soap.Fetch",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1869
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1691,
+      "FileName": "XrmServiceToolkit.js",
+      "DownloadUrl": ".\\1691"
+    }
+  ],
+  "Comments": []
+}

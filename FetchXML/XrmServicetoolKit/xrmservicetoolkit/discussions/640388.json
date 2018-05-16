@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1431665",
+    "ThreadId": "640388",
+    "Html": "the helpful methods &quot;GetCurrentUserRoles&quot; and &quot;IsCurrentUserRole&quot; should also retrieve roles that the user has via team memberships. Currently, if the user is a member of a team and that team has a role, this function will not find it. <br />\n<br />\nI have found this code snippet helpful to retrieve these roles:<br />\n<br />\n<a href=\"http://manyrootsofallevilrants.blogspot.ch/2014/01/get-users-roles-in-ms-dynamics-crm.html\" rel=\"nofollow\">Get user roles and team roles</a> <br />\n",
+    "PostedDate": "2015-06-24T01:27:17.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432267",
+    "ThreadId": "640388",
+    "Html": "Hi There.<br />\n<br />\nGood suggestion. Will have a look and see what I can do in the next release.<br />\n<br />\nMany thanks,<br />\nJaimie<br />\n",
+    "PostedDate": "2015-06-29T02:44:42.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

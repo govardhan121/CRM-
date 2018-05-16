@@ -1,0 +1,259 @@
+[
+  {
+    "Id": "0",
+    "Name": "XrmServiceToolkit 2.2.1 for CRM 15 online update 1",
+    "DevelopmentStatus": "Beta",
+    "Description": "* Version: 2.2.1\n\n** Date: May, 2015 Dependency: JSON2, jQuery (latest or 1.7.2 above)\n** ---NOTE---Due to the changes for CRM 2013, please use the attached version of ** JSON2 and jQuery\n*** Bug fixes for CRM online update 1 for EntityReference SOAP message\n*** Minified Version release\n\n*[NOTE]*\n*If you are on CRM 2015 online Update 1, download this version. Otherwise, please use stable version 2.2*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-05-28T07:53:21.193-07:00",
+    "Files": [
+      {
+        "Id": "6a1b8e45-5d76-4e92-a30d-51a2880964ea",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./0/6a1b8e45-5d76-4e92-a30d-51a2880964ea",
+        "Type": "Application",
+        "UploadDate": "2015-05-28T07:41:11.41-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "XrmServiceToolkit 2.1 for CRM 2011 and CRM 2013",
+    "DevelopmentStatus": "Stable",
+    "Description": "*   Version: 2.1\n*   Date: September, 2014\n**       Dependency: JSON2, jQuery (latest or 1.7.2 above)\n**       ---NOTE---Due to the changes for CRM 2013, please use the attached version of JSON2 and jQuery\n**       Tested Platform: IE11, IE10, latest Chrome, latest FireFox\n*    Changes:\n**       Performance Refactor\n**       Bug fixes for XrmServiceToolkit.Soap.Fetch\n**       Bug fixes for extension methods.\n**       Minified Version release",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-10-05T05:19:47.527-07:00",
+    "Files": [
+      {
+        "Id": "1b8fe011-a9c7-4584-bd77-03cd657c89b9",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./1/1b8fe011-a9c7-4584-bd77-03cd657c89b9",
+        "Type": "Application",
+        "UploadDate": "2014-10-05T05:16:51.277-07:00"
+      },
+      {
+        "Id": "72b061b0-b2b0-4a54-a35f-bbc6ca5842e9",
+        "FileName": "xml.zip",
+        "Url": "./1/72b061b0-b2b0-4a54-a35f-bbc6ca5842e9",
+        "Type": "Application",
+        "UploadDate": "2014-10-05T05:18:09.947-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "XrmServiceToolkit 2.0.1 for CRM 2011 and CRM 2013",
+    "DevelopmentStatus": "Beta",
+    "Description": "*   Version: 2.0.1 (beta)\n*   Date: April, 2014\n**       Dependency: JSON2, jQuery (latest or 1.7.2 above)\n**       ---NOTE---Due to the changes for CRM 2013, please use the attached version of JSON2 and jQuery\n**       Tested Platform: IE11, IE10, latest Chrome, latest FireFox\n*    Changes:\n**       New Behavior - XrmServiceTookit.Soap.Fetch method will allow 'page' and 'count' parameter to limit the returned records.\n**       New Fix - XrmServiceToolkit.Soap.Fetch fix an error when passing difference formats of Fetch XML with/without '<fetch>..' statements\n**       New Fix - XrmServiceToolkit.Extension methods error when retrieving web resources\n*   Beta Release for CRM 2013",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-05-27T13:56:22.27-07:00",
+    "Files": [
+      {
+        "Id": "d0f80e3b-3df6-4f7c-8f5d-1284172a7f03",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./2/d0f80e3b-3df6-4f7c-8f5d-1284172a7f03",
+        "Type": "Application",
+        "UploadDate": "2014-05-27T13:55:58.773-07:00"
+      },
+      {
+        "Id": "5284749f-738c-431b-b11c-089176b836cb",
+        "FileName": "xml.zip",
+        "Url": "./2/5284749f-738c-431b-b11c-089176b836cb",
+        "Type": "Application",
+        "UploadDate": "2014-04-21T09:29:49.373-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "XrmServiceToolkit 2.0.0 for CRM 2011 and CRM 2013",
+    "DevelopmentStatus": "Beta",
+    "Description": "*   Version: 2.0.0 (beta)\n**   Date: October, 2013\n**       Dependency: JSON2, jQuery (latest or 1.7.2 above)\n***       ---NOTE---Due to the changes for CRM 2013, please use the attached version of JSON2 and jQuery\n**       Tested Platform: IE10, latest Chrome, latest FireFox\n**       Tested CRM Server: CRM 2013 on-premise RTM, CRM 2013 online, CRM 2011 with RU15\n**    Changes:\n***      New Behavior - XrmServiceTookit.Soap.Fetch parameters change to work with asynchronous callback compared to 1.4.2 beta: XrmServiceToolkit.Soap.Fetch(fetchXml, fetchAll, callback)\n***       New Behavior - XrmServiceTookit.Common.AddNotification is working with CRM 2013 using the out-of-box functionality. Still support CRM 2011\n***       New Fix - XrmServiceToolkit.Comon.GetObjectCodeType is now using metadata retrieval as a supported method\n***      New Fix - The included jQuery has a line changed at the bottom <window.jQuery = jQuery;> $ is removed to work with CRM 2013 form\n*   Beta Release for CRM 2013",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-04-21T09:28:28.177-07:00",
+    "Files": [
+      {
+        "Id": "c6341f07-8129-4b24-8140-ba59c0fd55fd",
+        "FileName": "XrmServiceToolkit v2.0.0.zip",
+        "Url": "./3/c6341f07-8129-4b24-8140-ba59c0fd55fd",
+        "Type": "Application",
+        "UploadDate": "2013-10-10T10:25:46.1-07:00"
+      },
+      {
+        "Id": "d7fb37d1-fbf9-4ad8-9662-7cb15be355e0",
+        "FileName": "Configuration.zip",
+        "Url": "./3/d7fb37d1-fbf9-4ad8-9662-7cb15be355e0",
+        "Type": "Application",
+        "UploadDate": "2013-10-10T10:25:46.13-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "XrmServiceToolkit 1.4.1 for CRM 2011",
+    "DevelopmentStatus": "Stable",
+    "Description": "*   Version: 1.4.1\n*   Date: April, 2013\n*       Dependency: JSON2, jQuery (latest or 1.7.2 above)  \n*       Tested Platform: IE9, IE10, Chrome Version 26.0.1410.64 m, Firefox 20.0.1\n*       Feature: Add Cross Browser Support for RU12, RU13\n**       New Fix - XrmServiceToolkit.Common.AddNotification method updated for RU12, RU13, still compatible for RU11 below\n**       New Fix - XrmServiceToolkit.Soap.Fetch method did not format linked record correctly\n**       New Fix - XrmServiceToolkit.Soap.Retrieve method did not return partylist data for activity\n**       New Fix - Added manual conversion from String to Date conversion for cross browser\n**       New Fix - getServerUrl method is updated as getClientUrl to align with RU12 SDK method getClientUrl(), still compatible to support RU11 below\n**       New Function - getServerUrl private method is updated as getClientUrl to align with RU12 SDK method getClientUrl(), still compatible to support RU11 below\n**       New Function - XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata method is a method to return all metadata for all entities by the specified entity filters\n**       New Function - XrmServiceToolkit.Soap.RetrieveEntityMetadata method is a method to return the metadata for a certain entity by the specified entity filters\n**       New Function - XrmServiceToolkit.Soap.RetrieveAttributeMetadata method is a method to return the metadata for a certain entity's attribute",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2014-04-21T09:28:49.89-07:00",
+    "Files": [
+      {
+        "Id": "aeaaa2de-c54d-43f2-a099-a71a21ca6176",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./4/aeaaa2de-c54d-43f2-a099-a71a21ca6176",
+        "Type": "Application",
+        "UploadDate": "2013-04-21T08:52:54.057-07:00"
+      },
+      {
+        "Id": "d2dbefb4-5cee-460b-b053-15d76e48a7cc",
+        "FileName": "xml.zip",
+        "Url": "./4/d2dbefb4-5cee-460b-b053-15d76e48a7cc",
+        "Type": "Application",
+        "UploadDate": "2013-04-21T08:54:14.757-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "XrmServiceToolkit 1.4.0",
+    "DevelopmentStatus": "Beta",
+    "Description": "* Version: 1.4.0\n** Dependency: JSON2, jQuery 1.7.2 above\n** Date: January, 2013\n** New Feature: Add more cross browser support for RU12\n** Tested Browser: IE9, IE10, Chrome Version 24.0.1312.56 m, Firefox 18.0.1",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-01-22T13:58:53.247-08:00",
+    "Files": [
+      {
+        "Id": "2fc1e5d0-663f-4fd4-bd3b-15eec151365d",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./5/2fc1e5d0-663f-4fd4-bd3b-15eec151365d",
+        "Type": "Application",
+        "UploadDate": "2013-01-22T13:57:19.603-08:00"
+      },
+      {
+        "Id": "854f024c-74ff-4746-94bf-87bdc1a98493",
+        "FileName": "xml.zip",
+        "Url": "./5/854f024c-74ff-4746-94bf-87bdc1a98493",
+        "Type": "Application",
+        "UploadDate": "2013-01-22T13:58:00.93-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "6",
+    "Name": "XrmServiceToolkit 1.3.2",
+    "DevelopmentStatus": "Stable",
+    "Description": "* Version: 1.3.2\n** Date: January, 2013\n** Dependency: JSON2, jQuery (latest or 1.7.2 above) \n*** New Fix - XrmServiceToolkit.Soap not initializing soap service properly for some CRM online scenario - (Calling soap from ribbon button)\n*** Added more cross browser support before RU12",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-01-31T03:09:30.663-08:00",
+    "Files": [
+      {
+        "Id": "2d545df7-1b6d-47e2-b5c2-95e22c8520db",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./6/2d545df7-1b6d-47e2-b5c2-95e22c8520db",
+        "Type": "Application",
+        "UploadDate": "2013-01-21T05:43:59.117-08:00"
+      },
+      {
+        "Id": "6b3630d1-11b6-4318-ba23-107577959c3b",
+        "FileName": "xml.zip",
+        "Url": "./6/6b3630d1-11b6-4318-ba23-107577959c3b",
+        "Type": "Application",
+        "UploadDate": "2013-01-21T05:44:34.713-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "7",
+    "Name": "XrmServiceToolkit 1.3.1",
+    "DevelopmentStatus": "Stable",
+    "Description": "*   Version: 1.3.1\n*   Date: November, 2012\n*   Dependency: JSON2, jQuery (latest or 1.7.2 above)\n** New Feature - A change of logic to increase peroformance when returning large number of records\n** New Function - XrmServiceToolkit.Soap.QueryAll: Return all available records by query options (>5k+)\n** New Fix - XrmServiceToolkit.Rest.RetrieveMultiple not returning records more than 50\n** New Fix - XrmServiceToolkit.Soap.Business error when refering number fields like (int, double, float)     \n** New Fix - XrmServiceToolkit.Soap not handling error message properly",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-11-25T13:56:03.127-08:00",
+    "Files": [
+      {
+        "Id": "b53b2d6e-6061-4469-a106-b110df4e8e93",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./7/b53b2d6e-6061-4469-a106-b110df4e8e93",
+        "Type": "Application",
+        "UploadDate": "2012-11-25T13:42:58.413-08:00"
+      },
+      {
+        "Id": "d3db2b22-ee6f-41cb-ad54-e096adadaaa7",
+        "FileName": "xml.zip",
+        "Url": "./7/d3db2b22-ee6f-41cb-ad54-e096adadaaa7",
+        "Type": "Application",
+        "UploadDate": "2012-11-25T13:44:40.32-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "8",
+    "Name": "XrmServiceToolkit 1.3",
+    "DevelopmentStatus": "Beta",
+    "Description": "*JSON2 and jQuery 1.7.2 are included in the zip file for version 1.3*\n\n* Version: 1.3 \n** Dependency: JSON2, jQuery 1.7.2 above \n** Date: July, 2012 \n** New Feature: jQuery integration \n*** Cross Browser support. More testings are required \n** New Category and Extension: \n*** jQueryXrmDependentOptionSet: A generic configurable method to setup dependent option set in CRM 2011\n*** jQueryXrmFieldTooltip: A generic configurable method to setup tooltip for crm fields\n*** jQueryXrmLookupCustomFilterView: A generic configurable method to add custom filter view to crm lookup field \n \n* Version: 1.2 \n** Dependency: JSON2 \n** Date: May, 2012 \n** New Fix - Create, Update, Retrieve activity with PartyList type [From, To, Cc, Bcc]\n \n* Version: 1.1 \n** Depdendency: JSON2 \n** Date: April, 2012 \n** New Function - XrmServiceToolkit.Soap.Assign \n** New Function - XrmServiceToolkit.Soap.GrantAccess \n** New Function - XrmServiceToolkit.Soap.ModifyAccess \n** New Function - XrmServiceToolkit.Soap.RevokeAccess \n** New Function - XrmServiceToolkit.Soap.RetrievePrincipalAccess ﻿",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-08-23T03:11:19.427-07:00",
+    "Files": [
+      {
+        "Id": "17bf605b-d12d-48eb-ad87-8b1a2f65ec57",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./8/17bf605b-d12d-48eb-ad87-8b1a2f65ec57",
+        "Type": "Application",
+        "UploadDate": "2012-08-23T03:11:19.303-07:00"
+      },
+      {
+        "Id": "b4d20852-3f2c-422a-878f-d8ea58d01d24",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./8/b4d20852-3f2c-422a-878f-d8ea58d01d24",
+        "Type": "Application",
+        "UploadDate": "2012-05-24T06:24:42.21-07:00"
+      },
+      {
+        "Id": "ff214b81-b72d-4b15-a4c5-088c43df85a3",
+        "FileName": "xml.zip",
+        "Url": "./8/ff214b81-b72d-4b15-a4c5-088c43df85a3",
+        "Type": "Application",
+        "UploadDate": "2012-07-12T05:13:52.787-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "9",
+    "Name": "XrmServiceToolkit [version 1.1]",
+    "DevelopmentStatus": "Beta",
+    "Description": "XrmServiceToolkit 1.1\n\n* Whats new:\n*   Version: 1.1 \n*   Date: April, 2012\n**      New Function - XrmServiceToolkit.Soap.Assign\n**      New Function - XrmServiceToolkit.Soap.GrantAccess\n**      New Function - XrmServiceToolkit.Soap.ModifyAccess\n**      New Function - XrmServiceToolkit.Soap.RevokeAccess\n**      New Function - XrmServiceToolkit.Soap.RetrievePrincipalAccess",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-05-24T06:27:06.4-07:00",
+    "Files": [
+      {
+        "Id": "6c31dd6a-367c-43f0-a752-05372d7befe8",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./9/6c31dd6a-367c-43f0-a752-05372d7befe8",
+        "Type": "Application",
+        "UploadDate": "2012-04-30T07:21:05.72-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "10",
+    "Name": "XrmServiceToolkit 2.2 for CRM 2015, 2013, 2011",
+    "DevelopmentStatus": "Stable",
+    "Description": "* Version: 2.2\n** Date: April, 2015  Dependency: JSON2, jQuery (latest or 1.7.2 above)\n** ---NOTE---Due to the changes for CRM 2013, please use the attached version of ** JSON2 and jQuery\n*** Tested Platform: IE11, IE10, latest Chrome, latest FireFox\n*** Bug fixes for XrmServiceToolkit.Soap.Fetch\n*** Bug fixes for error handling\n*** Minified Version release",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-04-10T01:16:13.027-07:00",
+    "Files": [
+      {
+        "Id": "8a3e4af6-ede7-497d-b750-dd736c48e34e",
+        "FileName": "XrmServiceToolkit.zip",
+        "Url": "./10/8a3e4af6-ede7-497d-b750-dd736c48e34e",
+        "Type": "Application",
+        "UploadDate": "2015-04-09T13:00:36.73-07:00"
+      },
+      {
+        "Id": "195e0bfa-f393-4569-9bc1-d237666856dd",
+        "FileName": "xml.zip",
+        "Url": "./10/195e0bfa-f393-4569-9bc1-d237666856dd",
+        "Type": "Application",
+        "UploadDate": "2015-04-09T12:15:52.343-07:00"
+      }
+    ]
+  }
+]

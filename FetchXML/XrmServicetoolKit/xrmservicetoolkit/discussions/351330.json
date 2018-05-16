@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "820435",
+    "ThreadId": "351330",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using <em>XrmServiceToolkit.Soap.Create() </em>synchronously&nbsp;to create child records&nbsp;upon the\r\n<em>OnSave</em> form event of the parent record. However, it does not work when <em>\r\ncreating</em> the parent record because the GUID for the parent record does not yet exist, thus the EntityReference cannot be set.</p>\r\n<p>How would I use this for my purpose (without using a post-event plugin)?</p>\r\n<p>Thanks,</p>\r\n<p>Dave</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-04-05T08:41:35.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "822414",
+    "ThreadId": "351330",
+    "Html": "<p>Hey Dave.</p>\n<p>Ideally, Plug-in will be my approach to solve this since onSave event in JavaScript does not hit the database and create the record yet.</p>\n<p>If you really have to do this in JavaScript.</p>\n<p>I suppose you could create some logic when on load when the form is opened for update.</p>\n<p>Some ideas here:</p>\n<p>1. Create a new boolean attribute called \"new_childrecordcreated\". Put it on the form but invisiable.</p>\n<p>2. When the parent record is created, save the new attribute as false (default value or javascript)</p>\n<p>3. When the form is opend for update, if this attribute is false, then run your create child records logics.</p>\n<p>4. Once the child records are created using XrmServiceToolkit.Soap.Create(), simply set the value to true for the attribute. Therefore, your create logic won't run again in the future.</p>\n<p>The problem is if you run the javascript in synchrous mode and there are quite a few child records to be created, this way will affect the performance to just open the page.</p>\n<p>Again, this might be your choice if you want to do it. There might be other ways to solve the issue.</p>\n<p>Best Regards,</p>\n<p>Jaimie</p>",
+    "PostedDate": "2012-04-11T07:55:48.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "822960",
+    "ThreadId": "351330",
+    "Html": "<p>Hey Jaimie,</p>\r\n<p>Thanks for the suggestion but I decided to go with a plugin. Plus, the <em>XrmServiceToolkit.Soap.Create(</em>) function already works fine for creating the child records AFTER the parent record is created without any extra hidden fields, etc.</p>\r\n<p>Thanks again,</p>\r\n<p>Dave</p>",
+    "PostedDate": "2012-04-12T09:01:38.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

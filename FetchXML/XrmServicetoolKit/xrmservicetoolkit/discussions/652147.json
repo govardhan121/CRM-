@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1465759",
+    "ThreadId": "652147",
+    "Html": "I have this code block that retrieves a list of entities:\r<br />\n<br />\nvar entitiesMetadata = XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata([&quot;Entity&quot;], true);\t<br />\n<pre><code>    var currentEntityName = new Array();\n    select = document.getElementById('entities');\n\n    for (var i = 0; i &lt;= entitiesMetadata.length; i++) {\n\n        var entity = entitiesMetadata[i];\n        if (entity !== null) {\n            currentEntityName[i] = entity.LogicalName;\n        }\n    }\n</code></pre>\n\nHow do I get all the attributes for Contact? Does anyone know this? Anyone have any sample code? I really need an example as the documentation is just not there.<br />\n",
+    "PostedDate": "2016-03-06T13:16:39.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466555",
+    "ThreadId": "652147",
+    "Html": "Hi There.\r<br />\n<br />\nPlease have a look and download the full source code which has .htm page including all examples\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-03-11T09:03:44.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466769",
+    "ThreadId": "652147",
+    "Html": "Hi, this no longer works:\r<br />\n<br />\nvar entitiesMetadata = XrmServiceToolkit.Soap.RetrieveEntityMetadata([&quot;Attributes&quot;], &quot;contact&quot;, true);<br />\n",
+    "PostedDate": "2016-03-14T10:39:53.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

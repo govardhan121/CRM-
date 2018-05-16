@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nWe are getting below error in IE when tried to retrieve more than 50K records using fetch. It is working in Google chrome.\n\n__\"Not enough storage is available to complete this operation\".__\n\nCan anyone have solution for this issue.\n\nAny help be appriciated.\n\nThanks!\n\nBalasaheb",
+    "LastUpdatedDate": "2016-12-09T22:38:41.273-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-12-09T22:38:39.527-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Not enough storage is available to complete this operation.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1891
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1695,
+      "FileName": "Untitled.png",
+      "DownloadUrl": ".\\1695"
+    }
+  ],
+  "Comments": []
+}

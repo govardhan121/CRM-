@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1421734",
+    "ThreadId": "636076",
+    "Html": "Hi Jaimie,\r<br />\n<br />\nhow can I handle errors thrown in an asynchronous Soap-call?\r<br />\nOn synchronous calls I can use a try/catch block, which doesn't work on asynchronous calls.<br />\n",
+    "PostedDate": "2015-04-30T02:50:03.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1424165",
+    "ThreadId": "636076",
+    "Html": "Hi There.\r<br />\n<br />\nI am currently reviewing the issue about asynchronous error handling. Hopefully I can have some more time to provide an update soon.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-05-08T06:11:06.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452075",
+    "ThreadId": "636076",
+    "Html": "This appears to be a bug in the current version of XrmServiceToolkit. The method &quot;errorHandler&quot; (around line 584) THROWS an error when it ought to just RETURN the error. \r<br />\n<br />\nThis bug appears newly introduced. In earlier versions of XrmServiceToolkit, the error is returned correctly and not thrown.<br />\n",
+    "PostedDate": "2015-11-12T04:53:59.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452094",
+    "ThreadId": "636076",
+    "Html": "We already fixed this bug -- among other things -- in our custom XST Version. In the case of <code>XrmServiceToolkit.Soap.Fetch()</code> all you have to do is adding the following lines at the end of the private function body assigned to variable &quot;fetch&quot;:<br />\n<br />\n<img src=\"http://i.imgur.com/SLjhbC6.png\" alt=\"Image\" /><br />\n<br />\nThis issue actually affects most public methods of the XrmServiceToolkit.Soap which also offer an asynchronous call variant (by passing an optional callback function). To be more precise,  you can identify those faulty contact points by searching for &quot;doRequest(&quot; and check where the provided &quot;internalCallback&quot; functions don't care about a second callback parameter called. However, this would also mean that the callback function semantics would change, since client code now must become aware of an optional second Parameter.<br />\n",
+    "PostedDate": "2015-11-12T06:45:48.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452096",
+    "ThreadId": "636076",
+    "Html": "@ClausAppel Unfortunately this bug (handling async SOAP Errors gracefully) at least exists already since 2.0.1 beta. (I didn't look further behind)<br />\n",
+    "PostedDate": "2015-11-12T06:54:30.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466816",
+    "ThreadId": "636076",
+    "Html": "Any updates on this issue? We're using the 2.2.1 version for 2015 update 1 (on 2016?)\r<br />\nIf I get an error in a Soap request we want to be able to show something useful to the user, but I just get a 500 internal error in the console.\r<br />\nI notice in the doRequest function we have a call to getError(true, req) which returns &quot;new Error(errorMessage)&quot;.. though I don't see that the doRequest function then does anything with it?\r<br />\n<br />\nI've made this change which will return the Error object, and then I can test it using &quot;instanceof Error&quot; though not sure that's quite the intended result..\r<br />\n<br />\nthis:<br />\n<pre><code>if (req.status === 200) { // &quot;OK&quot;\n    var doc = req.responseXML;\n    try {\n        setSelectionNamespaces(doc);\n    } catch(e) {}\n    internalCallback(doc);\n}\nelse {\n    getError(true, req);\n}</code></pre>\n\nto:<br />\n<pre><code>blah blah blah...\nelse {\n    var err = getError(true, req);\n    return !!internalCallback ? internalCallback(err) : err;\n}</code></pre>\n\n",
+    "PostedDate": "2016-03-14T19:44:45.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

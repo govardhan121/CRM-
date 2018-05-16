@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:19:18.587-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello!\nI think it would be better to replace all \"return new Error\" with \"throw new Error\" in getError function here: https://xrmservicetoolkit.codeplex.com/SourceControl/latest#XrmServiceTookit/Scripts/helper/XrmServiceToolkit.js\nBecause when you call this function in doRequest, returned value is not used.\nThanks!",
+    "LastUpdatedDate": "2015-04-09T12:19:18.587-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-10-23T03:37:43.013-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Returned value of getError is never used  in XrmServiceToolkit.js",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 1749
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThanks for the suggestion. I have been thinking about this for a while. Will have a look and refactor the error handling logic in the next release. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-01-05T01:30:15.707-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:19:18.587-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

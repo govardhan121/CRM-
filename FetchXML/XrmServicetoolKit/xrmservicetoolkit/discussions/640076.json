@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1430827",
+    "ThreadId": "640076",
+    "Html": "Using IE 11 when use: XrmServiceToolkit.Soap.Fetch(fetchXml);\r<br />\n<br />\nFor Chrome, FF it OK\r<br />\n<br />\ndebugging: and find the function<br />\n<pre><code>    var selectSingleNode = function (node, xpathExpr) {\n        if (typeof (node.selectSingleNode) != &quot;undefined&quot;) {\n            return node.selectSingleNode(xpathExpr);\n        }\n        else {\n            var xpe = new XPathEvaluator();\n            var results = xpe.evaluate(xpathExpr, node, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);\n            return results.singleNodeValue;\n        }\n    };</code></pre>\n\nPlease help how I can fix this bug.<br />\n",
+    "PostedDate": "2015-06-18T00:35:01.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431923",
+    "ThreadId": "640076",
+    "Html": "Hi jaimieji,\r<br />\n<br />\nCould you look this issue ?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-06-25T18:10:58.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432266",
+    "ThreadId": "640076",
+    "Html": "Hi There.\r<br />\n<br />\nWill have a look when I have a bit time. A bit busier recently.\r<br />\n<br />\nYou can try using the IE debugger tool to put a break point on the line \r<br />\n<br />\nif(typeof (node.selectSingleNote) != &quot;undefined&quot;) \r<br />\n<br />\nand check why the condition does not run as it is the one IE should run.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-06-29T02:44:15.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

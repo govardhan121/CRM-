@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:29:25.177-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "There is a bug with the way integer values are parsed.  I only ran into issues when creating a new record using the Soap function, but it may pop up in other places.  \n\nThis problem is with this line of code:\n\n case \"number\":\n                            value = (attribute.hasOwnProperty(\"value\")) ? attribute[\"value\"] : attribute;\n                            encodedValue = encodeValue(value);\n                            var oType = (parseInt(encodedValue) === encodedValue) ? \"c:int\" : \"c:decimal\";\n                            xml.push('<b:value i:type=\"', oType, '\" xmlns:c=\"http://www.w3.org/2001/XMLSchema\">');\n                            xml.push(encodedValue, '</b:value>');\n                            break;\n\nIf you look where oType is set, notice the use of \"===\" when comparing parseInt(encodedValue) to encodedValue.  This compares both value and type.  The problem with this is that in the encodeValue() function you are basically, through the use of a couple other functions returning the string value of the value.  The reason this is an issue, from what I can tell, is that parseInt(encodedValue) == encodedValue will never evaluate to true because you are comparing the string value of the number to the integer value.  Therefore it is impossible to set the value of a Whole Number field using this code because it always falls back to \"c:decimal\" which throws an error.  \n\nI added the below code to work around this, but there is probably a better solution:\n\n case \"IntNumber\":\n                            value = (attribute.hasOwnProperty(\"value\")) ? attribute[\"value\"] : attribute;\n                            encodedValue = encodeValue(value);\n                            xml.push('<b:value i:type=\"c:int\" xmlns:c=\"http://www.w3.org/2001/XMLSchema\">');\n                            xml.push(encodedValue, '</b:value>');\n                            break;",
+    "LastUpdatedDate": "2014-09-09T14:29:25.177-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-09-02T15:02:38.607-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap Create with Whole Number (int) Attribute",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1737
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi there.\r\n\r\nYou can try using the following code.\r\n\r\n```\n//overcome limitations of numbers with type specified.... \ncreateContact.attributes[\"numberofchildren\"] = { value: 2, type: \"int\"}; \r\n\r\ncreateContact.attributes[\"exchangerate\"] = {value: 1.5617, type: \"decimal\"}; \r\n\r\ncreateContact.attributes[\"address1_latitude\"] = { value: 1.5617, type: \"double\" }; \r\n\r\ncreateContact.attributes[\"creditlimit\"] = { value: 2, type: \"Money\" }; \r\n\r\n```",
+      "PostedDate": "2014-09-05T13:21:16.6-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:29:25.177-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

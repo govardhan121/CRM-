@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "JSON.parse seems to crash in the errorHandler function if the response is HTML, so the errorCallback will not be thrown.\nE.g. 404 error page if the query string is to long.",
+    "LastUpdatedDate": "2015-09-21T07:59:04.967-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-07-16T03:58:11.107-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "JSON.parse: unexpected character in errorHandler(req)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1713
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nNot sure if this is caused by the library or it is the query string.\r\n\r\nI think using fiddler2 will give you a bit more information here.\r\n\r\nLet me know how you go.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-07-22T06:57:25.05-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jaimie,\r\n\r\nit is caused by browser if the query string exceeds the length of 2048 symbols. (a 404 page will be thrown)\nAfter that the library errorHandler crashes at \"JSON.parse(req.responseText)...\" because response is HTML and not JSON.\r\n\r\nE.g. it happens if you have long $filter queries with many guids.\nFor testing purpose you can also use this seenseless :) $select query in code:\n```\nAccountSet?$select=Address1_AddressTypeCode,Address1_Latitude,Address1_StateOrProvince,Address1_Fax,Address1_AddressId,Address1_Country,Address1_Longitude,Address1_FreightTermsCode,Address1_Name,Address1_PrimaryContactName,Address1_City,Address1_PostOfficeBox,Address1_PostalCode,Address1_Line1,Address1_Line2,Address1_Line3,Address1_Telephone1,Address1_Telephone2,Address1_Telephone3,Address1_UPSZone,Address1_UTCOffset,Address1_ShippingMethodCode,Address1_County,Address2_AddressTypeCode,Address2_Latitude,Address2_StateOrProvince,Address2_Fax,Address2_AddressId,Address2_Country,Address2_Longitude,Address2_FreightTermsCode,Address2_Name,Address2_PrimaryContactName,Address2_City,Address2_PostOfficeBox,Address2_PostalCode,Address2_Line1,Address2_Line2,Address2_Line3,Address2_Telephone1,Address2_Telephone2,Address2_Telephone3,Address2_UPSZone,Address2_UTCOffset,Address2_ShippingMethodCode,Address2_County,Address1_Composite,Address2_Composite,NumberOfEmployees,SharesOutstanding,Description,OwnershipCode,OwnerId,OwningUser,OwningTeam,OwningBusinessUnit,PreferredContactMethodCode,PreferredAppointmentTimeCode,PreferredSystemUserId,PreferredEquipmentId,PreferredServiceId,PreferredAppointmentDayCode,EntityImageId,StockExchange,TickerSymbol,IndustryCode,OverriddenCreatedOn,EMailAddress1,EMailAddress2,EMailAddress3,DoNotEMail,CreatedOn,CreatedBy,CreatedOnBehalfBy,Aging30,Aging30_Base,Aging60,Aging60_Base,Aging90,Aging90_Base,Fax,DoNotFax,AccountId,AccountRatingCode,Name,AccountNumber,FtpSiteURL,ModifiedOn,ModifiedBy,ModifiedOnBehalfBy,TerritoryId,TerritoryCode,CustomerTypeCode,ImportSequenceNumber,Revenue,Revenue_Base,AccountCategoryCode,AccountClassificationCode,CreditLimit,CreditLimit_Base,CreditOnHold,CustomerSizeCode,LastUsedInCampaign,DoNotSendMM,MarketCap,MarketCap_Base,DoNotBulkEMail,DoNotBulkPostalMail,MasterId,SIC,ParticipatesInWorkflow,DoNotPostalMail,DefaultPriceLevelId,PrimaryContactId,ProcessId,StageId,StateCode,StatusCode,Telephone1,Telephone2,Telephone3,DoNotPhone,ParentAccountId,BusinessTypeCode,OriginatingLeadId,ShippingMethodCode,VersionNumber,TimeZoneRuleVersionNumber,TransactionCurrencyId,WebSiteURL,ExchangeRate,YomiName,PaymentTermsCode,UTCConversionTimeZoneCode,Merged\n```\r\n\r\nBest Regards,\nFrancis",
+      "PostedDate": "2015-09-21T07:59:04.967-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

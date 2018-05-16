@@ -1,0 +1,100 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:19:30.66-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello.\n\nFetch method in XrmServiceToolkit 2.1 not support the attribute 'distinct' in fetch query.\nFunction 'fetch' in code not handle the presence of this attribute.\nI corrected the code as follows:\n```\nvar fetch = function (fetchCore, fetchAll, callback) {\n        ///<summary>\n        /// Sends synchronous/asynchronous request to do a fetch request.\n        ///</summary>\n        ///<param name=\"fetchCore\" type=\"String\">\n        /// A JavaScript String containing serialized XML using the FetchXML schema.\n        /// For efficiency, start with the \"entity\" node.\n        /// </param>\n        ///<param name=\"callback\" type=\"Function\">\n        /// A Function used for asynchronous request. If not defined, it sends a synchronous request.\n        /// </param>\n\n        var fetchXml = fetchCore;\n\n        if (fetchCore.slice(0, 7) === \"<entity\") {\n            fetchXml =\n                [\n                   \"<fetch mapping='logical'>\",\n                        fetchCore.replace(/\\\"/g, \"'\"),\n                   \"</fetch>\"\n                ].join(\"\");\n        } else {\n            var isAggregate = (fetchCore.indexOf(\"aggregate\") !== -1);\n            var isLimitedReturn = (fetchCore.indexOf(\"page='1'\") !== -1 && fetchCore.indexOf(\"count='\") !== -1);\n            __var distinctPos = fetchCore.indexOf(\"distinct=\");\n            var isDistinct = (distinctPos !== -1);\n            var valQuotes = fetchCore.substring(distinctPos + 9, distinctPos + 10);\n            var distinctValue = isDistinct\n                ? fetchCore.substring(fetchCore.indexOf(\"distinct=\") + 10, fetchCore.indexOf(valQuotes, fetchCore.indexOf(\"distinct=\") + 10))\n                : \"false\";__\n\n            var fetchEntity;\n\n            var xmlDoc = xmlParser(fetchCore);\n            fetchEntity = selectSingleNode(xmlDoc, \"//entity\");\n            if (fetchEntity === null) {\n                throw new Error(\"XrmServiceToolkit.Fetch: No 'entity' node in the provided FetchXML.\");\n            }\n            var fetchCoreDom = fetchEntity;\n            try {\n                fetchCore = xmlToString(fetchCoreDom).replace(/\\\"/g, \"'\");\n            }\n            catch (error) {\n                if (fetchCoreDom.xml) {\n                    fetchCore = fetchCoreDom.xml.replace(/\\\"/g, \"'\");\n                }\n                else {\n                    throw new Error(\"XrmServiceToolkit.Fetch: This client does not provide the necessary XML features to continue.\");\n                }\n            }\n\n            if (!isAggregate && !isLimitedReturn) {\n                fetchXml =\n                 [\n                     __\"<fetch mapping='logical' distinct='\"+ (isDistinct ? distinctValue : \"false\") +\"' >\",__\n                     fetchCore,\n                     \"</fetch>\"\n                 ].join(\"\");\n            }\n        }\n\n        var request = [\n               \"<request i:type='a:RetrieveMultipleRequest' xmlns:a='http://schemas.microsoft.com/xrm/2011/Contracts'>\",\n                   \"<a:Parameters xmlns:b='http://schemas.datacontract.org/2004/07/System.Collections.Generic'>\",\n                       \"<a:KeyValuePairOfstringanyType>\",\n                           \"<b:key>Query</b:key>\",\n                           \"<b:value i:type='a:FetchExpression'>\",\n                               \"<a:Query>\", crmXmlEncode(fetchXml), \"</a:Query>\",\n                           \"</b:value>\",\n                       \"</a:KeyValuePairOfstringanyType>\",\n                   \"</a:Parameters>\",\n                   \"<a:RequestId i:nil='true'/>\",\n                   \"<a:RequestName>RetrieveMultiple</a:RequestName>\",\n               \"</request>\"\n        ].join(\"\");\n\n        var async = !!callback;\n\n        return doRequest(request, \"Execute\", async, function (resultXml) {\n            var fetchResult = selectSingleNode(resultXml, \"//a:Entities\");\n            var moreRecords = (selectSingleNodeText(resultXml, \"//a:MoreRecords\") === \"true\");\n\n            var fetchResults = [];\n            if (fetchResult != null) {\n                for (var ii = 0, olength = fetchResult.childNodes.length; ii < olength; ii++) {\n                    var entity = new businessEntity();\n\n                    entity.deserialize(fetchResult.childNodes[ii]);\n                    fetchResults.push(entity);\n                }\n\n                if (fetchAll && moreRecords) {\n                    var pageCookie = selectSingleNodeText(resultXml, \"//a:PagingCookie\").replace(/\\\"/g, '\\'').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '\"');\n\n                    fetchMore(fetchCore, 2, pageCookie, fetchResults);\n                }\n\n                if (!async)\n                    return fetchResults;\n                else\n                    callback(fetchResults);\n            }\n            // ReSharper disable once NotAllPathsReturnValue\n        });\n    };\n```",
+    "LastUpdatedDate": "2015-04-09T12:19:30.66-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-10-12T05:48:56.98-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Support 'distinct' attribute in Fetch",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 1746
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Am I right or is otherwise resolved?",
+      "PostedDate": "2014-10-12T05:50:40.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi. \r\n\r\nNot sure if I am up-to-date with the function. As far as I remember, you can only use COUNT(DISTINCT) in Fetch XML. Using DISTINCT directly is not supported at this stage. \r\n\r\nI will need some testing to check though.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-10-13T02:32:46.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\nIn my organization in CRM exists 1 account with 2 contact's\nThis fetchxml return 2 records for my organization.\n```\n<fetch mapping=\"logical\" count=\"50\" version=\"1.0\">\n\t<entity name=\"account\">\n\t\t<attribute name=\"name\" />\n\t\t<link-entity name=\"contact\" from=\"parentcustomerid\" to=\"accountid\" />\n\t</entity>\n</fetch>\n```\r\n\r\nThis fetchxml return 1 record for my organization\n```\n<fetch mapping=\"logical\" count=\"50\" distinct=\"true\" version=\"1.0\">\n\t<entity name=\"account\">\n\t\t<attribute name=\"name\" />\n\t\t<link-entity name=\"contact\" from=\"parentcustomerid\" to=\"accountid\" />\n\t</entity>\n</fetch>\n```\r\n\r\nHope this helps.\r\n\r\nKind Regards,\nAlex",
+      "PostedDate": "2014-10-14T03:27:23.23-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-10-26T02:58:56.43-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\nTrue for me.\r\n\r\nMike.",
+      "PostedDate": "2014-10-26T03:03:21.553-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I faced the same problem recently.\nSeems that the new logic does not take into account the \"distinct\" part of the fetch xml\nThis is quite critical since versions below 2.0.0 don't support IE11\r\n\r\nCould you please take a look?",
+      "PostedDate": "2014-10-27T03:04:09.98-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-10-27T03:04:36.95-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-12-17T08:52:17.61-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I am also having this same issue.  I have changed the code to the one suggested in the description and it appears to be working ok after that. ",
+      "PostedDate": "2014-12-17T08:53:25.4-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "As I can see the issue still remains unanswered\nIs there any possibility to see the fix in the 2013 or upcoming 2015 version?\r\n\r\nThank you\n",
+      "PostedDate": "2014-12-26T08:47:33.877-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi There.\r\n\r\nThanks for submitting the issue. \r\n\r\nThis will be fixed and included in the next release. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-01-05T01:31:20.48-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:19:30.66-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

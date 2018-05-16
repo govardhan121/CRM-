@@ -1,0 +1,282 @@
+[
+  {
+    "Id": 771,
+    "Title": "JSON2 is dependency"
+  },
+  {
+    "Id": 772,
+    "Title": "Create Activity with partylist field is not included in the library"
+  },
+  {
+    "Id": 776,
+    "Title": "`IsCurrentUserRole` should not do fetch on every call"
+  },
+  {
+    "Id": 923,
+    "Title": "Extension method: JQueryAddLookupCustomFilterView"
+  },
+  {
+    "Id": 983,
+    "Title": "XrmServiceToolkit.REST.retrieveRecord documentation error"
+  },
+  {
+    "Id": 1073,
+    "Title": "REST.RetrieveMultiple - async parameter not passed to subsequent requests with >50 results"
+  },
+  {
+    "Id": 1109,
+    "Title": "Moving to version 1.3.1"
+  },
+  {
+    "Id": 1129,
+    "Title": "Fetch: Data from linked entites not formatted [Fixed for next release]"
+  },
+  {
+    "Id": 1132,
+    "Title": "Run Error"
+  },
+  {
+    "Id": 1135,
+    "Title": "cannot convert the xml string to cross browser xml object"
+  },
+  {
+    "Id": 1138,
+    "Title": "retrieveMultipleRecords method does not return data in synchronous mode"
+  },
+  {
+    "Id": 1144,
+    "Title": "XrmServiceToolkit.Extension jQueryXrmCustomFilterView"
+  },
+  {
+    "Id": 1150,
+    "Title": "addNotification not working after Update Rollup 12 [Fixed for next release]"
+  },
+  {
+    "Id": 1152,
+    "Title": "Recieved access denied when calling .SOAP.getServerUrl"
+  },
+  {
+    "Id": 1236,
+    "Title": "getCurrentUserId - Cannot convert the XML string to a cross-browser XML object."
+  },
+  {
+    "Id": 1244,
+    "Title": "error  The SDK request could not be deserialized"
+  },
+  {
+    "Id": 1246,
+    "Title": "Soap.Execute issue with selectsinglenode"
+  },
+  {
+    "Id": 1262,
+    "Title": "Object doesn't support property or method 'selectSingleNode' error on Soap.Create"
+  },
+  {
+    "Id": 1316,
+    "Title": "Object doesn't support property or method 'retrieveEntityMetadata'"
+  },
+  {
+    "Id": 1390,
+    "Title": "XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata"
+  },
+  {
+    "Id": 1476,
+    "Title": "Having issues with async calls with CRM 2013."
+  },
+  {
+    "Id": 1492,
+    "Title": "Lookup with Multiple selection"
+  },
+  {
+    "Id": 1508,
+    "Title": "selectNodes(), selectSingleNode() functions"
+  },
+  {
+    "Id": 1523,
+    "Title": "Issue while retrieve more than 5000 records"
+  },
+  {
+    "Id": 1569,
+    "Title": "Exception - XrmServiceToolkit.Fetch:No 'entity' node in the provided Fetchxml"
+  },
+  {
+    "Id": 1677,
+    "Title": "jQueryXrmFieldTooltip looking for resource in wrong location"
+  },
+  {
+    "Id": 1692,
+    "Title": "IE - HTML Web Resource Error"
+  },
+  {
+    "Id": 1693,
+    "Title": "Unable to create appointment with regarding attribute"
+  },
+  {
+    "Id": 1697,
+    "Title": "Invalid Xrm.Utility method: alertyDialog"
+  },
+  {
+    "Id": 1698,
+    "Title": "JQueryXrmCustomFilterView Error IE10/IE11"
+  },
+  {
+    "Id": 1700,
+    "Title": "Dependent Picklist Value Comparison Is Using Wrong Data Type"
+  },
+  {
+    "Id": 1703,
+    "Title": "CRM 2013: IE 9 Fetch Call Issue"
+  },
+  {
+    "Id": 1713,
+    "Title": "JSON.parse: unexpected character in errorHandler(req)"
+  },
+  {
+    "Id": 1726,
+    "Title": "Soap.Fetch - Poor performance with 3000 records"
+  },
+  {
+    "Id": 1733,
+    "Title": "TypeError MSCRM.InlineOptionSetControlView"
+  },
+  {
+    "Id": 1735,
+    "Title": "Soap.Fetch with server paging"
+  },
+  {
+    "Id": 1737,
+    "Title": "Soap Create with Whole Number (int) Attribute"
+  },
+  {
+    "Id": 1741,
+    "Title": "Soap.Fetch"
+  },
+  {
+    "Id": 1742,
+    "Title": "REST Functions over VPN"
+  },
+  {
+    "Id": 1746,
+    "Title": "Support 'distinct' attribute in Fetch"
+  },
+  {
+    "Id": 1749,
+    "Title": "Returned value of getError is never used  in XrmServiceToolkit.js"
+  },
+  {
+    "Id": 1759,
+    "Title": "Reflexive Associations"
+  },
+  {
+    "Id": 1771,
+    "Title": "See Item 1746"
+  },
+  {
+    "Id": 1775,
+    "Title": "XrmServiceToolkit.Soap.QueryByAttribute Order By Not Working"
+  },
+  {
+    "Id": 1778,
+    "Title": "XrmServiceToolkit.Soap.Update does not show errors"
+  },
+  {
+    "Id": 1782,
+    "Title": "Missing exceptions in CRM 2013"
+  },
+  {
+    "Id": 1789,
+    "Title": "Call XrmServiceToolkit.Soap.Fetch() with XML statement contain word \"aggregate\" return incorrect fetchXML statement"
+  },
+  {
+    "Id": 1798,
+    "Title": "Incompatible with CRM 2015 Online: XrmServiceToolkit.Soap.Fetch is not working anymore with the CRM 2015 api"
+  },
+  {
+    "Id": 1801,
+    "Title": "Lookup name,id,typename are not coming properly with crm2015 sp1"
+  },
+  {
+    "Id": 1806,
+    "Title": "Number types (Int, Double) and SOAP Create/Update"
+  },
+  {
+    "Id": 1815,
+    "Title": "Soap BusinessEntity Deserialize Issue for Activity PartyIds"
+  },
+  {
+    "Id": 1824,
+    "Title": "XrmServiceToolkit.Rest.errorHandler should not throw Exception"
+  },
+  {
+    "Id": 1825,
+    "Title": "XrmServiceToolkit.Soap.getError should not throw Exception"
+  },
+  {
+    "Id": 1830,
+    "Title": "XrmServiceToolkit.Soap.Fetch issue with Firefox/Chrome after update"
+  },
+  {
+    "Id": 1837,
+    "Title": "Min version contains error"
+  },
+  {
+    "Id": 1839,
+    "Title": "[FIX] How to make change ispriceoverridden to true?"
+  },
+  {
+    "Id": 1843,
+    "Title": "XrmServiceToolkit.Soap.Fetch signature change in v2.2"
+  },
+  {
+    "Id": 1845,
+    "Title": "XrmServiceToolkit 2.2.1 bug"
+  },
+  {
+    "Id": 1851,
+    "Title": "Unit Test template javascript  for VS 2015"
+  },
+  {
+    "Id": 1852,
+    "Title": "DisableAllControlsInTab"
+  },
+  {
+    "Id": 1853,
+    "Title": "encodeValue() function distort the string data with braces"
+  },
+  {
+    "Id": 1854,
+    "Title": "How to make method GET and not POST"
+  },
+  {
+    "Id": 1855,
+    "Title": "selectSingleNode not working in IE11"
+  },
+  {
+    "Id": 1856,
+    "Title": "XrmServiceToolkit.Soap.Fetch Single Quote Bug"
+  },
+  {
+    "Id": 1862,
+    "Title": "Soap BusinessEntity Deserialize Issue for EntityRefernce in Dynamics CRM 2016"
+  },
+  {
+    "Id": 1869,
+    "Title": "Issue with XrmServiceToolkit.Soap.Fetch"
+  },
+  {
+    "Id": 1872,
+    "Title": "Issue with retrieving lookup"
+  },
+  {
+    "Id": 1891,
+    "Title": "Not enough storage is available to complete this operation."
+  },
+  {
+    "Id": 1892,
+    "Title": "Get Current User Security Role Name"
+  },
+  {
+    "Id": 1893,
+    "Title": "Issue resolution on Deserialization PartyList"
+  }
+]

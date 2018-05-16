@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "816357",
+    "ThreadId": "350269",
+    "Html": "<p>req.open(\"GET\", _ODataPath() + type + optionsString, async);</p>\n<p>should be:</p>\n<p><br /> req.open(\"GET\", _ODataPath() + type <span style=\"color: #ff0000;\">+ 'Set' +</span> optionsString, async);</p>\n<p>&nbsp;</p>\n<p>or</p>\n<p>change from</p>\n<p>var queryOptions = returned.__next.substring((_ODataPath() + type + \"Set\").length);</p>\n<p>to&nbsp;</p>\n<p>var queryOptions = returned.__next.substring((_ODataPath() + type).length);</p>\n<p>&nbsp;</p>\n<p><br />PS: no XrmServiceToolkit.Rest.RetrieveMultiple example in XrmServiceToolkitTest.zip aspx page.</p>",
+    "PostedDate": "2012-03-27T20:56:26.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818697",
+    "ThreadId": "350269",
+    "Html": "<p>Hey there.</p>\r\n<p>Thanks for pointing it out.</p>\r\n<p>I have updated the sourcecode and the sample page</p>",
+    "PostedDate": "2012-04-02T03:39:23.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

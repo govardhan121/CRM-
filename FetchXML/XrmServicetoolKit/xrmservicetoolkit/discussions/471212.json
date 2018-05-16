@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1129224",
+    "ThreadId": "471212",
+    "Html": "When i use a fetchXml statement which has a limited count attribute, how can i determine if there are additional results available?\r<br />\nCan i somehow get my hands on the resultXml to get the morerecords flag?\r<br />\nOr is there a more standard way to get this crucial info?<br />\n",
+    "PostedDate": "2013-11-26T08:39:28.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1195203",
+    "ThreadId": "471212",
+    "Html": "Hey Loren.\r<br />\n<br />\nIn general, the result xml from soap request will include a parameter called &quot;a\\:MoreRecords&quot;. If this contains values, it will indicate there are more records for the retrieval. \r<br />\n<br />\nYou will need to search the resultXml for this if you want to retrieve all the records. You can have a look at the source code of XrmServiceToolkit.Soap.Fetch to have some ideas how the toolkit is allowed to do so. \r<br />\n<br />\nAnother way if you only care that the results are more than 5000 records, you can use an aggregate fetch xml to return the total number of records using Fetch.\r<br />\n<br />\nHope this helps.\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-01-24T03:03:24.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

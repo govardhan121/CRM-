@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1091091",
+    "ThreadId": "456498",
+    "Html": "Just wondering if ensuring support for crm 2013 (Orion) is on the schedule?<br />\n",
+    "PostedDate": "2013-09-11T04:21:14.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091562",
+    "ThreadId": "456498",
+    "Html": "Same question here: any plan to support CRM 2013?<br />\n",
+    "PostedDate": "2013-09-12T00:12:29.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093041",
+    "ThreadId": "456498",
+    "Html": "I guess the question is more about how XrmServiceToolkit will handle the fact that using jQuery in forms won't be allowed without dealing with jQuery conflict.\r<br />\n<br />\nIt seems obvious to me that REST functions will work as it does today. But SOAP calls require jQuery and this means it needs an update of the code.\r<br />\n<br />\nFor extra feature, the major update would be to use the new notification mechanism instead of the unsupported one in place today.\r<br />\n<br />\nMay we have an answer from the dev team, here?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-09-16T02:57:34.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1094041",
+    "ThreadId": "456498",
+    "Html": "Hi There.<br />\n<br />\nOrion will be supported and there will be lots of work to be done once there is access to more development details like CRM 2013 SDK beta, etc....I don't have access at the moment to these resources :( <br />\n<br />\nAs far as I have read, jQuery, jQuery UI and other third party libraries should be able to exist in CRM 2013, however there may be a namespace conflict which will cause jQuery to not work as expected. <br />\n<br />\n<a href=\"http://api.jquery.com/jQuery.noConflict/\" rel=\"nofollow\">http://api.jquery.com/jQuery.noConflict/</a><br />\n<br />\nTo make it work, there should be a way to add customized namespace to all the dependent libraries in the XrmServiceToolkit. <br />\n<br />\nIn its current state, jQuery logic in SOAP functions are not accessing any DOM elements if my memory is right, so I hope this will save a bit effort while the upgrade and preparation work start for CRM 2013.<br />\n<br />\nAs for now, hopefully there will be a final release for CRM 2011 only to provide a better performance, and a better support for cross platform, cross browser. <br />\n<br />\nIf time allows, we will add logics in the library to try to provide a smoother upgrade from CRM 2011 to CRM 2013. <br />\n<br />\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2013-09-18T07:36:29.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1105675",
+    "ThreadId": "456498",
+    "Html": "Hi There.\r<br />\n<br />\nA beta has been released to work with CRM 2013 as well as CRM 2011.\r<br />\n<br />\nFor more details, \r<br />\n<br />\n<a href=\"https://xrmservicetoolkit.codeplex.com/wikipage?title=CRM%202013%20Support%20and%20Development\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/wikipage?title=CRM%202013%20Support%20and%20Development</a>\r<br />\n<br />\nThanks for your support.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-10-09T12:18:46.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

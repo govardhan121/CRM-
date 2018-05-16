@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-09-26T05:46:00.303-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Getting \" Object doesn't support property or method 'selectSingleNode' \" script error while creating records using SOAP.Create() method.\nThis was working few weeks back and its become show stopper. Any fix/Workaround really help.",
+    "LastUpdatedDate": "2013-09-26T05:46:00.303-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-05-05T23:51:10.883-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Object doesn't support property or method 'selectSingleNode' error on Soap.Create",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1262
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There\r\n\r\nselectSingleNode has been removed from the latest version and it should not be used as well if you have modified the toolkit and for future CRM development to support cross broswer\r\n\r\nWhich version are you using at the moment?\r\n\r\nJaimie",
+      "PostedDate": "2013-05-08T02:05:10.92-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jaimie,\r\n\r\nI was not having the latest version earlier, I downloaded latest version and it is working fine with latest version.\r\n\r\nThank you so much.\r\n\r\n",
+      "PostedDate": "2013-05-09T02:16:54.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-26T05:46:00.303-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

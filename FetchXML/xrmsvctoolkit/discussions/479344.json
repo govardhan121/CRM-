@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1144761",
+    "ThreadId": "479344",
+    "Html": "Thanks for the great toolkit.<br />\n<br />\nI noticed that there is a bug with IE 11 with CRM 2011 server (Rollup 15).  Here is how I was able to fix it:<br />\n<pre><code>  var clientUrl = (function () {\n        var cURL;\n        try {\n          cURL = context.getClientUrl();\n        } catch(e) {\n        }\n        if (cURL !== undefined){\n            return cURL;\n        }\n</code></pre>\n\nRayan<br />\n",
+    "PostedDate": "2014-01-02T11:23:25.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1144790",
+    "ThreadId": "479344",
+    "Html": "Hi Rayan, \r<br />\n<br />\nThanks for providing the fix. Much appreciated!\r<br />\n<br />\nDaniel Cai | <a href=\"http://www.kingswaysoft.com\" rel=\"nofollow\">http://www.kingswaysoft.com</a><br />\n",
+    "PostedDate": "2014-01-02T12:42:12.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1207300",
+    "ThreadId": "479344",
+    "Html": "In what functions or in what scenarios would this bug occur?\r<br />\n<br />\nI'm just wondering if I need to update the library on my installation....<br />\n",
+    "PostedDate": "2014-02-12T06:13:40.31-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1208118",
+    "ThreadId": "479344",
+    "Html": "I'm using the code in a Web Resource.  The code handles the case when the context.getClientUrl() is undefined.  The should not happen, however since the .getClientUrl() is a new function, I suspect there is a bug with Microsoft's code.\r<br />\n<br />\nRayan<br />\n",
+    "PostedDate": "2014-02-13T14:10:59.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

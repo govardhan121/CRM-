@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-04-21T04:21:52.357-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have used this method to get attributes  for a given entity, example: salesorder\n\n    what I observed is some attributes are missing  for example customerid is not there. Instead of customer id\n\nthere are other attributes   __CustomerIdYomiName__,__CustomerIdType__,__CustomerIdName    except  CustomerId__\n\n  I think these attributes have been retrived from CRM Database, but  when I checked database, CustomerId column is there.\n\nI think it will be really useful if the columns match with the columns available in CRM Entity.\n\nPlease check this one. I am struck with something which needed to be completed.\n\nHope you understood above  Issue.",
+    "LastUpdatedDate": "2014-04-21T04:21:52.357-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-08-05T09:16:28.02-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1390
+  },
+  "FileAttachments": [
+    {
+      "FileId": 540,
+      "FileName": "14-Oct-13 3-47-30 PM.png",
+      "DownloadUrl": ".\\540"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "usage of method\n\n** Closed by jaimieji 9/26/2013 5:44 AM",
+      "PostedDate": "2013-09-26T05:45:05.833-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-26T05:45:06.03-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-10-14T07:55:31.96-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi There.\r\n\r\nI have tested the code and have no problems to return customerid using the method.\r\n\r\nvar entityMetadata = XrmServiceToolkit.Soap.RetrieveEntityMetadata([\"Attributes\"], \"salesorder\", true);\r\n\r\nIf you can try to use the latest version of the software, let me know the results.\r\n\r\nJaimie",
+      "PostedDate": "2013-10-14T07:55:37.717-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "![Image](https://www.codeplex.com/Download/AttachmentDownload.ashx?ProjectName=xrmservicetoolkit&WorkItemId=1390&FileAttachmentId=540)",
+      "PostedDate": "2013-10-14T07:56:33.423-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:21:52.357-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

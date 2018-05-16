@@ -1,0 +1,26 @@
+<div class="wikidoc"><h2>Supported Functions</h2><ul><li>createRecord (REST)</li>
+<li>updateRecord (REST)</li>
+<li>deleteRecord (REST)</li>
+<li>retrieve (REST)</li>
+<li>retrieveMultiple (REST)</li>
+<li>associate (REST)</li>
+<li>disassociate (REST)</li>
+<li>setState (SOAP)</li>
+<li>fetch (SOAP)</li>
+<li>execute (SOAP)</li></ul>
+
+<h2>Quick Sample</h2><div style="color:Black;background-color:White;"><pre>
+XrmSvcToolkit.createRecord({
+    entityName: <span style="color:#A31515;">&quot;Contact&quot;</span>,
+    entity: {FirstName: <span style="color:#A31515;">&quot;Joe&quot;</span>, LastName: <span style="color:#A31515;">&quot;Foo&quot;</span> },
+    async: <span style="color:Blue;">false</span>,
+    successCallback: <span style="color:Blue;">function</span> (result) {
+        <span style="color:Blue;">var</span> contactId = result.ContactId;
+        <span style="color:Green;">// do the rest stuff</span>
+    },
+    errorCallback: <span style="color:Blue;">function</span> (error) {
+        alert(<span style="color:#A31515;">&quot;There was an error when creating the contact record&quot;</span>);
+    }
+});
+</pre></div>
+<h2>Samples</h2><ul><li><a href="http://xrmsvctoolkit.codeplex.com/wikipage?title=SampleRetrieveBUName&amp;referringTitle=Documentation">Use Fetch to return the business unit name for the current user</a></li></ul></div><div class="ClearBoth"></div>

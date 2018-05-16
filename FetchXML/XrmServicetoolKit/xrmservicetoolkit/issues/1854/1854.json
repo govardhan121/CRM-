@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Use fetch to result XML\n\nXrmServiceToolkit.Soap.Fetch(xxxxxx) no working :-(\n\nError:\nPOST ....../XRMServices/2011/Organization.svc/web 500 (Internal Server Error)",
+    "LastUpdatedDate": "2016-03-04T03:37:50.63-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-03-04T03:37:50.63-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to make method GET and not POST",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1854
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1306253",
+    "ThreadId": "567857",
+    "Html": "When I use &quot;Top&quot; option for Field level position of Section prop - the Tooltip is NOT appear!\r<br />\nPlease clarify!<br />\n",
+    "PostedDate": "2014-09-19T03:05:21.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306529",
+    "ThreadId": "567857",
+    "Html": "And next bug: When field on form have red star or blue plus (level required or recommended) - there shown with 16px. This is schlecht!<br />\n",
+    "PostedDate": "2014-09-19T22:30:54.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307014",
+    "ThreadId": "567857",
+    "Html": "Hi.<br />\n<br />\nWhen you use toolkit function, it is still depending on if the CRM framework supports it (CRM 2011 or CRM2013). I am not sure what you mean by &quot;top&quot; option.<br />\n<br />\nYou could find more details by doing a search about tooltip support within CRM. <br />\n<br />\nKind Regards,<br />\nJaimie<br />\n",
+    "PostedDate": "2014-09-22T06:00:46.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307267",
+    "ThreadId": "567857",
+    "Html": "This is standard functionality of CRM 2011 Form Designer.\r<br />\n<a href=\"http://imglink.ru/show-image.php?id=5772743f5ea2306501cca886f4283710\" rel=\"nofollow\">Screenshot for Section Properties</a><br />\n",
+    "PostedDate": "2014-09-23T00:33:51.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307651",
+    "ThreadId": "567857",
+    "Html": "Hi.<br />\n<br />\nAs for CRM 2011, the tooltip function is using unsupported method to manipulate with DOM objects (There is no supported way). I am not sure if changing it to top options will actually modify the DOM. If so, that is why the function will not work. <br />\n<br />\nIf you still need to have the tooltip, it is better to have a look at the DOM objects after selecting the top options and try to add the tooltip. <br />\n<br />\nKind Regards,<br />\nJaimie<br />\n",
+    "PostedDate": "2014-09-24T01:21:43.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

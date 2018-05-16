@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1027474",
+    "ThreadId": "439557",
+    "Html": "When retrieving an email, for example, XrmServiceToolkit (I am using 1.4.0) is returning an empty array for the Party List fields e.g., to, from, cc, etc...  It looks like this line of code (line 1388):<br />\n<br />\nif (itemNodes[z].childNodes[0].text == &quot;partyid&quot;) {<br />\n<br />\nNeeds to be changed to:<br />\n<br />\nif ($(itemNodes[z].childNodes[0]).text() == &quot;partyid&quot;) {<br />\n<br />\nor:<br />\n<br />\nif (itemNodes[z].childNodes[0].textContent == &quot;partyid&quot; {<br />\n",
+    "PostedDate": "2013-04-08T13:16:41.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029387",
+    "ThreadId": "439557",
+    "Html": "Hi\r<br />\n<br />\nThanks for this. I have checked the code and there is a bug as you pointed out.\r<br />\n<br />\nThe fix will be included in the next release.\r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2013-04-12T00:52:33.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

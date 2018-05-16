@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1305744",
+    "ThreadId": "567726",
+    "Html": "When I try to setState on a queue item with the following command XrmServiceToolkit.Soap.SetState(&quot;queueitem&quot;, firstPrimaryEntityId, 0, 1); I receive the following error message 'The queued entity instance does not allow associated queue item to be activated in its current state' no matter what state the email is in. This works fine with other custom entities I have so it seems there is something peculiar with the way emails are handled through the setState command\r<br />\n<br />\nThanks\r<br />\nMichael<br />\n",
+    "PostedDate": "2014-09-17T15:08:08.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1305746",
+    "ThreadId": "567726",
+    "Html": "Hi Michael, \r<br />\n<br />\nI am afraid that you have posted the question to a wrong project. \r<br />\n<br />\nThanks,\r<br />\nDaniel Cai<br />\n",
+    "PostedDate": "2014-09-17T15:19:20.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

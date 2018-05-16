@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:18:25.983-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello\n\nNo exceptions are throw when I execute this code in CRM but it is wrong:\n```\nfunction sendEmail() {\n    var crmEmail = new XrmServiceToolkit.Soap.BusinessEntity(\"email\");\n    crmEmail.attributes[\"subject\"] = aSubject;\n    crmEmail.attributes[\"description\"] = aBody;\n    crmEmail.attributes[\"regardingobjectid\"] = {\n        $value: Xrm.Page.data.entity.getId(),\n        type: \"new_license\"\n    };\n    crmEmail.attributes[\"mimetype\"] = \"text/html\";\n    try {\n        var emailId = XrmServiceToolkit.Soap.Create(crmEmail);\n    }\n    catch (err) {\n        Xrm.Page.ui.setFormNotification(\"Create email error: \" + err.message, 'ERROR');\n        return false;\n    }\n}\n```\nThis code is wrong because of missing attributes in crmEmail.\n\nAll my code is based on exceptions.\nHow can I manage errors?\nHow can I debug I have no error message?\n\nMy setup:\n- CRM 2013 SP1 + UR1\n- IE 10\n\nIt seems the bug is the same for CRM 2015 (see other post).",
+    "LastUpdatedDate": "2015-04-09T12:18:25.983-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-02-06T08:01:05.097-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Missing exceptions in CRM 2013",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 1782
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\r\n\r\nError handling is already being discussed in a different Thread (http://xrmservicetoolkit.codeplex.com/workitem/1749) and according to Jamie going to be fixed in the next release.\r\n\r\njohnny\n",
+      "PostedDate": "2015-02-24T23:08:21.083-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "ok i will wait for the new release.\r\n\r\nThank you.",
+      "PostedDate": "2015-02-25T09:18:39.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:18:25.983-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

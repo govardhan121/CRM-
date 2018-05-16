@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nbecause getError function \"_throws new Error(...)_\" the callback function will never be called.\nOn async requests you can't catch the exceptions and so the code hangs and no error handling (logging, message box, etc.) is possible.\nE.g. you can test it with an invalid fetchXml query:\n```\n'<entity name=\"account\">' +\n\t'<attribute name=\"nonexistingfield\" />' +\n'</entity>'\n```\nThe getError function should \"_return new Error(...)_\" and the internalCallback should have the error object as first parameter:\n```\nif (req.status === 200)\n{       \n\tvar doc = req.responseXML;\n\ttry { setSelectionNamespaces(doc); } catch (e) { }\n\tinternalCallback(doc);\n}\nelse if (!!internalCallback)\n{\n\tinternalCallback(getError(req));\n}\n```\nIn custom code the callback function check would be something like this:\n```\nfunction (response)\n{\n\tif ($.type(response) !== 'error')\n\t{\n\t\t// OK\n\t\texecuteOtherCode();\n\t}\n\telse\n\t{\n\t\t// ERROR\n\t\tlog.error(response);\n\t}\n});\n```\nThe alternative would be an own error callback function parameter for soap requests (like for rest requests).\nWould you think the same way?\n\nBest Regards,\nFrancis",
+    "LastUpdatedDate": "2015-09-21T08:38:51.177-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-09-21T08:38:51.177-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.getError should not throw Exception",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1825
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

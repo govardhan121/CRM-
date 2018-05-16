@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1457899",
+    "ThreadId": "649574",
+    "Html": "I'm not seeing any discussion on this topic, however, with the release of CRM 2016, the previous organization data services was deprecated, and we are supposed to start using the web api (oData v4).  Are there any plans to upgrade XrmServiceToolkit to this version anytime soon?  This will impact whether we use this library now or not... <br />\n",
+    "PostedDate": "2016-01-04T08:16:51.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1458147",
+    "ThreadId": "649574",
+    "Html": "There are a number of complexities with the oData v4 endpoint that complicate the potential for a 1:1 update of this library.  That said, I was only minimally involved with the project to provide some enhancements back with CRM 2011/2013.  Given the proximity of JSON to core JavaScript functionality, I'd say that there is practically very little need for a framework such as this one.  Nonetheless, I'm aware that certain official sources are working on a code generation library against this endpoint, so I'd very simply say, &quot;stay tuned&quot;.  The most important point is that oData v2 libraries, like the one provided by this project, are decidedly incompatible with the Web Api.  If you're going to build a new library from scratch, I'd recommend using the ES6 &quot;fetch&quot; and &quot;Promise/A+&quot; APIs (with polyfills for older browsers, like IE11 and earlier).  They'll give you a much smaller footprint than the behemoth that is jQuery, and put you in a better position for development and compatibility with the future.<br />\n",
+    "PostedDate": "2016-01-05T20:32:56.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466557",
+    "ThreadId": "649574",
+    "Html": "Hi There.\r<br />\n<br />\nI am still trying to find time to update my knowledge about the new API in CRM 2016, but there is plan to continue support the library in the future.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-03-11T09:09:36.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

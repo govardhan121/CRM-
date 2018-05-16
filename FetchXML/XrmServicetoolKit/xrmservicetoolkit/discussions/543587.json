@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1238806",
+    "ThreadId": "543587",
+    "Html": "Hi,\r<br />\n<br />\nI'm looking for some more details on the usage of this extension.  In the link below it shows some XML, but not how to call this function or from where?  Does anyone have any step by step documentation or examples of this?  I assume since the function takes in a 'filename' parameter that this XML should be a webresource, but where and how is the function called from?\r<br />\n<br />\n<a href=\"https://xrmservicetoolkit.codeplex.com/wikipage?title=Extension\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/wikipage?title=Extension</a>\r<br />\n<br />\nThanks for any help provided!<br />\n",
+    "PostedDate": "2014-04-28T07:23:19.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1238838",
+    "ThreadId": "543587",
+    "Html": "Hi.<br />\n<br />\nThe method should be called onChange of the lookup field. For instance if you have a custom lookup called &quot;new_primarycontactid&quot; in account entity. You have created a XML web resource named &quot;new_lookupviewconfig.xml&quot;. You should configure all details in your xml definition as your requirements. <br />\n<br />\nYou can call the method in the following code. <br />\n<pre><code>account_new_primarycontactid_onChange = function () {\n    try {\n        XrmServiceToolkit.Extension.JQueryXrmCustomFilterView(&quot;new_lookupviewconfig.xml&quot;);\n    }\n    catch (err) {\n        alert(err.message);\n    }\n};\n</code></pre>\n\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2014-04-28T08:28:03.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1249059",
+    "ThreadId": "543587",
+    "Html": "Could this work for an 'Add Existing' button?<br />\n",
+    "PostedDate": "2014-05-23T13:48:15.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1250199",
+    "ThreadId": "543587",
+    "Html": "Hi\r<br />\n<br />\nThis is for lookup field only. SubGrid does not have such functions exposed currently.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-05-27T13:23:32.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

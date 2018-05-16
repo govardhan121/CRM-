@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "849282",
+    "ThreadId": "359695",
+    "Html": "\r\n<p>Im trying to follow the example for using the rest update command in the toolkit but am having problems.&nbsp; below is the code that I am using. above this I do have account Id defined.&nbsp; the field I want to update on the account is called&nbsp;&nbsp;&nbsp;\r\n abc_openhdcases&nbsp;&nbsp;&nbsp; when I run this with IE debugger I get the error</p>\r\n<p><span style=\"color:#ff0000; font-size:x-small\"><span style=\"color:#ff0000; font-size:x-small\"></p>\r\n<p>XrmServiceToolkit.REST.updateRecord requires the successCallback is a function.</p>\r\n</span></span>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var account = {};<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; account.abc_openhdcases = openhdcases;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XrmServiceToolkit.Rest.Update(<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; accountId,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; account,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;AccountSet&quot;);</p>\r\n<p></p>\r\n<p><span style=\"color:#000000; font-size:x-small\"><span style=\"font-size:x-small\">the documentation online has some extra functions that pair with the word equals that was throwing a different error when in my code. I assumed those were part of the test suite\r\n used to create the samples so I took them out. did I remove to much.&nbsp; </span>\r\n</span></p>\r\n",
+    "PostedDate": "2012-06-14T16:56:34.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "849293",
+    "ThreadId": "359695",
+    "Html": "<p>nevermind I figured it out I&nbsp;put the functions back in a removed just the&nbsp;equals&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var account = {};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; account.abc_openhdcases = openhdcases;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XrmServiceToolkit.Rest.Update(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '53DA56CA-D0BA-E011-876C-1CC1DEEAE7D7',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; account,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \"AccountSet\",<br />function () {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (true, true, \"The record should have been updated.\");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function (error) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (true, false, error.message);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; false<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );</p>",
+    "PostedDate": "2012-06-14T17:26:27.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "890984",
+    "ThreadId": "359695",
+    "Html": "<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> account = {};\r\naccount.abc_openhdcases = openhdcases;\r\n            \r\nXrmServiceToolkit.Rest.Update(\r\n   <span style=\"color: #a31515;\">'53DA56CA-D0BA-E011-876C-1CC1DEEAE7D7'</span>,\r\n    account,\r\n    <span style=\"color: #a31515;\">\"AccountSet\"</span>,\r\n    <span style=\"color: blue;\">function</span> () {\r\n         <span style=\"color: green;\">//add your logic here</span>\r\n         alert(<span style=\"color: #a31515;\">\"Record updated\"</span>);\r\n    },\r\n    <span style=\"color: blue;\">function</span> (error) {\r\n          alert(error.message);\r\n    },\r\n    <span style=\"color: blue;\">false</span>\r\n);\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-07-25T02:41:24.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

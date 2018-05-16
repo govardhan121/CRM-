@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "876429",
+    "ThreadId": "376183",
+    "Html": "\r\n<p>Can someone explain me how to integrate and use it?</p>\r\n",
+    "PostedDate": "2012-07-19T04:23:13.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "879491",
+    "ThreadId": "376183",
+    "Html": "\r\n<p>Hey There.</p>\r\n<p>Say you opened an account with a primary contact. And want to create a new email for some reason. This is the logic to get account id, contact id, etc</p>\r\n<p>You do need to be more specific about what you are asking though. If you are new to crm 2011 development. I think SDK is your best friend to speed things up.</p>\r\n<p>Jaimie</p>\r\n<div style=\"background-color:white; color:black\">\r\n<pre><span style=\"color:blue\">var</span> currentUserId = Xrm.Page.context.getUserId();\r\n<span style=\"color:blue\">var</span> accountId = Xrm.Page.data.entity.getId();\r\n<span style=\"color:blue\">var</span> primarycontact = Xrm.Page.getAttribute(<span style=\"color:#a31515\">&quot;primarycontactid&quot;</span>).getValue();\r\n\r\n<span style=\"color:blue\">var</span> contactId = <span style=\"color:blue\">null</span>;\r\n<span style=\"color:blue\">if</span>(primarycontact != <span style=\"color:blue\">null</span>) \r\n{\r\n    contactId = Xrm.Page.getAttribute(<span style=\"color:#a31515\">&quot;primarycontactid&quot;</span>)[0].id;\r\n}\r\n\r\n<span style=\"color:blue\">var</span> createEmail = <span style=\"color:blue\">new</span> XrmServiceToolkit.Soap.BusinessEntity(<span style=\"color:#a31515\">&quot;email&quot;</span>);\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;subject&quot;</span>] = <span style=\"color:#a31515\">&quot;Test Email subject&quot;</span>;\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;description&quot;</span>] = <span style=\"color:#a31515\">&quot;This email was created by the XrmServiceToolkit.Soap.Create() sample.&quot;</span>;\r\n\r\n<span style=\"color:blue\">var</span> from = [\r\n   { id: whoamiUserId, logicalName: <span style=\"color:#a31515\">&quot;systemuser&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> }\r\n];\r\n\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;from&quot;</span>] = { value: from, type: <span style=\"color:#a31515\">&quot;EntityCollection&quot;</span> };\r\n\r\n<span style=\"color:blue\">var</span> to = [\r\n   { id: accountId, logicalName: <span style=\"color:#a31515\">&quot;account&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> },\r\n   { id: contactId, logicalName: <span style=\"color:#a31515\">&quot;contact&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> }\r\n];\r\n\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;to&quot;</span>] = { value: to, type: <span style=\"color:#a31515\">&quot;EntityCollection&quot;</span> };\r\n\r\n<span style=\"color:blue\">var</span> cc = [\r\n   { id: accountId, logicalName: <span style=\"color:#a31515\">&quot;account&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> },\r\n   { id: contactId, logicalName: <span style=\"color:#a31515\">&quot;contact&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> }\r\n];\r\n\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;cc&quot;</span>] = { value: cc, type: <span style=\"color:#a31515\">&quot;EntityCollection&quot;</span> };\r\n\r\n<span style=\"color:blue\">var</span> bcc = [\r\n   { id: accountId, logicalName: <span style=\"color:#a31515\">&quot;account&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> },\r\n   { id: contactId, logicalName: <span style=\"color:#a31515\">&quot;contact&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> }\r\n];\r\n\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;bcc&quot;</span>] = { value: bcc, type: <span style=\"color:#a31515\">&quot;EntityCollection&quot;</span> };\r\n\r\ncreateEmail.attributes[<span style=\"color:#a31515\">&quot;directioncode&quot;</span>] = <span style=\"color:blue\">true</span>;\r\n\r\n<span style=\"color:blue\">var</span> emailId = XrmServiceToolkit.Soap.Create(createEmail);\r\n\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-07-20T03:30:31.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1091802",
+    "ThreadId": "376183",
+    "Html": "Hi,\r<br />\n<br />\nThis is what I did to create a custom activity... setting the <strong>regardingobjectid</strong><br />\n<pre><code>var regarding = [\n    { id: Xrm.Page.data.entity.getId(), logicalName: entitylogicalname, type: &quot;EntityReference&quot; }\n];\n\nvar trigger = new XrmServiceToolkit.Soap.BusinessEntity(&quot;cht_plugintrigger&quot;);\ntrigger.attributes[&quot;subject&quot;] = subject;\ntrigger.attributes[&quot;regardingobjectid&quot;] = \n         { id: regardingobjectid, logicalName: entitylogicalname, type: &quot;EntityReference&quot; };\n\ntriggerId = XrmServiceToolkit.Soap.Create(trigger);</code></pre>\n\n",
+    "PostedDate": "2013-09-12T09:20:17.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

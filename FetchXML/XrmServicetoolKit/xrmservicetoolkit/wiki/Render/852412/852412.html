@@ -1,0 +1,233 @@
+<div class="wikidoc">
+<p><em><strong>XrmServiceToolkit</strong></em> is a JavaScript library which could be used to make</p>
+<ul>
+<li>Common Methods: Change of CRM form like enable field, show field, etc </li><li>Rest EndPoint Methods: Create, Retrieve, Update a record, etc </li><li>Soap Request Methods: Create, Retrieve, Update a record, etc </li><li>Extension Methods: Setup Dependent OptionSet, Add Tooltip to fields, Add custom filter view to lookup field. All these methods are generic to use and configurable through editing of XML web resource.
+</li></ul>
+<p><strong>CRM 2013 Upgrade and Preparation</strong></p>
+<ul>
+<li>A beta version has just release in source code section for CRM 2013 [changeset: 25977]
+</li><li><a href="https://xrmservicetoolkit.codeplex.com/wikipage?title=CRM%202013%20Support%20and%20Development">CRM 2013 Support and Development</a>
+</li></ul>
+<p><strong>Debug / Unit Test JavaScript Rest or Soap in Visual Studio&nbsp;For CRM 2011</strong></p>
+<ul>
+<li><span style="font-size:10pt"><a title="Debug Soap / Rest in Visual Studio for CRM 2011" href="http://xrmservicetoolkit.codeplex.com/wikipage?title=Debug%20%2f%20Unit%20Test%20CRM%202011%20JavaScript%20Rest%2fSoap%20in%20visual%20studio%20for%20on-premise%20CRM%20installation">Debug
+ Soap / Rest in Visual Studio</a>&nbsp;For CRM 2011&nbsp;</span> </li></ul>
+<p><em><strong>Project Highlight and Notes: Current Release - Version 2.0.1 (April, 2014)</strong></em><br>
+<br>
+</p>
+<p><span style="font-family:Consolas; color:#006400">* @current version : 2.0.1</span></p>
+<p><span style="font-family:Consolas; color:#006400">* Date: April, 2014</span></p>
+<p><span style="font-family:Consolas; color:#006400">* Dependency: JSON2, jQuery (latest or 1.7.2 above)
+</span></p>
+<p><span style="font-family:Consolas; color:#006400">* Feature: Add Cross Browser Support for CRM 2011 with RU16, CRM 2013 with RU2</span></p>
+<p><span style="font-family:Consolas; color:#006400">* Tested Platform: IE9, IE10, IE11, Chrome Version (latest), Firefox (latest)</span><br>
+<br>
+<em>If you have used the toolkit previously for your project, thanks very much for your support. For version 1.4.1, download and try it out using a
+<span style="text-decoration:underline">testing</span> environment and let me know issues and bugs.
+</em><br>
+<br>
+<em>Happy Coding,</em><br>
+<em>Jaimie</em>&nbsp;</p>
+<p>For examples with qunit, please follow the links</p>
+<ul>
+<li><a title="Rest Functions" href="http://xrmservicetoolkit.codeplex.com/wikipage?title=Rest%20Functions" target="_self">Rest Functions</a>
+</li></ul>
+<ul>
+<li>
+<p><a title="Soap Functions" href="http://xrmservicetoolkit.codeplex.com/wikipage?title=Soap%20Functions" target="_self">Soap Functions</a></p>
+</li><li>
+<p><a title="Extension Functions" href="http://xrmservicetoolkit.codeplex.com/wikipage?title=Extension">Extension Functions</a></p>
+</li></ul>
+<p><strong><span style="color:#000000">Cross Browser Support</span></strong></p>
+<p>Cross Browser support and Cross platform are aligned with Dynamics CRM Roadmap with Microsoft Release</p>
+<p><strong><span style="color:#000000">Qunit Refresh and Test Results</span></strong></p>
+<p><span style="color:#000000">Qunit plays a big part during the development and continous development for this project.
+<span style="color:#ff0000">[NOTE] Qunit is for unit testing. You do not need the part of the code in live code</span></span></p>
+<p><span style="color:#000000"><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=xrmservicetoolkit&DownloadId=437590" alt="Qunit test result" width="1301" height="948"></span></p>
+<p><strong><span style="color:#000000">Code Examples in the documentation.</span></strong></p>
+<p><span style="color:#000000">All code examples or most of them are using in combination with Qunit. The qunit part of the code is not required in real life situation.
+</span></p>
+<p><strong><span style="color:#000000">Synchronous and Asynchronous</span></strong></p>
+<p><span style="color:#000000">The basics of synchronous and asynchronous calls are still the same without jQuery. As the reason not too s</span><span style="color:#000000">ure yet , jQuery 1.8 will not support ajax asynch=false anymore. However in reality,
+ there will be still usage, for example onSave, synchronous calls might still required. For best practise, asynchronous calls should be used for better performance.</span></p>
+<p><span style="color:#000000"><strong><em><span style="text-decoration:underline">XrmServiceToolkit.Rest</span></em></strong> funcitons use the last boolean parameter to indicate if the method runs asychronously or synchronously. If false is assigned, then
+ the method will run synchronously, otherwise an asynchrounous method will be called.</span></p>
+<p>&nbsp;</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> contact = {};
+contact.FirstName = <span style="color:#a31515">&quot;Diane&quot;</span>;
+contact.LastName = <span style="color:#a31515">&quot;Morgan&quot;</span>;
+contact.MiddleName = <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>;
+contact.GenderCode = { Value: 2 };
+contact.CreditLimit = { Value: <span style="color:#a31515">&quot;2.00&quot;</span> };
+contact.BirthDate = birthDate;
+contact.DoNotEMail = <span style="color:blue">true</span>;
+contact.DoNotPhone = <span style="color:blue">true</span>;
+
+XrmServiceToolkit.Rest.Create(
+	contact,
+	<span style="color:#a31515">&quot;ContactSet&quot;</span>,
+	<span style="color:blue">function</span> (result) {
+		contactId = result.ContactId;
+	},
+	<span style="color:blue">function</span> (error) {
+		alert(error.message);
+	},
+	<span style="color:blue">false //synchronous call</span>
+);
+&nbsp;</pre>
+</div>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> contact = {};
+contact.FirstName = <span style="color:#a31515">&quot;Diane&quot;</span>;
+contact.LastName = <span style="color:#a31515">&quot;Morgan&quot;</span>;
+contact.MiddleName = <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>;
+contact.GenderCode = { Value: 2 };
+contact.CreditLimit = { Value: <span style="color:#a31515">&quot;2.00&quot;</span> };
+contact.BirthDate = birthDate;
+contact.DoNotEMail = <span style="color:blue">true</span>;
+contact.DoNotPhone = <span style="color:blue">true</span>;
+
+XrmServiceToolkit.Rest.Create(
+	contact,
+	<span style="color:#a31515">&quot;ContactSet&quot;</span>,
+	<span style="color:blue">function</span> (result) {
+		contactId = result.ContactId;
+	},
+	<span style="color:blue">function</span> (error) {
+		alert(error.message);
+	},
+	<span style="color:blue">true //asynchronous call</span>
+);
+</pre>
+</div>
+<p>&nbsp;</p>
+<p><span style="color:#000000"><span style="text-decoration:underline"><em><strong>XrmServiceTookit.Soap</strong></em></span> functions using the last function parameter to indicate if the method runs asychronously or synchronously. If the funciton is defined,
+ the method will run asychronously. Otherwise, the method will be called synchronously.</span></p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> cols = [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;familystatuscode&quot;</span>, <span style="color:#a31515">&quot;ownerid&quot;</span>, <span style="color:#a31515">&quot;creditlimit&quot;</span>, <span style="color:#a31515">&quot;birthdate&quot;</span>, <span style="color:#a31515">&quot;donotemail&quot;</span>, <span style="color:#a31515">&quot;donotphone&quot;</span>];
+<span style="color:blue">var</span> retrievedContact = XrmServiceToolkit.Soap.Retrieve(<span style="color:#a31515">&quot;contact&quot;</span>, contactId, cols); <span style="color:#008000">//synchronous call
+</span><span style="color:blue">var</span> familyStatusLable = retrievedContact.attributes[<span style="color:#a31515">'familystatuscode'</span>].formattedValue;
+<span style="color:blue">var</span> firstName = retrievedContact.attributes[<span style="color:#a31515">'firstname'</span>].value;
+</pre>
+<pre><span style="color:blue">var</span> cols = [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;familystatuscode&quot;</span>, <span style="color:#a31515">&quot;ownerid&quot;</span>, <span style="color:#a31515">&quot;creditlimit&quot;</span>, <span style="color:#a31515">&quot;birthdate&quot;</span>, <span style="color:#a31515">&quot;donotemail&quot;</span>, <span style="color:#a31515">&quot;donotphone&quot;</span>];
+XrmServiceToolkit.Soap.Retrieve(<span style="color:#a31515">&quot;contact&quot;</span>, contactId, cols, <span style="color:blue">function</span>(result){
+<span style="color:blue">    var</span> familyStatusLable = result.attributes[<span style="color:#a31515">'familystatuscode'</span>].formattedValue;	
+<span style="color:blue">    var</span> firstName = result.attributes[<span style="color:#a31515">'firstname'</span>].value;
+}); <span style="color:#008000">//asychronous call
+</span></pre>
+</div>
+<p><strong><span style="color:#000000">Numbers</span></strong></p>
+<p><span style="color:#000000">CRM 2011 has number like whole number (int), floating point&nbsp;(double) and Decimal number (decimal), Currency (Money).
+</span></p>
+<p><span style="color:#000000">When using the soap funcitons in the library, it is recommended to include type when assigning values. It is more likely to cause issue for fields like decimal or double</span></p>
+<div style="color:black; background-color:white">
+<pre><span style="color:green">//overcome limitations of numbers with type specified.... </span>
+createContact.attributes[<span style="color:#a31515">&quot;numberofchildren&quot;</span>] = { value: 2, type: <span style="color:#a31515">&quot;int&quot;</span>}; 
+
+createContact.attributes[<span style="color:#a31515">&quot;exchangerate&quot;</span>] = {value: 1.5617, type: <span style="color:#a31515">&quot;decimal&quot;</span>}; 
+
+createContact.attributes[<span style="color:#a31515">&quot;address1_latitude&quot;</span>] = { value: 1.5617, type: <span style="color:#a31515">&quot;double&quot;</span> }; 
+
+createContact.attributes[<span style="color:#a31515">&quot;creditlimit&quot;</span>] = { value: 2, type: <span style="color:#a31515">&quot;Money&quot;</span> }; 
+
+</pre>
+</div>
+<p><strong><span style="color:#000000">FormattedValue </span></strong></p>
+<p><span style="color:#000000"><span style="color:#000000">The XrmServiceToolkit.Soap functions have an extra attribute returned as formattedValue. It could be very useful if you want to return some extra information. For example, to get the lable of OptionSet.
+ The example is synchrous.</span></span></p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">var</span> cols = [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;familystatuscode&quot;</span>, <span style="color:#a31515">&quot;ownerid&quot;</span>, <span style="color:#a31515">&quot;creditlimit&quot;</span>, <span style="color:#a31515">&quot;birthdate&quot;</span>, <span style="color:#a31515">&quot;donotemail&quot;</span>, <span style="color:#a31515">&quot;donotphone&quot;</span>];
+<span style="color:blue">var</span> retrievedContact = XrmServiceToolkit.Soap.Retrieve(<span style="color:#a31515">&quot;contact&quot;</span>, contactId, cols);
+<span style="color:blue">var</span> familyStatusLable = retrievedContact.attributes[<span style="color:#a31515">'familystatuscode'</span>].formattedValue;//label
+<span style="color:blue">var</span> familyStatusValue = retrievedContact.attributes[<span style="color:#a31515">'familystatuscode'</span>].value; //integer
+</pre>
+</div>
+<p><span style="color:#000000">An example to <strong>create email </strong>activity using the library.</span></p>
+<div style="color:black; background-color:white">
+<pre>    <span style="color:blue">var</span> createEmail = <span style="color:blue">new</span> XrmServiceToolkit.Soap.BusinessEntity(<span style="color:#a31515">&quot;email&quot;</span>);
+    createEmail.attributes[<span style="color:#a31515">&quot;subject&quot;</span>] = <span style="color:#a31515">&quot;Test Email subject&quot;</span>;
+    createEmail.attributes[<span style="color:#a31515">&quot;description&quot;</span>] = <span style="color:#a31515">&quot;This email was created by the XrmServiceToolkit.Soap.Create() sample.&quot;</span>;
+
+    <span style="color:blue">var</span> from = [
+       { id: whoamiUserId, logicalName: <span style="color:#a31515">&quot;systemuser&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> }
+    ];
+
+    createEmail.attributes[<span style="color:#a31515">&quot;from&quot;</span>] = { value: from, type: <span style="color:#a31515">&quot;EntityCollection&quot;</span> };
+
+    <span style="color:blue">var</span> to = [
+       { id: accountId, logicalName: <span style="color:#a31515">&quot;account&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> },
+       { id: contactId, logicalName: <span style="color:#a31515">&quot;contact&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> }
+    ];
+
+    createEmail.attributes[<span style="color:#a31515">&quot;to&quot;</span>] = { value: to, type: <span style="color:#a31515">&quot;EntityCollection&quot;</span> };
+
+    <span style="color:blue">var</span> cc = [
+       { id: accountId, logicalName: <span style="color:#a31515">&quot;account&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> },
+       { id: contactId, logicalName: <span style="color:#a31515">&quot;contact&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> }
+    ];
+
+    createEmail.attributes[<span style="color:#a31515">&quot;cc&quot;</span>] = { value: cc, type: <span style="color:#a31515">&quot;EntityCollection&quot;</span> };
+
+    <span style="color:blue">var</span> bcc = [
+       { id: accountId, logicalName: <span style="color:#a31515">&quot;account&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> },
+       { id: contactId, logicalName: <span style="color:#a31515">&quot;contact&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> }
+    ];
+
+    createEmail.attributes[<span style="color:#a31515">&quot;bcc&quot;</span>] = { value: bcc, type: <span style="color:#a31515">&quot;EntityCollection&quot;</span> };
+
+    createEmail.attributes[<span style="color:#a31515">&quot;directioncode&quot;</span>] = <span style="color:blue">true</span>;
+
+    emailId = XrmServiceToolkit.Soap.Create(createEmail);
+
+</pre>
+</div>
+<p><span style="color:#000000">An example to <strong>retrieve an email </strong>is like this. The returned value of [From/To/Cc/Bcc] is an array of Entity reference.</span></p>
+<div style="color:black; background-color:white">
+<pre>    <span style="color:blue">var</span> cols = [<span style="color:#a31515">&quot;subject&quot;</span>, <span style="color:#a31515">&quot;description&quot;</span>, <span style="color:#a31515">&quot;from&quot;</span>, <span style="color:#a31515">&quot;to&quot;</span>, <span style="color:#a31515">&quot;cc&quot;</span>, <span style="color:#a31515">&quot;bcc&quot;</span>, <span style="color:#a31515">&quot;directioncode&quot;</span>];
+    <span style="color:blue">var</span> retrievedEmail = XrmServiceToolkit.Soap.Retrieve(<span style="color:#a31515">&quot;email&quot;</span>, emailId, cols);
+<br>    var subject = retrievedEmail.attributes[<span style="color:#a31515">'subject'</span>].value;
+    var description = retrievedEmail.attributes[<span style="color:#a31515">'description'</span>].value;
+
+</pre>
+</div>
+<p><span style="color:#000000">To get the value of an array item of the returned result. Using something like
+</span></p>
+<p><span style="color:#000080"><em>var sender = retrievedEmail.attributes['from'].value[0];</em></span></p>
+<p><span style="color:#000000">Then you can get sender.id, sender.type, sender.logicalName, sender.Name per normal as a returned EntityReference value.
+</span></p>
+<p><span style="color:#000000">An example to use the GrantAccess is like this. For all other examples, please have a look at the attached aspx page.</span></p>
+<div style="color:black; background-color:white">
+<pre>     <span style="color:blue">var</span> accessOptions = {
+         targetEntityName: <span style="color:#a31515">&quot;contact&quot;</span>,
+         targetEntityId: contactId,
+         principalEntityName: <span style="color:#a31515">&quot;systemuser&quot;</span>,
+         principalEntityId: currentUserId,
+         accessRights: [<span style="color:#a31515">&quot;ReadAccess&quot;</span>, <span style="color:#a31515">&quot;WriteAccess&quot;</span>]
+     };
+
+     <span style="color:blue">var</span> grantAccessResponse = XrmServiceToolkit.Soap.GrantAccess(accessOptions);
+
+</pre>
+</div>
+<p><span style="color:#ff0000"><em>[NOTE] These functions regarding access should be combined with CRM 2011 security model and they could be useful if entities have to be controlled at record level. This obviously has to be used with consideration of user rights,
+ security settings and all other security related configurations as the requirement of the project.
+</em></span></p>
+<p><strong><span style="color:#ff0000">For details about how to use all these methods and updated examples. See attached .aspx page for examples.</span></strong></p>
+<p><span style="color:#008080"><strong>Credi: The code example is based on Daniel Cai's CrmWebServiceKit.
+</strong></span><br>
+<br>
+<a title="XrmServiceToolkit Test Page" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=xrmservicetoolkit&DownloadId=830276">XrmServiceToolkitTest.zip</a><br>
+<br>
+<strong>Dependency</strong></p>
+<p>JSON2 javascript library is required in CRM 2011 as a web resource to make the library working.</p>
+<p>jQuery 1.7.2 above is required from version 1.3</p>
+<p><em><strong>To Unit Test your code at local machine.</strong></em></p>
+<p>There is a way to test all your Rest / Soap calls directy from your development machine without modifying the library which is achieved by using the XrmPageTemplate.js and PageData.js. For details about how to using JavaScript Intellisense, please have a&nbsp;look
+ at this wonderful blog</p>
+<p>http://crmbusiness.wordpress.com/2011/12/01/crm-2011-using-javascript-intellisense-and-testpage-htm/</p>
+<p>Once you have got the PageData.js generated from any entity, simply put it in the helper&nbsp;folder to replace the existing&nbsp;PageData.js&nbsp;in the source code project which you could download from the [Source Code] section here.</p>
+<p>Now you could run and debug the XrmServiceToolkitTest.aspx from your visual studio.</p>
+<p>Happy Coding,</p>
+<p>Jaimie</p>
+</div><div class="ClearBoth"></div>

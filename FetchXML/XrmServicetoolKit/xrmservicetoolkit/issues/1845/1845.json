@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "XrmServiceToolkit.min.js present in version 2.2.1 has an error. There is a variable inside called oldkit which should be XrmServiceToolkit, at least this change solved it.",
+    "LastUpdatedDate": "2016-03-11T09:13:07.44-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-01-05T10:10:35.217-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit 2.2.1 bug",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 1845
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nI minified the library using online tools, sorry if it has caused issues. \r\n\r\nWill have a look soon and try to provide a working one.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2016-03-11T09:13:07.44-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\r\nExcellent add-on, I am using and acknowledging as part of a new add-on (www.summaryplus.com) which I am shortly releasing for beta.\r\n\r\nI have an issue which may be with XrmSvcToolkit though I cannot pin it down. I am retrieving a record which may have leading spaces but somewhere along the line leading spaces seem to get dropped. I cannot work out whether this is in the SOAP return itself or in XrmSvcToolkit.\r\n\r\nIf the latter, it is in getFetchResults.\r\n\r\nThis is version 0.2.\r\n\r\nI've got a fairly easy way round this as I have tried without success to pin it down, but thought I would raise as a possible issue. Browser is IE 9. Once I get released I will try to pin down some more and generate some test code.\r\nPaul\r\n",
+    "LastUpdatedDate": "2013-05-12T02:48:08.233-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmsvctoolkit",
+    "ReportedDate": "2013-05-12T02:48:08.233-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Leading space dropped",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 4
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

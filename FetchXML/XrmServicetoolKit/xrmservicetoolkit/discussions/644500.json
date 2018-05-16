@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1442851",
+    "ThreadId": "644500",
+    "Html": "I know CrmRestKit supports Q promises. Looking at the code for XrmServiceToolkit I don't see any Q promise support. I know I can wrap this in Q promises fairly easily but I am curious if you guys plan on adding in Q promise support directly into XrmServiceToolkit?<br />\n",
+    "PostedDate": "2015-09-02T08:25:19.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1443372",
+    "ThreadId": "644500",
+    "Html": "Hi There.\r<br />\n<br />\nCurrently I have no plans to add support of Q promises. Would be keen to have a look and learn when you get the integration done.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-09-06T12:29:28.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

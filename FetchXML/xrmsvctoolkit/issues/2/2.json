@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you want to retrieve a list of opportunities where a specific account is the customer, use the opportunity_customer_accounts entity relationship in the context of a specific account:\r\n\r\n/AccountSet(guid'[GUID value]')/opportunity_customer_accounts\r\n\r\nI suppose the other way would be to use $expand and $filter\r\n\r\nAnother thing I've noticed is that if you are using retrieve, you can specify opts.select & opts.expand but if using retrieveMultiple you can specify opts.odataQuery\r\nWould be good if you could use either method of parameters against both retrieve & retrieveMultiple\r\n\r\n-- \r\n $expand argument as per http://msdn.microsoft.com/en-us/library/gg309461.aspx:\r\n\r\n/AccountSet(guid'[GUID value]')?select=Name,opportunity_customer_accounts&$expand=opportunity_customer_accounts\r\n--",
+    "LastUpdatedDate": "2012-12-04T03:41:11.2-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "xrmsvctoolkit",
+    "ReportedDate": "2012-12-04T03:41:11.2-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using retrieveMultiple with Related Entities",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

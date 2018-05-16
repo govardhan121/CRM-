@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1312027",
+    "ThreadId": "569451",
+    "Html": "Hi,\r<br />\n<br />\nI was wondering if there is a way to handle the error generated when leaving a page while waiting for an asynchronous retrieveMultiple call?\r<br />\n<br />\nCurrently when I load an entity I make a retrieveMultiple call which takes a little while. If the user leaves the page before the asynchronous task completes then an error message appears.\r<br />\n<br />\nIs there anyway to catch and ignore this error? Other than turning off error messages inside CRM 2013.<br />\n",
+    "PostedDate": "2014-10-09T19:21:27.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312756",
+    "ThreadId": "569451",
+    "Html": "Hi There.\r<br />\n<br />\nRetrieveMultiple is quite slow in terms of performance by nature. I would recommend trying another method like Fetch, QueryByAttribute to achieve this as a workaround. \r<br />\n<br />\nAlso thinking if asynchronous method is ideal for your scenario. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-10-13T06:23:08.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312934",
+    "ThreadId": "569451",
+    "Html": "Hi,\r<br />\n<br />\nThanks for your response. Asynchronous is required due to time it takes for the call to finish and I didn't want the page to be frozen.\r<br />\n<br />\nHave you got any benchmarks for the performance of Fetch or QueryByAttribute vs RetriveMultiple?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-10-13T15:54:23.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312937",
+    "ThreadId": "569451",
+    "Html": "Here is a description of what I am doing. Can you suggest the quickest way to handle this please:\r<br />\n<br />\nI need to retrieve all records for a certain entity, I only require 2 fields from the records though. The name and the id. Can QueryByAttribute be used to retrieve all records?<br />\n",
+    "PostedDate": "2014-10-13T16:02:26.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312953",
+    "ThreadId": "569451",
+    "Html": "Thanks for the help. I have solved this with Fetch. It is so much faster than retrieveMultiple.<br />\n",
+    "PostedDate": "2014-10-13T17:32:08.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

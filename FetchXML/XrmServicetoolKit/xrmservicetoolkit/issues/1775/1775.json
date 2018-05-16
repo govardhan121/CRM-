@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "```\nvar LatestMembershipQuery = {\n        entityName: \"contract\",\n        attributes: [\"customerid\"],\n        values: [Xrm.Page.data.entity.getId()],\n        columnSet: [\"createdon\", \"title\", \"activeon\", \"expireson\", \"statuscode\"],\n        orderby: [\"createdon\",\"activeon\"] // Order by\n    };\n\n\n     XrmServiceToolkit.Soap.QueryByAttribute(LatestMembershipQuery, function (AllMemberships) {\n        //debugger;\n        var LatestMembershipBasedOnCreatedOnDate = AllMemberships[AllMemberships.length - 1];\n```\n\nFor 2 Contract with the same \"CreatedOn\" date, it is not sorting on \"ActiveOn\".\nUsing this \n```\n XrmServiceToolkit.Rest.RetrieveMultiple(\"ContractSet\",\n\n        \"$select=ActiveOn,CreatedOn,ExpiresOn,StateCode,Title&$orderby=CreatedOn desc,ActiveOn desc&$filter=ContactId/Id eq guid'\" + Xrm.Page.data.entity.getId() + \"'\",\n        function (AllMemberships) {\n}\n```\nworked fine. But I want to use QueryByAttribute, it is more like C# QueryExpression.\n\nThanks you.",
+    "LastUpdatedDate": "2015-01-22T02:38:11.82-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-01-22T02:33:17.983-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.QueryByAttribute Order By Not Working",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1775
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

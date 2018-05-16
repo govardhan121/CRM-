@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nI am working on a CRM project and I have a problem to retrieve lookup from Entity Classification DB.\n\nI have to retrieve name, level, and parent classification, which is lookup field. \n\nI am using XrmServiceToolkit.Rest.RetrieveMultiple to retrieve it.\n\n I suppose 'ad_parentclassification' shouldn't be retrieved like this, since it is lookup field, but I don't know how to do it.\n\nLet me know if you need some aditional info.\nThanks in advance\n\nHere is the code sample:\n\n    retrieveMultipleRecords = function ()\n     {\n\tvar accountArray = new Array();\n\tXrmServiceToolkit.Rest.RetrieveMultiple(\n\t\t\"ad_entityclassificationSet\",\n\t\t\"$select=ad_name, ad_level, ad_parentclassification  &$filter=ad_entityName eq 'account' \",\n\n\tfunction (results)\n\t{\n\t\tif (results.length >= 1)\n\t\t{\n\t\t\t\n\t\t\tlen = results.length;\n\t\t\t\n\t\t\tfor (var i = 0; i < results.length; i++)\n\t\t\t{\n\t\t\t\taccountArray.push(results[i]);\n\t\t\t\tacc1[i] = accountArray[i].ad_name;\n\t\t\t\tlev1[i] = accountArray[i].ad_level;\n\t\t\t\n\t\t\t\t\n\t\t\t}\n\t\t\tmax = Math.max(...lev1);\n\t\t}\n\t},\n\n\tfunction (error)\n\t{\n\t\talert(error.message);\n\t},\n\n\tfunction onComplete()\n\t{\n\t\t\n\t},\n\tfalse);",
+    "LastUpdatedDate": "2016-07-26T05:30:24.08-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-07-26T05:30:24.08-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with retrieving lookup",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1872
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

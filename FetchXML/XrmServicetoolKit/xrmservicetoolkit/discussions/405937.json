@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "952771",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I have upgraded to this version on my CRM Online environment but it seemed like the&nbsp;XrmServiceToolkit.Soap.Create and&nbsp;the&nbsp;XrmServiceToolkit.Soap.Retrieve functions are not working properly. Do you have any idea.</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2012-12-07T01:23:52.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952817",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>I just tested 1.3.1 with an online trial without problems.</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>    <span style=\"color:blue\">try</span> {\r\n      \r\n        <span style=\"color:blue\">var</span> createContact = <span style=\"color:blue\">new</span> XrmServiceToolkit.Soap.BusinessEntity(<span style=\"color:#a31515\">&quot;contact&quot;</span>);\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;firstname&quot;</span>] = <span style=\"color:#a31515\">&quot;Diane&quot;</span>;\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;lastname&quot;</span>] = <span style=\"color:#a31515\">&quot;Morgan&quot;</span>;\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;middlename&quot;</span>] = <span style=\"color:#a31515\">&quot;&lt;&&gt;&quot;</span>;   <span style=\"color:green\">// Deliberate special characters to ensure that the toolkit can handle special characters correctly.</span>\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;gendercode&quot;</span>] = { value: 2, type: <span style=\"color:#a31515\">&quot;OptionSetValue&quot;</span> };\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;familystatuscode&quot;</span>] = { value: 1, type: <span style=\"color:#a31515\">&quot;OptionSetValue&quot;</span> }; <span style=\"color:green\">// Picklist : Single - 1</span>\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;creditlimit&quot;</span>] = { value: 2, type: <span style=\"color:#a31515\">&quot;Money&quot;</span> };\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;birthdate&quot;</span>] = <span style=\"color:blue\">new</span> Date();\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;donotemail&quot;</span>] = <span style=\"color:blue\">true</span>;\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;donotphone&quot;</span>] = <span style=\"color:blue\">false</span>;\r\n        createContact.attributes[<span style=\"color:#a31515\">&quot;parentcustomerid&quot;</span>] = { id: Xrm.Page.data.entity.getId(), logicalName: <span style=\"color:#a31515\">&quot;account&quot;</span>, type: <span style=\"color:#a31515\">&quot;EntityReference&quot;</span> };\r\n\r\n        <span style=\"color:blue\">var</span> contactId = XrmServiceToolkit.Soap.Create(createContact);\r\n\r\n        <span style=\"color:blue\">var</span> cols = [<span style=\"color:#a31515\">&quot;firstname&quot;</span>, <span style=\"color:#a31515\">&quot;lastname&quot;</span>, <span style=\"color:#a31515\">&quot;middlename&quot;</span>, <span style=\"color:#a31515\">&quot;familystatuscode&quot;</span>, <span style=\"color:#a31515\">&quot;ownerid&quot;</span>, <span style=\"color:#a31515\">&quot;creditlimit&quot;</span>, <span style=\"color:#a31515\">&quot;birthdate&quot;</span>, <span style=\"color:#a31515\">&quot;donotemail&quot;</span>, <span style=\"color:#a31515\">&quot;donotphone&quot;</span>];\r\n        <span style=\"color:blue\">var</span> retrievedContact = XrmServiceToolkit.Soap.Retrieve(<span style=\"color:#a31515\">&quot;contact&quot;</span>, contactId, cols);\r\n        <span style=\"color:blue\">if</span> (retrievedContact != <span style=\"color:blue\">null</span>) {\r\n            alert(retrievedContact.attributes[<span style=\"color:#a31515\">'firstname'</span>].value);\r\n        }\r\n    }\r\n    <span style=\"color:blue\">catch</span> (err) {\r\n        alert(err.message);\r\n    }\r\n</pre>\r\n</div>\r\n<p>Give it a try and let me know if you still have issues.</p>\r\n<p>Jaimie</p>\r\n",
+    "PostedDate": "2012-12-07T03:03:35.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "953097",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Thanks Jaimie for your quick reply,</p>\r\n<p>Here is my code&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">function</span> getFullNameUser() {\r\n    <span style=\"color:blue\">try</span> {\r\n    <span style=\"color:blue\">var</span> currentUserId = XrmServiceToolkit.Soap.GetCurrentUserId();\r\n\r\n        <span style=\"color:blue\">var</span> cols = [<span style=\"color:#a31515\">&quot;firstname&quot;</span>, <span style=\"color:#a31515\">&quot;lastname&quot;</span>];\r\n        <span style=\"color:blue\">var</span> user = XrmServiceToolkit.Soap.Retrieve(<span style=\"color:#a31515\">&quot;systemuser&quot;</span>, currentUserId, cols);\r\n        alert(user.attributes[<span style=\"color:#a31515\">'lastname'</span>].value);\r\n    }\r\n    <span style=\"color:blue\">catch</span> (err) {\r\n        alert(err.message);\r\n    }\r\n};\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>I get the error :&nbsp;Unable to get &quot;value&quot; property of a reference null or undefined</p>\r\n<p>It works perfectly with the previous one.</p>\r\n<p>I tried to moved because with the previous one I have issues when trying to create entities with decimal attributes.</p>\r\n",
+    "PostedDate": "2012-12-07T12:23:51.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "953369",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>The code is fine and I have tested at my end which running the current user as system administrator.</p>\r\n<p>The problem might be caused by the user who executed the code does not have read privilege in their security role settings.</p>\r\n<p>Have a check and let me know if that&nbsp;explains the situation.</p>\r\n<p>Jaimie&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-08T12:46:21.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "953650",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hey,</p>\r\n<p>This user has all privileges on the security role settings. The same code works perfectly when I change the&nbsp;<span>XrmServiceToolkit.js file with the previous one (version 1.3).</span></p>\r\n<p><span>Actually my computer works on Windows 8 with IE10, when I test it on IE8 Compatibility, it works fine.</span></p>\r\n<p>I get the following error :</p>\r\n<p>&quot;cannot convert the xml string to a cross-browser XML object&quot;</p>\r\n<p>And then :</p>\r\n<p>There was an error while trying to deserialize parameter http://schemas.microsoft.com/xrm/2011/Contracts/Services:id. The innerException message was 'there was an error deserializing the object of type System.Guid. The value '' can not be parsed as the type\r\n 'Guid'.'</p>\r\n<p><span>Do you have any explanation of this ?</span>&nbsp;</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2012-12-09T14:50:03.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "953795",
+    "ThreadId": "405937",
+    "Html": "\r\n<blockquote style=\"padding-bottom:0px; font-style:italic; padding-top:0px; padding-left:0.25em; margin:0.25em 1em 0px; padding-right:0.25em; border:#ccc 0.1em solid\">\r\n<strong>&nbsp;</strong><br>\r\n<p><span><span>Actually my computer works on Windows 8 with IE10, when I test it on IE8 it works fine.</span></span></p>\r\n</blockquote>\r\n<p><br>\r\nHi there.</p>\r\n<p>Here is my test environment for the code</p>\r\n<p>1. Client: Windows 8 64-bit. IE10</p>\r\n<p>2. Server: CRM online (5.0.9690.2747)</p>\r\n<p>3. Framework: XrmServiceToolkit 1.3.1</p>\r\n<p>I would recommend you try to debug the code using IE developer tool (F12) and see if there are any errors.</p>\r\n<p>Let me know,</p>\r\n<p>Jaimie</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-10T01:58:45.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "953842",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Thanks Jaimie,</p>\r\n<p>When debbuging, I found that the problem was when trying to get the connected user ID in this function&nbsp;GetCurrentUserId().</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:green\">///&lt;summary&gt;</span>\r\n        <span style=\"color:green\">/// Sends synchronous request to retrieve the GUID of the current user.</span>\r\n        <span style=\"color:green\">///&lt;/summary&gt;</span>\r\n        <span style=\"color:blue\">var</span> request = <span style=\"color:#a31515\">&quot;&lt;request i:type='b:WhoAmIRequest' xmlns:a='http://schemas.microsoft.com/xrm/2011/Contracts' xmlns:b='http://schemas.microsoft.com/crm/2011/Contracts'&gt;&quot;</span> +\r\n                        <span style=\"color:#a31515\">&quot;&quot;</span> +\r\n                        <span style=\"color:#a31515\">&quot;&quot;</span> +\r\n                        <span style=\"color:#a31515\">&quot;WhoAmI&quot;</span> +\r\n                      <span style=\"color:#a31515\">&quot;&lt;/request&gt;&quot;</span>;\r\n        <span style=\"color:blue\">var</span> xmlDoc = doRequest(request, <span style=\"color:#a31515\">&quot;Execute&quot;</span>);\r\n\r\n        <span style=\"color:blue\">return</span> $(xmlDoc).find(<span style=\"color:#a31515\">'a\\\\:Results'</span>).children().eq(0).children().eq(1).text();\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p><span>It threw the exception : &quot;cannot convert the xml string to a cross-browser XML object&quot;.</span></p>\r\n<p><span>I get the same error on the retrieve query :</span></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">return</span> doRequest(msgBody, <span style=\"color:#a31515\">&quot;Retrieve&quot;</span>, !!callback, <span style=\"color:blue\">function</span> (resultXml) {\r\n            <span style=\"color:blue\">var</span> retrieveResult = $(resultXml).find(<span style=\"color:#a31515\">&quot;RetrieveResult&quot;</span>).eq(0)[0];\r\n            <span style=\"color:blue\">var</span> entity = <span style=\"color:blue\">new</span> businessEntity();\r\n            entity.deserialize(retrieveResult);\r\n\r\n            <span style=\"color:blue\">if</span> (!async)\r\n                <span style=\"color:blue\">return</span> entity;\r\n            <span style=\"color:blue\">else</span>\r\n                callback(entity);\r\n            <span style=\"color:green\">// ReSharper disable NotAllPathsReturnValue</span>\r\n        });\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>But I also find out this problem occurs only in my HTML web resource in which I link my javascripts files :</p>\r\n<pre><span>&lt;</span><span>script</span> <span>type</span><span>=</span><span>&quot;text/javascript&quot;</span> <span>src</span><span>=</span><span>&quot;../javascripts/jquery.js&quot;</span><span>&gt;</span><span>&lt;/</span><span>script</span><span>&gt;</span>\r\n    <span>&lt;</span><span>script</span> <span>type</span><span>=</span><span>&quot;text/javascript&quot;</span> <span>src</span><span>=</span><span>&quot;../javascripts/json2.js&quot;</span><span>&gt;</span><span>&lt;/</span><span>script</span><span>&gt;</span>\r\n    <span>&lt;</span><span>script</span> <span>type</span><span>=</span><span>&quot;text/javascript&quot;</span> <span>src</span><span>=</span><span>&quot;../javascripts/jqueryui.js&quot;</span><span>&gt;</span><span>&lt;/</span><span>script</span><span>&gt;</span>\r\n    <span>&lt;</span><span>script</span> <span>type</span><span>=</span><span>&quot;text/javascript&quot;</span> <span>src</span><span>=</span><span>&quot;../../../ClientGlobalContext.js.aspx&quot;</span><span>&gt;</span><span>&lt;/</span><span>script</span><span>&gt;</span>\r\n    <span>&lt;</span><span>script</span> <span>type</span><span>=</span><span>&quot;text/javascript&quot;</span> <span>src</span><span>=</span><span>&quot;../javascripts/XrmServiceToolkit.js&quot;</span><span>&gt;</span><span>&lt;/</span><span>script</span><span>&gt;</span>\r\n</pre>\r\n<p><span>These functions work perfectly when called directly from CRM form events.</span></p>\r\n<p>Any idea ?</p>\r\n<p><span>Regards</span></p>\r\n",
+    "PostedDate": "2012-12-10T03:21:34.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954838",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hi There.</p>\r\n<p>I have tested several scenarios using version 1.3.1 for both on-premise and online.</p>\r\n<p>So far for the scenarios I have run, there is only one which gave me the exact problem when trying to retrieve records</p>\r\n<p>-CRM Server: CRM online</p>\r\n<p>-Scenario: Call a web resource from a ribbon button on form</p>\r\n<p><strong><em><span style=\"text-decoration:underline\">Issue:</span></em></strong></p>\r\n<p>Somehow, when calling a web resource from a ribbon button for online CRM, when trying to create a XML document, even using IE, the XML document is created using the following code as if the explorer is non-IE</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> <span style=\"color:blue\">if</span> (window.DOMParser) {\r\n     <span style=\"color:green\">// ReSharper disable InconsistentNaming</span>\r\n     <span style=\"color:blue\">var</span> parser = <span style=\"color:blue\">new</span> DOMParser();\r\n     <span style=\"color:green\">// ReSharper restore InconsistentNaming</span>\r\n     xmlDoc = parser.parseFromString(txt, <span style=\"color:#a31515\">&quot;text/xml&quot;</span>);\r\n}\r\n\r\n</pre>\r\n</div>\r\n<p>Therefore, the current logic in 1.3.1 could not deserialize the entity properly. I will work on the issue and perform more testing and update a new version shortly. In the meantime, I would recommend you stay with 1.3 until the problem is resolved for your\r\n case.</p>\r\n<p>Jaimie</p>\r\n",
+    "PostedDate": "2012-12-11T16:46:00.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954851",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Hi Jaimie,</p>\r\n<p>Thanks for your explanations.</p>\r\n<p>I am using the 1.3 version, but do you have any workaround for the Decimal problem when using&nbsp;XrmServiceToolkit.Soap.Create ?</p>\r\n<p>Fabson</p>\r\n",
+    "PostedDate": "2012-12-11T17:48:14.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954993",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Try this</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">//overcome limitations of numbers with type specified.... </span>\r\ncreateContact.attributes[<span style=\"color:#a31515\">&quot;numberofchildren&quot;</span>] = { value: 2, type: <span style=\"color:#a31515\">&quot;int&quot;</span>}; \r\n\r\ncreateContact.attributes[<span style=\"color:#a31515\">&quot;exchangerate&quot;</span>] = {value: 1.5617, type: <span style=\"color:#a31515\">&quot;decimal&quot;</span>}; \r\n\r\ncreateContact.attributes[<span style=\"color:#a31515\">&quot;address1_latitude&quot;</span>] = { value: 1.5617, type: <span style=\"color:#a31515\">&quot;double&quot;</span> }; \r\n\r\ncreateContact.attributes[<span style=\"color:#a31515\">&quot;creditlimit&quot;</span>] = { value: 2, type: <span style=\"color:#a31515\">&quot;Money&quot;</span> }; \r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-12-12T01:45:24.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "955110",
+    "ThreadId": "405937",
+    "Html": "\r\n<p>Thanks Jaimie, it works fine.</p>\r\n",
+    "PostedDate": "2012-12-12T06:46:03.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

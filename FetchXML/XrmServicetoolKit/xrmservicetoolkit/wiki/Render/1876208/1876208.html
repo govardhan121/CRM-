@@ -1,0 +1,235 @@
+<div class="wikidoc">
+<h3><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:large"><span style="font-family:'Trebuchet MS',sans-serif">Project Description</span></span></span></h3>
+<p><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">XrmServiceToolkit is a JavaScript library which can be used for JavaScript Development under the platform for
+<strong><span style="text-decoration:underline">Microsoft Dynamics CRM 2011/2013/2015 environments</span></strong>. The library contains four major parts regarding functions.</span></span></p>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Common: General Methods used for various purpose.</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Rest: Organization Data Service functions including CRUD, Associate, Disassociate, etc</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Soap: Organization Service functions including CRUD, Fetch, Associate, Disassociate, etc</span>
+</span></li><li>Extension: jQuery extension to utilize WebResource to extend CRM 2011 /&nbsp;CRM 2013 / CRM 2015&nbsp;including dependent OptionSet, field tooltip, add custom filter view to lookup field. (Some Methods 'Unsupported'. Some of these methods have either been
+ replaced with supported methods or deprecated in CRM 2013 version) </li></ul>
+<p><span style="color:#ff0000">[NOTE] XrmServiceToolkit is now hosted at <a title="XrmServiceToolkit at GitHub" href="https://github.com/XrmServiceToolkit/XrmServiceToolkit" target="_blank">
+https://github.com/XrmServiceToolkit/XrmServiceToolkit</a>. Many Thanks to Stefan's hard work on the migration.
+<br>
+</span></p>
+<p><strong>CRM 2015</strong></p>
+<ul>
+<li>V2.2 is the official release for CRM 2015 support </li><li>If you are on CRM 2015 online Update 1, please go to download page and download v2.2.1
+</li></ul>
+<p><strong>CRM 2013 </strong></p>
+<ul>
+<li>A beta version has just been released in source code section for CRM 2013 [changeset: 25977]
+</li><li><a href="https://xrmservicetoolkit.codeplex.com/wikipage?title=CRM%202013%20Support%20and%20Development">CRM 2013 Support and Development</a>
+</li><li>Tested CRM 2013 server
+<ul>
+<li>PC
+<ul>
+<li>CRM 2013 on-premise for IE10, latest chrome, latest firefox </li><li>CRM 2013 online for IE10, latest chrome, latest firefox </li></ul>
+</li><li>Tablet - iPad 2, iOS 7.0.2
+<ul>
+<li>CRM 2013 online for latest chrome, latest safari </li></ul>
+</li><li>Tablet Client
+<ul>
+<li>iOS Client - iPad 2, iOS 7.0.2 </li><li>Windows App - Windows 8, Windows RT </li></ul>
+</li></ul>
+</li></ul>
+<p><strong>Debug / Unit Test JavaScript Rest or Soap in Visual Studio&nbsp;For CRM 2011</strong></p>
+<ul>
+<li><span style="font-size:10pt"><a title="Debug Soap / Rest in Visual Studio for CRM 2011" href="http://xrmservicetoolkit.codeplex.com/wikipage?title=Debug%20%2f%20Unit%20Test%20CRM%202011%20JavaScript%20Rest%2fSoap%20in%20visual%20studio%20for%20on-premise%20CRM%20installation">Debug
+ Soap / Rest in Visual Studio</a>&nbsp;For CRM 2011&nbsp;</span> </li></ul>
+<p><span style="color:#0000ff"><strong>* Whats new:</strong></span></p>
+<ul>
+<li>Version 2.2 </li><li>Dependency JSON2, jQuery 1.7.2 or above </li><li>Date: April, 2015
+<ul>
+<li>Tested Browser: IE10, IE11, Chrome (latest), Firefox (latest) </li><li>Tested CRM server: CRM 2015, CRM 2013, CRM 2011 </li><li>Bug fixes for XrmServiceToolkit.Sopa.Fetch </li><li>Bug fixes for error handling </li></ul>
+</li><li>Dependency JSON2, jQuery 1.7.2 or above </li><li>Date: October, 2014
+<ul>
+<li>Tested Browser: IE10, IE11, Chrome (latest), Firefox (latest) </li><li>Tested CRM server: CRM 2011 with RU17, CRM 2013 online, CRM 2013 on-premise with SP1
+</li><li>Performance refactor release. </li><li>Minified version release </li><li>Bug fixes for XrmServiceToolkit.Soap.Fetch </li><li>Bug fixes for extension methods </li></ul>
+</li><li>Version 2.0.1 </li><li>Dependency JSON2, jQuery 1.7.2 or above(modified) </li><li>Date: April, 2014&nbsp;
+<ul>
+<li>Tested Browser: IE10, Chrome (latest), Firefox (latest) </li><li>Tested CRM server: CRM 2011 with RU16, CRM 2013 online, CRM 2013 on-premise with RU2
+</li><li>New Behaviour - XrmServiceToolkit.Soap.Fetch now allows limited return with 'page' and 'count' parameters in fetch xml
+</li><li>New Fix - XrmServiceToolkit.Soap.Fetch fixed an issue when passing different format of fetchXml with/without &lt;fetch&gt; part
+</li><li>New Fix - XrmServiceToolkit.Extension fixed an issue when retrieving web resources.&nbsp;
+</li></ul>
+</li><li>Version 2.0.0 </li><li>Dependency: JSON2, jQuery 1.7.2(modified) </li><li>Date: October, 2013
+<ul>
+<li>Tested Browser: IE10, Chrome (latest), Firefox (latest) </li><li>Tested CRM server: CRM 2011 with RU15, CRM 2013 online, CRM 2013 on-premise RTM
+</li><li>New Behaviour&nbsp;- XrmServiceToolkit.Soap.Fetch parameters change to work with asynchronous callback compared to 1.4.2 beta: XrmServiceToolkit.Soap.Fetch(fetchXml, fetchAll, callback)
+</li><li>New Behaviour&nbsp;- XrmServiceToolkit.Common.AddNotification is working with CRM 2013 using the out-of-box functionality. Still support CRM 2011
+</li><li>New Fix - XrmServiceToolkit.Comon.GetObjectCodeType is now using metadata retrieval as a supported method
+</li><li>New Fix - The included jQuery has a line changed at the bottom &lt;window.jQuery = jQuery;&gt; $ is removed to work with CRM 2013 form
+</li></ul>
+</li><li>Version 1.4.1 </li><li>Dependency: JSON2, jQuery 1.7.2 above </li><li>Date: April, 2013
+<ul>
+<li>New Feature: Add more cross browser support for RU12, RU13 </li><li>Tested Browser: IE9, IE10, Chrome (latest), Firefox (latest) </li><li>New Fix: XrmServiceToolkit.Common.AddNotification method updated for RU12, RU13, still compatible for RU11 below
+</li><li>New Fix: XrmServiceToolkit.Soap.Fetch method did not format linked record correctly
+</li><li>New Fix: XrmServiceToolkit.Soap.Retrieve method did not return partylist data for activity
+</li><li>New Fix: Added manual conversion from String to Date conversion for cross browser
+</li><li>New Fix: getServerUrl method is updated as getClientUrl to align with RU12 SDK method getClientUrl(), still compatible to support RU11 below
+</li><li>New Function: getServerUrl private method is updated as getClientUrl to align with RU12 SDK method getClientUrl(), still compatible to support RU11 below
+</li><li>New Function: XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata method is a method to return all metadata for all entities by the specified entity filters
+</li><li>New Function: XrmServiceToolkit.Soap.RetrieveEntityMetadata method is a method to return the metadata for a certain entity by the specified entity filters
+</li><li>New Function: XrmServiceToolkit.Soap.RetrieveAttributeMetadata method is a method to return the metadata for a certain entity's attribute
+</li></ul>
+</li><li>Version: 1.4.0 </li><li>Dependency: JSON2, jQuery 1.7.2 above </li><li>Date: January, 2013
+<ul>
+<li>New Feature: Add more cross browser support for RU12 </li><li>Tested Browser: IE9, IE10, Chrome Version 24.0.1312.56 m, Firefox 18.0.1 </li></ul>
+</li><li>Version: 1.3.2 </li><li>Dependency: JSON2, jQuery 1.7.2 above </li><li>Date: January, 2013
+<ul>
+<li>New Fix: An issue where XrmServiceToolkit.Soap could not be initialized properly when calling from Ribbon for CRM Online
+</li><li>Add more cross browser support for coming RU12 </li></ul>
+</li><li>Version: 1.3.1 </li><li>Dependency: JSON2, jQuery 1.7.2 above </li><li>Date: November, 2012
+<ul>
+<li>New Feature:
+<ul>
+<li>A logic change to improvie performance when retrieving larger number of records
+</li></ul>
+</li><li>New Function:
+<ul>
+<li>XrmServiceToolkit.Soap.QueryAll: a method to return all records (&gt;5k&#43;). Similar to how to use XrmServiceToolkit.Soap.QueryByAttribute
+</li></ul>
+</li><li>New Fix:
+<ul>
+<li>XrmServiceToolkit.Rest.RetrieveMultiple not returning more than 50 records </li><li>XrmServiceToolkit.Soap.BusinessEntity not working properly with number attribute like int, double, decimal
+</li><li>XrmServiceToolkit.Soap not handling error message properly. </li></ul>
+</li></ul>
+</li><li>Version: 1.3 </li><li>Dependency: JSON2, jQuery 1.7.2 above </li><li>Date: July, 2012
+<ul>
+<li>New Feature
+<ul>
+<li>Integration with jQuery </li><li>Cross Browser support (TODO: Testings for real 'cross-browser' support. Long Story)
+</li></ul>
+</li><li>New Extension:
+<ul>
+<li>JQueryXrmDependentOptionSet: Create Configurable Dependent Option Set to utilize CRM 2011 web resource.
+</li><li>JQueryXrmFieldTooltip: Create configurable tooltip for fields on CRM 2011 form
+</li><li>JQueryXrmCustomFilterView: Create configurable resource to add custom filter view to crm 2011 lookup field on the form
+</li><li>JQueryXrmFormatNotesControl: Format the notes control to allow insert, allow edit
+</li></ul>
+</li></ul>
+</li><li>Version: 1.2 </li><li>Dependency: JSON2 </li><li>Date: May, 2012
+<ul>
+<li>New Fix - Create, Update, Retrieve activity with Party List Type. See documentation and test page for details
+</li></ul>
+</li><li>Version: 1.1 </li><li>Dependency: JSON2 </li><li>Date: April, 2012
+<ul>
+<li>New Function - XrmServiceToolkit.Soap.Assign </li><li>New Function - XrmServiceToolkit.Soap.GrantAccess </li><li>New Function - XrmServiceToolkit.Soap.ModifyAccess </li><li>New Function - XrmServiceToolkit.Soap.RevokeAccess </li><li>New Function - XrmServiceToolkit.Soap.RetrievePrincipalAccess </li></ul>
+</li></ul>
+<p>&nbsp;<span style="color:#0000ff"><strong>* Whats coming:</strong></span></p>
+<p><span style="color:#0000ff">CRM 2013 development and toolkit expansion for cross browser, cross platform development.
+</span></p>
+<ul>
+<li><span style="color:#0000ff">Finalize Cross-Browser Support.</span> </li><li><span style="color:#0000ff">Tune performance</span> </li></ul>
+<p><span style="color:#0000ff">If you have suggestions, please also&nbsp;let me know.
+</span></p>
+<p><span style="color:darkgreen; font-size:x-small"><span style="color:darkgreen; font-size:x-small"><span style="color:darkgreen; font-size:x-small"><span style="color:#cc0000; font-family:'Trebuchet MS',sans-serif; font-size:small"><strong><span style="text-decoration:underline"><span style="font-family:'Trebuchet MS',sans-serif">[Credits
+ and Licenses]</span></span></strong></span></span></span></span></p>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:small">MSCRM 2011 Web Service Toolkit for JavaScript</span></span>
+</span></span>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">@author Jaimie Ji</span>
+</span></span></li></ul>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Credits:</span>
+</span></span>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">The idea of this library was inspired by Daniel Cai's CrmWebServiceToolkit.</span>
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">The idea of this&nbsp;Qunit testing&nbsp;was inspired by Daniel Cai's CrmWebServiceToolkit.</span>
+</span></span></li></ul>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">The idea of BusinessEntity was inspired by Daniel Cai &amp;&amp; Ascentium CrmService JavaScript Library.</span>
+</span></span></li></ul>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">The REST Endpoint functions were inspired by MSCRM 2011 SDK javascript code and various resources from CRM
+ websites and forums. Some of them were just copies with minor modification.</span>
+</span></span></li></ul>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">The Soap functions were inspired by Daniel Cai &amp;&amp; Jamie Miley &amp;&amp; Paul Way &amp;&amp; Customer
+ Effective.</span> </span></span></li></ul>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:#38761d"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Additional thanks to all contributors of MSCRM and i have learned a lot from you all.</span>
+</span></span></li></ul>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small"><span style="color:#38761d">Date: February, 2012</span></span>
+</span></li></ul>
+<h3><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:large"><span style="font-family:'Trebuchet MS',sans-serif"><span style="color:darkgreen; font-size:x-small"><span style="color:darkgreen; font-size:x-small"><span style="color:darkgreen; font-size:x-small"><span style="color:#cc0000; font-family:'Trebuchet MS',sans-serif; font-size:small"><strong><span style="text-decoration:underline"><span style="font-family:'Trebuchet MS',sans-serif">[Speical
+ Thanks]</span></span></strong></span></span></span></span></span></span></span></h3>
+<h3><span style="font-family:'Trebuchet MS',sans-serif; color:#000080"><span style="font-size:large"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:x-small"><span style="font-size:x-small"><span style="font-size:x-small"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small"><span style="font-family:'Trebuchet MS',sans-serif">Thanks
+ very much for JetBrains to provide me a free ReSharper open license for this project.
+</span></span></span></span></span></span></span></span></h3>
+<h3><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:large"><span style="font-family:'Trebuchet MS',sans-serif">Features</span></span></span></h3>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Extension methods for common operations.
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Support for
+<span style="color:darkgreen"><span style="color:darkgreen"><span style="color:darkgreen"><strong>synchronous/asynchronous
+</strong><span style="color:black">call</span></span></span></span></span> </span>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Support for all models of Microsoft CRM 2011 (AD/IFD/CRM Online).
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Lightweight and Simplicity - gives direct access to the Organization Data Service and Organization Service without having to generate SOAP request each
+ time.</span> </span></li></ul>
+<p><span style="font-family:'Trebuchet MS',sans-serif; font-size:large"><strong><span style="font-family:'Trebuchet MS',sans-serif">Common Functions
+</span></strong></span></p>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif; font-size:small"><span style="font-family:'Trebuchet MS',sans-serif">EnableField: A JavaScript Function to enable a crm field
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">DisableField: A JavaScript Functionto disable a crm field</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">ShowField: A JavaScript Functionto show a crm field</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">HideField: A JavaScript Functionto hide a crm field</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">UpdateRequiredLevel: A JavaScript Function to update the required level a crm field</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">GetObjectTypeCode: A JavaScript Function to get the object type code of a entity</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">CalculateDaysBetween: A JavaScript Function to calcuate days between two dates</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">AddNotification: A JavaScript Function to add a crm2011-like notification message on top of a form</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">ShowError: A JavaScript Function to show a alert of a error message</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">GuidsAreEqual : A JavaScript Function to check if two guids are the same</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif">DisableAllControlsInTab : A JavaScript Function to disable all controls in a tab by tab number</span>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">DisableAllControlsInSection : A JavaScript Function to disable all controls in a section label</span></span>
+</li></ul>
+<p><span style="font-size:x-small"><span style="font-size:x-small"><span style="font-size:small"><span style="font-family:'Trebuchet MS',sans-serif; font-size:large"><strong><span style="font-family:'Trebuchet MS',sans-serif">Rest Functions
+</span></strong></span></span></span></span></p>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Create: A JavaScript Fuction to perform a create Rest Endpoint request</span>
+<span style="font-size:x-small">&nbsp;</span></span> </li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Retrieve: A JavaScript Fuction to perform a retrieve Rest Endpoint request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Update: A JavaScript Fuction to perform a update Rest Endpoint request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Delete: A JavaScript Fuction to perform a delete Rest Endpoint request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">RetrieveMultiple: A JavaScript Fuction to perform a retrieveMultiple Rest Endpoint request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Associate: A JavaScript Fuction to perform a associate Rest Endpoint request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif; font-size:small">Disassociate: A JavaScript Fuction to perform a disassociate Rest Endpoint request</span>
+</span></li></ul>
+<p><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:large"><strong>Soap Functions</strong></span>
+</span></span></p>
+<ul>
+<li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Busines Entity: A JavaScript Object represents a business entity of CRM 2011
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Execute: A JavaScript Function&nbsp;to perform a execute soap request
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Fetch: A JavaScript Function&nbsp;to perform a fetch soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Retrieve: A JavaScript Function&nbsp;to perform a retrieve soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">RetrieveMultiple: A JavaScript Function&nbsp;to perform a retrieve multiple soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Create: A JavaScript Function&nbsp;to perform a create soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Update: A JavaScript Function&nbsp;to perform a update soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Delete: A JavaScript Function&nbsp;to perform a delete soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">QueryByAttribute: A JavaScript Function&nbsp;to perform a query by attribute soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif">QueryAll: A JavaScript Function&nbsp;to perform a query all soap request to return all records (&gt;5k&#43;)</span>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">SetState: A JavaScript Function&nbsp;to perform a set state soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Associate: A JavaScript Function&nbsp;to perform a associate soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">Assign: A JavaScript Function&nbsp;to perform a assign soap request</span>
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">RetrievePrincipalAccess: A JavaScript Function&nbsp;to
+ perform a retrieve principal access soap request</span> </span></span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">GrantAccess:
+ A JavaScript Function&nbsp;to perform a grant access soap request</span> </span>
+</span></span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">ModifyAccess:
+ A JavaScript Function&nbsp;to perform a modify access soap request</span> </span>
+</span></span></span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">RevokeAccess: A JavaScript Function&nbsp;to perform a revoke access soap request</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">GetCurrentUserId : A JavaScript Function&nbsp;to get the id of the current user
+</span></span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">GetCurrentUserBusinessUnitId : A JavaScript Function&nbsp;to get the business unit id of the current user</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">GetCurrentUserRoles : A JavaScript Function&nbsp;to get the list of the current user roles</span>
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">IsCurrentUserRole : A JavaScript Function&nbsp;to check if the current user has certains roles</span></span>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif">RetrieveAllEntitiesMetadata: A JavaScript Function</span>&nbsp;to retrieve all entities' metadata according to the expected EntityFilter
+</span></li><li><span style="font-family:'Trebuchet MS',sans-serif">RetrieveEntityMetadata: A JavaScript Function to retrieve one entity's metadata according to the expected entity name and EntityFilter</span>
+</li><li><span style="font-family:'Trebuchet MS',sans-serif">RetrieveAttributeMetadata: A JavaScript Function to retrieve one attribute's metadata according to the entity name and attribute name</span>
+</li></ul>
+<p><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-family:'Trebuchet MS',sans-serif"><span style="font-size:large"><strong>Extension&nbsp;Functions</strong></span>
+</span></span></p>
+<ul>
+<li><span style="color:#000000">JQueryXrmDependentOptionSet: Create Configurable Dependent Option Set to utilize CRM 2011 web resource.</span>
+</li><li><span style="color:#000000">JQueryXrmFieldTooltip: Create configurable tooltip for fields on CRM 2011 form</span>
+</li><li><span style="color:#000000">JQueryXrmCustomFilterView: Create configurable ability to add custom filter view to crm 2011 lookup field on the form</span>
+</li><li><span style="color:#000000">JQueryXrmFormatNotesControl: Format the notes control to allow insert, allow edit</span>
+</li></ul>
+</div><div class="ClearBoth"></div>

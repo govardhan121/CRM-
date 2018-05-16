@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "829363",
+    "ThreadId": "353809",
+    "Html": "<p>I had a look at using this library for quering Related Entities (see <a title=\"http://msdn.microsoft.com/en-us/library/gg334767.aspx\" href=\"http://msdn.microsoft.com/en-us/library/gg334767.aspx\">http://msdn.microsoft.com/en-us/library/gg334767.aspx</a>)</p>\n<p>An example:</p>\n<p><code>/AccountSet(guid'[GUID value]')/opportunity_customer_accounts<code>?$select=FullName</code></code></p>\n<p>Adding id as an optional parameter to retrieveMultiple<br />and also adding an optional relatedentityName would then make it possible.</p>",
+    "PostedDate": "2012-04-27T06:34:05.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "941924",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>Hey Peter,</p>\r\n<p>just to clarify - are you looking to extend retrieveMultiple to cover case where you need to retrieve child records for a specific entity? Unless I'm missing something, this is fairly trivial by providing a condition on parent id attribute.&nbsp;</p>\r\n<p>Or, perhaps you're looking at the inclusion of the information from the child records? That's already supported by toolkit with $expand argument as per\r\n<a href=\"http://msdn.microsoft.com/en-us/library/gg309461.aspx\">http://msdn.microsoft.com/en-us/library/gg309461.aspx</a>:</p>\r\n<p><code><code>/AccountSet(guid'[GUID value]')</code></code><code>?select=Name,opportunity_customer_accounts&$expand=opportunity_customer_accounts</code></p>\r\n<p>Can you please clarify so that we can create an issue if applicable?</p>\r\n<p>Thanks<br>\r\nGeorge</p>\r\n",
+    "PostedDate": "2012-11-14T18:52:10.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951015",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>Currently in the libary, the retrieve function supports opts.id but retrieveMultiple does not.</p>\r\n<p>retrieveMultiple should allow for an optional opts.id so that the <code><code>Set(guid'[GUID value]')\r\n</code></code>can be specified if required.</p>\r\n",
+    "PostedDate": "2012-12-04T02:06:38.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951022",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>Sorry, still don't understand what are you trying to do. Filtering primary does not make any sense in retrieveMultiple as you might as well use retrieve instead. If you are filtering child records on parent id then query is more complicated anyway since\r\n in addition to id you need to specify the relationship.</p>\r\n<p>In any case, it's supported via&nbsp;options.odataQuery parameter, e.g.</p>\r\n<p>opts.odataQuery = &quot;<code><code>(guid'...')</code></code><code>?select=Name,opportunity_customer_accounts&$expand=opportunity_customer_accounts&quot;;</code></p>\r\n<p>Hold on, are you looking to simply parameterise the above? E.g.</p>\r\n<p>opts = {<br>\r\nparentid: primaryrecordid,<br>\r\nrelatedEntityName: 'opportunity_customer_accounts',<br>\r\ncolumns = ['Name']<br>\r\n}&nbsp;</p>\r\n<p>That could add value but, frankly, not a high priority. I suggest you create an issue record that can be taken care of at some point. Or, better still, fork the project, add the code and create a pull request. We'll review and integrate.</p>\r\n",
+    "PostedDate": "2012-12-04T02:38:52.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951028",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>If you want to retrieve a list of opportunities where a specific account is the customer, use the opportunity_customer_accounts entity relationship in the context of a specific account:</p>\r\n<p>/AccountSet(guid'[GUID value]')/opportunity_customer_accounts</p>\r\n<p>I suppose the other way would be to use $expend and $filter</p>\r\n<p>&nbsp;</p>\r\n<p>Another thing I've noticed is that if you are using retrieve, you can&nbsp;specify opts.select & opts.expand but if using retrieveMultiple you can specify opts.odataQuery<br>\r\nWould be good if you could use either method of parameters against both retrieve & retrieveMultiple</p>\r\n<p>I'll have a look at making a fork.</p>\r\n",
+    "PostedDate": "2012-12-04T02:57:36.41-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951057",
+    "ThreadId": "353809",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://xrmsvctoolkit.codeplex.com/workitem/2\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2012-12-04T03:41:11.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951058",
+    "ThreadId": "353809",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://xrmsvctoolkit.codeplex.com/workitem/3\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2012-12-04T03:42:48.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952069",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>I can see this useful, but I suppose this is achievable by constructing odataQuery parameter to be passed to retrieveMultiple method, so I would recommend developing an utility method (outside the libary) to handle this instead of implementing it in the\r\n library, which would probably cause confusions for people who are new to the library.&nbsp;</p>\r\n<p>What do you guys think?</p>\r\n",
+    "PostedDate": "2012-12-05T23:16:31.237-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952083",
+    "ThreadId": "353809",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">After thinking about it some more, I’m with Daniel. The idea is good, the code is useful in certain scenarios but different meaning for parameters like entityName, id is *<b>very*\r\n</b>confusing. Adding extra parameters like parentEntityName, parentId sounds like overkill, to be honest.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">How about a separate function instead, say, retrieveChildren that encapsulates the functionality in a nice and clean single-purpose wrapper?</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Daniel, for now I think it’s OK to add method to the library but create a separate namespace, say XrmSvcToolkit.Extensions. If it starts growing beyond a reason, we’ll split it into a separate source. Or we might\r\n just start a separate file right now?</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Thoughts?</span></p>\r\n</div>\r\n",
+    "PostedDate": "2012-12-05T23:43:14.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952127",
+    "ThreadId": "353809",
+    "Html": "\r\n<p>Could also add support for $filter and $orderby in this new function.</p>\r\n",
+    "PostedDate": "2012-12-06T01:30:04.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952133",
+    "ThreadId": "353809",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Peter,</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">That sounds good. Hopefully it all makes sense, looking forward to the final code.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Cheers</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">George</span></p>\r\n</div>\r\n",
+    "PostedDate": "2012-12-06T01:36:44.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

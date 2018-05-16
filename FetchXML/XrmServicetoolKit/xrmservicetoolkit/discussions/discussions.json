@@ -1,0 +1,527 @@
+[
+  {
+    "Id": "344771",
+    "Title": "Possible Bug?",
+    "LatestDate": "2012-02-26T03:32:23.883-08:00"
+  },
+  {
+    "Id": "348250",
+    "Title": "Calling XrmServiceToolkit",
+    "LatestDate": "2012-04-25T09:55:02.16-07:00"
+  },
+  {
+    "Id": "350269",
+    "Title": "Bug on XrmServiceToolkit.Rest.RetrieveMultiple?",
+    "LatestDate": "2012-04-02T03:39:23.653-07:00"
+  },
+  {
+    "Id": "350355",
+    "Title": "Cross Brower Support",
+    "LatestDate": "2012-07-09T14:28:48.32-07:00"
+  },
+  {
+    "Id": "351330",
+    "Title": "Using XrmServiceToolkit.Soap.Create() to Create a Child Record Upon OnSave of Parent Record",
+    "LatestDate": "2012-04-12T09:01:38.333-07:00"
+  },
+  {
+    "Id": "352020",
+    "Title": "How to return a value from RetrieveMultiple",
+    "LatestDate": "2014-10-06T06:35:51.563-07:00"
+  },
+  {
+    "Id": "352032",
+    "Title": "Future request for new functions",
+    "LatestDate": "2012-04-18T02:51:47.15-07:00"
+  },
+  {
+    "Id": "353497",
+    "Title": "formHeirarchy is undefined",
+    "LatestDate": "2012-04-25T02:52:49.163-07:00"
+  },
+  {
+    "Id": "354932",
+    "Title": "Create Activity",
+    "LatestDate": "2012-05-12T02:55:39.76-07:00"
+  },
+  {
+    "Id": "355377",
+    "Title": "XrmServiceToolkit.Soap.Fetch with a linked entity query",
+    "LatestDate": "2012-05-14T00:58:30.483-07:00"
+  },
+  {
+    "Id": "355917",
+    "Title": "  XrmServiceToolkit.Rest.Retrieve",
+    "LatestDate": "2012-07-25T03:56:24.403-07:00"
+  },
+  {
+    "Id": "356711",
+    "Title": "Using Fetch I need Response Xml not retrieved object",
+    "LatestDate": "2012-05-24T06:48:59.31-07:00"
+  },
+  {
+    "Id": "359695",
+    "Title": "Rest Update command",
+    "LatestDate": "2012-07-25T02:41:24.043-07:00"
+  },
+  {
+    "Id": "360783",
+    "Title": "Problem XrmServiceToolkit.Soap.Execute",
+    "LatestDate": "2012-06-26T03:36:47.8-07:00"
+  },
+  {
+    "Id": "361281",
+    "Title": "Metadata Services",
+    "LatestDate": "2012-07-02T07:35:01.243-07:00"
+  },
+  {
+    "Id": "361298",
+    "Title": "create an instance of a many to many relationship",
+    "LatestDate": "2012-07-02T02:04:15.323-07:00"
+  },
+  {
+    "Id": "361702",
+    "Title": "Creating new record",
+    "LatestDate": "2012-07-12T06:47:59.08-07:00"
+  },
+  {
+    "Id": "376183",
+    "Title": "How to use it?",
+    "LatestDate": "2013-09-12T09:20:17.207-07:00"
+  },
+  {
+    "Id": "387949",
+    "Title": "How to retrieve dateTime values with XrmServiceToolkit.Soap functions",
+    "LatestDate": "2012-07-25T02:34:41.437-07:00"
+  },
+  {
+    "Id": "389671",
+    "Title": "Write form data into CRM online",
+    "LatestDate": "2012-07-31T06:23:02.697-07:00"
+  },
+  {
+    "Id": "390031",
+    "Title": "updating a option set field with REST",
+    "LatestDate": "2012-08-03T07:50:45.323-07:00"
+  },
+  {
+    "Id": "391607",
+    "Title": "How to use this in a web resource ",
+    "LatestDate": "2012-08-15T02:04:36.523-07:00"
+  },
+  {
+    "Id": "392575",
+    "Title": "Serialisation error when creating Quote Detail",
+    "LatestDate": "2014-08-21T09:17:07.237-07:00"
+  },
+  {
+    "Id": "393805",
+    "Title": "GrantAccess and RevokeAccess functions",
+    "LatestDate": "2012-08-31T07:05:00.59-07:00"
+  },
+  {
+    "Id": "395567",
+    "Title": "Passing null date values to QueryByAttribute",
+    "LatestDate": "2012-09-17T01:12:03.857-07:00"
+  },
+  {
+    "Id": "397246",
+    "Title": "Change Request: return ID value in format \"{UpperCase}\"",
+    "LatestDate": "2012-10-02T11:29:27.687-07:00"
+  },
+  {
+    "Id": "397540",
+    "Title": "JQueryXrmDependentOptionSet (Does this save values to database)",
+    "LatestDate": "2012-10-02T02:11:14.99-07:00"
+  },
+  {
+    "Id": "402171",
+    "Title": "Sales Order Details and Rest Functions",
+    "LatestDate": "2012-11-16T00:55:09.98-08:00"
+  },
+  {
+    "Id": "402988",
+    "Title": "faultstring handling",
+    "LatestDate": "2012-11-16T00:56:32.17-08:00"
+  },
+  {
+    "Id": "403632",
+    "Title": "Cannot create record for Custom Entity",
+    "LatestDate": "2012-11-22T13:59:27.577-08:00"
+  },
+  {
+    "Id": "405937",
+    "Title": "XrmServiceToolkit 1.3.1 doesn't work as the previous one",
+    "LatestDate": "2012-12-12T06:46:03.537-08:00"
+  },
+  {
+    "Id": "434484",
+    "Title": "DateTime Value is not deserialized correctly",
+    "LatestDate": "2013-03-01T13:49:12.433-08:00"
+  },
+  {
+    "Id": "435475",
+    "Title": "Tooltips issue",
+    "LatestDate": "2013-03-12T02:01:23.413-07:00"
+  },
+  {
+    "Id": "436341",
+    "Title": "New functionalities",
+    "LatestDate": "2013-03-13T03:46:13.12-07:00"
+  },
+  {
+    "Id": "437076",
+    "Title": "New Features?",
+    "LatestDate": "2013-03-19T02:32:03.987-07:00"
+  },
+  {
+    "Id": "438589",
+    "Title": "getClientUrl instead of getServerUrl",
+    "LatestDate": "2013-04-02T01:34:22.79-07:00"
+  },
+  {
+    "Id": "438715",
+    "Title": "Spelling errors",
+    "LatestDate": "2013-04-02T01:33:31.903-07:00"
+  },
+  {
+    "Id": "439557",
+    "Title": "Fix for retrieving party list fields",
+    "LatestDate": "2013-04-12T00:52:33.58-07:00"
+  },
+  {
+    "Id": "442222",
+    "Title": "Revised SOAP.queryAll and SOAP.fetchMore to allow sort order (asc or desc) parameter to be passed",
+    "LatestDate": "2013-05-27T06:22:48.977-07:00"
+  },
+  {
+    "Id": "443653",
+    "Title": "$ Is Undefined",
+    "LatestDate": "2013-05-15T08:55:06.127-07:00"
+  },
+  {
+    "Id": "445103",
+    "Title": "xrmservicetoolkit is undefined ",
+    "LatestDate": "2013-06-02T03:42:53.347-07:00"
+  },
+  {
+    "Id": "448972",
+    "Title": "Access Denied on CRM form",
+    "LatestDate": "2013-07-04T06:19:42.427-07:00"
+  },
+  {
+    "Id": "449347",
+    "Title": "Handling null fields",
+    "LatestDate": "2013-07-31T10:01:50.627-07:00"
+  },
+  {
+    "Id": "450038",
+    "Title": "Soap.Fetch results",
+    "LatestDate": "2014-05-11T15:11:32.08-07:00"
+  },
+  {
+    "Id": "456319",
+    "Title": "GetObjectTypeCode return null",
+    "LatestDate": "2013-09-18T07:38:32.473-07:00"
+  },
+  {
+    "Id": "456498",
+    "Title": "Orion Support?",
+    "LatestDate": "2013-10-09T12:18:46.74-07:00"
+  },
+  {
+    "Id": "459014",
+    "Title": "Minified version",
+    "LatestDate": "2013-12-15T00:38:08.803-08:00"
+  },
+  {
+    "Id": "459051",
+    "Title": "Question about impersonation",
+    "LatestDate": "2014-01-16T03:20:50.35-08:00"
+  },
+  {
+    "Id": "471212",
+    "Title": "How to determine if there are additional results?",
+    "LatestDate": "2014-01-24T03:03:24.097-08:00"
+  },
+  {
+    "Id": "471533",
+    "Title": "Problem with Rest RetrieveMultiple",
+    "LatestDate": "2013-12-09T05:23:33.613-08:00"
+  },
+  {
+    "Id": "474537",
+    "Title": "Cheat sheet",
+    "LatestDate": "2014-01-16T03:18:44.863-08:00"
+  },
+  {
+    "Id": "484190",
+    "Title": "Release version",
+    "LatestDate": "2014-11-06T07:53:58.503-08:00"
+  },
+  {
+    "Id": "520645",
+    "Title": "Can you elaborate on the statement \"Remember the limitations of CRM events for tablet apps.\"",
+    "LatestDate": "2014-02-05T13:59:53.5-08:00"
+  },
+  {
+    "Id": "528501",
+    "Title": "How to limit the Fetch results",
+    "LatestDate": "2014-03-20T10:30:47.947-07:00"
+  },
+  {
+    "Id": "529563",
+    "Title": "BusinessEntity Prototype",
+    "LatestDate": "2014-02-25T05:59:47.727-08:00"
+  },
+  {
+    "Id": "534721",
+    "Title": "Soap.Fetch - Return TotalRecordCount",
+    "LatestDate": "2014-09-09T14:31:24.66-07:00"
+  },
+  {
+    "Id": "535883",
+    "Title": "Undefined error",
+    "LatestDate": "2014-03-20T10:32:16.163-07:00"
+  },
+  {
+    "Id": "540213",
+    "Title": "Soap.Update with TwoOptions parameter",
+    "LatestDate": "2014-03-26T10:47:47.51-07:00"
+  },
+  {
+    "Id": "540380",
+    "Title": "SOAP Fetch using wrong organization",
+    "LatestDate": "2014-03-28T13:38:51.94-07:00"
+  },
+  {
+    "Id": "542774",
+    "Title": "IE 11 - HTML Web Resource - Error",
+    "LatestDate": "2014-04-21T05:49:42.293-07:00"
+  },
+  {
+    "Id": "543587",
+    "Title": "JQueryXrmLookupCustomFilterView - Detailed Usage",
+    "LatestDate": "2014-05-27T13:23:32.037-07:00"
+  },
+  {
+    "Id": "545439",
+    "Title": "Her's how to Sort Descending using the QueryByAttribute function",
+    "LatestDate": "2014-05-15T07:24:14.837-07:00"
+  },
+  {
+    "Id": "546183",
+    "Title": "Deactivate Records",
+    "LatestDate": "2014-05-21T19:34:01.73-07:00"
+  },
+  {
+    "Id": "550347",
+    "Title": "Dependent option set failure - 3 issues",
+    "LatestDate": "2014-07-07T05:01:14.98-07:00"
+  },
+  {
+    "Id": "551778",
+    "Title": "retrieveMultiple is only getting 10 records",
+    "LatestDate": "2015-08-11T16:40:14.857-07:00"
+  },
+  {
+    "Id": "567857",
+    "Title": "jQueryXrmFieldTooltip - don't work with Top field level position",
+    "LatestDate": "2014-09-24T01:21:43.317-07:00"
+  },
+  {
+    "Id": "568975",
+    "Title": "OK, so I am a \"newb\" but..Installation?",
+    "LatestDate": "2014-10-06T06:37:20.793-07:00"
+  },
+  {
+    "Id": "569451",
+    "Title": "Leaving Page During a RetrieveMultiple call",
+    "LatestDate": "2014-10-13T17:32:08.777-07:00"
+  },
+  {
+    "Id": "569943",
+    "Title": "Unable to read the linked entity attribute name in JavaScript",
+    "LatestDate": "2014-10-19T06:46:40.64-07:00"
+  },
+  {
+    "Id": "570320",
+    "Title": "XrmServiceToolkit.Soap.Update ... don't update",
+    "LatestDate": "2016-01-13T13:25:53.933-08:00"
+  },
+  {
+    "Id": "571121",
+    "Title": "ToolTip: Working for Some Fields, Not Others, On The Same Form",
+    "LatestDate": "2015-02-24T14:35:12.163-08:00"
+  },
+  {
+    "Id": "572684",
+    "Title": "Break down XrmServiceToolkit from single file to multiple files",
+    "LatestDate": "2015-02-08T09:52:12.927-08:00"
+  },
+  {
+    "Id": "573295",
+    "Title": "Rest.Retrieve of type 'Entity'",
+    "LatestDate": "2015-02-08T09:50:27.877-08:00"
+  },
+  {
+    "Id": "574061",
+    "Title": "Extend Enable Field function",
+    "LatestDate": "2015-02-08T09:43:33.18-08:00"
+  },
+  {
+    "Id": "578802",
+    "Title": "SOAP.Retrieve can't retrieve lookup value?",
+    "LatestDate": "2015-02-08T09:38:48.34-08:00"
+  },
+  {
+    "Id": "579256",
+    "Title": "Wait for a RetrieveMultiple query",
+    "LatestDate": "2015-02-10T03:29:47.267-08:00"
+  },
+  {
+    "Id": "581325",
+    "Title": "Adding New Line characters in email body",
+    "LatestDate": "2015-02-18T14:55:35.75-08:00"
+  },
+  {
+    "Id": "581872",
+    "Title": "CRM 2015 Compatibility",
+    "LatestDate": "2015-03-05T11:56:58.913-08:00"
+  },
+  {
+    "Id": "581952",
+    "Title": "Is there a 'send email' method?",
+    "LatestDate": "2015-03-06T06:25:55.157-08:00"
+  },
+  {
+    "Id": "587898",
+    "Title": "AliasedValue attributes handling",
+    "LatestDate": "2015-06-29T02:50:32.613-07:00"
+  },
+  {
+    "Id": "636076",
+    "Title": "Errorhandling on Asynchronous Soap-Calls",
+    "LatestDate": "2016-03-14T19:44:45.82-07:00"
+  },
+  {
+    "Id": "639175",
+    "Title": "XrmServiceToolKit Typescript definition file",
+    "LatestDate": "2016-03-29T00:36:09.237-07:00"
+  },
+  {
+    "Id": "640076",
+    "Title": "Error:'XPathEvaluator' is undefined",
+    "LatestDate": "2015-06-29T02:44:15.35-07:00"
+  },
+  {
+    "Id": "640284",
+    "Title": "Diferent Authenticating... to the XRMServiceToolkit ",
+    "LatestDate": "2015-06-29T02:59:28.937-07:00"
+  },
+  {
+    "Id": "640388",
+    "Title": "Make \"GetCurrentUserRoles\" cover team roles ",
+    "LatestDate": "2015-06-29T02:44:42.04-07:00"
+  },
+  {
+    "Id": "640901",
+    "Title": "Missing Soap method: initializeFrom",
+    "LatestDate": "2015-07-03T02:40:54.343-07:00"
+  },
+  {
+    "Id": "642358",
+    "Title": "xrmservicetoolkit is undefined ",
+    "LatestDate": "2015-08-13T08:04:27.793-07:00"
+  },
+  {
+    "Id": "642452",
+    "Title": "RetrieveEntityMetadata, how do you us it?",
+    "LatestDate": "2015-08-13T08:09:24.567-07:00"
+  },
+  {
+    "Id": "644500",
+    "Title": "Support for Q Promises",
+    "LatestDate": "2015-09-06T12:29:28.183-07:00"
+  },
+  {
+    "Id": "645620",
+    "Title": "REST CRUD errorcallback",
+    "LatestDate": "2015-11-12T04:51:09.307-08:00"
+  },
+  {
+    "Id": "645671",
+    "Title": "XrmServiceToolkit.Soap.Fetch a call back function to every 100 records more than 5000 records",
+    "LatestDate": "2015-10-01T02:06:03.647-07:00"
+  },
+  {
+    "Id": "646150",
+    "Title": "Error handling in async SOAP calls",
+    "LatestDate": "2015-10-13T04:36:07.533-07:00"
+  },
+  {
+    "Id": "646622",
+    "Title": "Angular version of XrmServiceToolkit",
+    "LatestDate": "2015-10-25T05:39:31.637-07:00"
+  },
+  {
+    "Id": "647185",
+    "Title": "Soap.Retrieve does not return 'parentcustomerid' field's entity type",
+    "LatestDate": "2015-11-16T06:40:24.267-08:00"
+  },
+  {
+    "Id": "647505",
+    "Title": "ms crm app --> xpathevaluator' is undefined",
+    "LatestDate": "2015-12-09T23:46:10.813-08:00"
+  },
+  {
+    "Id": "649574",
+    "Title": "Will there be an upgrade to Web Api (oData v4) compatibility soon?",
+    "LatestDate": "2016-03-11T09:09:36.98-08:00"
+  },
+  {
+    "Id": "651657",
+    "Title": "CRM2016 support",
+    "LatestDate": "2016-03-11T08:57:57.517-08:00"
+  },
+  {
+    "Id": "652147",
+    "Title": "How do you use XrmServiceToolkit.Soap.RetrieveAllEntitiesMetadata?",
+    "LatestDate": "2016-03-14T10:39:53.68-07:00"
+  },
+  {
+    "Id": "652398",
+    "Title": "XML files missing in v2.2 download",
+    "LatestDate": "2016-03-11T09:02:15.27-08:00"
+  },
+  {
+    "Id": "652412",
+    "Title": "Github repository",
+    "LatestDate": "2016-04-28T07:42:29.987-07:00"
+  },
+  {
+    "Id": "653391",
+    "Title": "WiP TypeScript Version + Documentation + Testing",
+    "LatestDate": "2016-04-08T14:34:44.39-07:00"
+  },
+  {
+    "Id": "655308",
+    "Title": "Loading screen",
+    "LatestDate": "2016-06-07T06:33:57.53-07:00"
+  },
+  {
+    "Id": "655406",
+    "Title": "Simple (if not stupid) question",
+    "LatestDate": "2016-06-10T06:52:15.147-07:00"
+  },
+  {
+    "Id": "657618",
+    "Title": "How I can make a filter in my query multiple",
+    "LatestDate": "2016-09-01T15:01:02.943-07:00"
+  },
+  {
+    "Id": "662273",
+    "Title": "Fetch + paging = bug?",
+    "LatestDate": "2017-03-29T01:27:49.22-07:00"
+  }
+]

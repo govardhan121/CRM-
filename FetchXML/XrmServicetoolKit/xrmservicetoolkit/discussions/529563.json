@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1204095",
+    "ThreadId": "529563",
+    "Html": "Hi<br />\nfirst of all thanks for your great work.<br />\nA question: why did u remove getValue* functions from businessEntity.prototype ?<br />\n",
+    "PostedDate": "2014-02-07T00:47:10.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213822",
+    "ThreadId": "529563",
+    "Html": "Hi.\r<br />\n<br />\nThanks for your support for the toolkit. \r<br />\n<br />\nI am not sure what exactly you are asking. I don't think we have a getValue function from the beginning in businessEntity.prototype though.\r<br />\n<br />\nMay need a bit more information and review previous code sets :)\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-02-24T09:03:58.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214529",
+    "ThreadId": "529563",
+    "Html": "I was referring to the &quot;old&quot; _businessEntity.prototype in CrmServiceToolkit<br />\n",
+    "PostedDate": "2014-02-25T05:59:47.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

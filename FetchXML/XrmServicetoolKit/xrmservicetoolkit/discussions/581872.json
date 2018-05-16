@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1355841",
+    "ThreadId": "581872",
+    "Html": "Hi Jaimie!\r<br />\n<br />\nWhat can you say about the compatibility with CRM 2015?\r<br />\nI'm interested in the approximate release date.<br />\n",
+    "PostedDate": "2015-02-25T21:39:01.39-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356297",
+    "ThreadId": "581872",
+    "Html": "Hi There.\r<br />\n<br />\nThe current release should work with CRM 2015, but it is not &quot;officially&quot; supported as I only used a demo version of CRM 2015 to develop and test. To support RTM version of CRM 2015, I am looking at a April release. \r<br />\n<br />\nHopefully I would find a bit more time to do a proper testing for CRM 2015. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-27T02:12:51.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360203",
+    "ThreadId": "581872",
+    "Html": "Jaimie,\r<br />\n<br />\nI downloaded the zip files and attempted to import them into a CRM 2015 environment that I am working on.  I get an error that says &quot;You can only import solutions with a package version of 7.0 or earlier into this organization. Also, you can't import any solutions into this organization that were exported from CRM 2011 or earlier.&quot;  Am I importing the wrong version of the XrmServiceToolkit?\r<br />\n<br />\nThanks,\r<br />\nKevan<br />\n",
+    "PostedDate": "2015-03-05T11:56:58.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

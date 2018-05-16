@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1058831",
+    "ThreadId": "447589",
+    "Html": "Is it possible to set a lookup field with the XrmSvcToolkit? I've done it with the XRM Service toolkit as follows from the documentation:\r<br />\n<br />\naccount.PrimaryContactId = { Id: contactId, LogicalName: &quot;contact&quot; };\r<br />\n<br />\nI've tried doing the same with XrmSvcToolkit but it fails. Any ideas on getting this working?<br />\n",
+    "PostedDate": "2013-06-19T12:50:34.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058849",
+    "ThreadId": "447589",
+    "Html": "That should work, did you receive any error message? \r<br />\n<br />\nThanks,\r<br />\nDaniel<br />\n",
+    "PostedDate": "2013-06-19T13:36:32.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058869",
+    "ThreadId": "447589",
+    "Html": "Hi Daniel, thanks for the reply. I have a lookup on my Account form called <strong>new_PersonalContact</strong> that I want to include in the create record function to create a new Contact. The Contact form also has the <strong>new_PersonalContact</strong> lookup field, how can I set this using the code below? I am totally lost on how to do it with your toolkit. Thanks for any help.\r<br />\n<br />\n<br />\nXrmSvcToolkit.createRecord({<br />\n<pre><code>entityName: &quot;Contact&quot;,\nentity: {FirstName: &quot;Joe&quot;, LastName: &quot;Morris&quot;, __New_PersonalContact__:  },\nasync: false,\nsuccessCallback: function (result) {\n    var contactId = result.ContactId;\n\n},\nerrorCallback: function (error) {\n    alert(&quot;There was an error when creating the contact record&quot;);\n}</code></pre>\n\n});<br />\n",
+    "PostedDate": "2013-06-19T14:14:20.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058890",
+    "ThreadId": "447589",
+    "Html": "Have you tried something like this? <br />\n<pre><code>XrmSvcToolkit.createRecord({\nentityName: &quot;Contact&quot;,\nentity: {\n  FirstName: &quot;Joe&quot;, \n  LastName: &quot;Morris&quot;, \n  new_PersonalContact: {\n    Id: &quot;&lt;THE LONG GUID&gt;&quot;,\n    LogicalName: &quot;Contact&quot;\n  }\n},\nasync: false,\nsuccessCallback: function (result) {\n    var contactId = result.ContactId;\n\n},\nerrorCallback: function (error) {\n    alert(error);\n}\n});</code></pre>\n\nIt should report the actual error this time, since I have changed the alert. Can you please try that out and let me know? Also, would your look field name be something like new_PersonalContactId? <br />\n",
+    "PostedDate": "2013-06-19T15:03:32.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059864",
+    "ThreadId": "447589",
+    "Html": "Daniel, thank you for reply and fixing the prob; it worked perfectly!! I'm starting to find out that on Load testing this library runs faster than the XRM Service Toolkit. Although I have another question that I have been trying to sort out, but I'll post again so that others benefit.\r<br />\n<br />\nThanks for creating the library.<br />\n",
+    "PostedDate": "2013-06-22T03:31:31.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1428748",
+    "ThreadId": "639175",
+    "Html": "Hi,\r<br />\n<br />\nIs there a typescript definition file for this wonderful utility. I have just started playing with typescript and would like to refactor some code that uses xrm service toolkit?\r<br />\n<br />\nHameed<br />\n",
+    "PostedDate": "2015-06-04T03:15:52.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432269",
+    "ThreadId": "639175",
+    "Html": "Hi There.\r<br />\n<br />\nDavid Berry provided a TypeScript definition file for the script previously, but as I have not really looked into TypeScript. I have not been able to provide an updated definition file for the recent releases. \r<br />\n<br />\nSorry about that.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-06-29T02:49:32.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1468288",
+    "ThreadId": "639175",
+    "Html": "As Jaimieji already said there is a typescript definition file but since it is rather old and typescript made some api changes you have to manually adjust it to work with a recent typescript version. one example would be the change from &quot;bool&quot; to &quot;boolean&quot; as typename for bools.<br />\n",
+    "PostedDate": "2016-03-29T00:36:09.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

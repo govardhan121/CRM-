@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "816706",
+    "ThreadId": "350355",
+    "Html": "\r\n<p>With CRM 2011 R8 service update, CRM will support Firefox, Chrome, Safari beside IE. Does this script library support all of them? Any plan to use JQuery?</p>\r\n",
+    "PostedDate": "2012-03-28T11:25:24.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818700",
+    "ThreadId": "350355",
+    "Html": "<p>Hey There.</p>\r\n<p>That will be definately on the list for future development to support multiple explorer. However, not at this moment.</p>\r\n<p>At some stage, i would like to move it to JQuery as well.</p>\r\n<p>Cheers,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-04-02T03:46:21.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857015",
+    "ThreadId": "350355",
+    "Html": "<p>Jaimie,</p>\r\n<p>I re-wrote the _doRequest method to function with jQuery.&nbsp; Now there's no more IE-specific stuff in there (although I haven't had the time to test it on the R8-beta).&nbsp; I can send you the file if you'd like.</p>\r\n<p>It wasn't too much work.&nbsp; I did end up adding an errorCallback to the execute method.&nbsp; This was the only method I needed so I didn't implement it in all methods.&nbsp; I'd also&nbsp;consider doing away with synchronous support.&nbsp; As of jQuery 1.8,&nbsp;async:false requests are depreciated.</p>\r\n<p>Ray</p>",
+    "PostedDate": "2012-07-03T12:45:04.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857213",
+    "ThreadId": "350355",
+    "Html": "<p>Hey There.</p>\r\n<p>I am currently working on the upgrade to support cross browser as well as the integration with jQuery. Obviously, there are things to consider for me to introduce jQuery and how much i should introduce the integration with jQuery like you pointed out.</p>\r\n<p>Thanks very much for your support of the library. It would be great if you want to be part of the upgrade and contribute your knowledge.</p>\r\n<p>Best Regards,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-07-04T01:23:25.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "859301",
+    "ThreadId": "350355",
+    "Html": "<p>Microsoft just released a new tool to check code for the upcoming release.&nbsp; it did find some potential problems with the tool kit.&nbsp; if you install the solution from the below link and then open the solution after you import it you can check the toolkit for yourself.&nbsp;</p>\r\n<p><a href=\"http://blogs.msdn.com/b/crm/archive/2012/06/21/microsoft-dynamics-crm-2011-custom-code-validation-tool-released.aspx\">http://blogs.msdn.com/b/crm/archive/2012/06/21/microsoft-dynamics-crm-2011-custom-code-validation-tool-released.aspx</a></p>\r\n<p>&nbsp;</p>\r\n<p>Below is a summary of what is does not like</p>\r\n<p>The occurrence of .selectSingleNode was located 17 time(s) in this web resource.<br />The occurrence of .text was located 45 time(s) in this web resource.<br />The occurrence of ActiveXObject( was located 1 time(s) in this web resource.<br />The occurrence of .childNodes.length was located 5 time(s) in this web resource.<br />The occurrence of .firstChild was located 2 time(s) in this web resource.<br />The occurrence of .childNodes[ was located 54 time(s) in this web resource.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-07-09T11:31:24.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "859384",
+    "ThreadId": "350355",
+    "Html": "<p>Hey there.</p>\r\n<p>I have been using the tool to do the upgrade. :)</p>\r\n<p>Thanks anyway,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-07-09T14:28:48.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

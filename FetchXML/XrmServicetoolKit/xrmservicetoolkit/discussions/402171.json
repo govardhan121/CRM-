@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "937588",
+    "ThreadId": "402171",
+    "Html": "\r\n<p>is it possible with the Rest Functions in this toolkit to pull in the Product Name and Product quantity of each item in the sales order product or salesorderdetailset for a given order. I tried to plug in a guid of a sales order record and put the sales\r\n orderdetailset in there but in gives a Error 404 Not Found Resource not found for the segment.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;function order () <br>\r\n{<br>\r\nvar salesid = &quot;14273a6b-8e01-e211-857b-005056b60057&quot;<br>\r\nXrmServiceToolkit.Rest.Retrieve(<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; salesid,\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;SalesOrderDetailSet&quot;,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; null, null,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function (result) {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; equals(Id, accountId,\r\n &quot;Retrieve() &quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function (error) {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; equal(true, false, error.message);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; false<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );<br>\r\n}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-06T15:22:36.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "942577",
+    "ThreadId": "402171",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>SaleOrderDetailsSet could contain many record for an order in CRM.</p>\r\n<p>I would recommend using retrievemultiple method instead.</p>\r\n<p>To search for details for field and entity name (they are case-sensitive when using REST), you could using the\r\n<a href=\"http://crm2011odatatool.codeplex.com/\">http://crm2011odatatool.codeplex.com/</a>&nbsp;tool to generate the query and put them in the code.</p>\r\n<p>Hope this helps.</p>\r\n<p>Jaimie</p>\r\n",
+    "PostedDate": "2012-11-16T00:55:09.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

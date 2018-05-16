@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1059082",
+    "ThreadId": "447664",
+    "Html": "I have a FetchXML query, that keeps returning an &quot;undefined&quot; error. Anyone know why I'm getting an error, (code below):<br />\n<pre><code>function DataCheck() {\n\n    var AccountC;\n\n    var fetchXml = &quot;&lt;fetch mapping='logical'&gt;&quot; +\n                   &quot;&lt;entity name='account'&gt;&quot; +\n                   &quot;&lt;attribute name='name' /&gt;&quot; +\n                   &quot;&lt;attribute name='address1_city' /&gt;&quot; +\n                   &quot;&lt;attribute name='telephone1' /&gt;&quot; +\n                   &quot;&lt;attribute name='accountnumber' /&gt;&quot; +\n                   &quot;&lt;attribute name='new_primarypartner' /&gt;&quot; +\n                   &quot;&lt;attribute name='emailaddress1' /&gt;&quot; +\n                   &quot;&lt;attribute name='accountid' /&gt;&quot; +\n                   &quot;&lt;filter type='and'&gt;&quot; +\n                   &quot;&lt;condition attribute='telephone1' operator='eq' value='995-0151' /&gt;&quot; +\n                   &quot;&lt;/filter&gt;&quot; +\n                   &quot;&lt;/entity&gt;&quot; +\n                   &quot;&lt;/fetch&gt;&quot;;\n\n            XrmSvcToolkit.fetch({\n                fetchXml: fetchXml,\n                async: false,\n                successCallback: function (result) {\n                    AccountC =  result.entities[0].accountid.Name;\n                    alert(AccountC);\n                },\n                errorCallback: function (error) {\n                    throw error;\n                }\n            });\n\n            return AccountC;   \n    \n}</code></pre>\n\n",
+    "PostedDate": "2013-06-20T03:21:06.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059101",
+    "ThreadId": "447664",
+    "Html": "The error you're getting has nothing to do with the toolkit. The problem is on the following line:<br />\n<pre><code>AccountC =  result.entities[0].accountid.Name;</code></pre>\n\naccountid is Guid (passed as string), and property 'Name' is undefined. Which is exactly what you're getting.\r<br />\n<br />\nHTH\r<br />\nGeorge<br />\n",
+    "PostedDate": "2013-06-20T04:20:56.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059102",
+    "ThreadId": "447664",
+    "Html": "Thanks for the reply. I've looked at the samples but not sure how I can change it to get it to work. Any suggestions?<br />\n",
+    "PostedDate": "2013-06-20T04:24:55.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059108",
+    "ThreadId": "447664",
+    "Html": "Thanks Georged, I fixed it by going over my code properly.\r<br />\n<br />\nFor anyone else, the line that fixed it was this: <strong>AccountC =  result.entities[0].name;</strong><br />\n",
+    "PostedDate": "2013-06-20T04:32:45.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

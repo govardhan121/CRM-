@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1451602",
+    "ThreadId": "647185",
+    "Html": "I'm trying to create a small piece of JavaScript that automatically sets the Customer field on the Case form when the Contact field changes.  Below is my code.  The problem I found out is that the XrmServiceToolkit.Soap.Retrieve function doesn't return the entitytype of the field, which could be an account <em>OR</em> a contact.  The function does return the record name and ID just fine.<br />\n<pre><code>function ContactChange()\n{\n    var contact = Xrm.Page.getAttribute(&quot;primarycontactid&quot;).getValue();\n    if (contact==null)\n    {\n        Xrm.Page.getAttribute(&quot;customerid&quot;).setValue(null);\n    }\n    else\n    {\n        alert(&quot;contact not null&quot;);\n        var retrievedContact = XrmServiceToolkit.Soap.Retrieve(&quot;contact&quot;, contact[0].id, [&quot;parentcustomerid&quot;]);\n        var contactsAccount = retrievedContact.attributes[&quot;parentcustomerid&quot;];\n        \n        alert(contactsAccount.entityType);      // Returns 'unknown'\n        \n        Xrm.Page.getAttribute(&quot;customerid&quot;).setValue(contactsAccount);\n    }\n    Xrm.Page.getAttribute(&quot;customerid&quot;).fireOnChange();\n    Xrm.Page.ui.refreshRibbon();\n}</code></pre>\n\nIs there a way to retrieve the field's entity type without doing trial and error with database queries until a search for a contact or an account with the feild's GUID returns something?<br />\n",
+    "PostedDate": "2015-11-10T07:52:20.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452100",
+    "ThreadId": "647185",
+    "Html": "I debugged and fixed a similar misbehaviour with a colleague a last week. The reason was that the attribute &quot;parentcustomerid&quot; is type of AliasedValue whose actual value was an EntityReference (you get the entity Name through the property &quot;logicalName&quot;). XST has a bug when processing the XML Response. I don't know exactly if it will help you, but we'll see.\r<br />\n<br />\nHere is the faulty code: <a href=\"https://gist.github.com/anonymous/0a15a625583c5b68bc11\" rel=\"nofollow\">https://gist.github.com/anonymous/0a15a625583c5b68bc11</a><br />\n",
+    "PostedDate": "2015-11-12T07:22:14.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452267",
+    "ThreadId": "647185",
+    "Html": "Hi pbyte,\r<br />\n<br />\nThanks for the reply.  I am familiar with the unique nature of Customer type fields such as 'customerid' in the case entity and 'parentcustomerid' in the contact entity.  However I'm not code-savvy enough to incorporate the example code you point to, into XrmServiceToolkit.  So I'm trying other alternatives.  I tried building a little FetchXML query to return the 'parentcustomerid' field of the Case's Contact but it has the exact same issue that Soap.Retrieve has.  It returns the guid and the name of the record that's in the field, but it does not return the entityType so I cannot use it to set the case's customerid field.  I'm working on some additional code which just adds another SOPA query to see if an Account exists with the ID returned in the previous SOAP request.  I'll post a copy when I'm finished.<br />\n",
+    "PostedDate": "2015-11-13T08:12:09.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452272",
+    "ThreadId": "647185",
+    "Html": "Here's the result I came up with:<br />\n<pre><code>function ContactChange()\n{\n    var contact = Xrm.Page.getAttribute(&quot;primarycontactid&quot;).getValue();\n    if (contact==null)\n    {\n        Xrm.Page.getAttribute(&quot;customerid&quot;).setValue(null);\n    }\n    else\n    {\n        var retrievedContact = XrmServiceToolkit.Soap.Retrieve(&quot;contact&quot;, contact[0].id, [&quot;parentcustomerid&quot;]);\n        var parentCustomer = retrievedContact.attributes[&quot;parentcustomerid&quot;];\n        var Customer = [];\n        Customer[0] = new Object();\n        Customer[0].id = parentCustomer.id;\n        Customer[0].name = parentCustomer.name;\n        Customer[0].entityType = &quot;account&quot;;\n        if (XrmServiceToolkit.Soap.Retrieve(&quot;account&quot;, parentCustomer.id)==null)\n        {\n            Customer[0].entityType = &quot;account&quot;;\n        }\n        Xrm.Page.getAttribute(&quot;customerid&quot;).setValue(Customer);\n    }\n    Xrm.Page.getAttribute(&quot;customerid&quot;).fireOnChange();\n    Xrm.Page.getAttribute(&quot;primarycontactid&quot;).setValue(contact);\n    Xrm.Page.ui.refreshRibbon();  // Refresh the ribbon to show/hide buttons\n}</code></pre>\n\nOne quick note for anyone reading this, I'm using Xrm.Page.getAttribute(&quot;customerid&quot;).fireOnChange() to update a Quick View form, but doing this automatically clears the Contact field.  Rather than find an alternate way of refreshing the Quick View form, I just reset the contact field to what it was in the line below.  The above works just fine in my initial testing.<br />\n",
+    "PostedDate": "2015-11-13T08:44:04.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452569",
+    "ThreadId": "647185",
+    "Html": "My mistake.  I was debugging another piece of JavaScript recently that also used Soap.Retrieve and it didn't return the entity type attribute for that field either.  I'm guessing the function doesn't do it for any field, but it would be nice if XrmServiceToolkit did return the entity type that way the result can be used to directly set the value of a field on a form without having to create a new array and object.<br />\n",
+    "PostedDate": "2015-11-16T06:40:24.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

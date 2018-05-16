@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "855067",
+    "ThreadId": "361298",
+    "Html": "\r\n<p>hi.</p>\r\n<p>i have two entities with a many to many between them.</p>\r\n<p>suppose i want a lookup of one of these entities&nbsp;on a form of the other entity. and onchange of that lookup, i want to populate a subgrid underneath the lookup, with the selected lookup, and do this several times, so that i'm displaying a list of the\r\n related entities in the subgrid.</p>\r\n<p>how can i use the library to create this? been at this for a couple of hours now and i think i must be missing something?</p>\r\n<p>many thanks.</p>\r\n",
+    "PostedDate": "2012-06-28T08:35:29.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "856229",
+    "ThreadId": "361298",
+    "Html": "\r\n<p>Hey There.</p>\r\n<p>If you mean &quot;filter subgrid records dynamically according to the form value / field change&quot;, i am afraid that is not what the library is for or how subgrid works.</p>\r\n<p>In the community forum, there are people who have suggested some unsupported way to filter a subgrid but i am not sure this still works with the latest RUs.</p>\r\n<p>Maybe thinking about using a IFrame with a html page if you simply want to display related records dynamically. From there, the library could give you some extension like associate and disassociate. (could be quite heavy development and server calls though).</p>\r\n<p>Jaimie</p>\r\n",
+    "PostedDate": "2012-07-02T02:04:15.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

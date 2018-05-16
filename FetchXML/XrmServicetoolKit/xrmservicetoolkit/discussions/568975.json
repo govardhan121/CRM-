@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1310300",
+    "ThreadId": "568975",
+    "Html": "Can someone please advise me on how to get this into my 2013 deployment?  I tired to import these as solutions however CRM is not allowing stating these are not solution files.  I was going to submit new web resources for the .js and xmls files but then that appends them with the __org _ prefix to the names.  I am new to this side of CRM so please pardon my ignorance on this.\r<br />\n<br />\nThank You<br />\n",
+    "PostedDate": "2014-10-03T10:31:58.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310768",
+    "ThreadId": "568975",
+    "Html": "Hi There.\r<br />\n<br />\nA starting point about CRM is to learn from the SDK. You will find information about web resource and how to manage JS library in CRM 2011 and CRM 2013. \r<br />\n<br />\n<a href=\"http://msdn.microsoft.com/en-us/library/gg309473.aspx\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/gg309473.aspx</a>\r<br />\n<br />\nHope this helps.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-10-06T06:37:20.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1494818",
+    "ThreadId": "662273",
+    "Html": "Am I right seeing that you can't use Fetch to create your own paging?\r<br />\n<br />\nThe code seems to check only if the first page is being downloaded. Once you try to download another page (2+) the code assumes you're NOT using paging any more and will download all elements (or, as many as the CRM config allows + takes into account the fetchAll value).\r<br />\n<br />\nThis seems like a bug.<br />\n",
+    "PostedDate": "2017-03-29T01:27:49.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

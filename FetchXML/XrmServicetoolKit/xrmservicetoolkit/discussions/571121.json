@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1318471",
+    "ThreadId": "571121",
+    "Html": "This is odd and I've tried everything I can think of, but this one has me flummoxed.\r<br />\n<br />\nI am using the Toolkit for Tooltips. I have it set to be used on two fields: one is a free text, and the other is a Boolean.\r<br />\n<br />\nUsing the following XML (names and words changed to protect the innocent):<br />\n<pre><code>&lt;help&gt; \n    &lt;entity name=&quot;contact&quot;&gt; \n        &lt;attribute name='new_myfield_short_text'&gt; \n            &lt;shorthelp&gt;Some ToolTip&lt;/shorthelp&gt; \n        &lt;/attribute&gt;\n        &lt;attribute name='new_myfield_bool'&gt; \n            &lt;shorthelp&gt;Some other ToolTip&lt;/shorthelp&gt; \n        &lt;/attribute&gt; \n    &lt;/entity&gt;\n&lt;/help&gt;</code></pre>\n\n<strong>The ToolTip appears properly for the first field, but not the 2nd (boolean) one</strong>, but for the one with no custom text, I still get the question-mark icon. So I know I have not fat-fingered the field name. \r<br />\n<br />\nI tried some obvious stuff like fiddling with quote formats, copy and pasting the field name from the documentation generator to be very sure I've got it right, copy/pasting the original XML example and starting over, swapping the order of the fields in the XML, etc. \r<br />\n<br />\nI know there is a 2nd lookup field that impacts how this is used on Lookups. Is that true for Booleans too?\r<br />\n<br />\nI even F12-traced the code to see that all the appropriate values are being passed through  properly.\r<br />\n<br />\nThanks in advance for any help.<br />\n",
+    "PostedDate": "2014-11-02T17:42:00.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1319685",
+    "ThreadId": "571121",
+    "Html": "As the method is not supported in CRM 2011. The way how CRM rendered the field will be different as well.\r<br />\n<br />\nFor your case, it may be very likely caused by the way how the boolean field is displayed. \r<br />\n<br />\nYou may need to check the DOM elements and see what is the cause of the problem.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-11-06T07:52:30.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355042",
+    "ThreadId": "571121",
+    "Html": "For the benefit of anyone coming by later, I did determine that you need to use the logical name of the field in your XML, not the schema name.  In other words, it needs to be all lower case.<br />\n",
+    "PostedDate": "2015-02-23T15:51:13.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355363",
+    "ThreadId": "571121",
+    "Html": "To come back to this one more time... I looked at the DOM and the two fields. It appears the Toolkit is inserting the code properly but is being rendered inconsistently.<br />\n<br />\nThis one works:<br />\n<pre><code>&lt;label for=&quot;new_internationalphonenumber&quot;&gt;\n   International Phone Number\n   &lt;img width=&quot;16&quot; height=&quot;16&quot; id=&quot;img_new_internationalphonenumber&quot; style=&quot;display: inline;&quot; alt=&quot;Use this field for numbers that are not in North American format.&quot; src=&quot;/_imgs/ico/16_help.gif&quot; /&gt;\n   &lt;div id=&quot;help_new_internationalphonenumber&quot; style=&quot;visibility: hidden; position: absolute;&quot;&gt;: Use this field for numbers that are not in North American format.&lt;/div&gt;\n&lt;/label&gt;</code></pre>\n\nBut this one doesn't:<br />\n<pre><code>&lt;label for=&quot;new_caslconsentfororganization&quot;&gt;\n   CASL Consent for Organization\n   &lt;img width=&quot;16&quot; height=&quot;16&quot; id=&quot;img_new_caslconsentfororganization&quot; style=&quot;display: inline;&quot; alt=&quot;The quick brown fox jumped over something something&quot; src=&quot;/_imgs/ico/16_help.gif&quot; /&gt;\n   &lt;div id=&quot;help_new_caslconsentfororganization&quot; style=&quot;visibility: hidden; position: absolute;&quot;&gt;: The quick brown fox jumped over something something&lt;/div&gt;\n&lt;/label&gt;</code></pre>\n\n&quot;doesn't work&quot; meaning, I get the round help icon but the tooltip text doesn't appear onmouseover, just the field label &quot;CASL Consent for Organization&quot;.<br />\n<br />\nThe thing that's maddening is that even though the formats for the label are precisely the same, the first ToolTip works fine but the 2nd one doesn't appear. It's happening on both IE and Firefox.<br />\n",
+    "PostedDate": "2015-02-24T12:03:16.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355406",
+    "ThreadId": "571121",
+    "Html": "So to keep answering my own question, the issue seems to be that the text rendered when the user mouses over the toolTip is the title tag of the parent &lt;TD&gt; tag of the label.<br />\n<br />\nI found this problem only existed on Two Options fields rendered as radio buttons. In those cases, the parent TD tag didn't have a title.<br />\n<br />\nSo I fixed this by explicitly clobbering the title tag of the &lt;TD&gt; using jQuery 1.6+'s .prop method. See the additional code I added at the bottom.<br />\n<pre><code>        function registerHelp(entity, attr, txt) {\n            var obj = jQuery('#' + attr + '_c').children(':first');\n            //var obj = document.getElementById(attr+'_c').children[0];\n\n            if (obj != null) {\n                var html = '&lt;img id=&quot;img_' + attr + '&quot; src=&quot;/_imgs/ico/16_help.gif&quot; alt=&quot;' + txt + '&quot; width=&quot;16&quot; height=&quot;16&quot;&gt;&lt;/img&gt;&lt;div id=&quot;help_' + attr + '&quot; style=&quot;visibility: hidden; position: absolute;&quot;&gt;: ' + txt + '&lt;/div&gt;';\n                jQuery(obj).append(html);\n                \n                //20110909 GP: added line to hide/show help image\n                jQuery('#img_' + attr).css('display', (bDisplayImg) ? 'inline' : 'none');\n            }\n            \n            // Added code. pTD = parent TD tag - this explicitly sets the title of the parent &lt;TD&gt; tag of the field.\n            var pTD = jQuery('#' + attr + '_c');\n            if (pTD != null)\n            {\n                jQuery(pTD).prop(&quot;title&quot;,txt);\n            }\n        }</code></pre>\n\n",
+    "PostedDate": "2015-02-24T14:35:12.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-02-24T14:36:48.587-08:00"
+  }
+]

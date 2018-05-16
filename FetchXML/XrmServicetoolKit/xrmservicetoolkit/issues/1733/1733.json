@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:30:03.017-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "message: Cannot read property 'getParent' of null\n\nThis is received when I run the disableAllControlsInTab.  We only have 2 tabs and I'm referring to tab 0.\n\nWe are on CRM Dynamics 2013 SP1\n\nAny help would be appreciated.\n\nThanks\n\nJason",
+    "LastUpdatedDate": "2014-09-09T14:30:03.017-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-08-12T09:36:09.607-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "TypeError MSCRM.InlineOptionSetControlView",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1733
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Ok, I was able to narrow it down to the loop statement\r\n\r\ncontrol.getParent().getParent().  Basically the error was coming from a control within the header which was returning null.  To get around this I just added this around the if statement.\r\n\r\nif (control.getParent().getParent() != null){\r\n\r\n};\r\n\r\nI'm not sure if I'm missing something or if something changed in CRM 2013 SP1.  ",
+      "PostedDate": "2014-08-12T10:54:25.02-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\r\n\r\nThanks for submitting the issue. This will be fixed in the next release.\r\n\r\nJaimie",
+      "PostedDate": "2014-09-09T14:04:04.573-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:30:03.017-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1227536",
+    "ThreadId": "540380",
+    "Html": "I have a development server with 2 organizations on it. I wrote a small html web resource to display some data but when the fetch runs it is looking at what i believe to be the default org not the one I'm currently running in.\r<br />\n I have to believe that there is a way to get and set the org for the toolkit\r<br />\n<br />\nHere is my code\r<br />\n<br />\nvar sFetchXml = &quot;&lt;fetch mapping='logical' count='50' version='1.0'&gt;&lt;entity name='esi_waivedcost'&gt;&lt;attribute name='esi_cost' /&gt;&lt;attribute name='esi_name' /&gt;\t&lt;filter&gt;&lt;condition attribute='esi_inventoryid' operator='eq' value='&quot; + inventoryId + &quot;' /&gt;&lt;/filter&gt;&lt;/entity&gt;&lt;/fetch&gt;&quot;;<br />\n<pre><code>        var poFetchResult = XrmServiceToolkit.Soap.Fetch(sFetchXml); </code></pre>\n\n",
+    "PostedDate": "2014-03-27T12:45:29.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1227729",
+    "ThreadId": "540380",
+    "Html": "hi\r<br />\n<br />\nWeb Resource works only on the organisation where you put the web resource. Please have a look at the CRM SDK to work out how the organisation and authentication information are passed to a web resource. \r<br />\n<br />\nYou cannot pass organisation and authentication information using JavaScript. \r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-03-28T03:21:13.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1227986",
+    "ThreadId": "540380",
+    "Html": "My scenario is the HTML with this code in it is loaded into OrgA as a webresource. When I load the page and irame I get the data from OrgB which was the first organization I set up therefore the default.\r<br />\n<br />\nI need to have the html use the data for the currently loaded organization not the default. I have proven the fact that it looks at the wrong org on load so I'm not sure if this fixable or not.\r<br />\n<br />\nI'm not sure why Microsoft thinks that if I'm running a web resource in an organization that I would want it to retrieve data from another.\r<br />\n<br />\nBrian  <br />\n",
+    "PostedDate": "2014-03-28T13:38:51.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

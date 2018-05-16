@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "deserializing an EntityRefernce attribute is broken in Dynamics CRM2016 Online. The Attribute node has 2 additional child nodes and the first three do not match how they were returned in CRM 2015.\n\nI am referring to line 1772 and following lines:\n```\n                                case \"a:EntityReference\":\n                                    entRef = new xrmEntityReference();\n                                    entRef.type = sType.replace('a:', '');\n                                    var oChildNodes = tempNode.childNodes;\n                                    entRef.id = getNodeText(oChildNodes[0]);\n                                    entRef.logicalName = getNodeText(oChildNodes[1]);\n                                    entRef.name = getNodeText(oChildNodes[2]);\n                                    obj[sKey] = entRef;\n                                    break;\n```\noChildNodes[0] still happens to be the id, but the other two have moved. For this to continue to work, the nodename must be interpreted before assigning a value. I.e. we need something like this:\n\n```\n                                case \"a:EntityReference\":\n                                    entRef = new xrmEntityReference();\n                                    entRef.type = sType.replace('a:', '');\n                                    var oChildNodes = tempNode.childNodes;\n                                    for (var n = 0; n < oChildNodes.length; n++) {\n                                      var currentNodeName = oChildNodes[n].nodeName;\n                                      switch (currentNodeName) {\n                                        case \"a:Id\":\n                                          entRef.id = getNodeText(oChildNodes[n]);\n                                          break;\n                                        case \"a:Name\":\n                                          entRef.name = getNodeText(oChildNodes[n]);\n                                          break;\n                                        case \"a:LogicalName\":\n                                          entRef.logicalName = getNodeText(oChildNodes[n]);\n                                          break;\n                                      }\n                                    }\n                                    obj[sKey] = entRef;\n                                    break;\n```",
+    "LastUpdatedDate": "2016-04-19T02:05:40.37-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-04-19T02:05:40.37-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap BusinessEntity Deserialize Issue for EntityRefernce in Dynamics CRM 2016",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1862
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

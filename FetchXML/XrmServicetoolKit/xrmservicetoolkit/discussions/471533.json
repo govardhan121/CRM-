@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1130353",
+    "ThreadId": "471533",
+    "Html": "Any ideas what I am doing wrong? I have tried multiple permutations of the filter and still can't get it working. Thanks in advance.<br />\n<br />\nvar contractId = Xrm.Page.getAttribute(&quot;jov_contractid&quot;).getValue()[0].id;<br />\n<pre><code>    XrmServiceToolkit.Rest.RetrieveMultiple(\n        &quot;jov_period&quot;,\n        &quot;$filter=jov_Contractid/Id eq guid'&quot; + contractId + &quot;' and statuscode eq 1&quot;,\n        function (results) {\n                return results;\n        },\n        // ReSharper disable once UnusedParameter\n        function(error) {\n        },\n        function onComplete() {\n        },\n        false);\n</code></pre>\n\nI've tried<br />\n<br />\n&quot;$filter=jov_Contractid eq &quot; + contractId + &quot; and statuscode eq 1&quot;,<br />\n&quot;$filter=jov_Contractid eq ''&quot; + contractId + &quot;' and statuscode eq 1&quot;,<br />\n&quot;$filter=jov_contractid/Id eq guid'&quot; + contractId + &quot;' and statuscode eq 1&quot;<br />\namongst others with no luck.<br />\n",
+    "PostedDate": "2013-11-29T10:14:06.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130373",
+    "ThreadId": "471533",
+    "Html": "I've made some headway. The correct filter is:\r<br />\n<br />\n$filter=jov_Contractid/Id eq guid'41AFD426-B658-E311-9864-00155DA8A105' and statuscode/Value eq 1\r<br />\n<br />\nThis works in a RestClient (Firefox plugin) but still returns &quot;undefined&quot; using the RetrieveMultiple method.  <br />\n",
+    "PostedDate": "2013-11-29T11:16:04.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130389",
+    "ThreadId": "471533",
+    "Html": "I should have titled this &quot;One man's quest to enlightenment....&quot;<br />\n<br />\nthis works<br />\n<pre><code>    var contractId = Xrm.Page.getAttribute(&quot;jov_contractid&quot;).getValue()[0].id;\n    var dumdum = null;    \n    XrmServiceToolkit.Rest.RetrieveMultiple(\n        &quot;jov_periodSet&quot;,\n        &quot;$filter=jov_Contractid/Id eq guid'&quot; + contractId + &quot;' and statuscode/Value eq 1&quot;,\n        function (results) {\n                dumdum = results;\n        },\n        // ReSharper disable once UnusedParameter\n        function(error) {\n        },\n        function onComplete() {\n        },\n        false);\n\n    return dumdum;\n</code></pre>\n\nI hope this saves someone else some time and embarrassment.  :-)<br />\n",
+    "PostedDate": "2013-11-29T11:46:33.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1130542",
+    "ThreadId": "471533",
+    "Html": "Hi There.\r<br />\n<br />\nGlad that you have worked it out yourself. \r<br />\n<br />\nBuilding Rest Endpoint query is indeed an effort to be made in terms of CRM development in JavaScript :)\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-11-30T12:00:30.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1133119",
+    "ThreadId": "471533",
+    "Html": "Yes, saving results of an retrieve can be really trick in some parts, especially with async on :) You could also call a function in the success with the results as parameter if applicable.<br />\n",
+    "PostedDate": "2013-12-09T05:23:33.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

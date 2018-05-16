@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "__i try update change value not allowed__\n\n__Example:__\nvar king = new XrmServiceToolkit.Soap.BusinessEntity(\"opportunityproduct\", \"{5b3857ec-3a8d-e511-810f-2c59e53a241}\" );\nking.attributes[\"ispriceoverridden\"] = true;\nking.attributes[\"priceperunit\"] = \"550\";\nXrmServiceToolkit.Soap.Update(king);\n\n__Not working... how to make change?__\n\n__Error:__\n![Image](http://i.imgur.com/v5CH371.png)\nhttp://prntscr.com/96umfk\n\nthanks",
+    "LastUpdatedDate": "2015-11-27T05:42:09.283-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-11-24T10:59:50.31-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[FIX] How to make change ispriceoverridden to true?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1839
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I found a bug\r\n\r\nSoap not working, is just REST\r\n\r\n__Code wrong:__\n![Image](http://i.prntscr.com/0d4fc303ddb94004ae8c707cba34ccd4.png)\nhttp://prntscr.com/97jeoz\r\n\r\n__Later__ \r\n\r\n__Code fix:__\n![Image](http://i.prntscr.com/11a4897a409048c198483fca484ab49b.png)\nhttp://prntscr.com/97jeiw\r\n\r\n___Work! Not use space line from \"error\"___\r\n\r\n__Example to REST is work:__\n![Image](http://i.prntscr.com/33887a0294144e5087b915c5f34dcb45.png)\nhttp://prntscr.com/97jg1x\r\n\r\n;-)",
+      "PostedDate": "2015-11-27T05:34:45.643-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-11-27T05:35:52.97-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-11-27T05:38:35.293-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-11-27T05:42:09.283-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

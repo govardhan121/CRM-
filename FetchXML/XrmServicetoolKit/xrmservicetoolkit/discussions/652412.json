@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1466470",
+    "ThreadId": "652412",
+    "Html": "Hello,\r<br />\nDo you have official github repository?<br />\n",
+    "PostedDate": "2016-03-10T19:39:22.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466556",
+    "ThreadId": "652412",
+    "Html": "Hi There.\r<br />\n<br />\nNot currently, but may consider in the future.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-03-11T09:04:43.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2016-03-14T03:16:05.31-07:00"
+  },
+  {
+    "Id": "1468286",
+    "ThreadId": "652412",
+    "Html": "I think that would be really great if there was a github repo. Even MS's own stuff is on github like powerbi visuals or vscode. I think there would be also more contributers then.<br />\n",
+    "PostedDate": "2016-03-29T00:33:44.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471152",
+    "ThreadId": "652412",
+    "Html": "Hi There.\r<br />\n<br />\nI agree and would push this out soon. I do feel that my time is quite limited over the last year and it would be great to invite more people to contribute the project and make it more open source this way.\r<br />\n<br />\nStefan, do feel free to push out a GitHub repository and let us know the links.\r<br />\n<br />\nMany thanks.\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-04-24T02:03:15.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471601",
+    "ThreadId": "652412",
+    "Html": "Ok I set up a repo now with the history.<br />\nUpdate: I created a new Org to host the repo, link has been updated.<br />\n<br />\n<a href=\"https://github.com/XrmServiceToolkit/XrmServiceToolkit\" rel=\"nofollow\">XrmServicetoolkit</a><br />\n",
+    "PostedDate": "2016-04-28T07:42:29.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

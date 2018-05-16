@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1059866",
+    "ThreadId": "447878",
+    "Html": "We're trying to see if a record already exists. To do this we're using the retrieve function and we want to pass TWO GUID's to ensure we get the right one. This is what we have:<br />\n<pre><code>var contact; \nXrmSvcToolkit.retrieve({ \n    entityName: &quot;Contact&quot;, \n  __  id: GUID_ONE, GUID_TWO, __\n    async: false, \n    successCallback: function (result) { \n        contact = result; \n    }, \n    errorCallback: function (error) { \n       alert(&quot;Error&quot;);\n\n    } \n});</code></pre>\n\nIs that the correct way to do it? Moreover, how would one set a filter criteria, such as retrieve all contacts where the first name = Adventure, Telephone = 555-5322?<br />\n",
+    "PostedDate": "2013-06-22T03:36:46.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059868",
+    "ThreadId": "447878",
+    "Html": "What you are trying to do is (a) pass two GUIDS to retrieve a record, (b) create a filtered query with parameters which I don't think is possible right now with the XrmSvcToolkit. Try using the XRM service Toolkit by Jamie, I've done it myself with the Xrm Service Toolkit instead and implementation is quicker too.<br />\n",
+    "PostedDate": "2013-06-22T04:05:23.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059873",
+    "ThreadId": "447878",
+    "Html": "Thanks for the reply Michael. I will look into the XrmServiceToolkit but I would like to use this library instead mainly because it has been faster and formatted better. However it is possible to do what I have asked by using the retrieve multiple function, but I am not sure if I have formatted well. At the moment I get an Error, because I don't think my query is formatted well. here is the code:<br />\n<pre><code>                        XrmSvcToolkit.retrieveMultiple({ \n                        entityName: &quot;contact&quot;, \n                        async: false, \n                        odataQuery: &quot;?$filter=new_Client/Id eq + AccountGI, new_ConflictClient/Id eq AccountCGI&quot;,\n                        successCallback: function (result) { \n                            //contacts = result; \n                            \n                            alert(&quot;Sucess&quot;);\n                        }, \n                        errorCallback: function (error) { \n                           alert(&quot;Error&quot;);\n                    \n                        } \n                    });</code></pre>\n\nThe line that I think is causing me problems is: odataQuery: <strong>&quot;?$filter=new_Client/Id eq + AccountGI, new_ConflictClient/Id eq AccountCGI&quot;,</strong>\r<br />\n<br />\nStill looking for suggestions.<br />\n",
+    "PostedDate": "2013-06-22T04:51:50.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060212",
+    "ThreadId": "447878",
+    "Html": "As per <a href=\"http://msdn.microsoft.com/en-us/library/gg309461.aspx#BKMK_filter\" rel=\"nofollow\">documentation</a>, try something like this (AccountGI and AccountCGI are assumed to be variables set to GUIDs of corresponding records):<br />\n<pre><code>odataQuery: &quot;?$filter=new_Client/Id eq (guid'&quot; + AccountGI + &quot;') and new_ConflictClient/Id eq (guid'&quot; + AccountCGI + &quot;')&quot;</code></pre>\n\nIf you are after OR condition, simply replace 'and' with 'or'.\r<br />\nHTH\r<br />\nGeorge<br />\n",
+    "PostedDate": "2013-06-23T17:25:38.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060223",
+    "ThreadId": "447878",
+    "Html": "@PhilipMorris, yes, using retrieveMultiple is the right path, since retrieve is designed to retrieve only one record at a time. \r<br />\n<br />\nWhen you are uncertain about your query, your best friend is <a href=\"https://crm2011odatatool.codeplex.com/\" rel=\"nofollow\">OData Query Designer</a>. I believe George has already got you the right format. <br />\n",
+    "PostedDate": "2013-06-23T19:51:34.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

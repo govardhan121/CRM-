@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed the issue and replaced the file",
+    "ClosedDate": "2014-05-09T02:40:21.547-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "v2.0.1 has several references to an invalid Xrm method: Xrm.Utility.alertyDialog\nThis looks like to be a type for Xrm.Utility.alertDialog",
+    "LastUpdatedDate": "2014-05-09T02:40:21.547-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-05-08T02:01:41.097-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Invalid Xrm.Utility method: alertyDialog",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1697
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi \r\n\r\nCheers for submitting the issue. I noticed the typo as well. This shall be fixed soon.\r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2014-05-08T06:27:24.69-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-05-09T02:40:21.547-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

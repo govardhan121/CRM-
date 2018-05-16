@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1006623",
+    "ThreadId": "434484",
+    "Html": "I am not sure if this is fixed. <br />\n<br />\nwhen deserialize the date time value : &quot;2013-02-25T08:00:00Z&quot;<br />\nnew Date(&quot;2013-02-25T08:00:00Z&quot;) returns NaN.<br />\n",
+    "PostedDate": "2013-02-25T17:58:35.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006826",
+    "ThreadId": "434484",
+    "Html": "Hi \r<br />\n<br />\nWhich version are you using?\r<br />\n<br />\nPlease provide more details here\r<br />\n<br />\nThanks,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-02-26T02:37:34.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007728",
+    "ThreadId": "434484",
+    "Html": "/**<br />\n<ul>\n<li>MSCRM 2011 Web Service Toolkit for JavaScript</li>\n<li>@version : 1.0</li>\n<li>\nDate: February, 2012<br />\n*/<br />\n</li>\n</ul>\nWhen retreve case with Followup (datetime field with date value only), the deserization throws exception in IE 9 with CRM UR8<br />\n",
+    "PostedDate": "2013-02-27T09:26:29.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007919",
+    "ThreadId": "434484",
+    "Html": "It's IE Document Mode: <br />\n<br />\nIE8 standards: new Date(&quot;2013-02-25T08:00:00Z&quot;) returns NaN.<br />\nIE9 standards: new Date(&quot;2013-02-25T08:00:00Z&quot;) returns correct date.<br />\n<br />\nAny way to fix this?<br />\n<hr />\n<h2>From MSDN:</h2>\nThe ISO format is a simplification of the ISO 8601 extended format. The format is as follows:<br />\nYYYY-MM-DDTHH:mm:ss.sssZ<br />\n______Important<br />\nISO Date Format is not supported in Internet Explorer 8 standards mode and Quirks mode.______<br />\n",
+    "PostedDate": "2013-02-27T15:46:08.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1008813",
+    "ThreadId": "434484",
+    "Html": "Hi There.\r<br />\n<br />\nThis is a new conversion in 1.4.1 to convert string to Date. It might fix your issue. \r<br />\n<br />\nI also would recommend you give 1.4.0 a try considering you are using version 1.0\r<br />\n<br />\nJaimie<br />\n<pre><code>  var stringToDate = function (s) {\n        var b = s.split(/\\D/);\n        return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5]));\n    };</code></pre>\n\n",
+    "PostedDate": "2013-03-01T05:49:46.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1009040",
+    "ThreadId": "434484",
+    "Html": "Thanks a lot for the fix.\r<br />\n<br />\nWill upgrade when upgrading to UR12, It's on premise.<br />\n",
+    "PostedDate": "2013-03-01T13:49:12.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

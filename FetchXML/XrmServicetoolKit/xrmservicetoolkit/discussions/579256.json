@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1348298",
+    "ThreadId": "579256",
+    "Html": "Hi all,\r<br />\n<br />\n  I have a RetrieveMultiple query and I need to wait to the end of the request to hide a loading icon. I tried to hide the icon on the OnComplete function but it does not work. Please, can anybody helps me?\r<br />\n<br />\nThanks,\r<br />\nDavid Narbona<br />\n",
+    "PostedDate": "2015-02-02T09:22:13.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350098",
+    "ThreadId": "579256",
+    "Html": "Hi There.\r<br />\n<br />\nNot sure if this is related with the toolkit but a HTML code you are looking for. \r<br />\n<br />\nYou can try post the code here for us to have a look.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-08T09:41:40.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350570",
+    "ThreadId": "579256",
+    "Html": "Hi,\r<br />\n<br />\n  I have the next HTML code:<br />\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n&lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot;&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=620&quot;&gt;\n    &lt;title&gt;TimeLine&lt;/title&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;/Javascript/XrmServiceToolkit.js&quot;&gt;&lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div id=&quot;content&quot;&gt;\n        \n        &lt;div id=&quot;Timeline&quot; style=&quot;margin-top:20px;&quot;&gt;\n            &lt;img id=&quot;imgLoading&quot; src='/Images/imgsloading.gif' style='margin-left:50%; margin-top:4%; width: 36px;height: 36px;'/&gt;\n            &lt;div id=&quot;auxTimeLine&quot;&gt;\n            ...\n            &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;header&gt;&lt;/header&gt;\n    &lt;article&gt;&lt;/article&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>\n\nAnd the next JS code:<br />\n<pre><code>$(function () {\n    ...\n    DrawThisWeek();\n});\n\nfunction DrawThisWeek() {\n    var now = new Date();\n    var currentUserNow = new Date();\n    var previousMonday = null;\n    var nextSunday = null;\n    var weekDay = -1;\n    var dayMinutes = 24 * 60;\n    var nowHourMinutes = 0;\n    var nowTotalMinutes = 0;\n    var nowHours = 0;\n    ...\n    SetActivitiesObject(previousMonday, nextSunday);\n}\n\nfunction SetActivitiesObject(fromDate, toDate) {\n    if ((EntityID != null) &amp;&amp; (EntityID != &quot;&quot;)) {\n        ...\n        ShowLoading();\n\n        XrmServiceToolkit.Rest.RetrieveMultiple(\n            &quot;ActivityPointerSet&quot;,\n            &quot;$orderby=ScheduledEnd asc&amp;$filter=RegardingObjectId/Id eq guid'&quot; + EntityID + &quot;' and ScheduledEnd ne null and ScheduledEnd ge datetime'&quot; + fromDate + &quot;' and ScheduledEnd le datetime'&quot; + toDate + &quot;'&quot;,\n            function (Activityresults){ \n            ...\n            },\n            function (error) {\n                ...\n            },\n            function onComplete() {                \n            },\n            false\n        );\n\n        ...\n\n        DrawTimeline();\n    }\n}\n\nfunction DrawTimeline() {    \n    ...\n    ShowTimeLine();\n}\n\n\nfunction ShowLoading() {\n    $(&quot;#imgLoading&quot;).show();\n    $(&quot;#auxTimeLine&quot;).hide();\n}\n\nfunction ShowTimeLine() {\n    $(&quot;#imgLoading&quot;).hide();\n    $(&quot;#auxTimeLine&quot;).show();\n}</code></pre>\n\nIn Firefox it works correctly and you can see the loading image while the query is retrieving records, but in Chrome and IE the loading image is not shown.\r<br />\n<br />\nThanks &amp; Regards,\r<br />\nDavid Narbona<br />\n",
+    "PostedDate": "2015-02-10T03:29:47.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

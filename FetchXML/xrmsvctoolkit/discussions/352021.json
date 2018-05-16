@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "822816",
+    "ThreadId": "352021",
+    "Html": "\r\n<p>Hi Daniel,</p>\r\n<p>It will be nice if you add a two new functions: <strong>GrantAccess</strong> and\r\n<strong>RevokeAccess</strong> for entyti Object with systemuser and team.</p>\r\n<p>Today I use a solution from&nbsp;<span><strong>Jamie Miley</strong>:&nbsp;http://mileyja.blogspot.com/2011/05/grant-access-to-user-or-team-to-entity.html</span></p>\r\n<p><span><span>It</span><span>&nbsp;</span><span>works well, but</span><span>&nbsp;</span><span>I would like to</span><span>&nbsp;</span><span>have an &quot;<strong>all in one</strong>&quot; solution</span><span>.</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span><span>Best regards,</span></span></p>\r\n<p><span><span>FV</span></span></p>\r\n",
+    "PostedDate": "2012-04-12T02:31:53.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823151",
+    "ThreadId": "352021",
+    "Html": "<p>The number of CRM messages is significantly large, it would make the toolkit bloated if we add every message to the toolkit. I would recommend you extend the toolkit by adding this capability. You may try to check the current code base, and see if you can  implement it by yourself. You can start from setState function in the toolkit.&nbsp;</p>",
+    "PostedDate": "2012-04-12T14:52:04.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

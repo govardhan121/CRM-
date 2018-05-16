@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1232050",
+    "ThreadId": "541650",
+    "Html": "Hey guys, I have noticed that the latest Rollup for CRM Online has slowed the form down when using xrmsvctoolkit in the onLoad event. However I am trying to diagnose and although I have created many trial instances to see what was slowing down the form, two questions have arisen:<br />\n<ol>\n<li>\nDo I need to include the latest JQuery library with this toolkit on every CRM Form I use this on?<br />\n</li>\n<li>\nThe following code; I have set to async: true - but I am not noticing any performance improvements. I have added the code to the onLoad event handler, still seems to be slowing down the load time of the form. Any ideas how I can improve performance (the code block only retrieves Name, Telephone Number and Birthday, 3 columns) :<br />\n</li>\n</ol>\nXrmSvcToolkit.retrieve({<br />\n<pre><code>        entityName: &quot;Contact&quot;,\n        id: contactGUID,\n        async: true, \n</code></pre>\n\nI am hoping that MS did not do anything to break this library. <br />\n",
+    "PostedDate": "2014-04-08T14:40:58.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256450",
+    "ThreadId": "541650",
+    "Html": "Hi @PhilipMorris,\r<br />\n<br />\nSorry for the slow response. \r<br />\n<br />\nWhen you say it slows down, do you have a benchmark number? <br />\n<ul>\n<li>The toolkit doesn't rely on jQuery. </li>\n<li>\nasync or not shouldn't have much performance difference.<br />\n</li>\n</ul>\nFrom best practice perspective, always specify the list of fields that you want to get back from CRM server. \r<br />\n<br />\nLet us know if you have any further questions.\r<br />\n<br />\nThanks,\r<br />\nDaniel Cai | <a href=\"http://www.kingswaysoft.com\" rel=\"nofollow\">http://www.kingswaysoft.com</a><br />\n",
+    "PostedDate": "2014-06-15T06:09:51.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "Id": "0",
+    "Name": "XrmSvcToolkit v0.1.2",
+    "DevelopmentStatus": "Beta",
+    "Description": "This is a bug fix release, which addresses two bugs related to retrieve method, and ISO date parsing.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-03-01T10:37:56.72-08:00",
+    "Files": [
+      {
+        "Id": "c34e236b-b949-46ee-b2db-04c587ba0968",
+        "FileName": "XrmSvcToolkit_0_1_2_managed.zip",
+        "Url": "./0/c34e236b-b949-46ee-b2db-04c587ba0968",
+        "Type": "Application",
+        "UploadDate": "2012-11-15T22:49:18.673-08:00"
+      },
+      {
+        "Id": "d7e57a6b-ade5-4ad0-9509-c75cedf2b390",
+        "FileName": "XrmSvcToolkit_0_1_2_unmanaged.zip",
+        "Url": "./0/d7e57a6b-ade5-4ad0-9509-c75cedf2b390",
+        "Type": "Application",
+        "UploadDate": "2012-11-15T22:49:18.72-08:00"
+      },
+      {
+        "Id": "4c778989-ced5-4829-b276-2e17f95688f0",
+        "FileName": "XrmSvcToolkit.zip",
+        "Url": "./0/4c778989-ced5-4829-b276-2e17f95688f0",
+        "Type": "Source Code",
+        "UploadDate": "2012-11-15T22:49:18.72-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "XrmSvcToolkit v0.1.1",
+    "DevelopmentStatus": "Beta",
+    "Description": "This is a bug fix release, mainly contributed by George Doubinski.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-11-15T22:50:18.147-08:00",
+    "Files": [
+      {
+        "Id": "4e54bfe0-180e-4153-9980-208685d95474",
+        "FileName": "XrmSvcToolkit.zip",
+        "Url": "./1/4e54bfe0-180e-4153-9980-208685d95474",
+        "Type": "Source Code",
+        "UploadDate": "2012-07-28T06:42:41.923-07:00"
+      },
+      {
+        "Id": "72411706-a5cb-4c8f-b496-54d5e82f3081",
+        "FileName": "XrmSvcToolkit_0_1_1_unmanaged.zip",
+        "Url": "./1/72411706-a5cb-4c8f-b496-54d5e82f3081",
+        "Type": "Application",
+        "UploadDate": "2012-07-27T19:42:56.207-07:00"
+      },
+      {
+        "Id": "575fd31b-ac90-4b9a-88ee-c260ed1e1536",
+        "FileName": "XrmSvcToolkit_0_1_1_managed.zip",
+        "Url": "./1/575fd31b-ac90-4b9a-88ee-c260ed1e1536",
+        "Type": "Application",
+        "UploadDate": "2012-07-27T19:42:56.207-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "XrmSvcToolkit v0.1",
+    "DevelopmentStatus": "Beta",
+    "Description": "XrmSvcToolkit v0.1, with the following features available. \n!! Supported Functions\n* createRecord (REST)\n* updateRecord (REST)\n* deleteRecord (REST)\n* retrieve (REST)\n* retrieveMultiple (REST)\n* associate (REST)\n* disassociate (REST)\n* setState (SOAP)\n* fetch (SOAP)\n* execute (SOAP)",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-03-28T10:52:27.673-07:00",
+    "Files": [
+      {
+        "Id": "76902efe-af80-4204-b9d9-3ac93b60f040",
+        "FileName": "XrmSvcToolkit.zip",
+        "Url": "./2/76902efe-af80-4204-b9d9-3ac93b60f040",
+        "Type": "Application",
+        "UploadDate": "2012-03-28T10:31:49.887-07:00"
+      },
+      {
+        "Id": "81f75de7-9748-450b-9343-4533af47e4ef",
+        "FileName": "XrmSvcToolkit_0_1_unmanaged.zip",
+        "Url": "./2/81f75de7-9748-450b-9343-4533af47e4ef",
+        "Type": "Application",
+        "UploadDate": "2012-03-28T10:52:14.64-07:00"
+      },
+      {
+        "Id": "2769b564-51ad-44d1-8889-0120180bb508",
+        "FileName": "XrmSvcToolkit_0_1_managed.zip",
+        "Url": "./2/2769b564-51ad-44d1-8889-0120180bb508",
+        "Type": "Application",
+        "UploadDate": "2012-03-28T10:52:14.64-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "Silarop",
+    "DevelopmentStatus": "Planning",
+    "Description": "Timeframe: 2012\n\n* X-Browser support. This is on top of the list.\n* Handling webresources\n* Dealing with activity parties\n* Documentation\n** ~~Manifesto (why are we doing this)~~\n** General documentation",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-12-04T03:46:34.99-08:00",
+    "Files": []
+  },
+  {
+    "Id": "4",
+    "Name": "Noiro",
+    "DevelopmentStatus": "Planning",
+    "Description": "Timeframe: Q2 2013\n\n* Generalized Execute method\n* Toolkit namespaces (separation of SOAP and REST interfaces)\n* New CRM API, if any\n* Infrastructure for custom messages in CRM\n* Modular design\n* Documentation\n** Test cases\n** Samples",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2012-12-04T03:48:04.227-08:00",
+    "Files": []
+  },
+  {
+    "Id": "5",
+    "Name": "XrmSvcToolkit v0.2",
+    "DevelopmentStatus": "Beta",
+    "Description": "Mainly two changes in this release. \n* Cross-browser support\n* Bug fixes for synchronous calls that don't have any return values",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-03-01T10:37:32.133-08:00",
+    "Files": [
+      {
+        "Id": "061bd43a-39d8-4a39-897e-e94ea8058986",
+        "FileName": "XrmSvcToolkit_0_2_managed.zip",
+        "Url": "./5/061bd43a-39d8-4a39-897e-e94ea8058986",
+        "Type": "Application",
+        "UploadDate": "2013-03-01T10:37:31.87-08:00"
+      },
+      {
+        "Id": "360f4f3f-b562-4617-8709-48a330b109af",
+        "FileName": "XrmSvcToolkit_0_2_unmanaged.zip",
+        "Url": "./5/360f4f3f-b562-4617-8709-48a330b109af",
+        "Type": "Application",
+        "UploadDate": "2013-03-01T10:37:31.9-08:00"
+      },
+      {
+        "Id": "d39c2f96-e079-43fb-91bf-80a5f8b892dd",
+        "FileName": "XrmSvcToolkit.v0.2.zip",
+        "Url": "./5/d39c2f96-e079-43fb-91bf-80a5f8b892dd",
+        "Type": "Source Code",
+        "UploadDate": "2013-03-01T10:37:31.9-08:00"
+      }
+    ]
+  }
+]

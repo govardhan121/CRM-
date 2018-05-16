@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "839441",
+    "ThreadId": "356711",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;I need to get Response XML using soap fetch function instead of retrieved object</p>\r\n<p>using XRMservicetoolkit. Please advise how to do it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Harkamal Singh</p>\r\n",
+    "PostedDate": "2012-05-22T08:23:25.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "840430",
+    "ThreadId": "356711",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>harkamalgrewal wrote:</strong><br />\r\n<p>Hi,</p>\r\n<p>&nbsp;I need to get Response XML using soap fetch function instead of retrieved object</p>\r\n<p>using XRMservicetoolkit. Please advise how to do it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Harkamal Singh</p>\r\n</blockquote>\r\n<p><br />Hey There.</p>\r\n<p>I am afraid that the library does not support the response XML as a whole as there is a specific logic to deseralize the result into a buesiness enity.</p>\r\n<p>If you will need to get the response XML, i would recommend either write the logic yourself (examples could be found in SDK or forums). You can also extend the library to suit your needs.</p>\r\n<p>Happy Coding,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-05-24T06:48:59.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

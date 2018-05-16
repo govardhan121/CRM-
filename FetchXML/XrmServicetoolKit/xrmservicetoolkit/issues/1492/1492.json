@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Unrelated",
+    "ClosedDate": "2013-10-21T03:33:48.34-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi All,\n\n         I have a lookup field,  for this i want to select Multiple selection. In CRM 2011 we achieved this by writing JavaScript. But as the CRM is Upgraded to CRM 2013 the scripts are not working. I need multi select lookup functionality in CRM Fall-2013, how to achieve this.\n\nPlease can anyone help me to resolve this issue, below i am paisting my code:\n\n--------------------------------------------------------------------------------------\n\nfunction  load()\n{\ndocument.getElementById(\"new_product\").setAttribute(\"lookupstyle\", \"multi\");\nif(Xrm.Page.ui.getFormType()!=1)\n{\nvar data=new Array();\n// I created a one multiline text box to save the lookup values.\n// set the multiline textbox visible equal to false.\nvar store=Xrm.Page.getAttribute(\"new_textbox\").getValue();\nif(store!=null)\n{\ndata=store.split(\";\");\n// To get the \"Target record type\" Go to your form Customization ---> double click on your lookup--->Details--->Edit--->Here you can see \"Target Record Type\"\nvar typename = \"product\";\n var arr= new Array();\n var  i=0;\nvar   j=0;\nfor(i=0;i<((data.length-1)/2);i++)\n{\narr[i] = new Object();\narr[i].name = data[j];\narr[i].id= data[j+1];\narr[i].typename= typename ;\nj++;\nj=j+1;\n}\nXrm.Page.getAttribute(\"new_product\").setValue(arr);\n\n}\n}\n}\n\n\n\n//Form OnSave\n\nfunction save()\n{\n//setting values to description field\n\nvar value1 = Xrm.Page.getAttribute(\"new_product\").getValue;\nif(value1!=null)\n{\nvar s1;\nvar temp1=\"\";\nfor (s1=0;s1<value1.length;s1++)\n{\nvar temp3=\"\";\ntemp3=value1[s1].name+\";\";\ntemp1=temp1+\"\"+temp3;\n}\nXrm.Page.getAttribute(\"new_description\").setValue(temp1);\n}\n\n//setting values to new_textbox field\n\n var value = Xrm.Page.getAttribute(\"new_product\").getValue;\nif(value!=null)\n{\nvar s;\nvar temp=\"\";\nvar productrange=\"\";\nfor (s=0;s<value.length;s++)\n{\n\nvar temp2=\"\";\ntemp2=value[s].name+\";\"+value[s].id+\";\";\ntemp=temp+\"\"+temp2;\n\n{\n\n    //get product id\n    var productID = value[s].id;\n    var xml = \"<?xml version='1.0' encoding='utf-8'?>\" +\n    \"<soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'\" +\n    \" xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\" +\n    \" xmlns:xsd='http://www.w3.org/2001/XMLSchema'>\" +\n  Xrm.Page.context.getAuthenticationHeader() +\n    \"<soap:Body>\" +\n    \"<Retrieve xmlns='http://schemas.microsoft.com/crm/2007/WebServices'>\" +\n    \"<entityName>product</entityName>\" +\n    \"<id>\" + productID + \"</id>\" +\n    \"<columnSet xmlns:q1='http://schemas.microsoft.com/crm/2006/Query' xsi:type='q1:ColumnSet'>\" +\n        \"<q1:Attributes>\" +\n            \"<q1:Attribute>name</q1:Attribute>\" + \"<q1:Attribute>new_productrange_value</q1:Attribute>\"+  \n        \"</q1:Attributes>\" +\n    \"</columnSet>\" +\n    \"</Retrieve>\" +\n    \"</soap:Body>\" +\n    \"</soap:Envelope>\";\n    var xmlHttpRequest = new ActiveXObject(\"Msxml2.XMLHTTP\");\n    xmlHttpRequest.Open(\"POST\", \"/mscrmservices/2007/CrmService.asmx\", false);\n    xmlHttpRequest.setRequestHeader(\"SOAPAction\", \"http://schemas.microsoft.com/crm/2007/WebServices/Retrieve\");\n    xmlHttpRequest.setRequestHeader(\"Content-Type\", \"text/xml; charset=utf-8\");\n    xmlHttpRequest.setRequestHeader(\"Content-Length\", xml.length);\n    xmlHttpRequest.send(xml);\n    var resultXml = xmlHttpRequest.responseXML;\n\n    var errorCount = resultXml.selectNodes('//error').length;\n\n    if (errorCount != 0) \n\t{\n        var msg = resultXml.selectSingleNode('//description').nodeTypedValue;\n        //alert(msg);\n    }\n    //Display the retrieved value.\n    else \n\t{\n        if(resultXml.selectSingleNode(\"//q1:new_productrange_value\")!=null)\n\t\t{\n\t\t     productrange= productrange+ resultXml.selectSingleNode(\"//q1:new_productrange_value\").nodeTypedValue;\n\t\t     Xrm.Page.getAttribute(\"new_productrange_value\").setValue(productrange);\n\t\t\t\n\t\t}\n\t}\n\t}\n\n\n\n}\nXrm.Page.getAttribute(\"new_textbox\").setValue(temp);\nXrm.Page.getAttribute(\"new_product\").setValue(null);\n//document.getElementById(\"new_product\").setAttribute(\"lookupstyle\", \"single\");\n}\nelse\n{\nXrm.Page.getAttribute(\"new_textbox\").setValue(\"\");\n}\n}\n----------------------------------------------------------------------------------------------------",
+    "LastUpdatedDate": "2013-10-21T03:33:48.34-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-10-21T00:42:49.023-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Lookup with Multiple selection",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1492
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hey.\r\n\r\nThis is a place to raise issues for the toolkit only. I would recommend you try CRM development to get some help.\r\n\r\nRegards\nJaimie",
+      "PostedDate": "2013-10-21T03:33:12.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-10-21T03:33:48.34-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

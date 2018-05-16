@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "920036",
+    "ThreadId": "397540",
+    "Html": "\r\n<p>I'm planning to use your <span style=\"color:#008000\">JQueryXrmDependentOptionSet\r\n<span style=\"color:#000000\">extension function for a dependent option set field requirement that am currently working on.</span></span></p>\r\n<p><span style=\"color:#008000\"><span style=\"color:#000000\">My question is does this save the dependent option set values to database and will I be able to save the record with the value selected in the dependent option set and can view the saved value once\r\n I retrieve the record?</span></span></p>\r\n",
+    "PostedDate": "2012-10-01T07:20:34.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920444",
+    "ThreadId": "397540",
+    "Html": "\r\n<p>Hi There.</p>\r\n<p><span style=\"color:#008000\">JQueryXrmDependentOptionSet <span style=\"color:#000000\">\r\nfunction is not about creating the values. It is to 'filter' values dynamically according to another OptionSet value selected, so you will need to create the OptionSet with values first through entity customization.</span></span></p>\r\n<p><span style=\"color:#008000\"><span style=\"color:#000000\">Jaimie</span></span></p>\r\n",
+    "PostedDate": "2012-10-02T02:11:14.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

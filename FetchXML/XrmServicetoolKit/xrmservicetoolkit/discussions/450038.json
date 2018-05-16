@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1068427",
+    "ThreadId": "450038",
+    "Html": "Here are part of the results when I run the FetchXml in the Stunnware tool:<br />\n<pre><code>&lt;result&gt;\n    &lt;tpm_availablestatus name=&quot;Approved&quot; formattedvalue=&quot;928200009&quot;&gt;928200009&lt;/tpm_availablestatus&gt;\n&lt;/result&gt;\n</code></pre>\n\nWhen I run Soap.Fetch this is how I retrieve the value:  result[0].attributes[&quot;tpm_availablestatus&quot;].value\r<br />\nThis returns &quot;928200009&quot; which is good. \r<br />\n<br />\nI now need the value &quot;Approved&quot; as shown in the results so I try: result[0].attributes[&quot;tpm_availablestatus&quot;].name\r<br />\nThis gives me an error of &quot;undefined&quot;.  How do I retrieve the &quot;Approved&quot; value in the results?<br />\n",
+    "PostedDate": "2013-07-15T07:31:46.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075038",
+    "ThreadId": "450038",
+    "Html": "Hi There.\r<br />\n<br />\nIn current stage, the deserialization process only gets the value not attributes. \r<br />\n<br />\nThe options are:<br />\n<ol>\n<li>you can modify the deserialization function if this is absolutely required.</li>\n<li>\nnormally the values are the only meaningful results we care. &quot;Approved&quot; in your example may simply be put as a constant in a separate JavaScript file. ( I normally have a separate class to define things like form types, onSave event types, etc<br />\n</li>\n</ol>\nHope this helps,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-07-31T03:11:38.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1244151",
+    "ThreadId": "450038",
+    "Html": "I cannot speak for prior version, but, I'm using the latest version 2.0.1, for CRM 2013, and the 'formattedValue' property returns the option set's display value.<br />\n",
+    "PostedDate": "2014-05-11T15:11:32.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

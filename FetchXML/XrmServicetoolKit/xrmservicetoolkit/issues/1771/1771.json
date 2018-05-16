@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:18:55.807-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am having the same issue as item 1746.",
+    "LastUpdatedDate": "2015-04-09T12:18:55.807-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-12-16T15:34:24.067-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "See Item 1746",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1771
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThanks for submitting the issue. This will be looked and fixed in the next release.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-01-05T01:27:10.387-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:18:55.807-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

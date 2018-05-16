@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1313927",
+    "ThreadId": "569943",
+    "Html": "Hi,\r<br />\n<br />\nI've used the XRMToolkit to execute the fetchxml in JavaScript. In my fetchxml I am using link entity to link Entity B from Entity A. Now, after successfully executing the fetchxml in call back method I can read the attributes of entity A (primary entity of fetchxml) by \r<br />\n<br />\nrecords[i].attributename \r<br />\n<br />\nNote, the &quot;i&quot; is an incremental variable to iterate through all fetched records.\r<br />\n<br />\nThe problem is I'm unable to read the attributes of entity B in similar fashion. When I try to do that with alias name of entity B it does not fetch value for that alias. The value of alias is empty though I can see the value while doing &quot;quick watch&quot; in visual studio for \r<br />\n<br />\nrecords[i].aliasname.attributename\r<br />\n<br />\nSo, how to read the value/data of attribute of related/linked entity?\r<br />\n<br />\nAny quick help would be much appreciated.\r<br />\n<br />\nThanks,\r<br />\nAnkit  <br />\n",
+    "PostedDate": "2014-10-16T04:56:04.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314748",
+    "ThreadId": "569943",
+    "Html": "Hi There.\r<br />\n<br />\nRelated/Linked Entities are not handled in the current fetch method. It is a work item I always want to look at and see how it will impact performance.\r<br />\n<br />\nFor now, you may have to do two queries to retrieve related entities. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-10-19T06:46:40.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

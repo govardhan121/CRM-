@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1446459",
+    "ThreadId": "645620",
+    "Html": "Hi,<br />\n<br />\nMy error callback never gets called. Can you please help me?<br />\nSnippet from examples in documentation:<br />\n<pre><code>XrmServiceToolkit.Rest.Create(\n    account,\n    &quot;AccountSet&quot;,\n    function (result) {\n        accountId = result.AccountId;\n    },\n    function (error) {\n        alert(error.message);\n    },\n    false\n);</code></pre>\n\nShould I put in errorHandler function return new Error, instead of throw new Error?<br />\n<br />\nBest regards,<br />\n",
+    "PostedDate": "2015-09-29T17:44:13.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452074",
+    "ThreadId": "645620",
+    "Html": "This appears to be a bug in the current version of XrmServiceToolkit. As you say, the method &quot;errorHandler&quot; (around line 584) THROWS an error when it ought to just RETURN the error. I just changed this in my local version of XrmServiceToolkit. \r<br />\n<br />\nThis bug appears newly introduced. In earlier versions of XrmServiceToolkit, the error is returned correctly and not thrown.<br />\n",
+    "PostedDate": "2015-11-12T04:51:09.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

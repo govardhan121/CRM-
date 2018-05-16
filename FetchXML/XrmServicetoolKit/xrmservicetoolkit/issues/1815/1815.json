@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Just noticed an issue in the EntityCollection case of the deserialize function:\n\nWhen the nodeText === \"partyid\" the line \nvar partyReferenceNode = partyListNodes[i];\nshould be \nvar partyReferenceNode = partyListNodes[pi];",
+    "LastUpdatedDate": "2016-01-27T03:53:17.277-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-08-18T08:22:54.81-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap BusinessEntity Deserialize Issue for Activity PartyIds",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 1815
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThanks for the submission. I will have a look once I have a bit time and may include in the next release.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-09-06T12:30:32.463-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-09-15T05:56:39.087-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-09-23T15:14:53.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-01-27T03:53:17.277-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

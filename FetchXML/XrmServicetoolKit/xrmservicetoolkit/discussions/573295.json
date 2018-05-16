@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1326532",
+    "ThreadId": "573295",
+    "Html": "Hey guys,<br />\n<br />\nA quick summary: From a Phone Call Activity I have a related Entity Contact, I then relate a Contact to an Account. So, from Phone Call I want to get some data from the related Contact's Account and do this by:<br />\n<pre><code>         var lookup = Xrm.Page.getAttribute(&quot;regardingobjectid&quot;).getValue();\n         XrmServiceToolkit.Rest.Retrieve(lookup[0].id,\n                    'ContactSet',\n                    'ParentCustomerId',\n                    null,\n                    function (account) {\n                        alert(String(account));\n                    },\n                    function (error) {\n                        alert(&quot;in error handler&quot;);\n                        alert(error.message);\n                    }, true);\n</code></pre>\n\nWhere ParentCustomerId is of type 'Entity' in Contact.  I can get the Name of the account (by account.Name) and a few other (seemingly) random fields (none of which are the one I need), but not the ID of the account (which then I can use in another Retrieve).<br />\nThoughts? <br />\n",
+    "PostedDate": "2014-11-26T09:20:49.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350100",
+    "ThreadId": "573295",
+    "Html": "Hi There.\r<br />\n<br />\nSome fields in CRM store different schema names in CRM. I will recommend use a tool to check the field name and build your query. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-08T09:50:27.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

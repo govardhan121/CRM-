@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1263151",
+    "ThreadId": "550774",
+    "Html": "Hi,\r<br />\nI'm trying to set a lookup to null on another record using the update method, but I don't know how to specify the null value. ¿Could anyone help with the syntax?\r<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2014-07-07T00:54:43.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

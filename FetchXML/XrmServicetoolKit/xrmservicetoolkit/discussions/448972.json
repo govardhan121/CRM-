@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1064159",
+    "ThreadId": "448972",
+    "Html": "Hi there!\r<br />\n<br />\nI'm doing a Xrm.ServiceToolkit.Rest.Retrieve to pull some data from a parent record (through parentcustomerid) but getting an Access is Denied. I've pretty much used the function from the documentation section. Am I missing something?\r<br />\n<br />\nPete :)<br />\n",
+    "PostedDate": "2013-07-03T08:36:57.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064163",
+    "ThreadId": "448972",
+    "Html": "Hi There.\r<br />\n<br />\nIf you can provide a bit more details about where the code is called, that would be helpful.\r<br />\n<br />\nAccess is denied normally happens when you try to use JavaScript cross domain. \r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2013-07-03T08:52:42.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064178",
+    "ThreadId": "448972",
+    "Html": "Apologies, code is below :)<br />\nI'm basically just calling the below in a function when you update the parentcustomerid field on a Contact form. This is all there is it to it so far.<br />\n<pre><code>var accountObject = Xrm.Page.getAttribute(&quot;parentcustomerid&quot;);\n\nif (accountObject != null)\n{\n    var accountValue = accountObject.getValue();\n    {\n        var accountId = accountValue[0].id;\n        \n        XrmServiceToolkit.Rest.Retrieve(\n            accountId,\n            &quot;AccountSet&quot;,\n            null, null,\n            function (result)\n            {\n                alert(result.AccountId);\n            },\n            function(error)\n            {\n            },\n            false\n        );\n    }\n}</code></pre>\n\nThanks,<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-07-03T09:24:55.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064482",
+    "ThreadId": "448972",
+    "Html": "I've just realised that the CRM deployment is on RU6, which I'm sure isn't going to be helping. Rolling that up now so will let you know if this cures it :)\r<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-07-04T03:29:08.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064549",
+    "ThreadId": "448972",
+    "Html": "Hello again!\r<br />\n<br />\nNumpty alert - It was indeed because it was cross server, and I hadn't set up a mapping against a host name...\r<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-07-04T06:19:42.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

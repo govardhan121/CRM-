@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:30:27.427-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, \n\nwe used the XrmServiceToolkit in Version 1.4.1 with CRM 2011. Now we upgraded to CRM 2013 and use the ServiceToolkit Version 2.0.1. \n\nIn our form we have a custom grid with server paging functionality. With the version 1.4.1 it works great. But with the upgrade to 2.0.1 we have server paging for the first page. When we go to page 2, all data is retrieved. This depends on this line in the fetch function: \n\nvar isLimitedReturn = (fetchCore.indexOf(\"page='1'\") !== -1 && fetchCore.indexOf(\"count='\") !== -1);\n\nThe page='1' if condition is the error. When you leave the 1, then it works. \n\nAt this point another tip. Its better when you check not the double qutation marks in the fetch string query. I thinkt the right condition is this: \n\nvar isLimitedReturn = (fetchCore.indexOf(\"page=\") !== -1 && fetchCore.indexOf(\"count=\") !== -1);\n\nWhen do you plan the next release to fix this issue?",
+    "LastUpdatedDate": "2014-09-09T14:30:27.427-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-08-26T07:31:07.15-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap.Fetch with server paging",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1735
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nI am refactoring some issues with the Fetch method. Hopefully the coming release 2.1.0 should fix the problem\r\n\r\nJaimie",
+      "PostedDate": "2014-09-09T13:46:17.78-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:30:27.427-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

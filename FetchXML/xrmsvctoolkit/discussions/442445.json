@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1038957",
+    "ThreadId": "442445",
+    "Html": "Essentially, I have some calculations carried out, then the record updates itself as the following shows:<br />\n<pre><code>//OPPORTUNITY REVENUE ----------------------------------------------------------\n\n  var OpenCallsVar = Xrm.Page.getAttribute(&quot;new_openrecords&quot;).getValue();\n   \n  var RatePerMinute = Xrm.Page.getAttribute(&quot;new_rate&quot;).getValue();\n  \n  var OpportunityRevenueV = OpenCallsVar * RatePerMinute;\n  \n  \n //Toolkit to update the data\n XrmSvcToolkit.updateRecord({\n\n    //Entity we are updating\n    entityName: &quot;wse_timesheet&quot;,\n\n    //Entity ID, taken from above\n    id: ID,\n    \n    //Attribute, but Schema name not name of entity\n    entity: {new_OpportunityRevenue: OpportunityRevenueV},\n    \n    async: false,\n\n    successCallback: function (result) {\n\n    },\n\n    errorCallback: function (error) {\n\n        alert(&quot;There was an error when updating the contact record&quot;);\n\n    }\n\n});\n//END OPPORTUNITY REVENUE --------------------------------\n</code></pre>\n\nI get an error saying the record wasn't updated. This is because my calculations are carried out and I'm returned a whole number, that I want to set as a &quot;<strong>money</strong>&quot; type in my <em>new_OpportunityRevenue</em> in field. \r<br />\n<br />\nUsing Jamie's toolkit the money type was easily set using the following code:\r<br />\n<br />\n<strong>createContact.attributes[&quot;creditlimit&quot;] = { value: 2, type: &quot;Money&quot; };</strong> \r<br />\n<br />\nMy question is, can it be done with this toolkit or should I use Jamie's toolkit for that. My preference as always is to use your toolkit because it's simple and very fast.\r<br />\n<br />\nThanks for any help.<br />\n",
+    "PostedDate": "2013-05-03T03:05:12.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039020",
+    "ThreadId": "442445",
+    "Html": "I don't think what you want can be done. I've been researching on this myself for weeks and I couldn't come up with a solution as the document is lacking. If you really need to do this then switch to the XRMServiceToolkit for that, it's more comprehensive and can do more than this toolkit.<br />\n",
+    "PostedDate": "2013-05-03T06:32:41.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039060",
+    "ThreadId": "442445",
+    "Html": "@syed263, check out the XrmSvcToolkitTest.aspx file distributed with the toolkit, it can handle Money field. Based on your code snippet, the right way to construct a Money field would be something like this. <br />\n<br />\nentity: {&quot;new_OpportunityRevenue&quot;: { Value: OpportunityRevenueV.toString() } },<br />\n<br />\n@Andy, XrmServiceToolkit is bad in many ways, which I have tried to refrain from talking about that in public community. The only thing that we don't have in XrmSvcToolkit is the support of some SOAP messages (primarily CUD) using the SOAP endpoint. I was not able to commit time to implement this. If you are a developer, adding support of those SOAP messages is pretty straightforward. <br />\n",
+    "PostedDate": "2013-05-03T08:17:09.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039063",
+    "ThreadId": "442445",
+    "Html": "Thank you kindly Daniel. It worked perfectly.\r<br />\n<br />\nI'm using CRM Online, so not sure how I would view the XrmSvcToolkitTest.aspx? Should I upload the files in a new solution in CRM?<br />\n",
+    "PostedDate": "2013-05-03T08:26:00.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039073",
+    "ThreadId": "442445",
+    "Html": "@syed263, XrmSvcToolkitTest.aspx contains some code snippets that you can use as reference, you don't necessarily need to upload the file. It's not a required file to run the toolkit, it basically contains all the unit tests that I wrote for the toolkit to cover some special scenarios such as Money field that you had trouble with. <br />\n<br />\nYou can open the file in any text editor, such as Notepad++, or Visual Studio. <br />\n",
+    "PostedDate": "2013-05-03T08:41:26.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

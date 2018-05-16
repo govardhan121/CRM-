@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Calling XrmServiceToolkit.Soap.Fetch with FetchXML queries containing apostrophes (single quotes) fails.\n\nEscaping the apostrophes allows fetch to complete without errors but the query does not return the expected results. \n\nCRM uses double quotes in it's FetchXML and does not expect escaped apostrophes.",
+    "LastUpdatedDate": "2016-03-04T13:58:18.967-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-03-04T13:58:18.967-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.Fetch Single Quote Bug",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1856
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

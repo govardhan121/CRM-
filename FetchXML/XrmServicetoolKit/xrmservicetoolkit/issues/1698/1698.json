@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:25:29.453-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the function xmlToString used by JQueryXrmCustomFilterView , the following line needs changing from:\n\nif (window.ActiveXObject) {\n\nto:\n\nif (window.ActiveXObject && typeof xmlData[0].xml !== \"undefined\") {\n\nSpotted in v2.0.1",
+    "LastUpdatedDate": "2014-09-09T14:25:29.453-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-05-12T02:49:23.02-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "JQueryXrmCustomFilterView Error IE10/IE11",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1698
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nThanks for submitting the issue. I have refreshed the code.\r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2014-05-27T14:00:13.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:25:29.453-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

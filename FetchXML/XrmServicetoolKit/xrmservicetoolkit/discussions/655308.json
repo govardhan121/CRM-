@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1475323",
+    "ThreadId": "655308",
+    "Html": "Hello!\r<br />\n<br />\nFirst of all, thank you for this toolkit, really helpful.\r<br />\nI am having problems when trying to display loading screen in my html web resource to users when using SOAP functions (create, retrieve, delete, etc). I want to display loading for example when using delete function:<br />\n<pre><code>function deleteReport(){\n            loadingScreen();\n            var e = event || window.event, btn = e.target || e.srcElement;\n            reportGuid = btn.id.split(&quot;_&quot;);\n\n            if(!confirm(&quot;Are you sure you want to delete this record?&quot;)) {\n                stopLoadingScreen();\n                return 0;\n            }\n\n            try {\n                XrmServiceToolkit.Soap.Delete(&quot;novemo_timereport&quot;, reportGuid[1]);\n            }\n            catch (err) {\n                alert(&quot;There was a problem while trying to delete! Please try again...&quot;);\n            }\n            finally {\n                onLoad();\n                stopLoadingScreen();\n            }</code></pre>\n\nThe gif is displaying properly but as soon as I confirm delete, the gif stops spinning and it isn't showing any activity. I suppose that this problem has something to do with CRM but I am posting this here just in case you guys are familiar with this problem.\r<br />\n<br />\nIs there something I can do to ensure that the loading activity is displayed the whole time?<br />\n",
+    "PostedDate": "2016-06-07T06:33:57.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

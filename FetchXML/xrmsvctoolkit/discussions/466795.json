@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "1119674",
+    "ThreadId": "466795",
+    "Html": "In CRM2011, I was able to dynamically update a field using the code below in this case it is -<strong>nameOfField</strong>.<br />\n<pre><code>var  nameOfField= &quot;new_Status&quot;;\n\n    XrmSvcToolkit.updateRecord({\n        //Entity we are updating\n        entityName: entityType,\n        //Entity ID, taken from above\n        id: caseID,\n        //Attribute, but Schema name not name of entity\n        entity: {\n            nameOfField: false\n        },\n        async: false,\n        successCallback: function(result) {\n           alert(&quot;Update successful&quot;);\n        },\n        errorCallback: function(error) {\n            alert(&quot;ERROR: There was an error when updating the contact record&quot;);\n        }</code></pre>\n\nSince updating to CRM2013 the code above doesn't work. It's weird because I have one instance of CRM2013 that the code works on, but doesn't work in the others. I can't figure this out. Any advice?<br />\n",
+    "PostedDate": "2013-11-07T04:21:43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119764",
+    "ThreadId": "466795",
+    "Html": "I don't think you'll be able to do this dynamically as you want with this plugin.  I've tried something similar but had to revert to using Jamie's XrmServiceToolkit. I don't think this library is as adaptable as the XrmServiceToolkit. Take a look and give it a try: <a href=\"https://xrmservicetoolkit.codeplex.com/\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/</a><br />\n",
+    "PostedDate": "2013-11-07T07:05:21.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119877",
+    "ThreadId": "466795",
+    "Html": "Thanks for your feedback Michael. I've looked the the XrmServiceToolkit, seems good but I'll wait for either Daniel or someone else to reply. I really want to stick with this library.\r<br />\n<br />\nI just want to iterate that all I want is to take the variable and inject it into the update record:<br />\n<pre><code>__var  nameOfField= &quot;new_Status&quot;;__</code></pre>\n\nto:<br />\n<pre><code> entity: { \n                 nameOfField: false\n },</code></pre>\n\n",
+    "PostedDate": "2013-11-07T09:12:21.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120038",
+    "ThreadId": "466795",
+    "Html": "Hi Philip,\r<br />\n<br />\nthat should work. Have you tried capturing more details about the error or running Fiddler and checking what's being sent down the wire? \r<br />\n<br />\nThanks\r<br />\nGeorge<br />\n",
+    "PostedDate": "2013-11-07T14:30:37.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120390",
+    "ThreadId": "466795",
+    "Html": "Yeah I can confirm it doesn't work. There is no error in this case, it skips to the errorCallback function and produces the error alert.<br />\n",
+    "PostedDate": "2013-11-08T03:01:44.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120572",
+    "ThreadId": "466795",
+    "Html": "Georged, what happens is that I don't get an error in the code, but as Michael said you can't assign as a variable, for some reason it's not registering. What happens is it skips and calls the error function (function(error)) instead. Do you have any suggestions?<br />\n",
+    "PostedDate": "2013-11-08T09:53:24.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120578",
+    "ThreadId": "466795",
+    "Html": "Hi Philip,\r<br />\n<br />\nwhat I would do is to run fiddler to capture the trace to see what's being sent to the server. Failing to find out anything, I'd simply step through the code to figure out what's happening. The fact that it does work in 2011 but not in 2013 is very strange as endpoints didn't change <em>at all</em>. \r<br />\n<br />\nI'm planning to spend some time looking at 2013 compatibility over the weekend (in case you don't get to troubleshooting in the next couple days.)<br />\n",
+    "PostedDate": "2013-11-08T09:59:42.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120762",
+    "ThreadId": "466795",
+    "Html": "Georged, I ran the code in fiddler and VS/IE debugger and I'm beginning to think it may have been a mistake on my part - I just loaded an instance of CRM2011 and found that I got the same error in 2011 after clearing cache. I presumed the update to 2013 broke the code, but I think the file was cached so it was working in 2011. \r<br />\n<br />\nSo as a result, I don't think it's possible without modifying XRM library, which I certainly don't want to do. So this works:<br />\n<pre><code>var switchC = &quot;false&quot;;\n\n  entity: { \n                 nameOfField: switchC\n },</code></pre>\n\nbut this does not:<br />\n<pre><code>var nameOfField = &quot;new_Status&quot;;\n\n entity: { \n                 nameOfField: false\n },</code></pre>\n\nI'll wait on your conclusion Georged, see what you come up with. Thanks for your help.<br />\n",
+    "PostedDate": "2013-11-09T02:51:36.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120763",
+    "ThreadId": "466795",
+    "Html": "That's interesting. I'll have a look. Can you tell me what type is new_Status field?<br />\n",
+    "PostedDate": "2013-11-09T02:55:21.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120764",
+    "ThreadId": "466795",
+    "Html": "It's a two option (bit-field), but I have tried with String and Whole numbers and get the same result. A colleague is testing other data types as I type this right now.<br />\n",
+    "PostedDate": "2013-11-09T02:58:56.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120796",
+    "ThreadId": "466795",
+    "Html": "Sorry guys for the late response, I am on my way to move to a different city, it has been a lot of work in the past week, I didn't have much time to get online. \r<br />\n<br />\nOK, now back to the topic. I don't think this is a problem of the library, rather it is kind of JavaScript behavior. \r<br />\n<br />\nTo get around this issue, you might use a slightly different approach, say the following code: <br />\n<pre><code>var  nameOfField= &quot;new_Status&quot;;\n\nvar request = {\n    //Entity we are updating\n    entityName: entityType,\n    //Entity ID, taken from above\n    id: caseID,\n    //Attribute, but Schema name not name of entity\n    entity: {},\n    async: false,\n    successCallback: function(result) {\n       alert(&quot;Update successful&quot;);\n    },\n    errorCallback: function(error) {\n        alert(&quot;ERROR: There was an error when updating the contact record&quot;);\n    }\n};\n\nrequest.entity[nameOfField] = false;\n\nXrmSvcToolkit.updateRecord(request);</code></pre>\n\nI didn't run a test, but I suppose it should work, please let me know if otherwise. \r<br />\n<br />\nThanks,\r<br />\nDaniel Cai<br />\n",
+    "PostedDate": "2013-11-09T06:47:12.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120837",
+    "ThreadId": "466795",
+    "Html": "I'm just letting you know that the above works perfectly. I've been using this library but it just got a whole lot better - now it's easy to write reusable scripts. One question though; I tried to initialise with the same method above on the following retrieveMultiple code:<br />\n<pre><code>XrmSvcToolkit.retrieveMultiple({\n        entityName: Contacts,\n        async: false,\n        odataQuery: &quot;?$filter=new_RND1 eq &quot; + rrnd1 + &quot; and new_RND2 eq &quot; + rrnd2 + &quot;&quot;,\n        successCallback: function(result) {\n\n            var contact = callBackData.OpportunityId;\n\n        },\n        errorCallback: function(error) {\n            //some code\n        }</code></pre>\n\nHow would I go about using a variable for OpportunityId (var contact = callBackData.OpportunityId;) using a field:<br />\n<pre><code>var orange = Xrm.Page.getAttribute(&quot;new_orangefield&quot;).getValue();\n\nvar contact = callBackData.orange;</code></pre>\n\n",
+    "PostedDate": "2013-11-09T10:35:00.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

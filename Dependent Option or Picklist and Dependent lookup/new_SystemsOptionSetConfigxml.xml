@@ -1,0 +1,21 @@
+﻿<DependentOptionSetConfig entity="new_student" >
+  <ParentField id="new_city"
+               label="City">
+    <DependentField id="new_area"
+                    label="Area" />
+    <Option value="100000000"
+            label="Hyderabad">
+      <ShowOption value="100000000"
+                  label="Banjara Hills" />
+      <ShowOption value="100000001"
+                  label="Ameerpet" />
+    </Option>
+    <Option value="100000001"
+            label="Bangalore">
+      <ShowOption value="100000002"
+                  label="Marathalli" />
+      <ShowOption value="100000003"
+                  label="K R Puram" />
+    </Option>
+  </ParentField>
+</DependentOptionSetConfig>

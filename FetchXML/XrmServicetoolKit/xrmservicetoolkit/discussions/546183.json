@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1248214",
+    "ThreadId": "546183",
+    "Html": "Using the Rest Update, is there a way to deactivate a record?  ie: setting the State or Status.\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-05-21T18:44:57.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248231",
+    "ThreadId": "546183",
+    "Html": "Nevermind.  This library already has a built in SOAP request to do the SetState.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-05-21T19:34:01.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

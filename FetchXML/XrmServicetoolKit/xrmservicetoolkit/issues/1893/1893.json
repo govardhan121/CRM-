@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nthank you for your great work.  I don't know if this is the right place but I have found and resolved an issue regarding the deserialization of the fetchXml for Party entity reference.\n\n```\nif (nodeText === \"partyid\") {\n    var itemRef = new xrmEntityReference();\n    var partyListNodes = itemNodeChildNodes[1].childNodes;\n    for (var pi = 0, lenpi = partyListNodes.length; pi < lenpi; pi++) {\n          var partyReferenceNode = partyListNodes[i];\n\n          switch (partyReferenceNode.nodeName) {\n                case \"a:Id\":\n                       itemRef.id = getNodeText(partyReferenceNode);\n                       break;\n               case \"a:LogicalName\":\n                       itemRef.logicalName = getNodeText(partyReferenceNode);\n                       break;\n              case \"a:Name\":\n                       itemRef.name = getNodeText(partyReferenceNode);\n                       break;\n          }\n     }\n     items[y] = itemRef;\n}\n```\nThis is your original code. I have found the refuse regarding the index of partyListNodes. from [i] it has to be [pi]\n\nRegards \n\nAndrea",
+    "LastUpdatedDate": "2016-12-22T08:21:40.983-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-12-22T08:21:40.983-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue resolution on Deserialization PartyList",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1893
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

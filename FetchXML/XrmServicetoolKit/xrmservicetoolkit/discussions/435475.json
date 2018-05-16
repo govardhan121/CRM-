@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1010741",
+    "ThreadId": "435475",
+    "Html": "Hey guys,<br />\n<br />\nI was wanting to create custom tool tips for my CRM Forms, but instead of using a separate web resource I just wanted to use the description field for each attribute on the form.<br />\n<br />\nI changed the AJAX query to grab a soap request, but I am having issues parsing that response xml. Could I get some insight about that?<br />\n<br />\nHere is the snippet where I am going through that responseXml document:<br />\n<pre><code>createToolTips: function (xmlHttpRequest) {\n        var entityName = Xrm.Page.data.entity.getEntityName();\n        Xrm.Page.data.entity.attributes.forEach(function (attribute, index) {\n            var fieldName = attribute.getName();\n            var desc = crmGlobal.DescriptionToolTips.selectTipNode(result, &quot;//EntityMetadata/Attributes/Attribute[LogicalName='&quot; + fieldName + &quot;']/Description/UserLocLabel/Label&quot;);\n            if (desc != null) {\n                crmGlobal.DescriptionToolTips.createTipDiv(entityName, fieldName, desc.nodeTypedValue);\n            }\n        });\n    }</code></pre>\n\n",
+    "PostedDate": "2013-03-05T10:12:59.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013750",
+    "ThreadId": "435475",
+    "Html": "Hi There.\r<br />\n<br />\nI am not sure if this is related with the XrmServiceToolkit, but to check and parse the soap response xml, you could use tools like fiddler or IE developer tool to test your code to see if the response xml actually contains the right result.\r<br />\n<br />\nHappy Coding,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-03-12T02:01:23.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

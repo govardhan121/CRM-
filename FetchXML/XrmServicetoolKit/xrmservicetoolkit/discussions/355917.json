@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "836894",
+    "ThreadId": "355917",
+    "Html": "\r\n<p>I am fairly new to CRM Coding and this toolkit. I am trying to use the&nbsp;&nbsp; XrmServiceToolkit.Rest.Retrieve to pull detailed info on a account. if I plug a accountid guid into account id in the third line below.&nbsp; I am able to pull all the fields\r\n back that I want in the result function and then assign variables to them. I am trying to find out a way to filter by another custom field on the account. like a location number. is this possible and if so how would this code look</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>function test1 () {</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XrmServiceToolkit.Rest.Retrieve(<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AccountId,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;AccountSet&quot;,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; null, null,<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function (result) {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var Id = result.AccountId);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function (error) {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(&quot;failed&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; false<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2012-05-15T14:07:42.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "837576",
+    "ThreadId": "355917",
+    "Html": "<p>You'll have to use `XrmServiceToolkit.Rest.RetrieveMultiple` and write a little of raw oData.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>XrmServiceToolkit.Rest.RetrieveMultiple(\r\n    <span style=\"color: #a31515;\">'ActivityPartySet'</span>, <span style=\"color: green;\">// entity name + 'Set'</span>\r\n    <span style=\"color: #a31515;\">'$filter=LocationNumber eq'</span> Xrm.Page.getAttribute(<span style=\"color: #a31515;\">'locationNumber'</span>).getValue(), <span style=\"color: green;\">// Some raw oData goodness, assuming field is a string. Hopefully, there will be an API for filters in further versions.</span>\r\n    batchSuccessCallback, <span style=\"color: green;\">// retrieved data is paged (50 records a batch). this will be called after every batch. Process retrieved data here or it will be overwritten by next batch.</span>\r\n    errorCallback,\r\n    OnComplete, <span style=\"color: green;\">// this, finally, will be called after all pages are retrieved</span>\r\n    <span style=\"color: blue;\">false</span> <span style=\"color: green;\">// async or not?</span>\r\n    );\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-05-17T01:56:42.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "891033",
+    "ThreadId": "355917",
+    "Html": "<p>Hey There.</p>\r\n<p>Have a look at the XrmServiceToolkit.Soap.QueryByAttribute funciton. It might be the eaiser one to use.</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-07-25T03:56:24.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

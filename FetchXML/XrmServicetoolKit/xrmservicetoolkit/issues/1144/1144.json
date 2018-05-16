@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-04-21T04:22:28.29-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hi\nsorry for my english\ni wanted report bug the when in the cycle for dynamics field the xml\n\nfor (var a = 0; a < dynamic.length; a++) {\n                        var dynamicControlType = Xrm.Page.getControl($(dynamic[a]).attr('name')).getControlType();\n                        var fieldValueType = $(dynamic[a]).attr('fieldvaluetype'); //for optionset, name might be used to filter\n                        if (Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getValue() == null) {\n                            alert($(dynamic[a]).attr('name') + ' does not have a value. Please put validation logic on the field change to call this function. Only use XrmServiceToolkit.Extension.JQueryXrmCustomFilterView when the field has a value.');\n                            return;\n                        }\n                        var dynamicValue = null;\n                        switch (dynamicControlType) {\n                            case 'standard':\n                                dynamicValue = Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getValue();\n                                break;\n                            case 'optionset':\n                                dynamicValue = (fieldValueType != null && fieldValueType == 'label') ? Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getSelectionOption().text : Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getValue();\n                                break;\n                            case 'lookup':\n                                dynamicValue = (fieldValueType != null && fieldValueType == 'name') ? Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getValue()[0].name : Xrm.Page.getAttribute($(dynamic[a]).attr('name')).getValue()[0].id;\n                                break;\n                            default:\n                                alert($(dynamic[a]).attr('name') + \" is not supported for filter lookup view. Please change the configuration.\");\n                                break;\n                        }\n\n                        var operator = $(dynamic[a]).attr('operator');\n                        if (operator == null) {\n                            alert('operator is missing in the configuration file. Please fix the issue');\n                            return;\n                        }\n                        var dynamicString = $(dynamic[a]).attr('fetchnote');\n                        switch (operator.toLowerCase()) {\n                            case 'contains':\n                            case 'does not contain':\n                                dynamicValue = '%' + dynamicValue + '%';\n                                break;\n                            case 'begins with':\n                            case 'does not begin with':\n                                dynamicValue = dynamicValue + '%';\n                                break;\n                            case 'ends with':\n                            case 'does not end with':\n                                dynamicValue = '%' + dynamicValue;\n                                break;\n                            default:\n                                dynamicValue = dynamicValue;\n                                break;\n                        }\n\n                        fetchXml = fetchXml.replace(dynamicString, dynamicValue);\n                    }\n                }\nThis was corrected\nagain sorry for my English",
+    "LastUpdatedDate": "2014-04-21T04:22:28.29-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-02-05T12:49:10.377-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Extension jQueryXrmCustomFilterView",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 1144
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Can you please be more specific about the error?\r\n\r\nthanks\njaimie",
+      "PostedDate": "2013-02-14T14:47:32.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:56:00.303-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:22:28.29-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

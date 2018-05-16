@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1216065",
+    "ThreadId": "535883",
+    "Html": "Hi,<br />\n<br />\nDownloaded XrmServiceToolkit and Created three new webresource files and placed it on the form.<br />\nCreated a new function as below,<br />\n<br />\nfunction test(){<br />\nXrmServiceToolkit.Common.enableField(&quot;name&quot;);<br />\n}<br />\n<br />\ngetting &quot;<strong>Undefined error</strong>&quot; on load of the record.<br />\n<br />\nPlease help me.<br />\n<br />\nThanks in advance.<br />\n<br />\nRegards<br />\nArun Potti<br />\n",
+    "PostedDate": "2014-02-28T03:26:25.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224913",
+    "ThreadId": "535883",
+    "Html": "Hi.\r<br />\n<br />\nHave you also references the jQuery, json2, XrmServiceToolkit library in your form? \r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2014-03-20T10:32:16.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

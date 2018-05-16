@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nI'm not sure if this will be an issue in the library or not but I thought I would bring it up in case anyone else has seen this issue.  While on my network at work, the library works exactly as expected within CRM.\n\nWhile I am VPN'd into my work, I'm able to get to the CRM server there just as if I'm in the office, however, all XRMServiceToolkit functions stop working with the following error:\n\nInvalid Character\nFile: cxa_xrmservicetoolkit.js, Line: 760, Column: 21\n\n//It appears to be happening on the successCallback line.\nif (this.status === 200) {\n          successCallback(JSON.parse(this.responseText, dateReviver).d);\n\nAny ideas?\n\nThanks!",
+    "LastUpdatedDate": "2014-10-02T01:41:20.353-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-09-25T18:40:05.803-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "REST Functions over VPN",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1742
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.[0A][0A]Do you mean that the code stops working within CRM or through development?[0A][0A]Which version was used? As for VPN, I have seen various behaviour of REST/SOAP calls (not limited to the toolkit) depending on the VPN configuration. Sometimes you will see a cross domain call is made which is why the code will not work.[0A][0A]Cheers,[0A]Jaimie",
+      "PostedDate": "2014-09-29T02:35:51.947-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Within CRM it stops working.  Version 2.0.0 is being used.",
+      "PostedDate": "2014-09-29T06:26:47.2-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi There.\r\n\r\nIt is worth to do a debug in that case to check what is called of CRM service and what is passed to CRM using tools like developer tool in IE or Fiddler.\r\n\r\nLet me know more information if you have. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-10-02T01:41:20.353-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

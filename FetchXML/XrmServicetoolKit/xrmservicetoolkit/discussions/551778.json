@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1271535",
+    "ThreadId": "551778",
+    "Html": "Hi,\r<br />\n<br />\nFor some reason my query is only getting 10 results. Here is the query:<br />\n<pre><code>    var records = null;\n    XrmServiceToolkit.Rest.RetrieveMultiple(&quot;New_countrySet&quot;,\n        &quot;$select=*&quot;,\n        function (results) {\n            records = results;\n        },\n        function (error) {\n             equal(true, false, error.message);\n        },\n        function onComplete() { },\n        false);</code></pre>\n\nAny ideas?<br />\n",
+    "PostedDate": "2014-07-16T22:27:52.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1273751",
+    "ThreadId": "551778",
+    "Html": "This is only happening to some entities and not others.\r<br />\n<br />\nI have looked at the data inside sql manager (there is around 300 records) and there is no noticeable difference that should make this happen. It gets the last 10 records that were imported and it also retrieves any new records I create. Very strange behaviour.<br />\n",
+    "PostedDate": "2014-07-17T15:48:25.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1274228",
+    "ThreadId": "551778",
+    "Html": "I discovered what I was doing wrong. As retrieve multiple only gets 50 records at a time, I was overwriting records each time with the latest data received, and the last bundle happened to be 10.\r<br />\n<br />\nI updated my query to add results to an array and all was solved.<br />\n",
+    "PostedDate": "2014-07-19T06:49:38.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1275096",
+    "ThreadId": "551778",
+    "Html": "Hi.\r<br />\n<br />\nGlad to know you sorted it out.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-07-22T06:56:17.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1438097",
+    "ThreadId": "551778",
+    "Html": "Hi Can you give me an example to return &gt; 50 records.  I can't seem to page through the data using successBatchCallBack\r<br />\n<br />\nHere is my function (only returning 50 results)\r<br />\n<br />\nfunction GetSystemAccounts (id) {<br />\n<pre><code>XrmSvcToolkit.retrieveMultiple({ \n    entityName: &quot;Account&quot;, \n    async: false, \n    odataQuery: &quot;?$filter=StateCode/Value eq 0 and ParentAccountId/Id eq (guid'&quot; + id + &quot;')&quot;, \n    // 50 results returned per call\n    successCallback: function (result) { \n        accounts = result; \n    },\n    errorCallback: function (error) { \n       alert(&quot;Error&quot;);\n       return;\n    } \n});\nreturn accounts; </code></pre>\n\n}<br />\n",
+    "PostedDate": "2015-08-11T01:50:17.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1438213",
+    "ThreadId": "551778",
+    "Html": "The successCallback will only retrieve 50 results at a time. You need to append the result in successCallBack to another array. The following should fix your issue:<br />\n<pre><code>var accounts = new Array();\nXrmSvcToolkit.retrieveMultiple({ \n    entityName: &quot;Account&quot;, \n    async: false, \n    odataQuery: &quot;?$filter=StateCode/Value eq 0 and ParentAccountId/Id eq (guid'&quot; + id + &quot;')&quot;, \n    // 50 results returned per call\n    successCallback: function (result) { \n       for (var i = 0; i &lt; results.length; i++) {\n          accounts.push(results[i])\n       }\n    },\n    errorCallback: function (error) { \n       alert(&quot;Error&quot;);\n       return;\n    } \n});\nreturn accounts; </code></pre>\n\nNote the variable accounts is created outside the retrieveMultiple method and the results are added to it, which will be 50 at a time.<br />\n",
+    "PostedDate": "2015-08-11T16:40:14.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

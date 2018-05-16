@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "822810",
+    "ThreadId": "352020",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>It seems that RetrieveMultiple method use a success function as parameter.</p>\r\n<p>What if I want the method that uses RetrieveMultiple to return the values from that RetrieveMuliple call?</p>\r\n<p>How to write it?</p>\r\n",
+    "PostedDate": "2012-04-12T02:17:22.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "825346",
+    "ThreadId": "352020",
+    "Html": "<p>Hey There. I have put an example about using RetrieveMultiple example in the updated documentation in the aspx test page...Please have a look.</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>  test(<span style=\"color: #a31515;\">\"Test XrmServiceToolkit.Rest.RetrieveMultiple(contact) method to get the contacts\"</span>, <span style=\"color: blue;\">function</span> () {\r\n\r\n            XrmServiceToolkit.Rest.RetrieveMultiple(\r\n                <span style=\"color: #a31515;\">\"ContactSet\"</span>,\r\n                <span style=\"color: #a31515;\">\"$select=ContactId, FullName\"</span>,\r\n                <span style=\"color: blue;\">function</span> (results) {\r\n                    ok(results.length &gt; 0, results.length.toString() + <span style=\"color: #a31515;\">\" records should have been retrieved.\"</span>);\r\n                },\r\n                <span style=\"color: blue;\">function</span> (error) {\r\n                    equal(<span style=\"color: blue;\">true</span>, <span style=\"color: blue;\">false</span>, error.message);\r\n                },\r\n                <span style=\"color: blue;\">function</span> onComplete() {\r\n\r\n                },\r\n                <span style=\"color: blue;\">false</span>\r\n            );\r\n        });\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-04-18T02:46:58.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "825698",
+    "ThreadId": "352020",
+    "Html": "<p>Hi jaimieji,</p>\n<p>I think what tanguy92 mean is if we can do coding as follow:</p>\n<p>var results = XrmServiceToolkit.Rest.RetrieveMultiple('AccountSet', \"?$filter=StateCode/Value eq 0\", null, null, null);</p>\n<p>instead of using a success function as parameter, return results synchronously.</p>",
+    "PostedDate": "2012-04-18T16:04:25.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "831930",
+    "ThreadId": "352020",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>hjmhyl wrote:</strong><br />\r\n<p>Hi jaimieji,</p>\r\n<p>I think what tanguy92 mean is if we can do coding as follow:</p>\r\n<p>var results = XrmServiceToolkit.Rest.RetrieveMultiple('AccountSet', \"?$filter=StateCode/Value eq 0\", null, null, null);</p>\r\n<p>instead of using a success function as parameter, return results synchronously.</p>\r\n</blockquote>\r\n<p><br />Hi jaimieji,</p>\r\n<p>In you next release(1.5), it would be great if we can do code as I quoted.</p>",
+    "PostedDate": "2012-05-03T16:15:58.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294188",
+    "ThreadId": "352020",
+    "Html": "Hi,\r<br />\n<br />\nI think it is an old question asked by @tanguy92, but I want to do the same:\r<br />\n<br />\nvar results = XrmServiceToolkit.Rest.RetrieveMultiple('AccountSet', &quot;?$filter=StateCode/Value eq 0&quot;, null, null, null);\r<br />\n<br />\n<br />\nhow could i do this ? Is the library updated now ?<br />\n",
+    "PostedDate": "2014-08-28T01:40:53.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310767",
+    "ThreadId": "352020",
+    "Html": "Hi There.\r<br />\n<br />\nNot for Rest at the moment. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-10-06T06:35:51.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

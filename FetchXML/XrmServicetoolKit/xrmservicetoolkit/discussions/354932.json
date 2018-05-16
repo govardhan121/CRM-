@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "833464",
+    "ThreadId": "354932",
+    "Html": "\r\n<p>How do you create activity with XrmServiceToolkit?</p>\r\n<p>Say, phone call with 'from' and 'to' fields from other activity.</p>\r\n",
+    "PostedDate": "2012-05-08T07:05:28.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "835440",
+    "ThreadId": "354932",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>skfd wrote:</strong><br />\r\n<p>How do you create activity with XrmServiceToolkit?</p>\r\n<p>Say, phone call with 'from' and 'to' fields from other activity.</p>\r\n</blockquote>\r\n<p><br />Hey There.</p>\r\n<p>There is a bug at the moment to handle activity with partylist. I will try to fix it as soon as possible. Just a bit busy at client side at the moment.</p>\r\n<p>Thanks very much for submitting the issue.</p>\r\n<p>Best Regards,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-05-12T02:55:39.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

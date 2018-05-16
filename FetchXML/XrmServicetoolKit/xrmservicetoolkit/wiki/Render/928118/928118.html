@@ -1,0 +1,31 @@
+<div class="wikidoc"><h2>CRM 2013 and XrmServiceToolkit</h2>
+To support CRM 2013, there are lots of works to be done for the toolkit<br /><br /><b>Download</b><br /><br />Please download the latest version<br /><br /><b>Tested CRM 2013 server</b>
+<ul><li>PC
+<ul><li>CRM 2013 on-premise for IE10, latest chrome, latest firefox</li>
+<li>CRM 2013 online for IE10, latest chrome, latest firefox</li></ul></li>
+<li>Tablet - iPad 2, iOS 7.0.2
+<ul><li>CRM 2013 online for latest chrome, latest safari</li></ul></li>
+<li>Tablet Client - Remember the limitations of CRM events for tablet apps.
+<ul><li>iOS client - iPad 2, iOS 7.0.2</li>
+<li>Windows App - Windows 8, Windows RT</li></ul></li></ul>
+<br />Tablet client OnLoad : You may have a <u>&quot;alert&quot; is not defined error</u> when the app is initially loaded, but the problem should be gone once the app / page is fully loaded. This may be caused by &quot;In Microsoft Dynamics CRM for tablets any use of the window.alert method will be overridden to use Xrm.Utility.alertDialog without a callback&quot;<br /><br />Please try it in your CRM 2013 test environment and report issues, bugs<br /><br /><i>If reporting bugs, please start with CRM2013 or CRM2011, so it will be easier for us to target the CRM environment</i><br /><br /><b>Dependency</b><br />The toolkit will still require JSON2, jQuery to be used to support some conversion and extension methods. <br /><br /><b>NOTE:</b> The attached jQuery in the solution has some changes applied to make sure the toolkit will work on Form <br /> <br /><pre>// Expose jQuery to the global object
+window.jQuery = jQuery;
+</pre><br />All the $ usage has been removed from the toolkit. Instead, jQuery is used to avoid conflict<br /><br /><b>Development Tools and Environment</b>
+<ul><li>Visual Studio 2012 + Update 3</li>
+<li>IE10, latest Chrome, latest Firefox, latest Safari</li>
+<li>CRM 2013 SDK beta</li>
+<li>CRM 2013 on-premise RTM, CRM 2013 online for PC and Tablet - iPad</li>
+<li>Windows Server 2012</li>
+<li>SQL Server 2012</li>
+<li>jQuery v1.7.2 , QUnit v1.12.0</li></ul>
+All these are used in a windows 8 Hyper-V server<br /><br /><b>Release Note</b>
+<ul><li>New Behavior - XrmServiceTookit.Soap.Fetch parameters change to work with asynchronous callback compared to 1.4.2 beta: XrmServiceToolkit.Soap.Fetch(fetchXml, fetchAll, callback)</li>
+<li>New Behavior - XrmServiceTookit.Common.AddNotification is working with CRM 2013 using the out-of-box functionality. Still support CRM 2011</li>
+<li>New Fix - XrmServiceToolkit.Comon.GetObjectCodeType is now using metadata retrieval as a supported method</li>
+<li>New Fix - The included jQuery has a line changed at the bottom &lt;window.jQuery = jQuery;&gt; $ is removed to work with CRM 2013 form</li></ul>
+<br /><b>To be continued</b><br />
+<ul><li>New CRM 2013 methods will be added if needed</li>
+<li>More functions and modifications will be added to support tablet layout, outlook client, etc</li>
+<li>Better Performance tuning and changes along the way to support CRM 2013 for cross browser, cross platform (web, tablet, mobile, etc)</li>
+<li>Add-ons which developed using XrmServiceTookit will be added to the project in the future. In the format of source code and CRM solution</li></ul>
+<br />Happy Coding,<br />Jaimie Ji</div><div class="ClearBoth"></div>

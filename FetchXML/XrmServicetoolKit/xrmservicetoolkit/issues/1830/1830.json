@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nwe are using XrmServiceToolkit for a customer, especially the Fetch functionality. Everything was tested and worked fine a few days ago, but today we register a problem with Firefox/Chrome in combination with Soap.Fetch requests. All Soap requests doesn't work anymore with those Browsers. We assume that a automatic browser update of Firefox is the reason of this problem. With IE 11 we have no issues.\n\nThe console of the browser logs the following warning/error:\n\n*  The provided value 'msxml-document' is not a valid enum value of type XMLHttpRequestResponseType  (Warning in xrmservicetoolkit.js)\n* Refused to set unsafe header \"Content-Length\" (error in global.ashx)\n\n(see also attached file)\n\nIs this a known issue? Please help.\n\nBrowser Versions:\n\n* Firefox 40.0.3\n* Chrome 45.0.2454.101\n\nThanks\n\nMarius Müller",
+    "LastUpdatedDate": "2015-11-12T05:35:31.447-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-10-01T07:44:29.32-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.Fetch issue with Firefox/Chrome after update",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1830
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1678,
+      "FileName": "issue_soap_request.PNG",
+      "DownloadUrl": ".\\1678"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "You can close this issue. There was a Problem with another JSLibrary which had an side effect to the XrmServiceToolkit. Sorry for that.\r\n\r\nMarius\n",
+      "PostedDate": "2015-10-01T22:54:54.457-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "A sidenote for the sake of completeness:\r\n\r\nYou can safely ignore warning messages like \"The provided value 'msxml-document' is not a valid enum value of type XMLHttpRequestResponseType\" in modern browsers like Chrome/Firefox. These Messages occur because XST tries to exploit IE-specific XHR-behaviour in recent Versions of Internet Explorer. It tries to \"cast\" Response bodies to XmlDocument instances so that the document Content could be properly extracted using XPath selectors. It does this by assigning a proprietary (IE-specific) content type string that is -- obviously -- not supported and not needed in modern browsers which ship with proper XPath Support anyway.",
+      "PostedDate": "2015-11-12T05:35:31.447-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

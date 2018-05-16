@@ -1,0 +1,21 @@
+﻿<DependentOptionSetConfig entity="new_loancustomer" >
+  <ParentField id="new_category"
+               label="Category">
+    <DependentField id="new_subcategory"
+                    label="Sub Category" />
+    <Option value="100000001"
+            label="Software">
+      <ShowOption value="100000003"
+                  label="Business App" />
+      <ShowOption value="100000002"
+                  label="OS" />
+    </Option>
+    <Option value="100000000"
+            label="Hardware">
+      <ShowOption value="100000001"
+                  label="Desktop" />
+      <ShowOption value="100000000"
+                  label="Laptap" />
+    </Option>
+  </ParentField>
+</DependentOptionSetConfig>

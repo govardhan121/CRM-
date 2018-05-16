@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1098939",
+    "ThreadId": "459051",
+    "Html": "my client doesn't want to give access on our configuration data entity where we keep our settings data and etc.. so i need to get something on the configuration data entity through javascript by impersonation. How can I do that by using your toolkit?<br />\n",
+    "PostedDate": "2013-09-25T02:35:56.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1099623",
+    "ThreadId": "459051",
+    "Html": "Hi.<br />\n<br />\nAs far as I understand, it is not easy to impersonate in JavaScript especially for CRM 2011 oData/ Soap. You will need to implement the whole WCF interface to replace CRM 2011 service endpoint.  Also impersonation will break the business or license model for CRM framework itself and make your application insecure.<br />\n<br />\nFor your case, you should either discuss the necessity with the client that why you will need access to configuration data entity or alter the approach with JavaScript access ( use plugins, out-of-box security model for this )<br />\n<br />\nHope this helps.<br />\n<br />\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2013-09-26T05:38:40.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142379",
+    "ThreadId": "459051",
+    "Html": "Hi Jaimieji. I think with SOAP calls to crm, impersonation should be a matter of optionally supplying a different user guid to the call? It will only work if certain security within crm is in place. See <a href=\"http://stackoverflow.com/questions/20778946/can-i-impersonate-a-different-user-in-an-html-web-resource-online-2011-2013/20779539?iemail=1&amp;noredirect=1#20779539\" rel=\"nofollow\">here</a> for more info. \r<br />\n<br />\nThis would be a very useful feature of the toolkit, at least for me...:)<br />\n",
+    "PostedDate": "2013-12-26T09:47:32.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1170407",
+    "ThreadId": "459051",
+    "Html": "Hi.\r<br />\n<br />\nMy understanding so far is impersonation is not support / ignored since CRM 2011 in JavaScript. There are some discussions on the web regarding to this topic, but I do not think it is achievable using the current SDK.\r<br />\n<br />\nJaimie <br />\n",
+    "PostedDate": "2014-01-16T03:20:50.35-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

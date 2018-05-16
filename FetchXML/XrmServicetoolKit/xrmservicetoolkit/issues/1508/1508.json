@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Issue not related with the toolkit",
+    "ClosedDate": "2013-11-08T04:14:37.827-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\n    Can anyone tell me what are the replacements for selectNodes(), selectSingleNode() functions in XrmServiceToolKit. and how to use them in crm 2013.",
+    "LastUpdatedDate": "2013-11-08T04:14:37.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-11-05T05:52:03.16-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "selectNodes(), selectSingleNode() functions",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1508
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThe toolkit use jQuery to read XML and does not use selectNodes(), selectSingleNode() methods.\r\n\r\nIf you have JavaScript uses those methods, you will need to convert them into cross browser code for CRM 2013.\r\n\r\nYou can do a search to find several solutions on the web.\r\n\r\nJaimie",
+      "PostedDate": "2013-11-05T13:51:59.847-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-11-08T04:14:37.827-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

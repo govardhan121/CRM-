@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "799646",
+    "ThreadId": "344771",
+    "Html": "\r\n<p>I am new to codeplex so if this is not the correct location to post a possible bug, please forgive me.</p>\r\n<p>I am using SOAP and Fetch with the toolbox to return some data and it works great but I noticed that anytime the attribute is a DateTime type, the value is always null while the formattedValue is correct.</p>\r\n",
+    "PostedDate": "2012-02-24T14:39:48.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "800060",
+    "ThreadId": "344771",
+    "Html": "<p>Hey There.</p>\n<p>Give this a try and let me know if it return the <strong><em><span style=\"text-decoration: underline;\">dateTime</span></em></strong> correctly.</p>\n<p>In my end, it does return a <strong><em><span style=\"text-decoration: underline;\">dateTime</span></em></strong> value.</p>\n<div style=\"background-color: white; color: black;\">\n<pre><span style=\"color: blue;\">var</span> fetchXml =\r\n                    <span style=\"color: #a31515;\">\"&lt;fetch mapping='logical'&gt;\"</span> +\r\n                       <span style=\"color: #a31515;\">\"&lt;entity name='contact'&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='contactid' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='firstname' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='lastname' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='middlename' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='familystatuscode' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='ownerid' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='creditlimit' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='birthdate' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='accountrolecode' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='donotemail' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;attribute name='donotphone' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;filter&gt;\"</span> +\r\n                             <span style=\"color: #a31515;\">\"&lt;condition attribute='contactid' operator='eq' value='\"</span> + contactId + <span style=\"color: #a31515;\">\"' /&gt;\"</span> +\r\n                          <span style=\"color: #a31515;\">\"&lt;/filter&gt;\"</span> +\r\n                       <span style=\"color: #a31515;\">\"&lt;/entity&gt;\"</span> +\r\n                    <span style=\"color: #a31515;\">\"&lt;/fetch&gt;\"</span>;\r\n\r\n<span style=\"color: blue;\">var</span> retrievedContacts = XrmServiceToolkit.Soap.Fetch(fetchXml);\r\n\r\nalert(retrievedContacts[0].attributes[<span style=\"color: #a31515;\">\"birthdate\"</span>].value);\r\n\r\nalert(retrievedContacts[0].attributes[<span style=\"color: #a31515;\">\"birthdate\"</span>].type);</pre>\n</div>",
+    "PostedDate": "2012-02-26T03:32:23.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

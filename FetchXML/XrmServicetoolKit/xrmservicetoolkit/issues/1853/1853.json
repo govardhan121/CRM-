@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "``` C#\nvar encodeValue = function (value) {\n    // Handle GUIDs wrapped in braces\n    if (typeof value == typeof \"\" && value.slice(0, 1) === \"{\" && value.slice(-1) === \"}\") {\n        value = value.slice(1, -1);\n    }\n\n    // ReSharper disable QualifiedExpressionMaybeNull\n    return (typeof value === \"object\" && value.getTime)\n    // ReSharper restore QualifiedExpressionMaybeNull\n           ? encodeDate(value)\n           : crmXmlEncode(value);\n};\n```\nEx: If I try to update an object using _XrmServiceToolkit.soap.Update(EntityObj)_, that contains a string in braces (for example, JSON string after stringify) - external braces will be cut by _encodeValue()_.\nYou should more carefully define GUID. For example, using a regular expression. In any case you should not process (destroy) user data in the query.",
+    "LastUpdatedDate": "2016-04-11T04:41:52.973-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2016-02-29T06:11:40.423-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "encodeValue() function distort the string data with braces",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1853
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Proposal for improved handling of guids could look like this maybe?\n```\nfunction isGuid(guidString) {\n    if( typeof guidString === \"string\" && guidString.test(/^\\{?[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\\}?$/i)){\n        return true;\n    } else {\n        return false;\n    }\n}\r\n\r\nfunction encodeValue(value) {\n    // Handle GUIDs wrapped in braces\n    if (isGuid(value)) {\n        value = value.replace(/[{}]/gi, \"\");\n    }\r\n\r\n    return (typeof value === \"object\" && value.getTime)\n            ? encodeDate(value)\n            : crmXmlEncode(value);\n}\n```",
+      "PostedDate": "2016-04-11T04:41:52.973-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1482673",
+    "ThreadId": "657618",
+    "Html": "How I can make a filter in my query multiple\r<br />\n<br />\nvar Quoteid = &quot;121D466B-9765-E611-80D3-00155D00D107&quot;;\r<br />\n<br />\nXrmServiceToolkit.Rest.RetrieveMultiple(<br />\n<pre><code>            &quot;QuoteDetailSet&quot;,\n            &quot;$select=ProductId, Quantity, PricePerUnit, ManualDiscountAmount, ExtendedAmount, QuoteId &amp; $filter=QuoteId eq &quot;+Quoteid,\n            function (results) {\n                $scope.products = results;\n            },\n            function (error) {\n                $scope.products = error;\n            },\n            function onComplete() {\n\n            },\n            false\n        );\n</code></pre>\n\nHow filters are made with this library???\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-09-01T15:01:02.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

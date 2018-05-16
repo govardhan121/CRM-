@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "There needs to be a case added for `c:base64Binary` in `getTypedValue`.\r\n\r\nThis type is used for `ImageEntity`, the new record image field for CRM 2013.\r\n\r\nCurrently this error is thrown: `Uncaught Error: Unhandled field type: \"c:base64Binary\", please report the problem to the developer.`",
+    "LastUpdatedDate": "2013-12-12T11:56:42.527-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmsvctoolkit",
+    "ReportedDate": "2013-12-12T09:15:57.727-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "new c:base64Binary type in CRM 2013",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 5
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi, \n\nThanks for reaching out. \n\nHow would you like to use entityimage field in JavaScript? When you try to extract data from entityimage field, what you get from CRM is a byte array, I am not exactly sure how it can be used in JavaScript. \n\nThanks,\nDaniel Cai",
+      "PostedDate": "2013-12-12T10:37:42.217-08:00",
+      "Id": 127132
+    },
+    {
+      "Message": "I would create an `<img>` element with it and attach it to the DOM.\n\nhttps://developer.mozilla.org/en-US/docs/Web/API/window.btoa\nhttp://stackoverflow.com/questions/11524268/atob-not-working-in-ie\nhttp://stackoverflow.com/questions/1207190/embedding-base64-images",
+      "PostedDate": "2013-12-12T11:56:42.527-08:00",
+      "Id": 127155
+    }
+  ]
+}

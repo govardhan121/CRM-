@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1431315",
+    "ThreadId": "640284",
+    "Html": "Hello there,\r<br />\nI need to create a record in a controlled entity.\r<br />\nI don't want to give create permission to &quot;normal&quot; user, just the Administrator will have access (Create) to this entity.\r<br />\n<br />\nBut I need to create records in a html/jscript control that is called by any user...\r<br />\nSo, is possible do call the web services from a different Caller Id then the user who is calling the webresource?\r<br />\n<br />\nin c# I canDo an impersonation, can I do the same using XrmServiceToolKit??<br />\n",
+    "PostedDate": "2015-06-22T02:43:57.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431433",
+    "ThreadId": "640284",
+    "Html": "<ul>\n<li>Create a custom action and register run as administrator user.</li>\n<li>google and you can view a lot of blog post call custom action from javascript</li>\n</ul>\n",
+    "PostedDate": "2015-06-22T18:23:19.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-06-29T02:58:09.533-07:00"
+  },
+  {
+    "Id": "1432268",
+    "ThreadId": "640284",
+    "Html": "Hi There.\r<br />\n<br />\nFor CRM 2011 and CRM 2013, as I remember the authenication header is ignored in JavaScript, so there is no way you can impersonate the Javascript and run it as another user.\r<br />\n<br />\nIn general, using authentication and impersonation is a bit tricky and has security risks to do.\r<br />\n<br />\nI agree that action is a better option to do so.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-06-29T02:47:36.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432272",
+    "ThreadId": "640284",
+    "Html": "Thanks for the Reply.\r<br />\n<br />\nI will do just that. <br />\n",
+    "PostedDate": "2015-06-29T02:59:28.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

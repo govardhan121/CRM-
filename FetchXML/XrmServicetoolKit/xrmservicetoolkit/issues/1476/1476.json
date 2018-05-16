@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-04-21T04:21:41.95-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI was testing the features of CRM 2013 and observed that Async scripts are not working in XRMToolkit.\n Did the script upgrade to support CRM 2013?",
+    "LastUpdatedDate": "2014-04-21T04:21:41.95-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-10-04T04:48:16.197-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Having issues with async calls with CRM 2013.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1476
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nI currently have no access to CRM 2013. The toolkit has not been updated to work with CRM 2013 yet.\r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2013-10-05T02:34:33.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jaimie,\r\n\r\nYou can download a CRM 2013 RC1 VM from here: http://connect.microsoft.com/site687/Downloads/DownloadDetails.aspx?DownloadID=51174.\r\n\r\nIn the same site you can get the CRM 2013 RC1 bits too.\r\n\r\nI guess your company need to sign in for the trial in order to get access to that site.\r\n\r\nRegards,\r\n\r\nLuiz",
+      "PostedDate": "2013-10-05T16:23:17.897-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi There.\r\n\r\nThanks for the information. I have used CRM 2013 RTM and released a beta version for CRM 2013\r\n\r\nfor more details, \r\n\r\nhttps://xrmservicetoolkit.codeplex.com/wikipage?title=CRM%202013%20Support%20and%20Development\r\n\r\nRegards\nJaimie",
+      "PostedDate": "2013-10-09T12:17:19.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:21:41.95-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

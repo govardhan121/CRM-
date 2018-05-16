@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1065769",
+    "ThreadId": "449347",
+    "Html": "Is there a way to have fields that are listed in the soap columns return null instead of just not appearing in the list.\r<br />\n<br />\nI have about 50 fields in a soap call and I really don't what to have to wrap them all in if statements.\r<br />\n<br />\nThanks for any input.<br />\n",
+    "PostedDate": "2013-07-08T13:17:40.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075040",
+    "ThreadId": "449347",
+    "Html": "Hi There.\r<br />\n<br />\nYou should only return the values which are required for better response time and performance. I guess if you do need to retrieve all 50 fields. You can use conditional expression like the following\r<br />\n<br />\nvar fooNotNull = (foo !== null) ? true : false;\r<br />\n<br />\n<br />\nHope this helps.\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-07-31T03:15:45.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075187",
+    "ThreadId": "449347",
+    "Html": "I Meant to post this earlier but here is a piece of code I created to test fields.\r<br />\n<br />\n//--------- scripts Related to the XRM Service Toolkit\r<br />\n//\r<br />\n// Return the value of a field\r<br />\n// Receives the XRM entity object and the field name\r<br />\n// Returns either the value or null if the field is not there\r<br />\nfunction xrmfieldtest(entity, field) {<br />\n<pre><code>if (entity.attributes[field]) {\n    return (entity.attributes[field].value);\n} else {\n    return null\n}</code></pre>\n\n}\r<br />\n<br />\n<br />\nSimple but effective this way I can get nulls if I need them without much trouble.\r<br />\n<br />\nI only request the fields I need. The entity I'm working with has over 700 fields. But even if requested null fields are not returned.\r<br />\n<br />\nBrian<br />\n",
+    "PostedDate": "2013-07-31T10:01:50.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

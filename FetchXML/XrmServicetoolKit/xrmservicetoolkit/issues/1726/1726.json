@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2015-04-04T03:54:13.607-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nwe currently update our code and start to use the XrmServiceToolkit. Before we use the XrmSvcToolkit.\nWe need to change because the XrmSvcToolkit doesn't support the IE 11.\n\nBut we notice a poor performance while executing a query. The old solution, which used the XrmSvcToolkit, tooks about 2 seconds to execute this query:\n\n```\n\"<fetch mapping='logical' version='1.0'>\" +\n       \"<entity name='goal'>\" +\n       \"<attribute name='fiscalyear' />\" +\n       \"<attribute name='parentgoalid' />\" +\n       \"<attribute name='title' />\" +\n       \"<attribute name='percentage' />\" +\n        \"<filter>\" +\n            \"<condition attribute='fiscalyear' operator='eq' value='\" + currentYear + \"' />\" +\n         \"</filter>\" +\n          \"<link-entity name='goal' from='goalid' to='parentgoalid' alias='Uebergeordnet' >\" +\n              \"<attribute name='goalid' />\" +\n              \"<attribute name='ownerid' />\" +\n           \"</link-entity>\" +\n       \"</entity>\" +\n\"</fetch>\"\n\n```\n\nThe XrmServiceToolKit tooks about about 8-10 seconds to return a result with about 1500 records. \nWe have about 3.000 records in the database \n\nAny idea how to improve the performance?\n\nThanks in advance\n\nKind regards\n\nJens",
+    "LastUpdatedDate": "2015-04-04T03:54:13.607-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-07-24T05:22:09.513-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap.Fetch - Poor performance with 3000 records",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1726
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nI am in the process to review and refactor the code. These changes will be in the next major release. \r\n\r\nI have noticed that IE11 also has some performance issue when calling CRM service.\r\n\r\nWill put some more time in the development.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-07-28T13:21:08.227-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jamie,\r\n\r\nthanks for your quick respond. Can you estimate when the next version will available?\r\n\r\nThanks in advance.\r\n\r\nKind regards\r\n\r\nJens Borowy",
+      "PostedDate": "2014-08-04T01:07:01.123-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jens.\r\n\r\nI am looking at a release around September, 2014 as a major release to change some logics and improve performance. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-08-05T09:33:58.687-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-04T03:54:13.607-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

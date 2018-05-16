@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "With the new api, the EntityReference node is more complex and has this format.\n\n<a:KeyValuePairOfstringanyType>\n                      <b:key>rd_account</b:key>\n                      <b:value i:type=\"a:EntityReference\">\n                        <a:Id>495fcdfd-8af2-e411-80f3-c4346bacfd94</a:Id>\n                        <a:KeyAttributes xmlns:c=\"http://schemas.microsoft.com/xrm/7.1/Contracts\"/>\n                        <a:LogicalName>account</a:LogicalName>\n                        <a:Name>ABC Broker</a:Name>\n                        <a:RowVersion i:nil=\"true\"/>\n                      </b:value>\n                    </a:KeyValuePairOfstringanyType>\n\nso the Name is at position 3 and the logical name is at position 2.\n\nto retrieve entity reference, XrmServiceToolkit.Soap.Fetch\nThe code should be adapted to use the node name instead of an index...",
+    "LastUpdatedDate": "2015-05-28T07:45:30.347-07:00",
+    "PlannedForRelease": "XrmServiceToolkit 2.2.1 for CRM 15 online update 1",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-05-07T05:34:24.47-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Incompatible with CRM 2015 Online: XrmServiceToolkit.Soap.Fetch is not working anymore with the CRM 2015 api",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1798
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nI am updating my knowledge now and learn about the new API. I agree the logic will require better handling as the API updates.\r\n\r\nI understand that this will impact usability of the toolkit and hopefully I can provide a fix quickly.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-05-08T06:09:33.57-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Please download V2.2.1 for this fix",
+      "PostedDate": "2015-05-28T07:45:30.347-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

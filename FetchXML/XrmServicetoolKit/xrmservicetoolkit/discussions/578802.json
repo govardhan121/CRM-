@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1346753",
+    "ThreadId": "578802",
+    "Html": "I'm relatively new to Dynamics CRM and I'm slowly learning how to do things.  Honestly, if this library didn't exist I wouldn't even try to use SOAP or REST to get data from a related record.  But since it does (thank you!) there's something I'm trying to do that isn't working when I think it should.  What I want to do is, on a Case form, display both the related contact's information and also the contact's related account's information.  I've created a contact quickview form and an account quickview form that displays the information I want, however it's currently impossible to nest the account quickview form inside the contact quickview form.  So instead what I'm trying to do is add some javascript that copies the contact's account field to an account field that's on the case form and have the account quickview form link to this field. <br />\n<br />\nIn the org I'm trying to setup I'm using two custom fields on the case form that are a lookup to a contact record (&quot;new_contact&quot;) and a lookup to an account record (&quot;new_account&quot;).  With the contact forms I've created a custom field that's a lookup to an account record (&quot;new_companyname&quot;).  What the javascript code below is supposed to do is, whenever the case's contact lookup field is changed it uses SOAP.Retreive to look up the contact's account lookup field and copy it's value to the case's account lookup field, however the code isn't working correctly.<br />\n<pre><code>function CopyContactsAccount()\n{\n    var contact = Xrm.Page.getAttribute(&quot;new_contact&quot;).getValue();\n    if (contact==null)\n    {\n        Xrm.Page.getAttribute(&quot;new_account&quot;).setValue(null);\n    }\n    else\n    {\n        var retrievedcontact = XrmServiceToolkit.Soap.Retrieve(&quot;contact&quot;, contact[0].id, [&quot;new_companyname&quot;]);\n        Xrm.Page.getAttribute(&quot;new_account&quot;).setValue(retrievedcontact.attributes['new_companyname'].value);\n    }\n    Xrm.Page.getAttribute(&quot;new_account&quot;).fireOnChange();\n}</code></pre>\n\nOn the case record when I delete the contact field the account field is cleared just fine by the first half of the 'if' statement, but when I set the contact field to a contact record which has the account field set, the case's account field just stays cleared.  So the second half of the 'if' statement isn't working.  There are no error messages and I've learned from using Alert statements that retrievedcontact.attributes['new_companyname'].value is set to null but retrievedcontact.attributes['new_companyname'].id is not null.  Also, if I retriev the contact record's email address that works just fine.  Can anyone tell me why SOAP.Retrieve cannot retrieve the value in a lookup field and does anyone have any ideas of what I can do to fix it?<br />\n",
+    "PostedDate": "2015-01-28T06:30:19.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1346760",
+    "ThreadId": "578802",
+    "Html": "I forgot to mention I am on Dynamics CRM online.<br />\n",
+    "PostedDate": "2015-01-28T06:52:33.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1346915",
+    "ThreadId": "578802",
+    "Html": "I have a similar scenario I just tried implementing.  With emails, when I click the Reply button the email draft it creates automatically sets the 'From' field to the logged-in user.  Instead I'd prefer it to reply from the same email address the original email was sent to.  At my company, we want all emails to &amp; from our agents to come from specific email addresses.  I already have it setup so that our users have access to send emails on behalf of these addresses.  I just added the parentactivityid field to the email form and I'm trying to use the code below to change the 'From' field using the email forms onLoad event.<br />\n<pre><code>function SetFromAddress()\n{\n    if (Xrm.Page.getAttribute(&quot;statuscode&quot;).getValue()==1) // only edit if email is a Draft (option 1)\n    {\n        var parentfield = Xrm.Page.getAttribute(&quot;parentactivityid&quot;).getValue();\n        var parentemail = XrmServiceToolkit.Soap.Retrieve(&quot;email&quot;, parentfield[0].id, [&quot;to&quot;]);\n        Xrm.Page.getAttribute(&quot;from&quot;).setValue(parentemail.attributes['to'].value);\n        Xrm.Page.getAttribute(&quot;from&quot;).fireOnChange();\n    }\n}</code></pre>\n\nLike my post above, this code doesn't work and neither does it give an error message.  Strangely enough, though, when I had made a mistake and had Soap.Retreive retrieve the 'From' field instead of the 'To' field from the parent activity, this code worked just fine and changed the 'From' field of the reply.  if I use the alert function to test if parentemail.attributes['to'].value is null it returns false.\r<br />\n<br />\nThe alternative to doing this I suppose would be to try and edit/replace the commands behind the email form's Reply, Reply All, and Forward buttons using RibbonWorkbench but I'm not sure where to begin figuring that out.<br />\n",
+    "PostedDate": "2015-01-28T13:52:46.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1349506",
+    "ThreadId": "578802",
+    "Html": "I solved my initial problem of retrieving the lookup value.  Below is the code that I got to work.  Apparently I just didn't know enough about JavaScript.<br />\n<pre><code>function CopyContactsAccount()\n{\n    var contact = Xrm.Page.getAttribute(&quot;new_contact&quot;).getValue();\n    if (contact==null)\n    {\n        Xrm.Page.getAttribute(&quot;new_account&quot;).setValue(null);\n    }\n    else\n    {\n        var retrievedContact = XrmServiceToolkit.Soap.Retrieve(&quot;contact&quot;, contact[0].id, [&quot;new_companyname&quot;]);\n        var contactsAccount = retrievedContact.attributes[&quot;new_companyname&quot;];\n\n        var copyAccount = new Array();\n        copyAccount[0] = new Object();\n        copyAccount[0].id = contactsAccount.id;\n        copyAccount[0].name = contactsAccount.name;\n        copyAccount[0].entityType = &quot;account&quot;;\n\n        Xrm.Page.getAttribute(&quot;new_account&quot;).setValue(copyAccount);\n    }\n    Xrm.Page.getAttribute('new_account').fireOnChange();\n}</code></pre>\n\nWith the second question, I'm no longer trying to use the email form's OnLoad event to change the From field.  Instead I'm trying to use the toolkits email create feature to just completely replace the default reply, replyall, and forward functions.  This way I won't see the form temporarily load with the default value before OnLoad can change it.<br />\n",
+    "PostedDate": "2015-02-05T13:42:59.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350096",
+    "ThreadId": "578802",
+    "Html": "Hi There.\r<br />\n<br />\nWith the toolkit, Lookup Field returned with id, type, name attributes. For example, retrievedContact.attributes[&quot;new_companyname&quot;].id\r<br />\n<br />\nI do recommend you have a look at the SDK and document section of the toolkit about how to use the toolkit in CRM and how to assign value for a lookup field. \r<br />\n<br />\n<a href=\"https://xrmservicetoolkit.codeplex.com/documentation\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/documentation</a>\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-08T09:38:48.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

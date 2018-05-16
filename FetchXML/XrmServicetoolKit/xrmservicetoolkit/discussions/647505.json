@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1452230",
+    "ThreadId": "647505",
+    "Html": "Hi,\r<br />\n<br />\nWe are using crm 2015 and it is working without a problem. All code is executed correctly in IE and in Chrome. But when we try to use the crm app from Microsoft we get the error: 'xpathevaluator' is undefined. Can you help please?<br />\n",
+    "PostedDate": "2015-11-13T04:05:17.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1452733",
+    "ThreadId": "647505",
+    "Html": "Could you elaborate a bit more?\r<br />\nWhich XrmServiceToolkit function are you using when you get this error? \r<br />\n<br />\nFrom my experience this message is an indicator that invalid xml was returned from the crm endpoint which the xrmservicetoolkit tries to interpret anyway by creating a new xpathevaluator object. Which in your case is not working as this is undefined.<br />\n",
+    "PostedDate": "2015-11-17T03:02:21.353-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1453098",
+    "ThreadId": "647505",
+    "Html": "(Sorry for the late response, Was sick these last 2 days)\r<br />\n<br />\nI think it fails on this function:\r<br />\n<br />\nvar selectSingleNode = function (node, xpathExpr) {<br />\n<pre><code>    if (typeof (node.selectSingleNode) != &quot;undefined&quot;) {\n        return node.selectSingleNode(xpathExpr);\n    }\n    else {\n        var xpe = new XPathEvaluator();\n        var results = xpe.evaluate(xpathExpr, node, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null);\n        return results.singleNodeValue;\n\n    }\n};\n</code></pre>\n\nBut I doubt the problem has anything to do with invalid xml as the issue only occurs when we use a tablet. Or the crm app in windows 8.1. \r<br />\nThe web version works perfectly in different browsers.<br />\n",
+    "PostedDate": "2015-11-18T23:22:17.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1453103",
+    "ThreadId": "647505",
+    "Html": "I know that this function is probably the one that is failing.\r<br />\nThat's why I asked for a bit more information. Which method are you executing? For which entity?\r<br />\nThe fact that &quot;typeof (node.selectSingleNode) != &quot;undefined&quot; returns false indicates that node doesn't have a selectSingleNode function which implies that node is not an xml node and thus the response might not be valid xml. \r<br />\n<br />\nTry finding out what node contains on the tablet. Or if you tell me which function has this issue, I can have a look as well to see if this happens for me as well.<br />\n",
+    "PostedDate": "2015-11-18T23:46:57.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1453116",
+    "ThreadId": "647505",
+    "Html": "Ok, after some searching I found out it is on a custom fetch that we execute to retrieve the users security roles.<br />\n<pre><code>var fetchXml = &quot;&lt;fetch distinct='true' mapping='logical' output-format='xml-platform' version='1.0' &gt;&quot; +\n                            &quot;&lt;entity name='systemuser' &gt;&quot; +\n                                &quot;&lt;filter type='and' &gt;&quot; +\n                                    &quot;&lt;condition attribute='systemuserid' operator='eq-userid' /&gt;&quot; +\n                                &quot;&lt;/filter&gt;&quot; +\n                                &quot;&lt;link-entity name='teammembership' intersect='true' visible='false' to='systemuserid' from='systemuserid' link-type='outer'&gt;&quot; +\n                                    &quot;&lt;link-entity name='team' to='teamid' from='teamid' alias='ag' link-type='outer' &gt;&quot; +\n                                        &quot;&lt;link-entity name='teamroles' intersect='true' visible='false' to='teamid' from='teamid' link-type='outer' &gt;&quot; +\n                                            &quot;&lt;link-entity name='role' to='roleid' from='roleid' alias='teamroles' link-type='outer' &gt;&quot; +\n                                                &quot;&lt;attribute name='name' /&gt;&quot; +\n                                            &quot;&lt;/link-entity&gt;&quot; +\n                                        &quot;&lt;/link-entity&gt;&quot; +\n                                    &quot;&lt;/link-entity&gt;&quot; +\n                                &quot;&lt;/link-entity&gt;&quot; +\n                                &quot;&lt;link-entity name='systemuserroles' from='systemuserid' to='systemuserid' link-type='outer' &gt;&quot; +\n                                    &quot;&lt;link-entity name='role' from='roleid' to='roleid' alias='userroles' link-type='outer' &gt;&quot; +\n                                        &quot;&lt;attribute name='name' /&gt;&quot; +\n                                    &quot;&lt;/link-entity&gt;&quot; +\n                                &quot;&lt;/link-entity&gt;&quot; +\n                            &quot;&lt;/entity&gt;&quot; +\n                        &quot;&lt;/fetch&gt;&quot;;\n\nvar fetchRes = XrmServiceToolkit.Soap.Fetch(fetchXml);</code></pre>\n\nI believe that this is the line that gives the error. <br />\nBut as I said this does work in the browser but not in the crm app in windows. According to my collegue this also isn't a problem on ios.<br />\n",
+    "PostedDate": "2015-11-19T00:53:03.05-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1453137",
+    "ThreadId": "647505",
+    "Html": "I have been able to reproduce the error for me as well in the crm app on a windows 8.1 machine. (XrmServiceToolkit v 2.2)\r<br />\nStrange thing I noticed is that the fetch worked in an older version (2.0 beta) in the windows app.\r<br />\n<br />\nLooking at the code for interpreting the responses between these versions, you can see they went from jQuery(xmlDoc).find to a more direct approach in using xml nodes and Xpath as a fallback.\r<br />\n<br />\nI don't know if it's possible for you, but as a workaround you could try to do the following.<br />\n<ul>\n<li>Download the 2.0 version of the XrmServiceToolkit</li>\n<li>Add the 2.0 version to crm as a NEW web resource</li>\n<li>\nOn the form where you have this issue use this older version instead of the latest version<br />\n</li>\n</ul>\nMake sure you don't include both versions on one form.\r<br />\nAlso, be sure not to just replace the current version with the older one, because the newer version obviously has had some improvements which you might be using.<br />\n",
+    "PostedDate": "2015-11-19T03:44:59.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-12-09T23:49:20.53-08:00"
+  },
+  {
+    "Id": "1455387",
+    "ThreadId": "647505",
+    "Html": "Please check my question here: <a href=\"https://xrmservicetoolkit.codeplex.com/discussions/640076\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/discussions/640076</a>\r<br />\n<br />\nIt because crm app use IE 11<br />\n",
+    "PostedDate": "2015-12-09T23:46:10.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

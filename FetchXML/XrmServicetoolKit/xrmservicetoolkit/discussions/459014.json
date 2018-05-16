@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1098803",
+    "ThreadId": "459014",
+    "Html": "Is there any minified version ?\r<br />\n<br />\nIf not , what's best minifier for that (without breaking things)?<br />\n",
+    "PostedDate": "2013-09-24T16:26:45.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1099625",
+    "ThreadId": "459014",
+    "Html": "Hi.<br />\n<br />\nThere is no minified version for the tool. But a bing search will provide some options for you.<br />\n<br />\nI personally will never use any tools to minify my JavaScript library because most of them make my code unreadable / undebuggable. <br />\n<br />\nFrom a personal point of view, a better code structure and a proper usage of libraries and methods won't slow down your page. Also it will make future development, debug and release mush easier for the whole team.<br />\n<br />\nJust 2 cents of mine. :)<br />\n<br />\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2013-09-26T05:43:43.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1099833",
+    "ThreadId": "459014",
+    "Html": "Hi\r<br />\n<br />\njaimeiji , Thanks for reply\r<br />\n<br />\nOf course minified versions are unreadable and undebuggable , but customer has no sense about these things , they just want our solutions be reliable and of course fast , as you know CRM pages are heavy to load already and it's not fair we enforce the costumer wait more for loading heavier pages even for .00001 second.\r<br />\n<br />\nIf you familiar with desktop development it's something like Debug and Release version , no one deploy debug version just because they are debuggable  ,they release version.\r<br />\n<br />\nWe could have maximized one for debugging and minified one for poor customers.\r<br />\n<br />\nCustomer's PCs are not developer environment , agree ?<br />\n",
+    "PostedDate": "2013-09-26T13:55:56.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1100118",
+    "ThreadId": "459014",
+    "Html": "Hi.<br />\n<br />\nMy point is that unreadable and undebuggable release normally leads to future problems and affects the quality of the software and the customer in long term. <br />\n<br />\nFrom my view, mobility, transparency and sustainability are keys in the current cycle for software development, especially in terms of web development or software development to support cross platforms. As the trends move, more and more software development will require the ability for quicker fix, quicker release. Even for minified version for the argument of performance, they still should maintain the quality as a full release for this reason.<br />\n<br />\nTo answer the question, there will be no minified version for the toolkit at the current stage. However, this certainly will be on the agenda as the project moves on.<br />\n<br />\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2013-09-27T07:15:13.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1133122",
+    "ThreadId": "459014",
+    "Html": "<strong>tarhsaz wrote:</strong><br />\n<blockquote>\nIs there any minified version ?<br />\n<br />\nIf not , what's best minifier for that (without breaking things)?<br />\n</blockquote>\nI'm also not sure if a minified version is necessary, nonetheless, if you use grunt for example you have the option with the grunt-contrib-uglify module to minify/uglify your version and add make a sourcemap also so you don't lose your connection to the original code. I think you have to add the sourcemap with a tag to your uglified version. Since RU15 it is always good to add the sourceurl anyway for debugging.\r<br />\nExample:\r<br />\n<br />\n//# sourceURL=&lt;filename&gt;.js\r<br />\n//# sourceMappingURL=&lt;filename&gt;.js.map<br />\n",
+    "PostedDate": "2013-12-09T05:35:22.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1136049",
+    "ThreadId": "459014",
+    "Html": "Thanks hinogi , I'll check that.<br />\n",
+    "PostedDate": "2013-12-15T00:38:08.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

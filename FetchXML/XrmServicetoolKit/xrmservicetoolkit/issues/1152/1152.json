@@ -1,0 +1,100 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-05-08T02:05:35.703-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "We are getting an 'Access Denied' when we are using a fully qualified URL but we do not get the error when we just use our machine name: Access Denied when (http://machinename.domain.com/org/...)  No error when (http://machinename/org/...)\n\nI saw this blog: http://www.madronasg.com/blog/dynamics-crm-2011-javascript-%E2%80%9Caccess-denied%E2%80%9D-error-ajax-call#.UR5Bc6Vwps4\n\nand changed our version of the code to be:\n var getServerUrl = function () {\n        ///\n        /// Private function to return the server URL from the context\n        ///\n        ///String\n        ///var serverUrl = context().getServerUrl();\n        ///if (serverUrl.match(/\\/$/)) {\n        ///    serverUrl = serverUrl.substring(0, serverUrl.length - 1);\n        ///}\n        var serverUrl = document.location.protocol + \"//\" + document.location.host + \"/\" + Xrm.Page.context.getOrgUniqueName();\n        return serverUrl;\n    };\n\nWe are not getting the error any more. Also we are at CRM 2011 RU12v2 onpremise.\n\nWhat do you think?",
+    "LastUpdatedDate": "2013-05-16T04:17:08.65-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-02-15T06:35:25.267-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Recieved access denied when calling .SOAP.getServerUrl",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 1152
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Please do not create questions in the issue section. \r\n\r\nTry to verify if you can access CRM development service in URL directly. \r\n\r\nIt could be a configuration issue when CRM is installed. \r\n\r\nJaimie",
+      "PostedDate": "2013-02-15T08:45:08.13-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-15T08:45:24.767-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "http://social.microsoft.com/Forums/en/crmdevelopment/thread/e172c717-83d0-4e80-9a58-6fb62b844694",
+      "PostedDate": "2013-02-15T08:48:32.69-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Wrong place\n\n** Closed by jaimieji 15/02/2013 08:45",
+      "PostedDate": "2013-02-15T09:00:23.617-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-15T09:00:23.76-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi There.\r\n\r\nPlease ignore previous comment.\r\n\r\nFrom CRM 2011 SDK RU12, \r\n\r\n> getServerUrl\r\n\r\n> Deprecated. Use getClientUrl instead. Returns the base server URL. The format of this URL can change depending on whether the user is connected to on-premises Microsoft Dynamics CRM 2011, Microsoft Dynamics CRM Online, or working offline with Microsoft Dynamics CRM for Microsoft Office Outlook with Offline Access. \r\n\r\nThis may fix the issue you are having. Another possibility is that your server address / server name has been changed after the installation of CRM instance.\r\n\r\nHappy Coding,\nJaimie\n ",
+      "PostedDate": "2013-02-15T13:38:54.327-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:55:59.607-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks for the direction, I'm still a bit confused: \r\n\r\nThe XrmServiceToolKit.Soap.Fetch calls doRequest, which includes a call to orgServicePath() via  req.open(\"POST\", orgServicePath(), async); orgServicePath calls getServerUrl().  \r\n\r\nShouldn't orgServicePath() call getClientUrl() then",
+      "PostedDate": "2013-02-27T07:11:27.967-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi there.\r\n\r\ngetClientUrl() is introduced in rollup 12. getServerUrl() is the function for rollup 11 and previous rollups.\r\n\r\norgServicePath() use getServerUrl() (a custom function) to generate the full org service path dynamically.\r\n\r\nFor the future, the code will looks like this\r\n\r\n```\n    var getClientUrl = function () {\n        ///<summary>\n        /// Private function to return the server URL from the context\n        ///</summary>\n        ///<returns>String</returns>\n        var serverUrl = typeof context().getClientUrl !== \"undefined\" ? context().getClientUrl() : context().getServerUrl();\n        if (serverUrl.match(/\\/$/)) {\n            serverUrl = serverUrl.substring(0, serverUrl.length - 1);\n        }\n        return serverUrl;\n    };\r\n\r\n    var orgServicePath = function () {\n        ///<summary>\n        /// Private function to return the path to the organization service.\n        ///</summary>\n        ///<returns>String</returns>\n        return getClientUrl() + \"/XRMServices/2011/Organization.svc/web\";\n    };\n```",
+      "PostedDate": "2013-03-01T05:54:37.907-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-18T11:27:46.64-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-08T02:05:35.703-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T04:17:08.65-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1213539",
+    "ThreadId": "534721",
+    "Html": "Hallo, \r<br />\n<br />\nthe SOAP function Fetch supports a setting, to get the total record count of fetch queries. \r<br />\n<br />\n&lt;fetch mapping=&quot;logical&quot; count=&quot;5&quot; page=&quot;1&quot; returntotalrecordcount=&quot;true&quot;&gt;\r<br />\n<br />\nIf this flag is set to true, the result will have a node &quot;TotalRecordCount&quot;. This is very important for me handle custom HTML5 grids in CRM with server paging. At the moment i execute a second query with aggregate to get the total record count of my query. But if i have the TotalRecordCount in one query, the performance will be much better. \r<br />\n<br />\nDo you plan this functionality in next releases?<br />\n",
+    "PostedDate": "2014-02-24T01:46:05.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213820",
+    "ThreadId": "534721",
+    "Html": "Hi There.\r<br />\n<br />\nI am currently reviewing the Fetch method and try to support the scenario and some other features for Fetch. Hopefully in the next release, if the &lt;fetch.....&gt; is provided by the user, the method will not rebuild the fetch statement.\r<br />\n<br />\nThat way your fetch query will be supported automatically.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-02-24T09:02:22.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1293545",
+    "ThreadId": "534721",
+    "Html": "Hi Jaimie, \r<br />\n<br />\ndo you thought at this problem? I do not recognize that there is such a functionality in the new version ... \r<br />\n<br />\nBeste regards\r<br />\nFlorian<br />\n",
+    "PostedDate": "2014-08-26T07:35:09.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303025",
+    "ThreadId": "534721",
+    "Html": "It is to be included in 2.1.0\r<br />\n<br />\nCheers<br />\n",
+    "PostedDate": "2014-09-09T14:31:24.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

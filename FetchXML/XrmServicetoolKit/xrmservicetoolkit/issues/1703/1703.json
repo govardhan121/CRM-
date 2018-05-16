@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:29:03.74-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nIt seems to to throw \"Object doesn't support this property or method\" error whilst calling Fetch function in IE9 for CRM 2013, Is there a quick fix please ?\n\nThanks\n\nVaibhav",
+    "LastUpdatedDate": "2014-09-10T01:41:59.783-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-06-11T08:10:54.82-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CRM 2013: IE 9 Fetch Call Issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1703
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nCan you please do a bit debugging using IE developer tool or fiddler? That may provide more information why it is not working. \r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2014-06-16T08:20:54.107-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jamie,\r\n\r\nThanks for reponse, I did debug it and found that in it was getXhr function that was falling over \"return new XMLHttpRequest();\" statement, sorted this out but forcing it to go for ActiveXObject in case of IE 9. It's working fine now.\r\n\r\nVaibhav",
+      "PostedDate": "2014-06-17T06:25:06.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jamie, \r\n\r\nThanks for reponse, I did debug it and found that it was getXhr function that was falling over \"return new XMLHttpRequest();\" statement, sorted this out by forcing it to go for ActiveXObject in case of IE 9. It's working fine now.\n \nVaibhav",
+      "PostedDate": "2014-06-17T06:27:01.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\r\n\r\nI have modified the getXhr() method and hopefully it should solve the issue in the next release\r\n\r\nJaimie",
+      "PostedDate": "2014-09-09T14:28:51.42-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:29:03.74-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "\nThanks Jaimie. Just out of curiosity, when is the next release expected ?\r\n\r\nCheers,\r\n\r\nVaibhav\r\n\r\n",
+      "PostedDate": "2014-09-10T01:41:59.783-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

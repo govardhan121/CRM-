@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "918775",
+    "ThreadId": "397246",
+    "Html": "\r\n<p>Using Xrm.Page Script APIs, ID values are in this format: &quot;{643EA0BC-FB08-E211-B27F-005056B70007}&quot;</p>\r\n<p>XrmServiceToolkit returns ID in this format: &quot;643ea0bc-fb08-e211-b27f-005056b70007&quot;</p>\r\n<p>To make XrmServiceToolkit working nicely with Xrm.Page scripts, please make all ID values in this format: &quot;{UpperCase}&quot;.</p>\r\n<p>Thanks a lot!</p>\r\n<p>Very good JS CRM&nbsp;Library if not the best of all. Appreciate your effort and time.</p>\r\n",
+    "PostedDate": "2012-09-27T17:27:52.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920450",
+    "ThreadId": "397246",
+    "Html": "<p>Hi Kevin.</p>\r\n<p>Glad to help.</p>\r\n<p>As you might see already, it is not always the case that the GUID ID will be generated with curly brackets.</p>\r\n<p>As I remember, there is a part of the logic in the toolkit where the curly brackets will be trimmed out to also pass the GUID ID to fetchXml and other functions.</p>\r\n<p>It should not matter if the GUID ID is uppercase or not though.</p>\r\n<p>I will have a look at the problem later when I have a bit more time.</p>\r\n<p>Glad you like the toolkit.</p>\r\n<p>Regards,</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-10-02T02:16:49.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920771",
+    "ThreadId": "397246",
+    "Html": "<p>Hi Jaimie,</p>\r\n<p>I'm heavy user of your toolkit. I use it because of it's functionalities and code quality. Thanks a lot for sharing.</p>\r\n<p>Two reasons to make GUID values are \"{UpperCase}\", first, it will be same as XRM script model; second, it will make CRM Javascript code base consisent in all places.</p>\r\n<p>But I will leave you to investigate and decide if you'd like to change it in the toolkit - this could be code break changes for existing toolkit users - if you decide to change it - the sooner the better :-)</p>\r\n<p>Best regards,</p>\r\n<p>Kevin</p>",
+    "PostedDate": "2012-10-02T11:29:27.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

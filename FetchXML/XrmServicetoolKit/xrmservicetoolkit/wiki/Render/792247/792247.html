@@ -1,0 +1,263 @@
+<div class="wikidoc">
+<p><span style="text-decoration:underline"><strong>XrmServiceToolkit.Soap Methods</strong></span></p>
+<p><strong>These examples are built and combined with qunit. Please check&nbsp;&nbsp;<a href="http://docs.jquery.com/QUnit">http://docs.jquery.com/QUnit</a>&nbsp; for more details if you are new to it. Note You do need the qUnit code when using these methods
+ in development.</strong></p>
+<p><em><span style="text-decoration:underline"><strong>Execute</strong></span></em></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Execute() method using WhoAmIRequest message to get current user's ID&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> request = <span style="color:#a31515">&quot;&lt;request i:type='b:WhoAmIRequest' xmlns:a='http://schemas.microsoft.com/xrm/2011/Contracts' xmlns:b='http://schemas.microsoft.com/crm/2011/Contracts'&gt;&quot;</span> &#43;
+                            <span style="color:#a31515">&quot;&lt;a:Parameters xmlns:c='http://schemas.datacontract.org/2004/07/System.Collections.Generic' /&gt;&quot;</span> &#43;
+                            <span style="color:#a31515">&quot;&lt;a:RequestId i:nil='true' /&gt;&quot;</span> &#43;
+                            <span style="color:#a31515">&quot;&lt;a:RequestName&gt;WhoAmI&lt;/a:RequestName&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;/request&gt;&quot;</span>;
+            <span style="color:blue">var</span> whoAmI = XrmServiceToolkit.Soap.Execute(request);
+            whoamiUserId = whoAmI.getElementsByTagName(<span style="color:#a31515">&quot;a:Results&quot;</span>)[0].childNodes[0].childNodes[1].text;
+            ok(guidExpr.test(whoamiUserId), <span style="color:#a31515">&quot;WhoAmI request should returned a valid GUID. &quot;</span>);
+
+});
+</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>GetCurrentUserId</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.GetCurrentUserId() method to get current user's ID&quot;</span>, <span style="color:blue">function</span> () {
+
+            currentUserId = XrmServiceToolkit.Soap.GetCurrentUserId();
+            equals(currentUserId, whoamiUserId, <span style="color:#a31515">&quot;getCurrentUserId() method should return the same user ID as WhoAmI request. &quot;</span>);
+
+});
+</pre>
+</div>
+<div>
+<p><span style="text-decoration:underline"><em><strong>IsCurrentUserInRole</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.IsCurrentUserInRole() method to check if current user is a System Administrator.&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> isSystemAdministrator = XrmServiceToolkit.Soap.IsCurrentUserRole(<span style="color:#a31515">&quot;System Administrator&quot;</span>);
+            ok(isSystemAdministrator, <span style="color:#a31515">&quot;You ought to be a System Administrator to run test for isCurrentUserInRole() method. &quot;</span>);
+
+});</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>GetCurrentUserRoles</strong></em></span></p>
+<div style="color:black; background-color:white">
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.GetCurrentUserRoles() method to get all the system roles that the current user has been assigned to.&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> roles = XrmServiceToolkit.Soap.GetCurrentUserRoles();
+            ok(roles.constructor.toString().indexOf(<span style="color:#a31515">&quot;Array&quot;</span>) != -1, <span style="color:#a31515">&quot;getCurrentUserRoles() method should an array of user roles. &quot;</span>);
+
+        });
+</pre>
+</div>
+<span style="text-decoration:underline"><em><strong>Create</strong></em></span></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Create() method to create a CRM record (contact)&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> createContact = <span style="color:blue">new</span> XrmServiceToolkit.Soap.BusinessEntity(<span style="color:#a31515">&quot;contact&quot;</span>);
+            createContact.attributes[<span style="color:#a31515">&quot;firstname&quot;</span>] = <span style="color:#a31515">&quot;Diane&quot;</span>;
+            createContact.attributes[<span style="color:#a31515">&quot;lastname&quot;</span>] = <span style="color:#a31515">&quot;Morgan&quot;</span>;
+            createContact.attributes[<span style="color:#a31515">&quot;middlename&quot;</span>] = <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>;   <span style="color:green">// Deliberate special characters to ensure that the toolkit can handle special characters correctly.</span>
+            createContact.attributes[<span style="color:#a31515">&quot;gendercode&quot;</span>] = { value: 2, type: <span style="color:#a31515">&quot;OptionSetValue&quot;</span> };
+            createContact.attributes[<span style="color:#a31515">&quot;familystatuscode&quot;</span>] = { value: 1, type: <span style="color:#a31515">&quot;OptionSetValue&quot;</span> }; <span style="color:green">// Picklist : Single - 1</span>
+            createContact.attributes[<span style="color:#a31515">&quot;creditlimit&quot;</span>] = { value: 2, type: <span style="color:#a31515">&quot;Money&quot;</span> };
+            createContact.attributes[<span style="color:#a31515">&quot;birthdate&quot;</span>] = birthDate;
+            createContact.attributes[<span style="color:#a31515">&quot;donotemail&quot;</span>] = <span style="color:blue">true</span>;
+            createContact.attributes[<span style="color:#a31515">&quot;donotphone&quot;</span>] = <span style="color:blue">false</span>;
+            createContact.attributes[<span style="color:#a31515">&quot;parentcustomerid&quot;</span>] = { id: accountId, logicalName: <span style="color:#a31515">&quot;account&quot;</span>, type: <span style="color:#a31515">&quot;EntityReference&quot;</span> };
+
+            contactId = XrmServiceToolkit.Soap.Create(createContact);
+
+            ok(guidExpr.test(contactId), <span style="color:#a31515">&quot;Creating a contact should returned the new record's ID in GUID format. &quot;</span>);
+
+});</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>Update</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Update() method to update a CRM record (contact)&quot;</span>, <span style="color:blue">function</span> () {
+
+            equals(contactId, contactId, <span style="color:#a31515">&quot;ContactID&quot;</span>);
+            <span style="color:blue">var</span> updateContact = <span style="color:blue">new</span> XrmServiceToolkit.Soap.BusinessEntity(<span style="color:#a31515">&quot;contact&quot;</span>, contactId);
+            updateContact.attributes[<span style="color:#a31515">&quot;firstname&quot;</span>] = <span style="color:#a31515">&quot;Diane&quot;</span>;
+            updateContact.attributes[<span style="color:#a31515">&quot;lastname&quot;</span>] = <span style="color:#a31515">&quot;Lopez&quot;</span>;
+            updateContact.attributes[<span style="color:#a31515">&quot;donotpostalmail&quot;</span>] = <span style="color:blue">null</span>;
+            updateContact.attributes[<span style="color:#a31515">&quot;familystatuscode&quot;</span>] = { value: 2, type: <span style="color:#a31515">&quot;OptionSetValue&quot;</span> }; <span style="color:green">// Married</span>
+
+            <span style="color:blue">var</span> updateResponse = XrmServiceToolkit.Soap.Update(updateContact);
+
+            ok(updateResponse === <span style="color:#a31515">&quot;&quot;</span>, <span style="color:#a31515">&quot;The contact should be able to be updated.&quot;</span>);
+});</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>Retrieve</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Retrieve() method to retrieve a CRM record (contact)&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> cols = [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;familystatuscode&quot;</span>, <span style="color:#a31515">&quot;ownerid&quot;</span>, <span style="color:#a31515">&quot;creditlimit&quot;</span>, <span style="color:#a31515">&quot;birthdate&quot;</span>, <span style="color:#a31515">&quot;donotemail&quot;</span>, <span style="color:#a31515">&quot;donotphone&quot;</span>];
+            <span style="color:blue">var</span> retrievedContact = XrmServiceToolkit.Soap.Retrieve(<span style="color:#a31515">&quot;contact&quot;</span>, contactId, cols);
+
+            equals(retrievedContact.attributes[<span style="color:#a31515">'lastname'</span>].value, <span style="color:#a31515">&quot;Lopez&quot;</span>, <span style="color:#a31515">&quot;A retrieve of just updated contact has proved that its last name has actually been updated. &quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'firstname'</span>].value, <span style="color:#a31515">&quot;Diane&quot;</span>, <span style="color:#a31515">&quot;firstname matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'middlename'</span>].value, <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>, <span style="color:#a31515">&quot;middlename matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'familystatuscode'</span>].value, 2, <span style="color:#a31515">&quot;familystatuscode matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'familystatuscode'</span>].type, <span style="color:#a31515">&quot;OptionSetValue&quot;</span>, <span style="color:#a31515">&quot;CRM picklist's JavaScript type should be OptionSetValue&quot;</span>);
+            ok(CompareGuid(retrievedContact.attributes[<span style="color:#a31515">'ownerid'</span>].id, currentUserId), <span style="color:#a31515">&quot;ownerid matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'creditlimit'</span>].value, 2, <span style="color:#a31515">&quot;creditlimit matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'creditlimit'</span>].type, <span style="color:#a31515">&quot;Money&quot;</span>, <span style="color:#a31515">&quot;CRM number's JavaScript type should be Money&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'birthdate'</span>].value.getTime(), birthDate.getTime(), <span style="color:#a31515">&quot;birthdate matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'donotemail'</span>].value, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;donotemail matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'donotemail'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit field's value type should be boolean (donotemail)&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'donotphone'</span>].value, <span style="color:blue">false</span>, <span style="color:#a31515">&quot;donotphone matches&quot;</span>);
+            equals(retrievedContact.attributes[<span style="color:#a31515">'donotphone'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit's JavaScript type should be boolean (donotphone&quot;</span>);
+            same(<span style="color:blue">typeof</span> retrievedContact.attributes[<span style="color:#a31515">'donotpostalmail'</span>], <span style="color:#a31515">&quot;undefined&quot;</span>, <span style="color:#a31515">&quot;donotpostalmail matches&quot;</span>);
+});</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>RetrieveMultiple</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.RetrieveMultiple() method to retrieve a CRM record (contact)&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> query =
+                     <span style="color:#a31515">&quot;&lt;a:ColumnSet&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:AllColumns&gt;false&lt;/a:AllColumns&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:Columns xmlns:b='http://schemas.microsoft.com/2003/10/Serialization/Arrays'&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;firstname&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;lastname&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;middlename&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;familystatuscode&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;ownerid&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;creditlimit&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;birthdate&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;donotemail&lt;/b:string&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;b:string&gt;donotphone&lt;/b:string&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;/a:Columns&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;/a:ColumnSet&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:Criteria&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:Conditions /&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:FilterOperator&gt;And&lt;/a:FilterOperator&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:Filters&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;a:FilterExpression&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;a:Conditions&gt;&quot;</span> &#43;
+                            <span style="color:#a31515">&quot;&lt;a:ConditionExpression&gt;&quot;</span> &#43;
+                              <span style="color:#a31515">&quot;&lt;a:AttributeName&gt;contactid&lt;/a:AttributeName&gt;&quot;</span> &#43;
+                              <span style="color:#a31515">&quot;&lt;a:Operator&gt;Equal&lt;/a:Operator&gt;&quot;</span> &#43;
+                              <span style="color:#a31515">&quot;&lt;a:Values xmlns:b='http://schemas.microsoft.com/2003/10/Serialization/Arrays'&gt;&quot;</span> &#43;
+                                <span style="color:#a31515">&quot;&lt;b:anyType i:type='c:string' xmlns:c='http://www.w3.org/2001/XMLSchema'&gt;&quot;</span>&#43; contactId &#43;<span style="color:#a31515">&quot;&lt;/b:anyType&gt;&quot;</span> &#43;
+                              <span style="color:#a31515">&quot;&lt;/a:Values&gt;&quot;</span> &#43;
+                            <span style="color:#a31515">&quot;&lt;/a:ConditionExpression&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;/a:Conditions&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;a:FilterOperator&gt;And&lt;/a:FilterOperator&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;a:Filters /&gt;&quot;</span> &#43;
+                        <span style="color:#a31515">&quot;&lt;/a:FilterExpression&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;/a:Filters&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;/a:Criteria&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:Distinct&gt;false&lt;/a:Distinct&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:EntityName&gt;contact&lt;/a:EntityName&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:LinkEntities /&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:Orders /&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:PageInfo&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:Count&gt;0&lt;/a:Count&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:PageNumber&gt;0&lt;/a:PageNumber&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:PagingCookie i:nil='true' /&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;a:ReturnTotalRecordCount&gt;false&lt;/a:ReturnTotalRecordCount&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;/a:PageInfo&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;a:NoLock&gt;false&lt;/a:NoLock&gt;&quot;</span>;
+
+            <span style="color:blue">var</span> retrievedContacts = XrmServiceToolkit.Soap.RetrieveMultiple(query);
+
+            equals(retrievedContacts.length, 1, <span style="color:#a31515">&quot;only last created contact should be found&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'lastname'</span>].value, <span style="color:#a31515">&quot;Lopez&quot;</span>, <span style="color:#a31515">&quot;A retrieve of just updated contact has proved that its last name has actually been updated. &quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'firstname'</span>].value, <span style="color:#a31515">&quot;Diane&quot;</span>, <span style="color:#a31515">&quot;firstname matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'middlename'</span>].value, <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>, <span style="color:#a31515">&quot;middlename matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'familystatuscode'</span>].value, 2, <span style="color:#a31515">&quot;familystatuscode matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'familystatuscode'</span>].type, <span style="color:#a31515">&quot;OptionSetValue&quot;</span>, <span style="color:#a31515">&quot;CRM picklist's JavaScript type should be OptionSetValue&quot;</span>);
+            ok(CompareGuid(retrievedContacts[0].attributes[<span style="color:#a31515">'ownerid'</span>].id, currentUserId), <span style="color:#a31515">&quot;ownerid matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'creditlimit'</span>].value, 2, <span style="color:#a31515">&quot;creditlimit matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'creditlimit'</span>].type, <span style="color:#a31515">&quot;Money&quot;</span>, <span style="color:#a31515">&quot;CRM number's JavaScript type should be Money&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'birthdate'</span>].value.getTime(), birthDate.getTime(), <span style="color:#a31515">&quot;birthdate matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotemail'</span>].value, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;donotemail matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotemail'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit field's value type should be boolean (donotemail)&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotphone'</span>].value, <span style="color:blue">false</span>, <span style="color:#a31515">&quot;donotphone matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotphone'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit's JavaScript type should be boolean (donotphone&quot;</span>);
+            same(<span style="color:blue">typeof</span> retrievedContacts[0].attributes[<span style="color:#a31515">'donotpostalmail'</span>], <span style="color:#a31515">&quot;undefined&quot;</span>, <span style="color:#a31515">&quot;donotpostalmail matches&quot;</span>);
+
+});</pre>
+</div>
+<p><span style="text-decoration:underline"><em><strong>Fetch</strong></em></span></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Fetch() method to retrieve a CRM record (contact)&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> fetchXml =
+                    <span style="color:#a31515">&quot;&lt;fetch mapping='logical'&gt;&quot;</span> &#43;
+                       <span style="color:#a31515">&quot;&lt;entity name='contact'&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='contactid' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='firstname' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='lastname' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='middlename' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='familystatuscode' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='ownerid' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='creditlimit' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='birthdate' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='accountrolecode' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='donotemail' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;attribute name='donotphone' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;filter&gt;&quot;</span> &#43;
+                             <span style="color:#a31515">&quot;&lt;condition attribute='contactid' operator='eq' value='&quot;</span> &#43; contactId &#43; <span style="color:#a31515">&quot;' /&gt;&quot;</span> &#43;
+                          <span style="color:#a31515">&quot;&lt;/filter&gt;&quot;</span> &#43;
+                       <span style="color:#a31515">&quot;&lt;/entity&gt;&quot;</span> &#43;
+                    <span style="color:#a31515">&quot;&lt;/fetch&gt;&quot;</span>;
+
+            <span style="color:blue">var</span> retrievedContacts = XrmServiceToolkit.Soap.Fetch(fetchXml);
+
+            equals(retrievedContacts.length, 1, <span style="color:#a31515">&quot;only last created contact should be found&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'lastname'</span>].value, <span style="color:#a31515">&quot;Lopez&quot;</span>, <span style="color:#a31515">&quot;A retrieve of just updated contact has proved that its last name has actually been updated. &quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'firstname'</span>].value, <span style="color:#a31515">&quot;Diane&quot;</span>, <span style="color:#a31515">&quot;firstname matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'middlename'</span>].value, <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>, <span style="color:#a31515">&quot;middlename matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'familystatuscode'</span>].value, 2, <span style="color:#a31515">&quot;familystatuscode matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'familystatuscode'</span>].type, <span style="color:#a31515">&quot;OptionSetValue&quot;</span>, <span style="color:#a31515">&quot;CRM picklist's JavaScript type should be OptionSetValue&quot;</span>);
+            ok(CompareGuid(retrievedContacts[0].attributes[<span style="color:#a31515">'ownerid'</span>].id, currentUserId), <span style="color:#a31515">&quot;ownerid matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'creditlimit'</span>].value, 2, <span style="color:#a31515">&quot;creditlimit matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'creditlimit'</span>].type, <span style="color:#a31515">&quot;Money&quot;</span>, <span style="color:#a31515">&quot;CRM number's JavaScript type should be Money&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'birthdate'</span>].value.getTime(), birthDate.getTime(), <span style="color:#a31515">&quot;birthdate matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotemail'</span>].value, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;donotemail matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotemail'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit field's value type should be boolean (donotemail)&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotphone'</span>].value, <span style="color:blue">false</span>, <span style="color:#a31515">&quot;donotphone matches&quot;</span>);
+            equals(retrievedContacts[0].attributes[<span style="color:#a31515">'donotphone'</span>].type, <span style="color:#a31515">&quot;boolean&quot;</span>, <span style="color:#a31515">&quot;CRM bit's JavaScript type should be boolean (donotphone&quot;</span>);
+            same(<span style="color:blue">typeof</span> retrievedContacts[0].attributes[<span style="color:#a31515">'donotpostalmail'</span>], <span style="color:#a31515">&quot;undefined&quot;</span>, <span style="color:#a31515">&quot;donotpostalmail matches&quot;</span>);
+
+});</pre>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.Fetch() method to do an aggregation query&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> fetchXml =
+                <span style="color:#a31515">&quot;&lt;fetch mapping='logical' aggregate='true'&gt;&quot;</span> &#43;
+                   <span style="color:#a31515">&quot;&lt;entity name='contact'&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;attribute name='contactid' aggregate='count' alias='count' /&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;filter&gt;&quot;</span> &#43;
+                         <span style="color:#a31515">&quot;&lt;condition attribute='contactid' operator='eq' value='&quot;</span> &#43; contactId &#43; <span style="color:#a31515">&quot;' /&gt;&quot;</span> &#43;
+                      <span style="color:#a31515">&quot;&lt;/filter&gt;&quot;</span> &#43;
+                   <span style="color:#a31515">&quot;&lt;/entity&gt;&quot;</span> &#43;
+                <span style="color:#a31515">&quot;&lt;/fetch&gt;&quot;</span>;
+
+            <span style="color:blue">var</span> fetchedContacts = XrmServiceToolkit.Soap.Fetch(fetchXml);
+
+            equals(fetchedContacts.length, 1, <span style="color:#a31515">&quot;only one record should be returned when doing aggregation.&quot;</span>);
+            equals(fetchedContacts[0].attributes[<span style="color:#a31515">'count'</span>].formattedValue, <span style="color:#a31515">&quot;1&quot;</span>, <span style="color:#a31515">&quot;only one contact record would match the id.&quot;</span>);
+});
+</pre>
+</div>
+</div>
+<p>QueryByAttribute</p>
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Soap.QueryByAttribute() method to retrieve a CRM record (contact) using two criteria&quot;</span>, <span style="color:blue">function</span> () {
+            <span style="color:blue">var</span> queryOptions = {
+                entityName: <span style="color:#a31515">&quot;contact&quot;</span>,
+                attributes: [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>],
+                values: [<span style="color:#a31515">&quot;Diane&quot;</span>, <span style="color:#a31515">&quot;&lt;&amp;&gt;&quot;</span>, <span style="color:#a31515">&quot;Lopez&quot;</span>],
+                columnSet: [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>, <span style="color:#a31515">&quot;middlename&quot;</span>, <span style="color:#a31515">&quot;familystatuscode&quot;</span>, <span style="color:#a31515">&quot;ownerid&quot;</span>, <span style="color:#a31515">&quot;creditlimit&quot;</span>, <span style="color:#a31515">&quot;birthdate&quot;</span>, <span style="color:#a31515">&quot;donotemail&quot;</span>, <span style="color:#a31515">&quot;donotphone&quot;</span>],
+                orderby: [<span style="color:#a31515">&quot;firstname&quot;</span>, <span style="color:#a31515">&quot;lastname&quot;</span>] <span style="color:green">// Order by firstname and then lastname even though we are only getting one record back</span>
+            };
+
+            <span style="color:blue">var</span> fetchedContacts = XrmServiceToolkit.Soap.QueryByAttribute(queryOptions);
+
+            ok(fetchedContacts.length &gt;= 1, <span style="color:#a31515">&quot;at least there should be one matched contact record, which is what we just created&quot;</span>);
+});
+</pre>
+</div>
+</div><div class="ClearBoth"></div>

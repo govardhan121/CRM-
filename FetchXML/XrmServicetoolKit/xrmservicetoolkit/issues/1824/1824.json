@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nbecause errorHandler function \"_throws new Error(...)_\" the errorCallback function will never be called.\nE.g. you can test it with an invalid $select query:\n```\nAccountSet?$select=NonExistingField\n```\nThe errorHandler should \"_return new Error(...)_\" for correct errorCallback function execution.\nWould you think the same way?\n\nBest Regards,\nFrancis",
+    "LastUpdatedDate": "2016-02-25T12:59:13.707-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-09-21T08:20:46.28-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Rest.errorHandler should not throw Exception",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 1824
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi, \r\n\r\n_short note:_\nOf corse the main problem are not logical errors (like invalid $select fields) during development, but rather runtime errors (errors from CRM if length limit is exceeded, errors from plugins on create/update are thrown, and so on, ...).\nOn synchronous requests you have a chance to catch the Exception, but unfortunately not on asynchronous requests.\r\n\r\nBest Regards,\nFrancis",
+      "PostedDate": "2015-09-21T08:58:20.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-02-25T12:57:40.643-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "this has actually caused a few of our scripts to fail miserably in Chrome because the \"error\" isn't returned, just thrown.\n",
+      "PostedDate": "2016-02-25T12:59:13.707-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

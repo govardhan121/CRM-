@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "1050115",
+    "ThreadId": "445332",
+    "Html": "Hi there!\r<br />\n<br />\nI've been using this on CRM forms to lovely effect, although I'm having trouble using in a html web resource in CRM - I get Unable to get property 'createRecord' of undefined or null reference  or similar when trying to call functions.\r<br />\n<br />\nI've included the normal JS libraries that I normally do on CRM forms...am I missing something silly here?\r<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-05-29T07:12:52.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050142",
+    "ThreadId": "445332",
+    "Html": "I suspect this is a reference path issue. You can try to use Fiddler to check if you are getting 404 error for the referenced library. \r<br />\n<br />\nThe following blog post might help in terms of understanding the path of CRM web resources. \r<br />\n<a href=\"http://www.develop1.net/public/post/CRM-Developer-e28098Must-Knowe28099-2-Web-Resource-Caching.aspx\" rel=\"nofollow\">http://www.develop1.net/public/post/CRM-Developer-e28098Must-Knowe28099-2-Web-Resource-Caching.aspx</a>\r<br />\n<br />\nHope this helps. \r<br />\nDaniel Cai<br />\n",
+    "PostedDate": "2013-05-29T07:56:45.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050148",
+    "ThreadId": "445332",
+    "Html": "Cheers Daniel will check this out. It's not within an iFrame i'm trying to do this by the way, i'm planning on having a completely stand-alone html page, I don't know if that makes a difference...?\r<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-05-29T08:09:31.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050149",
+    "ThreadId": "445332",
+    "Html": "Stand-alone HTML page is fine as long as it is hosted as web resources. When you use stand-alone HTML page, you need to also add ClientGlobalContext.js.aspx as a script file to your HTML head. <br />\n",
+    "PostedDate": "2013-05-29T08:12:45.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050170",
+    "ThreadId": "445332",
+    "Html": "I've got that in there - this is what i've got so far, am I missing something obvious?<br />\n<pre><code>&lt;HTML&gt;\n&lt;HEAD&gt;\n    &lt;TITLE&gt; Add/Remove dynamic rows in HTML table &lt;/TITLE&gt;\n    &lt;SCRIPT src=&quot;ksw_XrmSvcToolkit.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/SCRIPT&gt;\n    &lt;SCRIPT src=&quot;ksw_json2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/SCRIPT&gt;\n    &lt;script src=&quot;ClientGlobalContext.js.aspx&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;\n\n    &lt;SCRIPT language=&quot;javascript&quot;&gt;      \n        function test()\n        {\n            XrmSvcToolkit.createRecord\n            ({\n                entityName: &quot;Account&quot;,\n                entity: {Name: &quot;Test&quot;},\n                async: false,\n                successCallback: function (result) \n                {\n                    alert(&quot;Huzzah!&quot;);\n                },\n                errorCallback: function (error) \n                {\n                    alert(&quot;There was an error when creating the order record&quot;);\n                    alert(error.description);\n                }\n            });\n        }\n    &lt;/SCRIPT&gt;\n&lt;/HEAD&gt;\n&lt;BODY&gt;  \n    &lt;INPUT type=&quot;button&quot; value=&quot;Test&quot; onclick=&quot;test()&quot; /&gt;\n&lt;/BODY&gt;\n&lt;/HTML&gt;\n</code></pre>\n\n",
+    "PostedDate": "2013-05-29T08:58:22.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050190",
+    "ThreadId": "445332",
+    "Html": "Pete, web resources won't be under the same folder (virtual one), so you would need to prepend the path in order to reference the script files properly. You can find each web resource's path by opening it in CRM, then you can use either relative path or absolute path in your HTML web resource file. <br />\n",
+    "PostedDate": "2013-05-29T09:44:52.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050496",
+    "ThreadId": "445332",
+    "Html": "Hi Daniel,\r<br />\n<br />\nFirstly, thanks for your on-going help with this.\r<br />\n<br />\nI've got all my xrmsvctoolkit web resources and html in the same folder, and I think it's finding these - if I change the reference to anything else it doesn't find XrmSvcToolkit at all:\r<br />\n<br />\nSCRIPT5009: 'XrmSvcToolkit' is undefined \r<br />\n<br />\nWhereas it's the following error I seem to be getting when I've got everything referenced:\r<br />\n<br />\nSCRIPT5007: Unable to get property 'createRecord' of undefined or null reference\r<br />\n<br />\nIs it ClientGlobalContext i'm not referencing properly? I can navigate to the URL using the relative path referenced here, so it appears to be in the right place....\r<br />\nAlso, apologies for plain text code above, i'll edit this now as it's not helping matters!\r<br />\n<br />\nPete<br />\n",
+    "PostedDate": "2013-05-30T01:41:50.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050513",
+    "ThreadId": "445332",
+    "Html": "I've just tried this in another environment which I've got set up in Outlook and got\r<br />\n<br />\n'Xrm' is undefined in XrmSvcToolkit.js, could this be related?<br />\n",
+    "PostedDate": "2013-05-30T02:20:52.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050834",
+    "ThreadId": "445332",
+    "Html": "\r\n<p></p>\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Hey, just a wild shot, try swapping json2 and XrmSvcToolkit loading lines. This aside, I’d say something’s gone terribly wrong and your XrmSvcToolkit source is corrupted.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<div>\r\n<div style=\"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0cm 0cm 0cm\">\r\n<p><b><span lang=\"EN-US\" style=\"font-size:11.0pt; font-family:\"></span></b></p>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2013-05-30T13:12:00.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

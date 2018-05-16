@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1396477",
+    "ThreadId": "614251",
+    "Html": "I'm using the retrieve method in the xrmsvctoolkit and am trying to get the value from a currency field on a related record.\r<br />\n<br />\nWhen I throw an alert to tell me the value retrieved, I'm getting [&quot;object Object&quot;] as my result. I've tried retrieving the actual field as well as the base field.\r<br />\n<br />\nExample:<br />\n<pre><code>var quote = Xrm.Page.getAttribute(&quot;ev_selectpricequotedetail&quot;).getValue();\nvar quoteid = quote[0].id;\n\nvar results = XrmSvcToolkit.retrieve({\n    entityName: &quot;ev_pricequotedetail&quot;,\n    id: quoteid,\n    select: [&quot;ev_name&quot;, &quot;ev_price&quot;, &quot;ev_price_Base&quot;],\n    async: false\n});\n\nvar quotePrice = results.ev_price;\nvar priceBase = results.ev_price_Base;\nalert(quotePrice);\nalert(priceBase);   \n</code></pre>\n\nI don't have this issue with string fields I'm retrieving from the same entity. Any suggestiosn as to how to retrieve the currency data?<br />\n",
+    "PostedDate": "2015-03-25T11:03:27.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1396573",
+    "ThreadId": "614251",
+    "Html": "Nevermind; I was missing the .Value at the end of the var:\r<br />\n<br />\nvar quotePrice = results.ev_price.Value\r<br />\n<br />\nThis will return the full data vaule.<br />\n",
+    "PostedDate": "2015-03-25T13:15:59.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-03-25T13:16:06.85-07:00"
+  }
+]

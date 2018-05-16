@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1464084",
+    "ThreadId": "651657",
+    "Html": "Is there any plan to release Xrmservicetoolkit on CRM 2016?<br />\n",
+    "PostedDate": "2016-02-23T02:59:33.463-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1464702",
+    "ThreadId": "651657",
+    "Html": "<strong>dyainal wrote:</strong><br />\n<blockquote>\nIs there any plan to release Xrmservicetoolkit on CRM 2016?<br />\n</blockquote>\nI need this version supported for CRM 2016 also. <br />\n",
+    "PostedDate": "2016-02-26T04:46:52.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1464993",
+    "ThreadId": "651657",
+    "Html": "<strong><em>MS Dynamics CRM 2016</em></strong> is supported by <strong><em>XrmServiceToolkit 2.2/2.2.1</em></strong> perfectly (but only with using old <strong><em>XRMServices/2011/Organization.svc</em></strong> service).\r<br />\n<br />\n;)<br />\n",
+    "PostedDate": "2016-02-29T06:19:53.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1465504",
+    "ThreadId": "651657",
+    "Html": "POST .... /XRMServices/2011/Organization.svc/web 500 (Internal Server Error)\r<br />\n<br />\nWhy POST?<br />\n",
+    "PostedDate": "2016-03-04T03:39:43.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466553",
+    "ThreadId": "651657",
+    "Html": "Hi There.\r<br />\n<br />\nI have not yet had some free time to look into CRM 2016 API, but there are plans to continue supporting the library for CRM 2016. As a matter of expanding the current library or branching it out to only support CRM 2016, I have not yet decided. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-03-11T08:57:57.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

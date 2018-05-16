@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1360693",
+    "ThreadId": "584862",
+    "Html": "HI, \r<br />\n<br />\nI´m experiencing an issue trying to import the solution to a CRM 2015 Online. \r<br />\nWhen I try to Import it pops an error. \r<br />\n&quot;You can only import solutions with package version 7.0 or earlier into this organization. Also, you can´t import any solutions into this organization that were exported from Microsoft Dynamics CRM 2011 or earlier.&quot; \r<br />\n<br />\nCan you help me with this? \r<br />\nThanks in advance :)<br />\n",
+    "PostedDate": "2015-03-07T21:59:45.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1467005",
+    "ThreadId": "584862",
+    "Html": "I am having the same issue with an on-premise instance - is there a plan for a version compatible with CRM 2015?<br />\n",
+    "PostedDate": "2016-03-16T08:51:19.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

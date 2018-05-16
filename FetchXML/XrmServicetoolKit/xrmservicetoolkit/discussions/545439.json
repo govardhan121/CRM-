@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1245741",
+    "ThreadId": "545439",
+    "Html": "After playing with this a bit I was able to get this to work successfully.  The key is the placement of the ' character.<br />\n<pre><code>  queryOptions = {\n          entityName: &quot;account&quot;,\n          attributes: [&quot;address1_city&quot;, &quot;statecode&quot;],\n          values:     [&quot;Boston&quot;, 0],\n          columnSet:  [&quot;firstname&quot;, &quot;lastname&quot;],\n          orderBy:    [&quot;lastname' descending='true&quot;] };\n  results = XrmServiceToolkit.Soap.QueryByAttribute(queryOptions);\n</code></pre>\n\nThe serialized result will look like this (cleaned up a bit):\r<br />\n<br />\n&lt;fetch mapping='logical'&gt; <br />\n  &lt;entity name='account'&gt;<br />\n<pre><code> &lt;attribute name='firstname' /&gt;\n &lt;attribute name='lastname' /&gt;\n &lt;order attribute='lastname' descending='true' /&gt;      \n &lt;filter&gt;\n    &lt;condition attribute='address1_city' operator='eq' value='Boston' /&gt;\n    &lt;condition attribute='statecode' operator='eq' value='0' /&gt;      \n &lt;/filter&gt;</code></pre>\n\n&lt;/entity&gt;\r<br />\n&lt;/fetch&gt;<br />\n",
+    "PostedDate": "2014-05-15T07:24:14.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

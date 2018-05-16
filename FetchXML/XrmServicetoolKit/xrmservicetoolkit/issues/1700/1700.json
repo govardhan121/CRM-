@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:16:17.807-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In the function filterDependentField it compares the current value of the option set to the new set of potential values. If no match is made it clears the value. In CRM 2013 the current value is an integer, but the jQuery value is a string so the strict comparison fails.\n\nSo this line needs changing:\n\n   if (currentChildFieldValue === optionDataValue) {\n\nto this:\n\n   if (currentChildFieldValue === parseInt(optionDataValue)) {",
+    "LastUpdatedDate": "2014-09-09T14:16:17.807-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-05-21T03:06:18.047-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Dependent Picklist Value Comparison Is Using Wrong Data Type",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1700
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nThanks for submitting the issue. I have fixed the problem and refreshed the download file. \r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2014-05-27T13:57:24.493-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:16:17.807-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

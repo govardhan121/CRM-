@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-09-26T05:45:44.1-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am getting \"Object doesn't support property or method 'retrieveEntityMetadata'\" exception, when I try to retrieve entity metadata.\n\nI am calling \"retrieveEntityMetadata\" method as below\n\nvar entityMetadata = XrmServiceToolkit.Soap.retrieveEntityMetadata(\"Attributes\", \"contact\", true);\n\nPlease let me know if I miss anything",
+    "LastUpdatedDate": "2013-09-26T05:45:44.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-07-03T00:22:20.53-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Object doesn't support property or method 'retrieveEntityMetadata'",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1316
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It should be XrmServiceToolkit.Soap.RetrieveEntityMetadata instead of the lower case function.\r\n\r\n```\nvar entityMetadata = XrmServiceToolkit.Soap.RetrieveEntityMetadata([\"Attributes\"], \"contact\", true);\r\n\r\n```\r\n\r\nGive it a try and let me know.\nJaimie",
+      "PostedDate": "2013-07-03T02:48:47.78-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jamie,\r\n\r\nI was able to call the function with proper casing as below\r\n\r\nvar entityMetadata = XrmServiceToolkit.Soap.__RetrieveEntityMetadata__(\"Attributes\", \"contact\", true)\r\n\r\nThanks for helping out",
+      "PostedDate": "2013-07-05T05:18:27.547-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-26T05:45:44.1-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

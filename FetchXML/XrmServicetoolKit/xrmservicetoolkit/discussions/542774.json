@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1235925",
+    "ThreadId": "542774",
+    "Html": "Hi,\r<br />\n<br />\nI'm using this library in an HTML web resource against CRM 2011. I seem to be getting an error in the developers tools console in IE 11, but not in Chrome. Below is a snippet of the code I'm using:\r<br />\n<br />\n&lt;script src=&quot;<a href=\"http://code.jquery.com/jquery-1.7.2.min.js&quot;&gt;&lt;/script\" rel=\"nofollow\">http://code.jquery.com/jquery-1.7.2.min.js\"></script</a>&gt;\r<br />\n&lt;script src=&quot;cxo_json2js&quot;&gt;&lt;/script&gt;\r<br />\n&lt;script src=&quot;ClientGlobalContext.js.aspx&quot;&gt;&lt;/script&gt;\r<br />\n&lt;script src=&quot;cxo_xrmservicetoolkitjs&quot;&gt;&lt;/script&gt;\r<br />\n<br />\n&lt;script type=&quot;text/javascript&quot;&gt;\r<br />\n$(function() {          \r<br />\n<pre><code>var query = &quot;$filter=cxo_BookingId/Id eq guid'&quot; + 123+ &quot;'&quot;;\n\nXrmServiceToolkit.Rest.RetrieveMultiple(\n    &quot;cxo_imageSet&quot;,\n    query,\n    function (results) {\n        console.log(results);\n    },\n    function (error) {\n        console.log(error);\n    },\n    function onComplete() {\n    },\n    false\n);      </code></pre>\n\n});\r<br />\n<br />\nBelow are two errors I see in the IE11 developer tools console:\r<br />\n<br />\nSCRIPT5009: 'XPathEvaluator' is undefined\r<br />\nFile: global.ashx, Line: 6, Column: 431745\r<br />\n<br />\nCRIPT5007: Unable to get property 'CrmUrlEncode' of undefined or null reference\r<br />\nFile: global.ashx, Line: 6, Column: 154903\r<br />\n<br />\nAm I doing something incorrectly with using this library as an HTML web resource? I've successfully called this query in js web resources in the same CRM instance and browser.\r<br />\n<br />\nAny help would be appreciated.\r<br />\n<br />\nThanks,\r<br />\nBob<br />\n",
+    "PostedDate": "2014-04-20T10:22:24.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236105",
+    "ThreadId": "542774",
+    "Html": "Hi.\r<br />\n<br />\nCRM 2011 is not compatible with IE11 yet. \r<br />\n<br />\nYou can find the whole list in the following link\r<br />\n<br />\n<a href=\"http://support.microsoft.com/kb/2669061\" rel=\"nofollow\">http://support.microsoft.com/kb/2669061</a>\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-04-21T04:18:16.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236136",
+    "ThreadId": "542774",
+    "Html": "Thanks.  I actually figured it out.\r<br />\n<br />\nBy putting in the following line in your HTML it will work properly:\r<br />\n<br />\n&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=10&quot; /&gt;\r<br />\n<br />\nGreat library, btw.<br />\n",
+    "PostedDate": "2014-04-21T05:49:42.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

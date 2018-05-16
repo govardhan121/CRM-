@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "854986",
+    "ThreadId": "361281",
+    "Html": "\r\n<p>I am using your library and love it. It has everything that I was using in it, and the fact that I can select whether a call is sync or async is the best feature of this library for me. The only thing that I miss, is that you did not include the Metadata\r\n Services that are provided in the SDK. It would be awesome to see the sdk.metadata.js methods in your library to get entity information without the need of another library.</p>\r\n<p>Thanks for this great library and if you would like me to integrate it and send it to you instead let me know.</p>\r\n<p>Sincerely,</p>\r\n<p>Louis</p>\r\n",
+    "PostedDate": "2012-06-28T06:33:01.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "856211",
+    "ThreadId": "361281",
+    "Html": "<p>Hey Louis.</p>\r\n<p>That would be great. I could add you into the project if you are keen.</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-07-02T01:24:15.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "856361",
+    "ThreadId": "361281",
+    "Html": "<p>btw.</p>\r\n<p>If the reason why MetaData service is required, in case you want to get the lable of a OptionSet Field. formatteValue might fit the purpose</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">var</span> cols = [<span style=\"color: #a31515;\">\"firstname\"</span>, <span style=\"color: #a31515;\">\"lastname\"</span>, <span style=\"color: #a31515;\">\"middlename\"</span>, <span style=\"color: #a31515;\">\"familystatuscode\"</span>, <span style=\"color: #a31515;\">\"ownerid\"</span>, <span style=\"color: #a31515;\">\"creditlimit\"</span>, <span style=\"color: #a31515;\">\"birthdate\"</span>, <span style=\"color: #a31515;\">\"donotemail\"</span>, <span style=\"color: #a31515;\">\"donotphone\"</span>];\r\n<span style=\"color: blue;\">var</span> retrievedContact = XrmServiceToolkit.Soap.Retrieve(<span style=\"color: #a31515;\">\"contact\"</span>, contactId, cols);\r\n<span style=\"color: blue;\">var</span> familyStatusLable = retrievedContact.attributes[<span style=\"color: #a31515;\">'familystatuscode'</span>].formattedValue;\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-07-02T07:35:01.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

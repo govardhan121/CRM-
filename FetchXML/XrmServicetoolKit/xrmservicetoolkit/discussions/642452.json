@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1437686",
+    "ThreadId": "642452",
+    "Html": "I just started using this library, for my own learning purposes I am trying to get a list of entities and their corresponding attributes but I am not sure how to use the method: RetrieveEntityMetadata\r<br />\n<br />\nWhat I want to do is get a list of entities, populate an optionSet, then display the corresponding attributes in another optionset.  Does anyone know how to proceed with this?\r<br />\n<br />\nAny help would be appreciated.<br />\n",
+    "PostedDate": "2015-08-07T03:14:30.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1439421",
+    "ThreadId": "642452",
+    "Html": "Hi There.\r<br />\n<br />\n&quot;RetrieveEntityMetadata&quot; is a method to interact with CRM metadata. It is not used to create/update fields and their definitions like OptionSet.\r<br />\n<br />\nIf what you mean is to retrieve the selected value of a OptionSet field of a record, then populate the value to another OptionSet (assuming same OptionSet setups for options and values), you can use &quot;Retrieve&quot; and &quot;Update&quot; method. \r<br />\n<br />\nAlways good to rely on SDK to understand the possibilities in the CRM framework\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-08-13T08:09:24.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

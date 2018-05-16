@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It would be nice if there would be some kind of useful documentation, and a change log reflecting the changes to the former version.\nThere was a parameter added in between the fetchCore and the callback, fetchAll namly, that causes a lot of difficulties with former version.\nso (fetchXml, false,/true callback) is now necessary.",
+    "LastUpdatedDate": "2016-04-11T04:46:22.743-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-12-17T03:31:08.12-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "XrmServiceToolkit.Soap.Fetch signature change in v2.2",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 1843
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Updating the TypeScript definitions accordingly would be welcomed as well, it currently doesn't define the added parameter at all.",
+      "PostedDate": "2016-02-29T04:30:40.573-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2016-02-29T04:31:13.15-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I had a look at the changes and the changes was made due to the fact that now the async flag was dropped in favor of checking if there is a callback function called. If not the call will be sync. So the callback was set to be always the last argument to not have \"null\" arguments in between, and that is why the fetchAll got put in between which breaks some older version calls.\n",
+      "PostedDate": "2016-04-11T04:46:22.743-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

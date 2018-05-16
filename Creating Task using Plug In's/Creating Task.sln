@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creating Task", "Creating Task\Creating Task.csproj", "{EB04B808-3D77-4ACD-95F8-A5F7F2A8DB22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContacts", "UpdateContacts\UpdateContacts.csproj", "{077F98EE-8D2A-47A4-B908-8C1346AE6338}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB04B808-3D77-4ACD-95F8-A5F7F2A8DB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB04B808-3D77-4ACD-95F8-A5F7F2A8DB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB04B808-3D77-4ACD-95F8-A5F7F2A8DB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB04B808-3D77-4ACD-95F8-A5F7F2A8DB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077F98EE-8D2A-47A4-B908-8C1346AE6338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077F98EE-8D2A-47A4-B908-8C1346AE6338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077F98EE-8D2A-47A4-B908-8C1346AE6338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077F98EE-8D2A-47A4-B908-8C1346AE6338}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

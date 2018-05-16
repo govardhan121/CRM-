@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1466428",
+    "ThreadId": "652398",
+    "Html": "Hello,\r<br />\nI'm trying to download the XrmServiceToolkit 2.2 for CRM 2015, 2013, 2011 but it appears the download is missing files. When we tried to import the solution into our Org (brand-new 2015 on-premise instance) we receive an error message:\r<br />\n<br />\n&quot;The solution file is invalid. The compressed file must contain the following files at its root: solution.xml, customizations.xml, and [Content_Types].xml. Customization files exported from previous versions of Microsoft Dynamics CRM are not supported.&quot;\r<br />\n<br />\nWhen I unzip the file from the Downloads page, I see the .xml files are not included. Is there something additional I need to download? I have been using the 2013 toolkit without issue previously. <br />\n",
+    "PostedDate": "2016-03-10T11:16:28.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1466554",
+    "ThreadId": "652398",
+    "Html": "Hi There.\r<br />\n<br />\nThe toolkit is just JavaScript files instead of a CRM solution. You can unzip the folder and include JavaScripts in your development solution and upload them into CRM as web resources. \r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2016-03-11T09:02:15.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

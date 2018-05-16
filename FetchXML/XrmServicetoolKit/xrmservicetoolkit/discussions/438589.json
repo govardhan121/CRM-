@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1023457",
+    "ThreadId": "438589",
+    "Html": "I just wanted to see if anyone else has ran into issues with getServerUrl.  We replaced it with getClientUrl and have avoided a few issues:<br />\n<ol>\n<li>\nIFD vs. Non-IFD, for instance a user who may have a test environment using On Prem and the production using IFD.<br />\n</li>\n<li>\nCross Domain 'Access Is Denied' errors were resolved by using getClientUrl.  In this scenario if one user accessed using HTTP and the other accessed using HTTPS.<br />\n</li>\n</ol>\nIs this something worth looking into for a future release or am I off somewhere?\r<br />\n<br />\nThanks!\r<br />\n<br />\nChris<br />\n",
+    "PostedDate": "2013-03-31T09:05:15.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1024118",
+    "ThreadId": "438589",
+    "Html": "Hi.\r<br />\n<br />\ngetClientUrl will be introduced in the coming release 1.4.1 which will be released within 2 weeks. \r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2013-04-02T01:34:22.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

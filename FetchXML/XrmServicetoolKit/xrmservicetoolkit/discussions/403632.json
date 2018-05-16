@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "943383",
+    "ThreadId": "403632",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm trying to create new records for custom entities and i'm always receiving this error:</p>\r\n<p>Error: 500: Internal Server Error: the specified entity does not exist.</p>\r\n<p>This is the code:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>\t<span style=\"color:blue\">var</span> zp_test = {};\n\tzp_test.zp_name = <span style=\"color:#a31515\">&quot;Test name&quot;</span>;\n\t\n\tXrmServiceToolkit.Rest.Create(\n\t\tzp_test,\n\t\t<span style=\"color:#a31515\">&quot;zp_test&quot;</span>,\n\t\t<span style=\"color:blue\">function</span> (result)\n\t\t{\n\t\t\t<span style=\"color:blue\">var</span> zp_testid = result.zp_testid;\n\t\t\talert(zp_testid);\n\t\t},\n\t\t<span style=\"color:blue\">function</span>(erro){ alert(erro.message);},\n        <span style=\"color:blue\">false</span>);</pre>\r\n</div>\r\n<p>Does anyone have any tips about what i'm doing wrong?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2012-11-17T16:15:03.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945835",
+    "ThreadId": "403632",
+    "Html": "\r\n<p>Hi There.</p>\r\n<p>REST is case sensitive, so you need to make sure the name of your entity and attributes are the same name in CRM.</p>\r\n<p>I found the easy way to build REST Query is to use the ODATA Query Designer <a href=\"http://crm2011odatatool.codeplex.com/\">\r\nhttp://crm2011odatatool.codeplex.com/</a></p>\r\n<p>Hope this helps.</p>\r\n<p>Jaimie</p>\r\n",
+    "PostedDate": "2012-11-22T12:25:11.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945867",
+    "ThreadId": "403632",
+    "Html": "\r\n<p>Hi jaimieji,</p>\r\n<p>You were right, it was a case sensitive problem. I'm new in crm and got confused since you may have different cases for .net coding and the REST/SOAP.</p>\r\n<p>Thank you very much.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-22T13:59:27.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

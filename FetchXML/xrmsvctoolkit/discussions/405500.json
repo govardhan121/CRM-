@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "951029",
+    "ThreadId": "405500",
+    "Html": "\r\n<p>Some sample code for the fetch function.&nbsp;</p>\r\n<p>This function returns the BusinessUnitName for the current user.</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">function</span> GetBusinessUnitName() {\r\n    <span style=\"color:blue\">var</span> lGetBusinessUnitName;\r\n\r\n    <span style=\"color:blue\">var</span> fetchXml = <span style=\"color:#a31515\">&quot;&lt;fetch mapping='logical'&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;entity name='systemuser'&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;attribute name='businessunitid' /&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;filter type='and'&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;condition attribute='systemuserid' operator='eq-userid' /&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;/filter&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;/entity&gt;&quot;</span> &#43;\r\n                   <span style=\"color:#a31515\">&quot;&lt;/fetch&gt;&quot;</span>;\r\n\r\n            XrmSvcToolkit.fetch({\r\n                fetchXml: fetchXml,\r\n                async: <span style=\"color:blue\">false</span>,\r\n                successCallback: <span style=\"color:blue\">function</span> (result) {\r\n                    lGetBusinessUnitName =  result.entities[0].businessunitid.Name;\r\n                },\r\n                errorCallback: <span style=\"color:blue\">function</span> (error) {\r\n                    <span style=\"color:blue\">throw</span> error;\r\n                }\r\n            });\r\n\r\n    <span style=\"color:blue\">return</span> lGetBusinessUnitName;\r\n}\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-12-04T03:01:13.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951043",
+    "ThreadId": "405500",
+    "Html": "\r\n<p>This is a very good example, I'll copy it to the documentation, if you don't mind.</p>\r\n<p>--</p>\r\n<p>George</p>\r\n",
+    "PostedDate": "2012-12-04T03:25:42.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951045",
+    "ThreadId": "405500",
+    "Html": "\r\n<p>That is fine.</p>\r\n",
+    "PostedDate": "2012-12-04T03:26:38.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

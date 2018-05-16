@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1017139",
+    "ThreadId": "437076",
+    "Html": "Hi Jaimie\r<br />\n<br />\nGreat work so far on this!\r<br />\n<br />\nI was wondering if you'd look at implementing methods to trigger Workflows using ExecuteWorkflowRequest or launching dialogs?\r<br />\n<br />\nAndy<br />\n",
+    "PostedDate": "2013-03-18T08:53:04.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017327",
+    "ThreadId": "437076",
+    "Html": "Hi Andy.\r<br />\n<br />\nI don't have plans to add methods to launch dialog, forms as it seems the SDK has already included them or will include them. The following example is from SDK 5.0.14<br />\n<blockquote>\nfunction openDialogProcess(dialogId,entityName,objectId)<br />\n{<br />\nvar url = Xrm.Page.context.getClientUrl() + &quot;/cs/dialog/rundialog.aspx?DialogId=&quot; +<br />\ndialogId + &quot;&amp;EntityName=&quot; + entityName + &quot;&amp;ObjectId=&quot; + objectId;<br />\nwindow.open(url);<br />\n}<br />\n</blockquote>\nTrigging a workflow may be added but not in the coming release 1.4.1 ( Current plan for 1.4.1 is around the middle of April )\r<br />\n<br />\nHope this clears some questions.\r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2013-03-18T14:40:39.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017538",
+    "ThreadId": "437076",
+    "Html": "Thats great thanks!<br />\n",
+    "PostedDate": "2013-03-19T02:32:03.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

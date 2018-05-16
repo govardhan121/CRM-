@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DependentOptionSetConfig entity="new_teacher" >
+  <ParentField id="new_category"
+               label="Category">
+    <DependentField id="new_subcategory"
+                    label="Sub Category" />
+    <Option value="100000000"
+            label="Software">
+      <ShowOption value="100000000"
+                  label="Business App" />
+      <ShowOption value="100000001"
+                  label="OS" />
+    </Option>
+    <Option value="100000001"
+            label="Hardware">
+      <ShowOption value="100000002"
+                  label="Desktop" />
+      <ShowOption value="100000003"
+                  label="Laptop" />
+    </Option>
+  </ParentField>
+</DependentOptionSetConfig>

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1324422",
+    "ThreadId": "572684",
+    "Html": "Not all the forms need all the functionalities of XrmServiceToolkit, so does it make sence to break down the XrmServiceToolkit into mulitple files, say, 4 files: Common, Rest, Soap, Extension\r<br />\nso that developer can decide if extra file/functionality needed on per form base?<br />\n",
+    "PostedDate": "2014-11-20T11:22:53.003-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350101",
+    "ThreadId": "572684",
+    "Html": "Hi There.\r<br />\n<br />\nWith 2.1 version, a minified version has released for production server. I do not have plans currently to split the toolkit into multiple files, but there are plans to continuously improve the performance of the toolkit.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-08T09:52:12.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

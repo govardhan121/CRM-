@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1328870",
+    "ThreadId": "574061",
+    "Html": "Hi,\r<br />\n<br />\nmaybe it is the wrong place for suggestions, but I think it would be great, if the enableField function could be extended to an at least optional check for fieldsecurity, handled by a very simple  function.\r<br />\nLike <br />\n<pre><code>function canFieldBeSet(fieldName) { return ((Xrm.Page.getAttribute(fieldName).getUserPrivilege().canUpdate &amp;&amp; Xrm.Page.ui.getFormType == 2) || (Xrm.Page.getAttribute(fieldName).getUserPrivilege().canCreate &amp;&amp; Xrm.Page.ui.getFormType == 1));}</code></pre>\n\nIn the enable field it could be checked if it is safe to enable the field, to avoid issues. The function could also be used to check before a value set to the field\r<br />\n<br />\nI just had the need of it recently so I thought I share it here. Probably I am a duplicate or it is obsolete with CRM 2013 :). If so I apologize. \r<br />\n<br />\nBest regards<br />\n",
+    "PostedDate": "2014-12-04T11:24:42.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1350099",
+    "ThreadId": "574061",
+    "Html": "Hi There.\r<br />\n<br />\nThanks for the suggestion. Though a feel the example is a bit situational and normally you would not need to do such checking for a enable function in JavaScript.\r<br />\n<br />\nReally appreciate the post though.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-02-08T09:43:33.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

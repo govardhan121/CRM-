@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:18:07.04-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI am using CRM 2015.\nWhen I call XrmServiceToolkit.Soap.Fetch return incorrect fetchXML statement, when I used entity or attribute name that contain word \"aggregate\".\n\nBelow is part of the script.\n\n```\nvar fetch = \"<fetch version='1.0' output-format='xml-platform' mapping='logical'>\" +\n\t\t\t\t\"<entity name='nml_slsaggregatecatgcompetition'>\" +\n\t\t\t\t\t\"<attribute name='nml_slsaggregatecatgcompetitionid' />\" +\n\t\t\t\t\t\"<filter type='and'>\" +\n\t\t\t\t\t\"<condition attribute='nml_servicecategorygroup1st' operator='eq' value='\" + xts_servicecategorygroupid + \"' />\" +\n\t\t\t\t\t\"</filter>\" +\n\t\t\t\t  \"</entity>\" +\n\t\t\t\t\"</fetch>\";\nvar result = XrmServiceToolkit.Soap.Fetch(fetch);\n```\nI try to debug and found this part of script cause the error.\n\nSource file name: XrmServiceToolkit.js\n\nline 2145:\n\n```\nvar isAggregate = (fetchCore.indexOf(\"aggregate\") !== -1);\n```\nand line 2167:\n```\n            if (!isAggregate && !isLimitedReturn) {\n                fetchXml =\n                 [\n                     \"<fetch mapping='logical' >\",\n                     fetchCore,\n                     \"</fetch>\"\n                 ].join(\"\");\n            }\n\n```\nIn my opinion it is some-kind of FetchXML analyzer to detect FetchXML aggregation functions like count, sum, avg etc. \nhttps://msdn.microsoft.com/en-us/library/gg309565.aspx \nAs soon as fetchXML statement above contains nml_slsaggregatecatgcompetition field it treat is like “aggregation” specific function and further in code in this particular case it covers statement with another “fetch” tag and in this case forms incorrect fetchXML statement.\n \n```\nif (!isAggregate && !isLimitedReturn) {\n                fetchXml =\n                 [\n                     \"<fetch mapping='logical' >\",\n                     fetchCore,\n                     \"</fetch>\"\n                 ].join(\"\");\n            }\n```\n\nPossible solutions:\nMy analysis is based on code review is replacing  \n```\nvar isAggregate = (fetchCore.indexOf(\"aggregate\") !== -1)\n```\nwith\n```\nvar isAggregate = (fetchCore.indexOf(\"aggregate=\") !== -1)\n```\n\nwith this it will allows us to make script more smarter in analyzing fetchXMLs and make sure that there is an attribute \"aggregate=\" and it is not just attribute or entity name.\n\nKind Regards,\nIrman",
+    "LastUpdatedDate": "2015-04-09T12:18:07.04-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-02-27T03:15:21.53-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Call XrmServiceToolkit.Soap.Fetch() with XML statement contain word \"aggregate\" return incorrect fetchXML statement",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 1789
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Agreed with you that we can use var isAggregate = (fetchCore.indexOf(\"aggregate=\") !== -1)",
+      "PostedDate": "2015-02-27T03:28:32.507-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-02-27T03:28:37.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-02-27T08:38:23.17-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-02-27T08:39:28.893-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-02-27T08:40:49.813-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-03-16T21:08:17.42-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:18:07.04-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

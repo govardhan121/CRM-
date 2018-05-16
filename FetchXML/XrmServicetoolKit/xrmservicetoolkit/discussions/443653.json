@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1043572",
+    "ThreadId": "443653",
+    "Html": "I have been using version 1.1 of this tooklit for a year now and it is awesome. Saved me a ton of time and I have built a pretty lengthy utility library on top of it.<br />\n<br />\nHowever I now have an issue. I have an environment that is on-premise R12. I had a solution built online that I imported to the on-premise solution.<br />\n<br />\nIn my on-premise version, I am getting the error &quot;Object doesn’t support property or method selectSingleNode&quot;. As noted elsewhere in the discussions, I upgraded to 1.4.1. Simply created a new Web Resource with the 1.4.1 code and swapped it out on my form.<br />\n<br />\nOn the same code that was working with R13 online, I am now getting:<br />\n&quot;Error: '$' is undefined&quot;<br />\n<br />\nThere are no dollar signs in my own code other than in an unrelated regexp.<br />\n<br />\nAny ideas? Thanks again for a great product.<br />\n",
+    "PostedDate": "2013-05-14T15:01:18.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043753",
+    "ThreadId": "443653",
+    "Html": "Hi There.\r<br />\n<br />\n$ is used by jQuery library. The latest library requires jQuery, JSON2 to be loaded before the functions of XrmServiceToolkit library being called.\r<br />\n<br />\nThe requirement of jQuery library was introduced around 1.2 if I remember it right. Try to add jQuery library in and let me know if that solves your issue.\r<br />\n<br />\nThe other possibility is because RU13 is loading JavaScript libraries asynchronously which may also cause some issues.\r<br />\n<br />\n<a href=\"http://community.dynamics.com/crm/b/magnetismsolutionscrmblog/archive/2013/03/03/crm-2011-polaris-asynchronous-javascript-loading.aspx\" rel=\"nofollow\">http://community.dynamics.com/crm/b/magnetismsolutionscrmblog/archive/2013/03/03/crm-2011-polaris-asynchronous-javascript-loading.aspx</a>\r<br />\n<br />\nHope this helps.\r<br />\n<br />\nJaimie<br />\n",
+    "PostedDate": "2013-05-15T02:30:00.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043949",
+    "ThreadId": "443653",
+    "Html": "Thanks for the quick reply. I installed the jQuery piece in conjunction with the core 1.4.1. code and it works fine now.<br />\n",
+    "PostedDate": "2013-05-15T08:55:06.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

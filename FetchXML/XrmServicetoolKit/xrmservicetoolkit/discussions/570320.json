@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1315253",
+    "ThreadId": "570320",
+    "Html": "Hello,\r<br />\nI'm quite new on the field of XRM and Codeplex, I'm working with CRM 2013 on premise.\r<br />\nI'm looping on the following code which doesn't update a record. The idea is :<br />\n<ul>\n<li>fetch the entity 'ntk_autonumber' and check there's only 1 record</li>\n<li>read the record and the field containing an autonumber code</li>\n<li>\nincrement this number and update the autonumber record\r<br />\nI get the answer &quot;undefined&quot; from XrmServiceToolkit.Soap.Update and the record is not updated. Where am I wrong ?\r<br />\nThank you in advance for your attention.<br />\n</li>\n</ul>\n<pre><code>// check the unicity of the autonumber record(s)\nvar fetchXml = &quot;&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'&gt;&quot;\n  + &quot; &lt;entity name='ntk_autonumber'&gt;&quot;\n    + &quot; &lt;attribute name='ntk_autonumberid' /&gt;&quot;\n    + &quot; &lt;attribute name='ntk_autonumber_jobcode' /&gt;&quot;\n    + &quot; &lt;filter type='and'&gt;&quot;\n        + &quot; &lt;condition attribute='statecode' operator='eq' value='0' /&gt;&quot;\n    + &quot; &lt;/filter&gt;&quot;\n  + &quot; &lt;/entity&gt;&quot;\n+ &quot; &lt;/fetch&gt;&quot;;\nvar fetchedRecords = XrmServiceToolkit.Soap.Fetch(fetchXml);\nif (fetchedRecords.length != 1) {\n    alert(&quot;NTK error: autonumber record not unique: &quot; + fetchedRecords.length);\n    return;\n}\n\nvar autonumber = fetchedRecords[0];\nvar jobCode = autonumber.attributes[&quot;ntk_autonumber_jobcode&quot;].value;\njobCode = jobCode + 1;\nautonumber.attributes[&quot;ntk_autonumber_jobcode&quot;] = jobCode;\n\n// update the autonumber record\nvar updateResult = XrmServiceToolkit.Soap.Update(autonumber);\nalert(&quot;updateResult: &quot; + updateResult);</code></pre>\n\n",
+    "PostedDate": "2014-10-21T02:17:30.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1315298",
+    "ThreadId": "570320",
+    "Html": "Hi There.\r<br />\n<br />\nTo use the update method, you will need to initialize the business entity with like <br />\n<blockquote>\nvar updateContact = new XrmServiceToolkit.Soap.BusinessEntity(&quot;ntk_autonumber&quot;, entityId);<br />\n</blockquote>\nYou can find examples of usage of methods in the documentation section here.\r<br />\n<br />\nHope this helps.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-10-21T04:42:13.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1315302",
+    "ThreadId": "570320",
+    "Html": "Hi Jaimie,\r<br />\nThanks for your attention.\r<br />\nI already try that but without more success (same &quot;undefined&quot; result and record not updated)<br />\n<pre><code>function autonumberIncrement() {\n    // check there's only 1 active autonumber record\n    var fetchXml = &quot;&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='true'&gt;&quot;\n      + &quot; &lt;entity name='ntk_autonumber'&gt;&quot;\n        + &quot; &lt;attribute name='ntk_autonumberid' /&gt;&quot;\n        + &quot; &lt;attribute name='ntk_autonumber_jobcode' /&gt;&quot;\n        + &quot; &lt;filter type='and'&gt;&quot;\n            + &quot; &lt;condition attribute='statecode' operator='eq' value='0' /&gt;&quot;\n        + &quot; &lt;/filter&gt;&quot;\n      + &quot; &lt;/entity&gt;&quot;\n    + &quot; &lt;/fetch&gt;&quot;;\n    var fetchedRecords = XrmServiceToolkit.Soap.Fetch(fetchXml);\n    if (fetchedRecords.length != 1) {\n        alert(&quot;NTK error: autonumber record not unique: &quot; + fetchedRecords.length);\n        return;\n    }\n    alert(&quot;fetch length: &quot; + fetchedRecords.length);\n\n    var autonumber = new XrmServiceToolkit.Soap.BusinessEntity(&quot;ntk_autonumber&quot;, fetchedRecords[0].id);\n    var jobCode = fetchedRecords[0].attributes[&quot;ntk_autonumber_jobcode&quot;].value + 1;\n    autonumber.attributes[&quot;ntk_autonumber_jobcode&quot;] = jobCode;\n    var updateResult = XrmServiceToolkit.Soap.Update(autonumber);\n\n    return jobCode;\n}</code></pre>\n\n",
+    "PostedDate": "2014-10-21T04:59:10.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316578",
+    "ThreadId": "570320",
+    "Html": "Hi There.\r<br />\n<br />\nA couple of things to check<br />\n<ol>\n<li>The returned value of the ntk_autonumber_jobcode is not an integer value, so you may need to convert it and plus 1 to the value</li>\n<li>\nThe running user does not have the privilege to perform the logic.<br />\n</li>\n</ol>\nHope this helps.\r<br />\nJaimie <br />\n",
+    "PostedDate": "2014-10-26T06:58:35.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359620",
+    "ThreadId": "570320",
+    "Html": "There appears to be a bug in the way XrmServiceToolkit recognises whether you have passed an int or a decimal. Specifically line 1654 which is the following\r<br />\n<br />\nvar oType = (parseInt(encodedValue) === encodedValue) ? &quot;c:int&quot; : &quot;c:decimal&quot;;\r<br />\n<br />\nThe encodedValue is a string so parseInt never matches it.\r<br />\n<br />\nAlternately try this \r<br />\n<br />\nautonumber.attributes[&quot;ntk_autonumber_jobcode&quot;] = ( value: jobCode, type: &quot;int&quot;};<br />\n",
+    "PostedDate": "2015-03-03T19:22:38.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459162",
+    "ThreadId": "570320",
+    "Html": "Thanks <a href=\"mailto:@bradsprigg\" rel=\"nofollow\">@bradsprigg</a>. I ran into the same issue and spent about 2 hours debugging, pretty much down the same path you took, before I saw your solution. It was a big help.\r<br />\n<br />\nMitch<br />\n",
+    "PostedDate": "2016-01-13T13:25:53.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

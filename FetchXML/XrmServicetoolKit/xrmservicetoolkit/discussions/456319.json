@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1090489",
+    "ThreadId": "456319",
+    "Html": "If I use <strong>GetObjectTypeCode()</strong> in HTML Webresource it always return null value.<br />\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;\n    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;/&gt;\n    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/WebResources/cp_LastActivitiesCSS&quot; /&gt;\n    &lt;script src=&quot;/WebResources/ClientGlobalContext.js.aspx&quot; type=&quot;text/javascript&quot; &gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;/WebResources/cp_JQuery&quot;&gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;/WebResources/cp_json2&quot;&gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;/WebResources/cp_XrmServiceToolkit14&quot;&gt;&lt;/script&gt;\n    &lt;script type=&quot;text/javascript&quot; src=&quot;/WebResources/cp_CommonFormsFunctions&quot;&gt;&lt;/script&gt;\n    &lt;style type=&quot;text/css&quot;&gt;\n    &lt;/style&gt;\n  &lt;/head&gt;\n  &lt;body id=&quot;body&quot;&gt;\n    &lt;script type=&quot;text/javascript&quot;&gt;\n        var data = [];\n        var today = new Date();\n        var begindate =  new Date(today.setDate(today.getDate() - 30));\n        \n        alert('TypeCode: ' + XrmServiceToolkit.Common.GetObjectTypeCode('account'));\n...\n...\n...\n&lt;/html&gt;</code></pre>\n\n",
+    "PostedDate": "2013-09-10T00:47:01.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1094044",
+    "ThreadId": "456319",
+    "Html": "Hi.\r<br />\n<br />\nThanks for submitting the issue. Will have a look once I have my new VM built. \r<br />\n<br />\nA bit occupied with work and personal issues.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2013-09-18T07:38:32.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

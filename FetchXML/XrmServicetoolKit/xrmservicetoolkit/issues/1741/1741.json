@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Just had problem to retrieve more than 5k records the xml that says more records doesnt have property .text which indicates if the resultset contains more records or not, i could fix that with using .nodeValue instead .text",
+    "LastUpdatedDate": "2014-10-14T02:18:59.383-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-09-25T10:12:23.293-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Soap.Fetch",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1741
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThere was a bug in the previous release. Can you please try 2.1 and see if it works for you now?\r\n\r\nKind Regard,\nJaimie,",
+      "PostedDate": "2014-10-07T01:07:17.797-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Jop its fixed in the latest update, but now im having issue with retrieving large sets, now i got stucked on page3 req.send() will return Error 500. Do you have any idea what cause this ? this means that the largest set i can get now is 10k",
+      "PostedDate": "2014-10-09T02:19:14.99-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi. \r\n\r\nThere should be no limit in the function of how many you can retrieve. A possibility is that the large number of returned records will cause a time out.\r\n\r\nIf you need to retrieve more 5k records, it is better to think about another approach for better performance. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2014-10-14T02:18:59.383-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

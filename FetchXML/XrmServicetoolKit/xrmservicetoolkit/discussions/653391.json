@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1469506",
+    "ThreadId": "653391",
+    "Html": "Hello everyone,\r<br />\nas a personal project I took myself to convert the XrmServiceToolkit to a TypeScript Version.\r<br />\nI haven't tested it yet since I was busy trying to push it into form.\r<br />\nBut I made good progress so if anyone is willing to help me testing it you would be welcome.\r<br />\n<br />\nI used webpack to bundle the typescript version, there is also a minified version.\r<br />\n<br />\nI splitted the whole project into modules. None of the helper functions will lurk around the main functions.\r<br />\n<br />\nI tried to add types where I could but I'm sure I missed some and even chose the wrong types in some places. Also I may have used &quot;any&quot; a bit to often in some cases ;)\r<br />\n<br />\nI also generated a documentation with typedoc. I converted the original comments from XML to jsdoc.\r<br />\n<br />\nYou should have IntelliSense in VS2015 and VSCode.\r<br />\n<br />\nIf you have suggestions for improvement let me know.\r<br />\n<br />\nSince Jamie is not yet aware of my repository and he is hard to contact I will not post the link here until he approves. But you can contact me if you want to help or try out.<br />\n",
+    "PostedDate": "2016-04-08T14:34:44.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

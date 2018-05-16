@@ -1,0 +1,27 @@
+<div class="wikidoc">This function demonstrate the use of Fetch to return the BusinessUnitName for the current user. <br /><i>Thanks to <a href="http://www.codeplex.com/site/users/view/Peter000000">Peter000000</a></i><br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">function</span> GetBusinessUnitName() {
+    <span style="color:Blue;">var</span> lGetBusinessUnitName;
+
+    <span style="color:Blue;">var</span> fetchXml = <span style="color:#A31515;">&quot;&lt;fetch mapping=&#39;logical&#39;&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;entity name=&#39;systemuser&#39;&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;attribute name=&#39;businessunitid&#39; /&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;filter type=&#39;and&#39;&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;condition attribute=&#39;systemuserid&#39; operator=&#39;eq-userid&#39; /&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;/filter&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;/entity&gt;&quot;</span> +
+                   <span style="color:#A31515;">&quot;&lt;/fetch&gt;&quot;</span>;
+
+            XrmSvcToolkit.fetch({
+                fetchXml: fetchXml,
+                async: <span style="color:Blue;">false</span>,
+                successCallback: <span style="color:Blue;">function</span> (result) {
+                    lGetBusinessUnitName =  result.entities[0].businessunitid.Name;
+                },
+                errorCallback: <span style="color:Blue;">function</span> (error) {
+                    <span style="color:Blue;">throw</span> error;
+                }
+            });
+
+    <span style="color:Blue;">return</span> lGetBusinessUnitName;
+}
+</pre></div></div><div class="ClearBoth"></div>

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "907687",
+    "ThreadId": "394172",
+    "Html": "\r\n<p>Hello guys,</p>\r\n<p>I have a fetchXML query like this:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>        <span style=\"color:#a31515\">&quot;&lt;fetch mapping='logical' aggregate='true'&gt;&quot;</span> &#43;\r\n\t        <span style=\"color:#a31515\">&quot;&lt;entity name='quotedetail'&gt;&quot;</span> &#43;\r\n\t\t        <span style=\"color:#a31515\">&quot;&lt;attribute name='extendedamount' alias='sumExtendedAmount' aggregate='sum'/&gt;&quot;</span> &#43;\r\n                <span style=\"color:#a31515\">&quot;&lt;filter type='and'&gt;&quot;</span> &#43;\r\n\t\t\t        <span style=\"color:#a31515\">&quot;&lt;condition attribute='quotedetailid' operator='in'&gt;&quot;</span> &#43;\r\n\t\t\t\t        <span style=\"color:#a31515\">&quot;&lt;value&gt;&quot;</span> &#43; stringIds &#43; <span style=\"color:#a31515\">&quot;&lt;/value&gt;&quot;</span> &#43;\r\n\t\t\t        <span style=\"color:#a31515\">&quot;&lt;/condition&gt;&quot;</span> &#43;\r\n\t\t        <span style=\"color:#a31515\">&quot;&lt;/filter&gt;&quot;</span> &#43;\r\n\t        <span style=\"color:#a31515\">&quot;&lt;/entity&gt;&quot;</span> &#43;\r\n        <span style=\"color:#a31515\">&quot;&lt;/fetch&gt;&quot;</span>\r\n</pre>\r\n</div>\r\n<p>which works great with XrmSvcToolkit.fetch, but it's returning the amount in the\r\n<span style=\"text-decoration:underline\">Base </span>Currency when I parse it like this:&nbsp;&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>quoteLinesTotalAmount = result.entities[0][<span style=\"color:#a31515\">'sumExtendedAmount'</span>].Value;\r\n</pre>\r\n</div>\r\n<p>This complicates things when the Currency of the record is different because I have to deal with the exchange rate etc.&nbsp;&nbsp; I'd like to get the amount in the Currency of the record, not the Base Currency... Is it possible?</p>\r\n<p>thanks!~</p>\r\n",
+    "PostedDate": "2012-09-03T02:48:05.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "941932",
+    "ThreadId": "394172",
+    "Html": "\r\n<p>Hey,</p>\r\n<p>The behaviour is by design. You're running aggregate over the currency field and CRM has no choice but to convert all values to base currency. How else would you deal with the situation where some quotes&nbsp;are in dollars,&nbsp;some in euros and&nbsp;others - in pounds?</p>\r\n<p>If you retrieve a single record then you get back extended values that include information about transaction currency.</p>\r\n<p>HTH<br>\r\nGeorge</p>\r\n",
+    "PostedDate": "2012-11-14T19:28:38.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "942543",
+    "ThreadId": "394172",
+    "Html": "\r\n<p>Thanks George, that makes sense!&nbsp;</p>\r\n<p>All the best with everything,</p>\r\n<p>Nate</p>\r\n",
+    "PostedDate": "2012-11-15T23:52:35.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058705",
+    "ThreadId": "394172",
+    "Html": "Hi Guys, I am trying to execute a very similar query to this but the execution just fails completely.  I've tried executing the FetchXML standalone and I get the following error:\r<br />\n<br />\nUnable to cast object of type 'System.String' to type 'Microsoft.Xrm.Sdk.Money'.\r<br />\n<br />\nThe query I'm using is here:\r<br />\n<br />\n&lt;fetch mapping='logical' aggregate='true'&gt;\r<br />\n&lt;entity name='new_entityid'&gt;\r<br />\n&lt;attribute name='new_fieldvalue' alias='Total' aggregate='sum'/&gt;\r<br />\n&lt;filter type='and'&gt;\r<br />\n&lt;condition attribute='new_entityid' operator='eq' value='GUID' /&gt;\r<br />\n&lt;/filter&gt;\r<br />\n&lt;/entity&gt;\r<br />\n&lt;/fetch&gt;\r<br />\n<br />\nAny help you can offer would be amazing as this is driving me mental.<br />\n",
+    "PostedDate": "2013-06-19T08:06:35.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058719",
+    "ThreadId": "394172",
+    "Html": "@UberMunchkin, the error message you posted is probably coming from your C# code. By looking at the FetchXML query, I don't see anything wrong, except that you might have a typo with your entity name. \r<br />\n<br />\nBTW, this seems to be a whole new topic. <br />\n",
+    "PostedDate": "2013-06-19T08:36:11.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058721",
+    "ThreadId": "394172",
+    "Html": "Hmm, not using C#, I'm using Javascript.\r<br />\n<br />\nIt's very frustrating as there is no other useful information provided by the error.  Thanks for responding though.<br />\n",
+    "PostedDate": "2013-06-19T08:39:02.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058723",
+    "ThreadId": "394172",
+    "Html": "@UberMunchkin, this is strange, can you run the same query if you use Stunnware Tools? <br />\n",
+    "PostedDate": "2013-06-19T08:41:58.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058725",
+    "ThreadId": "394172",
+    "Html": "Yes, it executes fine in the Stunnware tools.<br />\n",
+    "PostedDate": "2013-06-19T08:47:58.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058763",
+    "ThreadId": "394172",
+    "Html": "@UberMunchkin, that's very strange. JavaScript should never report a type of 'System.String' or 'Microsoft.Xrm.Sdk.Money'.<br />\n",
+    "PostedDate": "2013-06-19T10:08:13.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058889",
+    "ThreadId": "394172",
+    "Html": "\r\n<p></p>\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Howdy,</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Based on the error message I’d say error is definitely coming from the server-side. If I did not know better I’d say that the field new_fieldvalue is not money type.\r\n</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">This speculation aside, I would try to run Fiddler2, run query through Stunnware then through client code and pick up the differences in trace.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Thanks</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">George</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<div>\r\n<div style=\"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0cm 0cm 0cm\">\r\n<p style=\"margin-left:36.0pt\"><b><span lang=\"EN-US\" style=\"font-size:11.0pt; font-family:\"></span></b></p>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2013-06-19T15:00:38.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060305",
+    "ThreadId": "394172",
+    "Html": "Interestingly enough the error turned out to be naming.\r<br />\n<br />\nThe Fetch XML executed just fine in the Stunnware Tools but blew up every time I tried to run it using XrmSvcToolkit.  So on a whim I changed this line:\r<br />\n<br />\n&lt;attribute name='new_fieldvalue' alias='Total' aggregate='sum'/&gt; \r<br />\n<br />\nto this:\r<br />\n<br />\n&lt;attribute name='new_fieldvalue' alias='new_fieldvalue_Total' aggregate='sum'/&gt; \r<br />\n<br />\nand it worked just fine.  It looks like something in the XrmSvcToolkit or one of it's dependencies doesn't like you using the alias 'Total' in aggregate queries.\r<br />\n<br />\nCheers for the help folks.<br />\n",
+    "PostedDate": "2013-06-24T02:50:33.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1060328",
+    "ThreadId": "394172",
+    "Html": "\r\n<p></p>\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Hmmm, interesting… I think the problem could be related to the endpoints in use as Stunnware tools use CRM 4 endpoint, AFAIK. I don’t see any other reason why it would work differently.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<div>\r\n<div style=\"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0cm 0cm 0cm\">\r\n<p style=\"margin-left:36.0pt\"><b><span lang=\"EN-US\" style=\"font-size:11.0pt; font-family:\"></span></b></p>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2013-06-24T04:30:37.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

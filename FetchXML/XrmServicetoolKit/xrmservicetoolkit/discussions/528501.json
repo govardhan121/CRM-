@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1201268",
+    "ThreadId": "528501",
+    "Html": "Hi,\r<br />\nis it possible to limit the XrmServiceToolkit.Soap.Fetch() results like 'TOP number' in SQL.\r<br />\nI´ve tried to use &quot;count='number'&quot;, but this gets totally ignored as far as I can see in Fiddler.\r<br />\nHere is the complete Fetch: <br />\n<pre><code>function getFetchResult(forYear)\n{\n    var myFetchXML = &quot;&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false' count='1'&gt;&quot; +\n                        &quot;&lt;entity name='account'&gt;&quot; +\n                          &quot;&lt;attribute name='name' /&gt;&quot; +\n                          &quot;&lt;attribute name='accountid' /&gt;&quot; +\n                          &quot;&lt;attribute name='vfw_siegelnummer' /&gt;&quot; +\n                          &quot;&lt;attribute name='od4u_laufvariable' /&gt;&quot; +\n                          &quot;&lt;attribute name='od4u_jahresnummer' /&gt;&quot; +\n                          &quot;&lt;order attribute='od4u_laufvariable' descending='true' /&gt;&quot; +\n                          &quot;&lt;filter type='and'&gt;&quot; +\n                            &quot;&lt;condition attribute='od4u_jahresnummer' operator='eq' value='&quot; + forYear + &quot;' /&gt;&quot; +\n                          &quot;&lt;/filter&gt;&quot; +\n                        &quot;&lt;/entity&gt;&quot; +\n                      &quot;&lt;/fetch&gt;&quot;;\n\n    return XrmServiceToolkit.Soap.Fetch(myFetchXML);\n}</code></pre>\n\n",
+    "PostedDate": "2014-01-31T03:48:23.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1203030",
+    "ThreadId": "528501",
+    "Html": "Hi There.\r<br />\n<br />\nI do believe there is a way in general to limit the number of records by using page and count in the fetch. For example, \r<br />\n<br />\n&quot;&lt;fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false' page='1' count='1'&gt;&quot; \r<br />\n<br />\nHowever, the current version of the toolkit has modified the fetch method to allow user only put &lt;entity name=....&gt; to start by using the fetch. Therefore the content of the fetch statement has ben ignored except aggregate. \r<br />\n<br />\nI am currently updating the toolkit to 2.0.1 and hopefully will have some better approach for the fetch method.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-02-05T08:00:48.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1216043",
+    "ThreadId": "528501",
+    "Html": "Hi Jaimie,\r<br />\n<br />\nFirst, thanks for your work and the quality of your development.\r<br />\n<br />\nDo you know when the version 2.0.1 will be available ?\r<br />\n<br />\nBest regards,\r<br />\nNicolas<br />\n",
+    "PostedDate": "2014-02-28T02:43:50.797-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224912",
+    "ThreadId": "528501",
+    "Html": "Hi.\r<br />\n<br />\nThanks for your support. :)\r<br />\n<br />\nCurrent plan is the end of this month or in the middle of next month cause I am a bit busier with work and life at the moment.\r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-03-20T10:30:47.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "2.2 release",
+    "ClosedDate": "2015-04-09T12:19:08.06-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It is not possible to associate two entities of the same type.\n\nThe Code looks like (Soap)\n\n\"<a:KeyValuePairOfstringanyType>\",\n \"<b:key>Relationship</b:key>\",\n \"<b:value i:type='a:Relationship'>\",\n __\"<a:PrimaryEntityRole i:nil='true' />\",__\n \"<a:SchemaName>\", relationshipName, \"</a:SchemaName>\",\n \"</b:value>\",\n \"</a:KeyValuePairOfstringanyType>\",\n\nbut it should be somethink like\n\n\"<a:KeyValuePairOfstringanyType>\",\n\"<b:key>Relationship</b:key>\",\n\"<b:value i:type='a:Relationship'>\",\n __\"<a:PrimaryEntityRole>Referenced</a:PrimaryEntityRole>\",__\n\"<a:SchemaName>\", relationshipName, \"</a:SchemaName>\",\n\"</b:value>\",\n \"</a:KeyValuePairOfstringanyType>\",",
+    "LastUpdatedDate": "2015-04-09T12:19:08.06-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-10-31T08:04:23.033-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "Reflexive Associations",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1759
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nThanks for the feedback. I will have a look at the issue and do some testing. \r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-01-05T01:28:52.853-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-04-09T12:19:08.06-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

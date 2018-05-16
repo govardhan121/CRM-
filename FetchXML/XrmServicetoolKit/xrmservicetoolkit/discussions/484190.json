@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1151347",
+    "ThreadId": "484190",
+    "Html": "Do you have an idea of when the Beta tag will be removed from the latest version?  I really need to use the 2013 version but my manager wont allow it while it's &quot;in beta&quot;.\r<br />\n<br />\nthanks<br />\n",
+    "PostedDate": "2014-01-09T06:35:42.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1170412",
+    "ThreadId": "484190",
+    "Html": "Hi There.\r<br />\n<br />\nI still try to hold the version as beta because CRM 2013 implementation is only just started. We will target the release version as stable while more results are collected from real life projects\r<br />\n<br />\nThe library itself is an open source JavaScript library used by developers. Unlike CRM solutions, I do not really see there will problems or conflicts in your project. Maybe have a talk with your manager and try to explain why you want to use the library through the development. Hope it will be okay.\r<br />\n<br />\nThanks for your support. \r<br />\n<br />\nRegards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-01-16T03:26:11.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1318583",
+    "ThreadId": "484190",
+    "Html": "Hi Jaimie,\r<br />\n<br />\nThanks for developing the library. I'm planning on using it.\r<br />\nHave you got any news on this? How is the beta phase for 2013 going? And what's the plan for CRM 2015?\r<br />\n<br />\nRegards,\r<br />\nJohnny<br />\n",
+    "PostedDate": "2014-11-03T02:55:18.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1319686",
+    "ThreadId": "484190",
+    "Html": "Hi There.\r<br />\n<br />\nThe current release version 2.1 is the stable release which should contain minimal bugs. As always, the library may not meet all requirements depending on the project. \r<br />\n<br />\nHope this helps.\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2014-11-06T07:53:58.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

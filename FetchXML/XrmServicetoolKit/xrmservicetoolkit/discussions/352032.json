@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "822853",
+    "ThreadId": "352032",
+    "Html": "\r\n<p>Hi&nbsp;Jaimie,</p>\r\n<p>It will be nice if you add a two new functions:&nbsp;<strong>GrantAccess</strong>&nbsp;and&nbsp;<strong>RevokeAccess</strong>&nbsp;for entyti Object with systemuser and team.</p>\r\n<p>Today I use a solution from&nbsp;<strong>Jamie Miley</strong>:&nbsp;http://mileyja.blogspot.com/2011/05/grant-access-to-user-or-team-to-entity.html</p>\r\n<p>It&nbsp;works well, but&nbsp;I would like to&nbsp;have an &quot;<strong>all in one</strong>&quot; solution.</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards,</p>\r\n<p>FV</p>\r\n<p>PS:&nbsp;<span>I suggested</span><span>&nbsp;</span><span>this idea</span><span>&nbsp;</span><span>to Daniel</span><span>, who</span><span>&nbsp;</span><span>is the author of</span><span>&nbsp;</span><span>a similar</span><span>&nbsp;</span><span>library</span><span>&nbsp;</span><span><strong><a title=\"XrmSvcToolkit\" href=\"http://xrmsvctoolkit.codeplex.com/\">CrmSvcToolkit</a></strong>.</span><span>&nbsp;</span><span>Who\r\n is</span><span>&nbsp;</span><span>faster?</span></p>\r\n",
+    "PostedDate": "2012-04-12T04:40:34.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "825349",
+    "ThreadId": "352032",
+    "Html": "<p>Hey There.</p>\r\n<p>Thanks for your suggestion. I am actually looking to add them in at some stage.</p>\r\n<p>Maybe just they won't be an elegant solution, but i have a rough idea what i am after at this stage.</p>\r\n<p>Thanks and Happy Coding.</p>\r\n<p>Jaimie</p>",
+    "PostedDate": "2012-04-18T02:51:47.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

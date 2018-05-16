@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-04-21T04:20:56.267-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm not sure whether this an issue affecting other users of this toolkit but the Extension method: __jQueryXrmFieldTooltip__ is failing to locate the web resource passed into the function.\n\nI amended the error output for this function, but the error only returns \"Internal Server Error\".\n\nI changed the Ajax query to look at the location __\"/WebResources/\"__ instead of __\"../WebResources/\"__ and it works correctly.\n\nI've attached the Jquery Ajax call below.\n```\njQuery.ajax({\n            type: \"GET\",\n            url: \"/WebResources/\" + filename,\n            dataType: \"xml\",\n            success: parseHelpXml,\n            // ReSharper disable UnusedParameter\n            error: function (xmlHttpRequest, textStatus, errorThrown) {\n                // ReSharper restore UnusedParameter\n                alert('Something is wrong to setup the tooltip for the fields. Please contact your administrator. Status: ' +  textStatus + ' Error: ' + errorThrown);\n            }\n        }); //end Ajax\n```",
+    "LastUpdatedDate": "2014-04-21T04:20:56.267-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-02-25T05:28:16.15-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "jQueryXrmFieldTooltip looking for resource in wrong location",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1677
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nThanks. The fix will be implemented in 2.0.1\r\n\r\n```\nurl: GetClientUrl)+ \"/WebResources/\" + filename,\n```\r\n\r\nRegards,\nJaimie",
+      "PostedDate": "2014-04-21T04:20:50.54-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:20:56.267-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

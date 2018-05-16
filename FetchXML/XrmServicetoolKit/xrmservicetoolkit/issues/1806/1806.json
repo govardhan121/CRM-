@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi.\nNumber types (Int, Double) not supported in Create/Update method's SOAP.\n\nthis code\n```\ncase \"number\":\n                            value = (attribute.hasOwnProperty(\"value\")) ? attribute[\"value\"] : attribute;\n                            encodedValue = encodeValue(value);\n                            var oType = (parseInt(encodedValue) === encodedValue) ? \"c:int\" : \"c:decimal\";\n                            xml.push(\"<b:value i:type='\", oType, \"' xmlns:c='http://www.w3.org/2001/XMLSchema'>\");\n                            xml.push(encodedValue, '</b:value>');\n                            break;\n```\noType c:int never accept the value \"c:int\"",
+    "LastUpdatedDate": "2015-06-06T02:25:49.217-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2015-06-04T05:39:50.847-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Number types (Int, Double) and SOAP Create/Update",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1806
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi There.\r\n\r\nNumbers should be used as example below. \r\n\r\n```\ncreateContact.attributes[\"numberofchildren\"] = { value: 2, type: \"int\"}; \r\n\r\ncreateContact.attributes[\"exchangerate\"] = {value: 1.5617, type: \"decimal\"}; \r\n\r\ncreateContact.attributes[\"address1_latitude\"] = { value: 1.5617, type: \"double\" }; \r\n\r\ncreateContact.attributes[\"creditlimit\"] = { value: 2, type: \"Money\" }; \n```\r\n\r\nPlease have a look documentation section and example about how usage.\r\n\r\nKind Regards,\nJaimie",
+      "PostedDate": "2015-06-04T08:27:16.89-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi.\nYou are right.\nMy mistake.",
+      "PostedDate": "2015-06-06T02:25:49.217-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

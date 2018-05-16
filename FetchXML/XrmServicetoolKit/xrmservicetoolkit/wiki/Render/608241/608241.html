@@ -1,0 +1,176 @@
+<div class="wikidoc">
+<p><span style="text-decoration:underline"><strong>XrmServiceToolkit.Rest Methods</strong></span></p>
+<p><strong>These examples are built and combined with qunit. Please check <a href="http://docs.jquery.com/QUnit">
+http://docs.jquery.com/QUnit</a>&nbsp;for more details if you are new to it.</strong></p>
+<p><strong><em><span style="text-decoration:underline">Create</span></em></strong></p>
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Create() method to create a new record&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> account = {};
+            account.Name = <span style="color:#a31515">&quot;Test Account Name&quot;</span>;
+            account.Description = <span style="color:#a31515">&quot;This account was created by the XrmServiceToolkit.Rest.Create() sample.&quot;</span>;
+            <span style="color:blue">if</span> (contactId != <span style="color:blue">null</span>) {
+                <span style="color:green">//Set a lookup value</span>
+                account.PrimaryContactId = { Id: contactId, LogicalName: <span style="color:#a31515">&quot;contact&quot;</span> };
+            }
+            <span style="color:green">//Set a picklist value</span>
+            account.PreferredContactMethodCode = { Value: 2 }; <span style="color:green">//E-mail</span>
+
+            <span style="color:green">//Set a money value</span>
+            account.Revenue = { Value: <span style="color:#a31515">&quot;2000000.00&quot;</span> }; <span style="color:green">//Set Annual Revenue</span>
+
+            <span style="color:green">//Set a Boolean value</span>
+            account.DoNotPhone = <span style="color:blue">true</span>; <span style="color:green">//Do Not Allow</span>
+
+            <span style="color:green">//Add Two Tasks</span>
+            <span style="color:blue">var</span> today = <span style="color:blue">new</span> Date();
+            <span style="color:blue">var</span> startDate = <span style="color:blue">new</span> Date(today.getFullYear(), today.getMonth(), today.getDate() &#43; 3); <span style="color:green">//Set a date three days in the future.</span>
+
+            <span style="color:blue">var</span> LowPriTask = { Subject: <span style="color:#a31515">&quot;Low Priority Task&quot;</span>, ScheduledStart: startDate, PriorityCode: { Value: 0} }; <span style="color:green">//Low Priority Task</span>
+            <span style="color:blue">var</span> HighPriTask = { Subject: <span style="color:#a31515">&quot;High Priority Task&quot;</span>, ScheduledStart: startDate, PriorityCode: { Value: 2} }; <span style="color:green">//High Priority Task</span>
+            account.Account_Tasks = [LowPriTask, HighPriTask];
+            XrmServiceToolkit.Rest.Create(
+                account,
+                <span style="color:#a31515">&quot;AccountSet&quot;</span>,
+                <span style="color:blue">function</span> (result) {
+                    accountId = result.AccountId;
+                    ok(guidExpr.test(result.AccountId), <span style="color:#a31515">&quot;Creating a account should returned the new record's ID in GUID format. &quot;</span>);
+                },
+                <span style="color:blue">function</span> (error) {
+                    equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                },
+                <span style="color:blue">false</span>
+            );
+});</pre>
+<div style="color:black; background-color:white"><strong><em><span style="text-decoration:underline">Retrieve
+</span></em></strong></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Retrieve() method to retrieve a record&quot;</span>, <span style="color:blue">function</span> () {
+
+            XrmServiceToolkit.Rest.Retrieve(
+                accountId,
+                <span style="color:#a31515">&quot;AccountSet&quot;</span>,
+                <span style="color:blue">null</span>, <span style="color:blue">null</span>,
+                <span style="color:blue">function</span> (result) {
+                    <span style="color:blue">var</span> Id = result.AccountId;
+                    equals(Id, accountId, <span style="color:#a31515">&quot;Retrieve() method should return the same account ID as Create() result. &quot;</span>);
+                },
+                <span style="color:blue">function</span> (error) {
+                    equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                },
+                <span style="color:blue">false</span>
+            );
+        });
+</pre>
+</div>
+<div style="color:black; background-color:white"><span style="text-decoration:underline"><em><strong>Update
+</strong></em></span></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Update() method to update a record&quot;</span>, <span style="color:blue">function</span> () {
+
+            <span style="color:blue">var</span> account = {};
+            account.Name = <span style="color:#a31515">&quot;Updated Account Name&quot;</span>;
+            account.Address1_AddressTypeCode = { Value: 3 }; <span style="color:green">//Address 1: Address Type = Primary</span>
+            account.Address1_City = <span style="color:#a31515">&quot;Sammamish&quot;</span>;
+            account.Address1_Line1 = <span style="color:#a31515">&quot;123 Maple St.&quot;</span>;
+            account.Address1_PostalCode = <span style="color:#a31515">&quot;98074&quot;</span>;
+            account.Address1_StateOrProvince = <span style="color:#a31515">&quot;WA&quot;</span>;
+            account.EMailAddress1 = <span style="color:#a31515">&quot;someone@microsoft.com&quot;</span>;
+
+            XrmServiceToolkit.Rest.Update(
+                accountId,
+                account,
+                <span style="color:#a31515">&quot;AccountSet&quot;</span>,
+                <span style="color:blue">function</span> () {
+                    equals(<span style="color:blue">true</span>, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;The record should have been updated.&quot;</span>);
+                },
+                <span style="color:blue">function</span> (error) {
+                    equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                },
+                <span style="color:blue">false</span>
+            );
+});
+</pre>
+</div>
+<p><strong><em><span style="text-decoration:underline">Delete</span></em></strong></p>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Delete(account) method to delete a record&quot;</span>, <span style="color:blue">function</span> () {
+
+            XrmServiceToolkit.Rest.Delete(
+                accountId,
+                <span style="color:#a31515">&quot;AccountSet&quot;</span>,
+                <span style="color:blue">function</span> () {
+                    equals(<span style="color:blue">true</span>, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;The record should have been deleted.&quot;</span>);
+                },
+                <span style="color:blue">function</span> (error) {
+                    equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                },
+                <span style="color:blue">false</span>
+            );
+});
+</pre>
+</div>
+<div style="color:black; background-color:white"><strong><em><span style="text-decoration:underline">Associate</span></em></strong></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Associate() method to associate a record&quot;</span>, <span style="color:blue">function</span> () {
+
+            XrmServiceToolkit.Rest.Associate(
+                contactId,
+                <span style="color:#a31515">&quot;ContactSet&quot;</span>,
+                accountId,
+                <span style="color:#a31515">&quot;AccountSet&quot;</span>,
+                <span style="color:#a31515">&quot;account_primary_contact&quot;</span>,
+                <span style="color:blue">function</span> () {
+                    equals(<span style="color:blue">true</span>, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;The record should have been associated.&quot;</span>);
+                },
+                <span style="color:blue">function</span> (error) {
+                    equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                },
+                <span style="color:blue">false</span>
+            );
+});
+</pre>
+</div>
+<div style="color:black; background-color:white"><strong><em><span style="text-decoration:underline">Disassociate</span></em></strong></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.Disassociate() method to disassociate a record&quot;</span>, <span style="color:blue">function</span> () {
+
+            XrmServiceToolkit.Rest.Disassociate(
+                    contactId,
+                    <span style="color:#a31515">&quot;ContactSet&quot;</span>,
+                    accountId,
+                    <span style="color:#a31515">&quot;account_primary_contact&quot;</span>,
+                    <span style="color:blue">function</span> () {
+                        equals(<span style="color:blue">true</span>, <span style="color:blue">true</span>, <span style="color:#a31515">&quot;The record should have been disassociated.&quot;</span>);
+                    },
+                    <span style="color:blue">function</span> (error) {
+                        equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+                    },
+                    <span style="color:blue">false</span>
+                );
+});
+</pre>
+</div>
+<p>&nbsp;</p>
+<div style="color:black; background-color:white"><strong><em><span style="text-decoration:underline">RetrieveMultiple</span></em></strong></div>
+<div style="color:black; background-color:white">
+<pre>test(<span style="color:#a31515">&quot;Test XrmServiceToolkit.Rest.RetrieveMultiple(contact) method to get the contacts&quot;</span>, <span style="color:blue">function</span> () {
+
+	XrmServiceToolkit.Rest.RetrieveMultiple(
+		<span style="color:#a31515">&quot;ContactSet&quot;</span>,
+		<span style="color:#a31515">&quot;$select=ContactId, FullName&quot;</span>,
+		<span style="color:blue">function</span> (results) {
+			ok(results.length &gt; 0, results.length.toString() &#43; <span style="color:#a31515">&quot; records should have been retrieved.&quot;</span>);
+		},
+		<span style="color:blue">function</span> (error) {
+			equal(<span style="color:blue">true</span>, <span style="color:blue">false</span>, error.message);
+		},
+		<span style="color:blue">function</span> onComplete() {
+
+		},
+		<span style="color:blue">false</span>
+	);
+});
+</pre>
+</div>
+<p>&nbsp;</p>
+</div><div class="ClearBoth"></div>

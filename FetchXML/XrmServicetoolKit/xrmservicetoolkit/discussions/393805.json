@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "906515",
+    "ThreadId": "393805",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I need to give temporary access to the logged user to create an entity record (i.e.: create a new contact based on certain information entered). At the same time, we I don't want the users having access to the Contacts entity all the time.</p>\r\n<p>We already create&nbsp;a plugin (C#) that does that,&nbsp;but now we need to do it in JS, because the contact record needs to be created before the plugin for that entity&nbsp;gets fired.</p>\r\n<p>We already have a systemuser we used in the plugin (superuser)</p>\r\n<p>I was trying to use the GrantAccess and RevokeAccess functions introduced in 1.1 version, but it seems they are not doing what we are expecting (or maybe those functions are not meant for that).</p>\r\n<p>Could you provide some samples of how to use those two functions?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-08-30T12:38:01.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "906729",
+    "ThreadId": "393805",
+    "Html": "<p>Hi.</p>\r\n<p>GrantAccess and RevokeAccess have the same rule and how they should be used as described in the SDK.</p>\r\n<pre>Contains the data that is needed to grant a security principal (user or team) access to the specified record. </pre>\r\n<p>Therefore, you need a specified record to use the methods. The examples could be found in aspx page under source code.</p>\r\n<p>Your scenario bascially talking about create privilege not access if that make sense. As for now, i could not really recomment how you could do this in JS and i personally will not do ths in JS as well from security and complexity point of view.</p>\r\n<p>May do a bit search and see what others will suggest.</p>\r\n<p>Jaimie</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-08-31T01:30:36.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "906876",
+    "ThreadId": "393805",
+    "Html": "<p>Thanks Jaimie for your quick response.</p>\r\n<p>I see, it's used to assing permissions to an existing record; not to the entity... And yes, it's more a Privilege related issue.</p>\r\n<p>I'll keep using the Plugin (C#) instead...</p>\r\n<p>Thanks you again for the library, it's very useful.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-08-31T07:05:00.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

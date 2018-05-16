@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2014-09-09T14:16:44.407-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\nI'm trying to create appointment with regarding attribute with following code.I'm Not able to create appointment.can anybody please send the sample code for my requirement.\n\n                var appointment = new Object();\n                appointment.Subject = \"test\";\n                appointment.ScheduledStart = startTime;\n                appointment.ScheduledEnd = endTime;\n               \n                appointment.Description = \"test\";\n                appointment.RegardingObjectId = { Id: parent.Xrm.Page.data.entity.getId(), LogicalName: \"contact\" };\n                appointment.IsAllDayEvent = true;\n                \n               XrmServiceToolkit.Rest.Create(\n                 appointment,\n                \"AppointmentSet\",\n                function (result) {\n                \n                    alert(\"Created New Appointment\");\n                },\n                function (error) {\n                    alert(error.message);\n                }, false\n                );",
+    "LastUpdatedDate": "2014-09-09T14:16:44.407-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-04-25T03:06:20.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unable to create appointment with regarding attribute",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1693
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nThere is an example using the soap method to create an email. You could change it to create an appointment.\r\n\r\n```\nvar createEmail = new XrmServiceToolkit.Soap.BusinessEntity(\"email\");\n    createEmail.attributes[\"subject\"] = \"Test Email subject\";\n    createEmail.attributes[\"description\"] = \"This email was created by the XrmServiceToolkit.Soap.Create() sample.\";\r\n\r\n    var from = [\n       { id: whoamiUserId, logicalName: \"systemuser\", type: \"EntityReference\" }\n    ];\r\n\r\n    createEmail.attributes[\"from\"] = { value: from, type: \"EntityCollection\" };\r\n\r\n    var to = [\n       { id: accountId, logicalName: \"account\", type: \"EntityReference\" },\n       { id: contactId, logicalName: \"contact\", type: \"EntityReference\" }\n    ];\r\n\r\n    createEmail.attributes[\"to\"] = { value: to, type: \"EntityCollection\" };\r\n\r\n    var cc = [\n       { id: accountId, logicalName: \"account\", type: \"EntityReference\" },\n       { id: contactId, logicalName: \"contact\", type: \"EntityReference\" }\n    ];\r\n\r\n    createEmail.attributes[\"cc\"] = { value: cc, type: \"EntityCollection\" };\r\n\r\n    var bcc = [\n       { id: accountId, logicalName: \"account\", type: \"EntityReference\" },\n       { id: contactId, logicalName: \"contact\", type: \"EntityReference\" }\n    ];\r\n\r\n    createEmail.attributes[\"bcc\"] = { value: bcc, type: \"EntityCollection\" };\r\n\r\n    createEmail.attributes[\"directioncode\"] = true;\r\n\r\n    emailId = XrmServiceToolkit.Soap.Create(createEmail);\n```",
+      "PostedDate": "2014-05-28T12:42:41.313-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-09T14:16:44.407-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

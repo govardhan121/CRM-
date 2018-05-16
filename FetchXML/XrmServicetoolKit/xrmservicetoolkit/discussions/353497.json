@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "828284",
+    "ThreadId": "353497",
+    "Html": "<p>hi. using the library, in a simple account form onload event, using</p>\n<p>XrmServiceToolkit.Common.HideField('Fax');</p>\n<p>i'm getting the above error. it's driving me nuts. has anyone any ideas?</p>\n<p>&nbsp;</p>\n<p>edit: this is fixed - nothing to do with the library, just how to configure it and reference it within the crm gui. good stuff :)</p>",
+    "PostedDate": "2012-04-25T02:52:49.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

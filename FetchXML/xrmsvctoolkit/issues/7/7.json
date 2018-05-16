@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "On a date value of \"2016-08-01T00:00:00\" the parseIsoDate function states an invalid date.  Date part [8] is null in this case and the function doesn't account for it.  Adding a check for null  in the conditional statement allows for conversion of the date.  The date field in our CRM causing the issue is a Date Only field and the behavior is set to Time Zone Independent.\r\n\r\nExisting Line:\r\n```\r\nparseInt(dateParts[4], 10) - (dateParts[8] == \"\" || dateParts[8] == \"Z\" ? 0 : parseInt(dateParts[8]))\r\n```\r\n",
+    "LastUpdatedDate": "2017-01-07T09:24:24.27-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmsvctoolkit",
+    "ReportedDate": "2017-01-07T09:24:24.27-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "parseIsoDate issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 7
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

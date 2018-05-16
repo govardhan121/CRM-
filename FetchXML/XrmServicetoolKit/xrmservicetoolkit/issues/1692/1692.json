@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Duplicated with discussions.",
+    "ClosedDate": "2014-04-21T04:19:46.42-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n\nI'm using this library in an HTML web resource against CRM 2011.  I seem to be getting an error in the developers tools console in IE 11, but not in Chrome.  Below is a snippet of the code I'm using:\n\n<script src=\"http://code.jquery.com/jquery-1.7.2.min.js\"></script>\n<script src=\"cxo_json2js\"></script>\n<script src=\"ClientGlobalContext.js.aspx\"></script>\n<script src=\"cxo_xrmservicetoolkitjs\"></script>\n\t\n<script type=\"text/javascript\">\n    $(function() {\t\t\t\n\t\tvar query = \"$filter=cxo_BookingId/Id eq guid'\" + 123+ \"'\";\n\t\t\n\t\tXrmServiceToolkit.Rest.RetrieveMultiple(\n\t\t\t\"cxo_imageSet\",\n\t\t\tquery,\n\t\t\tfunction (results) {\n\t\t\t\tconsole.log(results);\n\t\t\t},\n\t\t\tfunction (error) {\n\t\t\t\tconsole.log(error);\n\t\t\t},\n\t\t\tfunction onComplete() {\n\t\t\t},\n\t\t\tfalse\n\t\t);\t\t\n\t});\n\n\nBelow are two errors I see in the IE11 developer tools console:\n\nSCRIPT5009: 'XPathEvaluator' is undefined\nFile: global.ashx, Line: 6, Column: 431745\n\nCRIPT5007: Unable to get property 'CrmUrlEncode' of undefined or null reference\nFile: global.ashx, Line: 6, Column: 154903\n\nAm I doing something incorrectly with using this library as an HTML web resource?  I've successfully called this query in js web resources in the same CRM instance and browser.\n\nAny help would be appreciated.  \n\nThanks,\nBob",
+    "LastUpdatedDate": "2014-04-21T04:19:46.42-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2014-04-20T10:20:34.19-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "IE - HTML Web Resource Error",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1692
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nI have replied your post in the fourm.\r\n\r\nJaimie",
+      "PostedDate": "2014-04-21T04:19:18.713-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:19:46.42-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

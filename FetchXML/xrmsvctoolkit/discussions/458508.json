@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1096809",
+    "ThreadId": "458508",
+    "Html": "I just got an email from Microsoft stating that after a system check they found that the XrmSvcToolkit is unsupported. Is there going to be an update for CRM Online 2013<br />\n",
+    "PostedDate": "2013-09-20T01:17:57.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1096837",
+    "ThreadId": "458508",
+    "Html": "Hey Philip,\r<br />\n<br />\nthanks for letting us know. Email should have contained an attachment containing details about the incompatibilities. Can you please send us the relevant part of that attachment?\r<br />\n<br />\nThanks again\r<br />\nGeorge<br />\n",
+    "PostedDate": "2013-09-20T02:21:49.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1096870",
+    "ThreadId": "458508",
+    "Html": "Received a message from Microsoft; here is the file: <a href=\"http://pastebin.com/zptwjkKr\" rel=\"nofollow\">http://pastebin.com/zptwjkKr</a>\r<br />\n<br />\nLet me know if I can assist. I'm on CRM 2011 Online, but I have an instance on 2013 as well.<br />\n",
+    "PostedDate": "2013-09-20T03:42:15.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1096919",
+    "ThreadId": "458508",
+    "Html": "Great, Philip, thanks for sending this through.\r<br />\n<br />\nScanner picked only on IsOutlookClient() call which is just a single line in the code and will be easily replaced before the 2013 release.\r<br />\nInterestingly that scanner did not pick on getServerUrl which is deprecated and should be replaced with getClientUrl.\r<br />\n<br />\nIn any case, we'll fix those very soon. <br />\n",
+    "PostedDate": "2013-09-20T05:50:02.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1117767",
+    "ThreadId": "458508",
+    "Html": "Any news on when we can get an update for 2013?<br />\n",
+    "PostedDate": "2013-11-05T08:51:58.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1117897",
+    "ThreadId": "458508",
+    "Html": "I will get into this sometime this week. \r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-11-05T10:28:19.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1120808",
+    "ThreadId": "458508",
+    "Html": "I tried to run Legacy Feature Check Tool, and it didn't report this as an issue, not sure what tool Microsoft is using to scan the code. <br />\n",
+    "PostedDate": "2013-11-09T07:40:54.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

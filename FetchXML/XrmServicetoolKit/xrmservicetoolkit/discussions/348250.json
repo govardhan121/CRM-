@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "809058",
+    "ThreadId": "348250",
+    "Html": "\r\n<p>I am using your toolkit, but I am afaird I am not very familiar with the calling convention,</p>\r\n<p>&nbsp;</p>\r\n<p>I am trying to call XrmServiceToolKit.Common._hideField in 'Client' Form OnLoad</p>\r\n<p>Inside the Handler Properties</p>\r\n<p>I put XrmServiceToolKit.Common._hideField in 'Function' field</p>\r\n<p>I put my first parameter &quot;Fax&quot; &nbsp;in the 'Comma separated list of parameters ...' field</p>\r\n<p>And I got this error</p>\r\n<p>There was an error with this field's customized event.</p>\r\n<p>Field:window</p>\r\n<p>Event:onload</p>\r\n<p>Error:Object doesn't support property or method '_hideField'</p>\r\n<p>Any help will be appreciated. &nbsp;Thanks.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-03-12T06:04:35.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "809171",
+    "ThreadId": "348250",
+    "Html": "<p>Try</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>XrmServiceToolkit.Common.HideField(<span style=\"color: #a31515;\">'Fax'</span>);\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-03-12T09:56:12.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "828487",
+    "ThreadId": "348250",
+    "Html": "<p>hi. i tried that and it simply doesn't work :(</p>",
+    "PostedDate": "2012-04-25T09:29:25.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "828503",
+    "ThreadId": "348250",
+    "Html": "<p>this works:</p>\r\n<p>put XrmServiceToolkit.Common.HideField in the function field, 'fax' in the comma separated values thing.</p>\r\n<p>grief. i wish people would take a little time to document their otherwise good work properly!!!!!!!!!!!!!!</p>",
+    "PostedDate": "2012-04-25T09:55:02.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

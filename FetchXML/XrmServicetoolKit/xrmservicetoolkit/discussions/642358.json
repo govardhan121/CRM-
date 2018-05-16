@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1437328",
+    "ThreadId": "642358",
+    "Html": "when i push on ribbon button javascript not working and i get error &quot;xrmservicetoolkit is undefined &quot; I try many version but not have success. can anyone help me please.\r<br />\nCondition;\r<br />\nI use Crm 2015, i load json2, jquery1.7.2 and xrmservicetoolkit2.2.1 on Form. I create two ribbon button on custom entity. first button create a invoice for contact person second button create invoice for firm with more than one contact assembly. Problem is when i create for contact is working but when i try for firm i get error of XrmServiceToolkit not defined.\r<br />\nafter i create a button of contact invoice update crm 2015 then now i try to create button for firm but XrmServiceToolkit is undefined. Now i have crm 2015 version 7.0.1.129 language german\r<br />\n<br />\nThanks for every aid<br />\n",
+    "PostedDate": "2015-08-05T02:33:51.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1439420",
+    "ThreadId": "642358",
+    "Html": "Hi There.\r<br />\n<br />\nBasically, you will need to load &quot;custom libraries&quot; in ribbon before you can use them in some situations. \r<br />\n<br />\nPlease have a look at the following link and hope that helps. \r<br />\n<br />\n<a href=\"https://rajeevpentyala.wordpress.com/2012/05/23/loading-dependent-jscript-libraries-in-ribbon-buttons-execution-crm-2011/\" rel=\"nofollow\">https://rajeevpentyala.wordpress.com/2012/05/23/loading-dependent-jscript-libraries-in-ribbon-buttons-execution-crm-2011/</a>\r<br />\n<br />\nKind Regards,\r<br />\nJaimie<br />\n",
+    "PostedDate": "2015-08-13T08:04:27.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

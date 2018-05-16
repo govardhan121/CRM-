@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "1356143",
+    "ThreadId": "581952",
+    "Html": "Hi jaimieji,\r<br />\n<br />\nI followed your example at <a href=\"https://xrmservicetoolkit.codeplex.com/documentation\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/documentation</a> on how to create an email and it's able to create a draft.  In one situation this is exactly what I want and I then open the draft by adding<br />\n<pre><code> Xrm.Utility.openEntityForm(&quot;email&quot;, emailId);</code></pre>\n\nto the end of my code.  However, in another situation I want the jscript to send the email without opening it for editing.  How would I do that?  I've tried setting 'statuscode' and 'statecode' to 3 and 6 for 'Sent' and 'Pending Send' respectively, but the status stays as 'Draft'.  I also briefly tried setting 'deliveryattempts' to 0 per something I read in another blog post but it just prevented the code from creating the email.<br />\n",
+    "PostedDate": "2015-02-26T14:53:02.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356175",
+    "ThreadId": "581952",
+    "Html": "I may have found my answer. From some extra reading online, I found out that I cannot simply set the statuscode and statecode like I do other fields.  It requires some SOAP function calls to accomplish that.  After a bit more digging I found one reference to XrmServiceToolkit.Soap.SetState() function at <a href=\"https://community.dynamics.com/crm/f/117/t/122205.aspx\" rel=\"nofollow\">https://community.dynamics.com/crm/f/117/t/122205.aspx</a> and see SetState is in the list of SOAP functions on the homepage, <a href=\"https://xrmservicetoolkit.codeplex.com/\" rel=\"nofollow\">https://xrmservicetoolkit.codeplex.com/</a>.  It would be nice if there were more examples to look at online, but I will dig into this further when I get back to work tomorrow.<br />\n",
+    "PostedDate": "2015-02-26T16:51:02.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356479",
+    "ThreadId": "581952",
+    "Html": "I've been successful in changing the status of the email to 'Pending Send' via SetState(), however the email stays at 'Pending Send' and never goes out.  I've tried setting the deliveryattempts field as shown below, but then the code doesn't create the email.  I've tried searching for references of other people setting deliveryattempts using javascript or jscript but all I can find are examples of workflows setting the 'No. of Delivery Attempts' field.<br />\n<pre><code>createEmail.attributes[&quot;directioncode&quot;] = true;\ncreateEmail.attributes[&quot;deliveryattempts&quot;] = 0;\nemailId = XrmServiceToolkit.Soap.Create(createEmail);\nXrmServiceToolkit.Soap.SetState(&quot;email&quot;, emailId, 1, 6);</code></pre>\n\nUnless there is some way to set the field in Javascript, all I can think to do is use fireOnChange on a custom field to trigger a workflow that sets 'No. of Delivery Attempts' to 0.<br />\n",
+    "PostedDate": "2015-02-27T12:06:23.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356486",
+    "ThreadId": "581952",
+    "Html": "You will need to make a SOAP call to execute SendEmailRequest.  See the code from this blog post:\r<br />\n<br />\n<a href=\"http://mileyja.blogspot.com/2012/02/send-email-synchronously-in-microsoft.html\" rel=\"nofollow\">http://mileyja.blogspot.com/2012/02/send-email-synchronously-in-microsoft.html</a><br />\n",
+    "PostedDate": "2015-02-27T12:16:59.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356538",
+    "ThreadId": "581952",
+    "Html": "Unfortunately I know very little about SOAP which is why I'm using XrmServiceToolkit.  I had seen that blog post before, but I'll take a look at again and see if I can figure out how to use it.  As a first guess I'd try to copy all of 'var requestMain' into my own code and then use XrmServiceToolkit.Soap.Execute() to execute it.  I'm hopeful then that all I need to change/pass into it is the 'EmailId' which is near to the middle of the blog example.<br />\n",
+    "PostedDate": "2015-02-27T14:25:41.213-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1358813",
+    "ThreadId": "581952",
+    "Html": "Pardon me if I don't understand something, but in the blog example I don't see an email ID variable being passed to the function and I also don't see one being concatenated into requestMain.  What I thought was the email ID is just text inside of a string.  So I'm assuming this will just Send the email on the form the user already has open.  If I wanted to do that I would have used the Send() function shown in <a href=\"http://bogdano-crm.blogspot.com/2013/03/crm-2011-send-email-from-javascript.html\" rel=\"nofollow\">http://bogdano-crm.blogspot.com/2013/03/crm-2011-send-email-from-javascript.html</a> .  The problem is I am creating the email via javascript first so the form is not open.<br />\n",
+    "PostedDate": "2015-03-02T08:13:52.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1359892",
+    "ThreadId": "581952",
+    "Html": "Never mind my last question.  I think I understand now.  The example is sending the email with a GUID of 'dc946d36-3e41-e111-9d05-0050569838b7'.  I just need to replace this part with the GUID of the email I'm creating.  I just didn't understand why someone would hard code the GUID of an email into their code, so I thought it was the GUID ID of something else.  I started looking at the C#, plug-in example which explained that I was wrong.  How many times does someone need to send the same email?  I'm all set now.  Thanks dipple.<br />\n",
+    "PostedDate": "2015-03-04T13:08:50.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360151",
+    "ThreadId": "581952",
+    "Html": "Here's my attempt to make a function out of the blog example using XrmServiceToolkit.Soap.execute(), however it isn't working, and I am at a loss to know how to debug SOAP.<br />\n<pre><code>function SendEmail(emailId)\n{\n    var request = [\n        &quot;&lt;request i:type='b:SendEmailRequest'&quot;,\n        &quot;xmlns:a='http://schemas.microsoft.com/xrm/2011/Contracts'&quot;,\n        &quot;xmlns:b='http://schemas.microsoft.com/crm/2011/Contracts'&gt;&quot;,\n            &quot;&lt;a:Parameters xmlns:c='http://schemas.datacontract.org/2004/07/System.Collections.Generic'&gt;&quot;,\n                &quot;&lt;a:KeyValuePairOfstringanyType&gt;&quot;,\n                    &quot;&lt;c:key&gt;EmailId&lt;/c:key&gt;&quot;,\n                    &quot;&lt;c:value i:type='d:guid' xmlns:d='http://schemas.microsoft.com/2003/10/Serialization/'&gt;&quot;,\n                        emailId,\n                    &quot;&lt;/c:value&gt;&quot;,\n                &quot;&lt;/a:KeyValuePairOfstringanyType&gt;&quot;,\n                &quot;&lt;a:KeyValuePairOfstringanyType&gt;&quot;,\n                    &quot;&lt;c:key&gt;IssueSend&lt;/c:key&gt;&quot;,\n                    &quot;&lt;c:value i:type='d:boolean' xmlns:d='http://www.w3.org/2001/XMLSchema'&gt;true&lt;/c:value&gt;&quot;,\n                &quot;&lt;/a:KeyValuePairOfstringanyType&gt;&quot;,\n                &quot;&lt;a:KeyValuePairOfstringanyType&gt;&quot;,\n                    &quot;&lt;c:key&gt;TrackingToken&lt;/c:key&gt;&quot;,\n                    &quot;&lt;c:value i:type='d:string' xmlns:d='http://www.w3.org/2001/XMLSchema' /&gt;&quot;,\n                &quot;&lt;/a:KeyValuePairOfstringanyType&gt;&quot;,\n            &quot;&lt;/a:Parameters&gt;&quot;,\n            &quot;&lt;a:RequestId i:nil='true' /&gt;&quot;,\n            &quot;&lt;a:RequestName&gt;SendEmail&lt;/a:RequestName&gt;&quot;,\n        &quot;&lt;/request&gt;&quot;\n    ].join(&quot; &quot;);\n\n    XrmServiceToolkit.Soap.Execute(request)\n}</code></pre>\n\n** Corrected typos mentioned below.  KSG_CRM, 3/6/2015. ** <br />\n",
+    "PostedDate": "2015-03-05T09:29:08.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360237",
+    "ThreadId": "581952",
+    "Html": "Use Fiddler to see the requests that are sent when you use crm to send a direct email using web interface.  Compare the soap request with the request you are making.  I will look for the code I have used in the past.  I have done exactly what you are trying to do in the past and I used XrmServiceToolkit to make the soap call.<br />\n",
+    "PostedDate": "2015-03-05T13:21:43.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360409",
+    "ThreadId": "581952",
+    "Html": "I found the problem(s) after a lot of troubleshooting.  First, in the join statement I need a space instead of an empty string.  Second, the last line needs to be XrmServiceToolkit.Soap.Execute(request) with a capital 'E' even though the function defined in the toolkit with a lower case 'e'.<br />\n",
+    "PostedDate": "2015-03-06T06:25:55.157-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "fixed in 2.0.1",
+    "ClosedDate": "2014-04-21T04:21:12.31-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am getting below exception while doing retrieve with a linked entity\n\n___XrmServiceToolkit.Fetch:No 'entity' node in the provided Fetchxml___\n\nI am on CRM UR 13.\n\nAny help or pointer on this would be really appreciated.",
+    "LastUpdatedDate": "2014-04-21T04:21:12.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "xrmservicetoolkit",
+    "ReportedDate": "2013-12-04T01:09:18.037-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Exception - XrmServiceToolkit.Fetch:No 'entity' node in the provided Fetchxml",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 1569
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi.\r\n\r\nI think there may be a potential issue in version 2.0.0. The change will be included in 2.0.1 which I hope will be released around later February, 2014\r\n\r\nRegards\nJaimie",
+      "PostedDate": "2014-02-05T07:57:23.757-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-04-21T04:21:12.31-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

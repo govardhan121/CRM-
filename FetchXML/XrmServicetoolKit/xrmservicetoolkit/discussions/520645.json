@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1191125",
+    "ThreadId": "520645",
+    "Html": "I'm not familiar with the event limitations for the tablet application.\r<br />\n<br />\nPlease explain what the limitation is.\r<br />\n<br />\nCheers!<br />\n",
+    "PostedDate": "2014-01-22T08:47:50.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1203034",
+    "ThreadId": "520645",
+    "Html": "Hi. <br />\n<br />\nAs far as I remember, (I may be very wrong though)<br />\n<ol>\n<li>customization is limited for tablet app even close to none</li>\n<li>iFrame, WebResource will not be displayed in tablet apps</li>\n<li>Integrations will not work (yammer, activity feeds, bing map, sharepoint document)</li>\n<li>Cannot switch forms</li>\n<li>onLoad method is the only method will be triggered</li>\n<li>When tablet app goes offline, data will be read-only. form events will not work.</li>\n<li>\nwildcard search will not work for tablet app<br />\n</li>\n</ol>\nMaybe more and will have changes in the latest RU1. I will need to put some readings there about tablet application part.<br />\n<br />\nHope this helps.<br />\n<br />\nRegards,<br />\nJaimie<br />\n",
+    "PostedDate": "2014-02-05T08:04:27.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1203212",
+    "ThreadId": "520645",
+    "Html": "Hi Jaimie,\r<br />\n<br />\nTo your bullet #5, using an iPad, I was able to get a field on-change event to execute custom java-script. \r<br />\n<br />\nThanks,\r<br />\nMark<br />\n",
+    "PostedDate": "2014-02-05T13:59:53.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
