@@ -1,0 +1,9 @@
+Managed Solutions:
+
+This is the solutions that you can import and publish only. You neither export it nor you can make any changes in it.
+
+Unmanaged Solutions:
+
+It allows you to perform all operations like Import, Export, add/remove component, publish customization and lot other.
+
+In this blog we are mainly focusing on restriction of Managed solution and how to convert Managed solution into Unmanaged one. Once you convert Managed solution into Unmanaged, then you can do anything with it.

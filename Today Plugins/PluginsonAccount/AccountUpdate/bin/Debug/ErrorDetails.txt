@@ -1,0 +1,57 @@
+Unhandled Exception: System.ServiceModel.FaultException`1[[Microsoft.Xrm.Sdk.OrganizationServiceFault, Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]: There is no active transaction. This error is usually caused by custom plug-ins that ignore errors from service calls and continue processing.Detail: 
+<OrganizationServiceFault xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/xrm/2011/Contracts">
+  <ActivityId>9a02b96c-79e4-4293-824d-8177b9d31294</ActivityId>
+  <ErrorCode>-2147220911</ErrorCode>
+  <ErrorDetails xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiExceptionSourceKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Plugin/Microsoft.Crm.Common.ObjectModel.AccountService</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiOriginalExceptionKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Microsoft.Crm.CrmException: There is no active transaction. This error is usually caused by custom plug-ins that ignore errors from service calls and continue processing. ---&gt; Microsoft.Crm.CrmException: There is no active transaction. This error is usually caused by custom plug-ins that ignore errors from service calls and continue processing.
+   at Microsoft.Crm.CrmTransaction.CommitTransaction()
+   at Microsoft.Crm.SqlExecutionContext.CommitTransaction()
+   at Microsoft.Crm.Extensibility.MessageProcessor.Execute(PipelineExecutionContext context)
+   at Microsoft.Crm.Extensibility.InternalMessageDispatcher.Execute(PipelineExecutionContext context)
+   at Microsoft.Crm.Extensibility.ExtensiblePlatformMessageDispatcher.Execute(PipelineExecutionContext pluginContext)
+   at Microsoft.Crm.Extensibility.ExtensiblePlatformMessageDispatcher.UpdateWithInvocationSource(BusinessEntity entity, FilterExpression filter, Int32 invocationSource, ExecutionContext context)
+   at Microsoft.Crm.Extensibility.ExtensiblePlatformMessageDispatcher.Update(BusinessEntity entity, FilterExpression filter, ExecutionContext context)
+   at Microsoft.Crm.BusinessEntities.BusinessProcessObject.UpdateWithPipelineAndExtensions(IBusinessEntity entity, ExecutionContext context)
+   at Microsoft.Crm.BusinessEntities.BusinessProcessObject.Update(IBusinessEntity entity, ExecutionContext context, Boolean updateWithPipeline)
+   at Microsoft.Crm.Common.ObjectModel.AccountService.Update(IBusinessEntity entity, ExecutionContext context)
+   --- End of inner exception stack trace ---
+   at Microsoft.Crm.Extensibility.VersionedPluginProxyStepBase.Execute(PipelineExecutionContext context)
+   at Microsoft.Crm.Extensibility.PipelineInstrumentationHelper.Execute(Boolean instrumentationEnabled, String stopwatchName, ExecuteWithInstrumentation action, PipelineExecutionContext context)
+   at Microsoft.Crm.Extensibility.Pipeline.Execute(PipelineExecutionContext context)</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiStepKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">63cdbb1b-ea3e-db11-86a7-000a3a5473e8</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiDepthKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">1</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiActivityIdKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">9a02b96c-79e4-4293-824d-8177b9d31294</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiPluginSolutionNameKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">System</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key>ApiStepSolutionNameKey</d2p1:key>
+      <d2p1:value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">System</d2p1:value>
+    </KeyValuePairOfstringanyType>
+  </ErrorDetails>
+  <Message>There is no active transaction. This error is usually caused by custom plug-ins that ignore errors from service calls and continue processing.</Message>
+  <Timestamp>2018-01-04T04:31:34.5525596Z</Timestamp>
+  <ExceptionRetriable>false</ExceptionRetriable>
+  <ExceptionSource i:nil="true" />
+  <InnerFault i:nil="true" />
+  <OriginalException i:nil="true" />
+  <TraceText i:nil="true" />
+</OrganizationServiceFault>
+

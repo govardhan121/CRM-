@@ -1,0 +1,2 @@
+Perform Basic Data Operations in Microsoft Dynamics CRM Using the REST Endpoint
+http://msdn.microsoft.com/en-us/library/gg328090.aspx

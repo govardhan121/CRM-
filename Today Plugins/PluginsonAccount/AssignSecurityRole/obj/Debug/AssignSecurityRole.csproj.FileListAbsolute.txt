@@ -1,0 +1,6 @@
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\bin\Debug\AssignSecurityRole.dll
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\bin\Debug\AssignSecurityRole.pdb
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\obj\Debug\AssignSecurityRole.dll
+C:\Users\home\Desktop\Batches\20th batch\Plugins 20th Batch\Vijay\PluginsonAccount\AssignSecurityRole\obj\Debug\AssignSecurityRole.pdb

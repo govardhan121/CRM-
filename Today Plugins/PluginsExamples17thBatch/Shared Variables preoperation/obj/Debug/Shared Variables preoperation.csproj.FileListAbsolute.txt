@@ -1,0 +1,7 @@
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\obj\Debug\Shared Variables preoperation.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\bin\Debug\Shared Variables preoperation.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\bin\Debug\Shared Variables preoperation.pdb
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\obj\Debug\Shared Variables preoperation.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\Shared Variables preoperation\obj\Debug\Shared Variables preoperation.pdb

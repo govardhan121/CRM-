@@ -1,0 +1,69 @@
+Time and Condition Based Workflows in CRM 2011
+http://www.powerobjects.com/blog/2012/10/12/time-condition-based-workflows-in-crm-2011/
+http://www.powerobjects.com/2012/09/20/how-to-create-automatic-follow-up-activities-in-crm-2011/
+http://www.powerobjects.com/2012/05/24/assign-owner-and-route-case-to-queue-using-workflow-in-dynamics-crm/
+
+How to Fix Workflows Stuck in Waiting in CRM 2011:
+http://www.powerobjects.com/blog/2013/03/28/how-to-fix-a-crm-workflow-stuck-in-progress/
+http://www.powerobjects.com/blog/2013/06/05/crm-2011-workflows-stuck-in-waiting/
+
+23. Synchronous workflow is infinite
+    ans: Synchronous workflows and infinite loop error
+
+1. without using the any event,the workflow will trigger?
+
+Ans : Yes using ondemand
+
+Realtime workflow example:
+Building A Custom Real-Time Workflow
+https://dynamicscrmgirl.wordpress.com/2013/09/17/crm-2013-beta-real-time-workflows/
+Calculated Fields Introduced in Dynamics CRM 2015
+http://inogic.com/blog/2014/10/
+
+
+Using real-time (synchronous) workflows in Dynamics CRM 2013 - See more at: http://blog.clickdimensions.com/2013/12/using-real-time-synchronous-workflows-in-dynamics-crm-2013.html#sthash.tAueEsXB.dpuf
+
+http://blog.clickdimensions.com/2013/12/using-real-time-synchronous-workflows-in-dynamics-crm-2013.html
+https://www.salentica.com/crm-2013-real-time-workflows/
+
+http://garethtuckercrm.com/2013/12/06/crm-2013-new-features-using-real-time-workflow-for-validation-rules/
+
+http://www.powerobjects.com/2012/09/20/how-to-create-automatic-follow-up-activities-in-crm-2011/
+http://www.powerobjects.com/2012/05/24/assign-owner-and-route-case-to-queue-using-workflow-in-dynamics-crm/
+
+Auto-Numbering with CRM Workflows: Real-Time vs. Asynchronous  (very very important)
+
+http://niiranen.eu/crm/2013/12/auto-numbering-workflows-real-time-vs-asynchronous/
+
+https://msdynamicscrmblog.wordpress.com/tag/processes/
+
+
+Workflow Example:
+https://msdynamicscrmblog.wordpress.com/2013/10/20/types-of-processes-in-dynamics-crm-2013/
+http://crmbook.powerobjects.com/system-administration/processes/workflows/
+
+https://technet.microsoft.com/en-us/library/dn531067.aspx
+
+https://technet.microsoft.com/en-us/library/dn531149.aspx
+https://technet.microsoft.com/en-us/library/dn531079.aspx
+http://www.thecrmbusiness.com/blog/posts/2013/march/what-is-workflow-in-crm.aspx
+https://msdynamicscrmblog.wordpress.com/2013/11/21/workflow-processes-in-dynamics-crm-2013/
+https://msdynamicscrmblog.wordpress.com/2013/11/06/business-process-flows-in-dynamics-crm-2013/
+https://msdynamicscrmblog.wordpress.com/2013/10/19/types-of-forms-in-dynamics-crm-2013/
+https://msdynamicscrmblog.wordpress.com/2013/10/21/types-of-entities-in-dynamics-crm-2013/
+https://msdynamicscrmblog.wordpress.com/2013/10/22/types-of-fields-in-dynamics-crm-2013/
+
+------
+workflow wait conditions
+http://www.magnetismsolutions.co.nz/blog/paul-nieuwelaars-blog/2012/11/25/workflow-wait-conditions-best-practices-dynamics-crm-2011
+https://community.dynamics.com/crm/b/magnetismsolutionscrmblog/archive/2012/11/26/workflow-wait-conditions-best-practices-dynamics-crm-2011.aspx
+http://rahuljim.blogspot.in/2013/06/waits-and-timeouts-in-dynamics-crm.html
+http://social.technet.microsoft.com/wiki/contents/articles/11291.microsoft-dynamics-crm-2011-workflows-wait-and-timeout.aspx
+http://www.experts-exchange.com/Software/Microsoft_Applications/Microsoft_Dynamics/Q_28406523.html
+
+http://mscrmbasics.blogspot.in/2013/03/crm-2011-how-to-use-waittimeout-in.html
+
+when to use plug-ins vs workflow
+https://msdn.microsoft.com/en-us/library/gg509027.aspx
+Getting started with CRM 2011 JavaScript REST (OData) Web Service Calls
+https://woodsworkblog.wordpress.com/2013/01/15/getting-started-with-crm-2011-javascript-rest-odata-web-service-calls/

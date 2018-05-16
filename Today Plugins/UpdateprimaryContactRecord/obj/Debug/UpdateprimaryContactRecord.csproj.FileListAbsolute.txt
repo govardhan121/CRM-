@@ -1,0 +1,13 @@
+D:\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\UpdateprimaryContactRecord.dll
+D:\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\UpdateprimaryContactRecord.pdb
+D:\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\Microsoft.Xrm.Sdk.xml
+D:\PluginsExamples\UpdateprimaryContactRecord\obj\Debug\UpdateprimaryContactRecord.dll
+D:\PluginsExamples\UpdateprimaryContactRecord\obj\Debug\UpdateprimaryContactRecord.pdb
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\UpdateprimaryContactRecord.dll
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\UpdateprimaryContactRecord.pdb
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\obj\Debug\UpdateprimaryContactRecord.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\obj\Debug\UpdateprimaryContactRecord.dll
+C:\Users\home\Desktop\Batches\16th batch\Plugins\PluginsExamples\UpdateprimaryContactRecord\obj\Debug\UpdateprimaryContactRecord.pdb

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginsonAccount", "PluginsonAccount\PluginsonAccount.csproj", "{883DB05B-CC59-4FC6-A3A8-E133DE92CA5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountUpdate", "AccountUpdate\AccountUpdate.csproj", "{415CF94B-7F5F-4F77-B616-8E234491C60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignSecurityRole", "AssignSecurityRole\AssignSecurityRole.csproj", "{77C81803-C3BF-478F-B7C4-F35F06E68D66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{883DB05B-CC59-4FC6-A3A8-E133DE92CA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883DB05B-CC59-4FC6-A3A8-E133DE92CA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883DB05B-CC59-4FC6-A3A8-E133DE92CA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883DB05B-CC59-4FC6-A3A8-E133DE92CA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415CF94B-7F5F-4F77-B616-8E234491C60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415CF94B-7F5F-4F77-B616-8E234491C60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415CF94B-7F5F-4F77-B616-8E234491C60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415CF94B-7F5F-4F77-B616-8E234491C60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C81803-C3BF-478F-B7C4-F35F06E68D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C81803-C3BF-478F-B7C4-F35F06E68D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C81803-C3BF-478F-B7C4-F35F06E68D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C81803-C3BF-478F-B7C4-F35F06E68D66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

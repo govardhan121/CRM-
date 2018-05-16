@@ -1,0 +1,7 @@
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\obj\Debug\PluginsExamples17thBatch.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\bin\Debug\PluginsExamples17thBatch.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\bin\Debug\PluginsExamples17thBatch.pdb
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\obj\Debug\PluginsExamples17thBatch.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\PluginsExamples17thBatch\obj\Debug\PluginsExamples17thBatch.pdb

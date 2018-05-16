@@ -1,0 +1,7 @@
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\bin\Debug\Case resoltion.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\bin\Debug\Case resoltion.pdb
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\obj\Debug\Case resoltion.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\obj\Debug\Case resoltion.pdb
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\Case resoltion\obj\Debug\Case resoltion.csprojResolveAssemblyReference.cache

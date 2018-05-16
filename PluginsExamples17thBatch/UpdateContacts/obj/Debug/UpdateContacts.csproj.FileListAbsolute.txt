@@ -1,0 +1,14 @@
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\bin\Debug\UpdateContacts.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\bin\Debug\UpdateContacts.pdb
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.dll
+C:\Users\home\Desktop\Batches\18th batch\Plugins_18thBatch\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.pdb
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\bin\Debug\UpdateContacts.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\bin\Debug\UpdateContacts.pdb
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\UpdateContacts\obj\Debug\UpdateContacts.pdb

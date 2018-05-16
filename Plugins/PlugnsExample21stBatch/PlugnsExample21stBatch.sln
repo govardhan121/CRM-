@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCreationafterAccountCreated", "PlugnsExample21stBatch\TaskCreationafterAccountCreated.csproj", "{891F11C8-260A-420E-831E-1839CA25628B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{891F11C8-260A-420E-831E-1839CA25628B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891F11C8-260A-420E-831E-1839CA25628B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891F11C8-260A-420E-831E-1839CA25628B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891F11C8-260A-420E-831E-1839CA25628B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

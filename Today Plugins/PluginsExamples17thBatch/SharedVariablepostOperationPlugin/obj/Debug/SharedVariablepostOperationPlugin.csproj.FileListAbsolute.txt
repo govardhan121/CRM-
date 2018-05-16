@@ -1,0 +1,6 @@
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\bin\Debug\SharedVariablepostOperationPlugin.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\bin\Debug\SharedVariablepostOperationPlugin.pdb
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\obj\Debug\SharedVariablepostOperationPlugin.dll
+C:\Users\home\Desktop\Batches\20th batch\Today Plugins\PluginsExamples17thBatch\SharedVariablepostOperationPlugin\obj\Debug\SharedVariablepostOperationPlugin.pdb
